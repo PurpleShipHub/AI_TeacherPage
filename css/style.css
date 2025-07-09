@@ -1,0 +1,244 @@
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: linear-gradient(to bottom, #e9d5ff, #ddd6fe);
+    min-height: 100vh;
+    color: #1f2937;
+}
+
+/* Container & Layout */
+#app {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.container {
+    text-align: center;
+    max-width: 600px;
+    width: 100%;
+}
+
+.screen {
+    display: none;
+}
+
+.screen.active {
+    display: block;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Typography */
+.title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #1f2937;
+    margin-bottom: 1rem;
+}
+
+.subtitle {
+    font-size: 1.25rem;
+    color: #4b5563;
+    margin-bottom: 2rem;
+}
+
+.screen-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #1f2937;
+    margin-bottom: 2rem;
+}
+
+/* Character */
+.character-wrapper {
+    margin-bottom: 2rem;
+}
+
+.character {
+    width: 256px;
+    height: auto;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Speech Bubble */
+.speech-bubble {
+    background: white;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.speech-bubble::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 20px solid white;
+}
+
+/* Buttons */
+.btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 9999px;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin: 0.5rem;
+}
+
+.btn-primary {
+    background-color: #6366f1;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #4f46e5;
+    transform: scale(1.05);
+}
+
+.btn-secondary {
+    background-color: #9ca3af;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #6b7280;
+    transform: scale(1.05);
+}
+
+.btn-yes {
+    background-color: #10b981;
+    color: white;
+}
+
+.btn-yes:hover {
+    background-color: #059669;
+}
+
+.btn-no {
+    background-color: #ef4444;
+    color: white;
+}
+
+.btn-no:hover {
+    background-color: #dc2626;
+}
+
+.btn-unknown {
+    background-color: #6b7280;
+    color: white;
+}
+
+.btn-unknown:hover {
+    background-color: #4b5563;
+}
+
+/* Answer Buttons */
+.answer-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.answer-buttons.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 400px;
+    margin: 1.5rem auto 0;
+}
+
+/* Progress Info */
+.progress-info {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+/* Tool Info */
+.tool-name {
+    font-size: 1.5rem;
+    color: #6366f1;
+    margin: 1rem 0;
+}
+
+.tool-description {
+    color: #4b5563;
+    margin-bottom: 1rem;
+}
+
+.tool-strengths {
+    text-align: left;
+    margin: 1rem 0;
+}
+
+.tool-strengths h4 {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.tool-strengths ul {
+    list-style: none;
+    padding-left: 1rem;
+}
+
+.tool-strengths li::before {
+    content: "💪 ";
+    margin-right: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .title {
+        font-size: 2rem;
+    }
+    
+    .character {
+        width: 192px;
+    }
+    
+    .answer-buttons.grid {
+        grid-template-columns: 1fr;
+    }
+}

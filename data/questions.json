@@ -1,0 +1,34 @@
+[
+  {
+    "id": "q1",
+    "text": "어떤 작업을 위한 AI 도구를 찾고 계신가요?",
+    "type": "category",
+    "options": ["대화/채팅", "이미지 생성", "코딩", "글쓰기"],
+    "filterLogic": {
+      "options": {
+        "대화/채팅": ["chatbot"],
+        "이미지 생성": ["image"],
+        "코딩": ["coding"],
+        "글쓰기": ["writing"]
+      }
+    }
+  },
+  {
+    "id": "q2",
+    "text": "무료로 사용할 수 있는 옵션이 필요하신가요?",
+    "type": "yes_no",
+    "filterLogic": {
+      "yes": ["free", "freemium"],
+      "no": []
+    }
+  },
+  {
+    "id": "q3",
+    "text": "전문적인 용도로 사용하실 예정인가요?",
+    "type": "yes_no",
+    "filterLogic": {
+      "yes": ["professional", "productivity"],
+      "no": ["casual", "hobby"]
+    }
+  }
+]

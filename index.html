@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI.Teacher - 당신의 AI 도구 선생님</title>
+    <meta name="description" content="아키네이터 스타일로 최적의 AI 도구를 찾아드립니다">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- 시작 화면 -->
+        <div id="startScreen" class="screen active">
+            <div class="container">
+                <div class="character-wrapper">
+                    <img src="images/ai_teacher_explaining.png" alt="AI Teacher" class="character" id="mainCharacter">
+                </div>
+                <h1 class="title">AI.Teacher</h1>
+                <p class="subtitle">당신에게 필요한 AI 도구를 찾아드립니다</p>
+                <button class="btn btn-primary" onclick="startQuiz()">시작하기</button>
+            </div>
+        </div>
+
+        <!-- 질문 화면 -->
+        <div id="questionScreen" class="screen">
+            <div class="container">
+                <h2 class="screen-title">AI.Teacher</h2>
+                <div class="character-wrapper">
+                    <img src="images/ai_teacher_curious.png" alt="AI Teacher" class="character" id="questionCharacter">
+                </div>
+                <div class="speech-bubble">
+                    <p id="questionText"></p>
+                </div>
+                <div id="answerButtons" class="answer-buttons"></div>
+                <div class="progress-info">
+                    <span>진행률: <span id="progressPercent">0</span>%</span>
+                    <span>남은 후보: <span id="remainingCount">0</span>개</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 결과 화면 -->
+        <div id="resultScreen" class="screen">
+            <div class="container">
+                <h2 class="screen-title">AI.Teacher</h2>
+                <div class="character-wrapper">
+                    <img src="images/ai_teacher_explaining.png" alt="AI Teacher" class="character">
+                </div>
+                <div class="speech-bubble">
+                    <p>찾았습니다! 당신에게 딱 맞는 AI 도구는...</p>
+                    <h3 id="toolName" class="tool-name"></h3>
+                    <p id="toolDescription" class="tool-description"></p>
+                    <div id="toolStrengths" class="tool-strengths"></div>
+                    <a id="toolLink" class="btn btn-primary" target="_blank" rel="noopener noreferrer">바로가기</a>
+                </div>
+                <button class="btn btn-secondary" onclick="restart()">다시 시작</button>
+            </div>
+        </div>
+
+        <!-- 에러 화면 -->
+        <div id="errorScreen" class="screen">
+            <div class="container">
+                <h2 class="screen-title">AI.Teacher</h2>
+                <div class="character-wrapper">
+                    <img src="images/ai_teacher_thinking.png" alt="AI Teacher" class="character">
+                </div>
+                <div class="speech-bubble">
+                    <p>죄송합니다. 조건에 맞는 AI 도구를 찾지 못했습니다.</p>
+                    <p>다시 시도해보시겠어요?</p>
+                </div>
+                <button class="btn btn-primary" onclick="restart()">다시 시작</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

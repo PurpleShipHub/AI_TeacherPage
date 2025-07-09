@@ -1,0 +1,77 @@
+[
+  {
+    "id": "chatgpt",
+    "name": "ChatGPT",
+    "description": "OpenAI가 개발한 대화형 AI 챗봇",
+    "category": "chatbot",
+    "features": ["대화형 인터페이스", "코드 생성", "번역", "요약", "창의적 글쓰기"],
+    "pricing": {
+      "type": "freemium",
+      "details": "무료 버전 제공, Plus $20/월"
+    },
+    "tags": ["chatbot", "writing", "coding", "general", "openai"],
+    "url": "https://chat.openai.com",
+    "strengths": ["범용성", "자연스러운 대화", "다양한 작업 수행 가능"],
+    "useCases": ["일반적인 질문 답변", "코드 작성 도움", "글쓰기 도움"]
+  },
+  {
+    "id": "claude",
+    "name": "Claude",
+    "description": "Anthropic이 개발한 안전하고 유용한 AI 어시스턴트",
+    "category": "chatbot",
+    "features": ["긴 문맥 이해", "코드 분석", "문서 작성", "연구 지원"],
+    "pricing": {
+      "type": "freemium",
+      "details": "무료 버전 제공, Pro $20/월"
+    },
+    "tags": ["chatbot", "writing", "coding", "research", "anthropic"],
+    "url": "https://claude.ai",
+    "strengths": ["긴 문서 처리", "정확한 분석", "안전성"],
+    "useCases": ["긴 문서 분석", "연구 작업", "코드 리뷰"]
+  },
+  {
+    "id": "midjourney",
+    "name": "Midjourney",
+    "description": "텍스트로 이미지를 생성하는 AI 아트 도구",
+    "category": "image",
+    "features": ["고품질 이미지 생성", "예술적 스타일", "커스터마이징"],
+    "pricing": {
+      "type": "subscription",
+      "details": "$10/월부터 시작"
+    },
+    "tags": ["image", "art", "creative", "design"],
+    "url": "https://midjourney.com",
+    "strengths": ["예술적 품질", "독특한 스타일", "커뮤니티"],
+    "useCases": ["아트워크 생성", "콘셉트 디자인", "일러스트레이션"]
+  },
+  {
+    "id": "github-copilot",
+    "name": "GitHub Copilot",
+    "description": "AI 페어 프로그래밍 도구",
+    "category": "coding",
+    "features": ["코드 자동완성", "함수 생성", "주석 기반 코드 생성"],
+    "pricing": {
+      "type": "subscription",
+      "details": "$10/월 또는 $100/년"
+    },
+    "tags": ["coding", "developer", "productivity", "github"],
+    "url": "https://github.com/features/copilot",
+    "strengths": ["IDE 통합", "실시간 코드 제안", "다양한 언어 지원"],
+    "useCases": ["코드 작성 속도 향상", "보일러플레이트 코드 생성", "학습 도구"]
+  },
+  {
+    "id": "notion-ai",
+    "name": "Notion AI",
+    "description": "Notion에 통합된 AI 작성 도구",
+    "category": "writing",
+    "features": ["글 작성", "요약", "번역", "아이디어 정리"],
+    "pricing": {
+      "type": "subscription",
+      "details": "$10/월 추가"
+    },
+    "tags": ["writing", "productivity", "notes", "organization"],
+    "url": "https://notion.so/product/ai",
+    "strengths": ["Notion 통합", "문서 작성 효율성", "협업"],
+    "useCases": ["회의록 작성", "아이디어 정리", "문서 요약"]
+  }
+]
