@@ -1,0 +1,64 @@
+{
+  "ui": {
+    "title": "AI.Lehrer",
+    "subtitle": "Finden Sie das perfekte KI-Tool für Sie!",
+    "startButton": "Starten",
+    "nextButton": "Weiter",
+    "yes": "Ja",
+    "no": "Nein",
+    "unknown": "Weiß nicht",
+    "restart": "Neustart",
+    "visitTool": "Tool verwenden",
+    "shareResult": "Ergebnis teilen",
+    "progress": "Fortschritt",
+    "remaining": "Verbleibende Tools",
+    "recommended": "Empfohlenes Tool",
+    "strengths": "💪 Stärken",
+    "loading": "Laden...",
+    "dataLoading": "Daten werden geladen...",
+    "error": "Ein Fehler ist aufgetreten",
+    "retry": "Erneut versuchen",
+    "language": "Sprache",
+    "changeLanguage": "Sprache ändern"
+  },
+  "questions": {
+    "whatNeed": "Wofür brauchen Sie ein KI-Tool?",
+    "freeOnly": "Möchten Sie nur kostenlose Tools verwenden?",
+    "complexity": "Bevorzugen Sie einfache Nutzung statt komplexer Einstellungen?",
+    "korean": "Benötigen Sie koreanische Sprachunterstützung?",
+    "collaboration": "Benötigen Sie Teamwork-Funktionen?",
+    "mobile": "Werden Sie es auf dem Handy verwenden?",
+    "api": "Benötigen Sie API-Integrationsfunktionen?",
+    "commercial": "Werden Sie es für kommerzielle Zwecke verwenden?"
+  },
+  "categories": {
+    "chatbot": "Chatbot/Gespräch",
+    "image": "Bildgenerierung",
+    "coding": "Programmierhilfe",
+    "writing": "Schreiben",
+    "research": "Forschung",
+    "audio": "Sprache/Musik",
+    "video": "Videobearbeitung",
+    "productivity": "Produktivität",
+    "design": "Design",
+    "entertainment": "Unterhaltung"
+  },
+  "messages": {
+    "welcome": "Hallo! Ich bin AI.Lehrer. Ich helfe Ihnen durch einige Fragen das perfekte KI-Tool zu finden.",
+    "thinking": "Hmm... lassen Sie mich nachdenken",
+    "analyzing": "Analysiere Ihre Antworten...",
+    "result": "Analyse abgeschlossen! Das KI-Tool, das ich Ihnen empfehle, ist",
+    "perfect": "Perfekte Wahl!",
+    "noResult": "Ich konnte kein Tool finden, das Ihren Kriterien entspricht. Bitte versuchen Sie es erneut.",
+    "retry": "Möchten Sie es erneut versuchen?",
+    "shareTwitter": "Von AI.Lehrer empfohlenes KI-Tool:",
+    "shareKakao": "AI.Lehrer Empfehlung:",
+    "shareButton": "AI.Lehrer verwenden"
+  },
+  "errors": {
+    "dataLoadFailed": "Daten konnten nicht geladen werden.",
+    "kakaoShareNotReady": "Kakao-Sharing ist in Vorbereitung.",
+    "pageNotFound": "Seite nicht gefunden",
+    "goHome": "Zur Startseite"
+  }
+}

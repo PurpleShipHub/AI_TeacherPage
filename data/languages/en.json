@@ -1,0 +1,75 @@
+{
+  "ui": {
+    "title": "AI.Teacher",
+    "subtitle": "Find the perfect AI tool for you!",
+    "startButton": "Start",
+    "nextButton": "Next",
+    "yes": "Yes",
+    "no": "No",
+    "unknown": "Unknown",
+    "restart": "Restart",
+    "visitTool": "Use Tool",
+    "shareResult": "Share Result",
+    "progress": "Progress",
+    "remaining": "Remaining Tools",
+    "recommended": "Recommended Tool",
+    "strengths": "💪 Strengths",
+    "loading": "Loading...",
+    "dataLoading": "Loading data...",
+    "error": "An error occurred",
+    "retry": "Retry",
+    "language": "Language",
+    "changeLanguage": "Change Language"
+  },
+  "questions": {
+    "q1": "What type of AI tool are you looking for?",
+    "q1a": "What type of content do you want to create?",
+    "q1b": "What work can we help you with?",
+    "q2": "Do you need free options?",
+    "q3": "Do you need professional-level quality?",
+    "q4": "Do you need integration with specific platforms or tools?",
+    "q5": "Is Korean language support important?",
+    "q6": "Should it be easy for beginners to use?"
+  },
+  "options": {
+    "대화/채팅": "Chat/Conversation",
+    "콘텐츠 생성": "Content Creation",
+    "업무 도구": "Business Tools",
+    "엔터테인먼트": "Entertainment",
+    "이미지/디자인": "Images/Design",
+    "글/텍스트": "Writing/Text",
+    "오디오/음성": "Audio/Voice",
+    "비디오": "Video",
+    "프로그래밍": "Programming",
+    "프레젠테이션": "Presentation",
+    "디자인 작업": "Design Work",
+    "문서 작성": "Document Writing"
+  },
+  "categories": {
+    "chatbot": "Chatbot/Conversation",
+    "image": "Image Generation",
+    "coding": "Coding Help",
+    "writing": "Writing",
+    "research": "Research",
+    "audio": "Voice/Music",
+    "video": "Video Editing",
+    "productivity": "Productivity",
+    "design": "Design",
+    "entertainment": "Entertainment"
+  },
+  "messages": {
+    "welcome": "Hello! I'm AI.Teacher. I'll help you find the perfect AI tool through a few questions.",
+    "thinking": "Hmm... let me think",
+    "analyzing": "Analyzing your answers...",
+    "result": "Analysis complete! The AI tool I recommend for you is",
+    "perfect": "Perfect choice!",
+    "noResult": "I couldn't find a tool that matches your criteria. Please try again.",
+    "retry": "Would you like to try again?",
+    "shareTwitter": "AI Teacher recommended AI tool:"
+  },
+  "errors": {
+    "dataLoadFailed": "Failed to load data.",
+    "pageNotFound": "Page not found",
+    "goHome": "Go Home"
+  }
+}

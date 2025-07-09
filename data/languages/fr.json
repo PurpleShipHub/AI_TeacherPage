@@ -1,0 +1,64 @@
+{
+  "ui": {
+    "title": "AI.Professeur",
+    "subtitle": "Trouvez l'outil IA parfait pour vous !",
+    "startButton": "Commencer",
+    "nextButton": "Suivant",
+    "yes": "Oui",
+    "no": "Non",
+    "unknown": "Je ne sais pas",
+    "restart": "Redémarrer",
+    "visitTool": "Utiliser l'outil",
+    "shareResult": "Partager le résultat",
+    "progress": "Progression",
+    "remaining": "Outils restants",
+    "recommended": "Outil recommandé",
+    "strengths": "💪 Forces",
+    "loading": "Chargement...",
+    "dataLoading": "Chargement des données...",
+    "error": "Une erreur s'est produite",
+    "retry": "Réessayer",
+    "language": "Langue",
+    "changeLanguage": "Changer de langue"
+  },
+  "questions": {
+    "whatNeed": "Pour quoi avez-vous besoin d'un outil IA ?",
+    "freeOnly": "Voulez-vous utiliser uniquement des outils gratuits ?",
+    "complexity": "Préférez-vous une utilisation simple plutôt qu'une configuration complexe ?",
+    "korean": "Avez-vous besoin du support coréen ?",
+    "collaboration": "Avez-vous besoin de fonctions de collaboration d'équipe ?",
+    "mobile": "L'utiliserez-vous sur mobile ?",
+    "api": "Avez-vous besoin de fonctions d'intégration API ?",
+    "commercial": "L'utiliserez-vous à des fins commerciales ?"
+  },
+  "categories": {
+    "chatbot": "Chatbot/Conversation",
+    "image": "Génération d'images",
+    "coding": "Aide au codage",
+    "writing": "Écriture",
+    "research": "Recherche",
+    "audio": "Voix/Musique",
+    "video": "Édition vidéo",
+    "productivity": "Productivité",
+    "design": "Design",
+    "entertainment": "Divertissement"
+  },
+  "messages": {
+    "welcome": "Bonjour ! Je suis AI.Professeur. Je vais vous aider à trouver l'outil IA parfait grâce à quelques questions.",
+    "thinking": "Hmm... laissez-moi réfléchir",
+    "analyzing": "Analyse de vos réponses...",
+    "result": "Analyse terminée ! L'outil IA que je vous recommande est",
+    "perfect": "Choix parfait !",
+    "noResult": "Je n'ai pas pu trouver un outil correspondant à vos critères. Veuillez réessayer.",
+    "retry": "Souhaitez-vous réessayer ?",
+    "shareTwitter": "Outil IA recommandé par AI.Professeur :",
+    "shareKakao": "Recommandation AI.Professeur :",
+    "shareButton": "Utiliser AI.Professeur"
+  },
+  "errors": {
+    "dataLoadFailed": "Échec du chargement des données.",
+    "kakaoShareNotReady": "Le partage Kakao est en préparation.",
+    "pageNotFound": "Page non trouvée",
+    "goHome": "Retour à l'accueil"
+  }
+}

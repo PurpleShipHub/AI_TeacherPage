@@ -1,0 +1,360 @@
+[
+  {
+    "id": "q_category_primary",
+    "text": "이 도구는 주로 텍스트나 대화를 다루나요?",
+    "type": "yes_no",
+    "targetTags": ["chatbot", "writing", "research"],
+    "category": "chatbot",
+    "importance": 1.0
+  },
+  {
+    "id": "q_category_visual",
+    "text": "이 도구는 이미지나 비주얼 콘텐츠를 만드나요?",
+    "type": "yes_no",
+    "targetTags": ["image", "design", "creative", "video"],
+    "importance": 1.0
+  },
+  {
+    "id": "q_category_code",
+    "text": "이 도구는 프로그래밍이나 개발과 관련이 있나요?",
+    "type": "yes_no",
+    "targetTags": ["coding", "developer", "github", "programming"],
+    "category": "coding",
+    "importance": 1.0
+  },
+  {
+    "id": "q_price_free",
+    "text": "완전 무료로 사용할 수 있나요?",
+    "type": "yes_no",
+    "targetTags": ["free", "opensource"],
+    "importance": 0.9
+  },
+  {
+    "id": "q_price_freemium",
+    "text": "무료 버전이 있지만 유료 기능도 있나요?",
+    "type": "yes_no",
+    "targetTags": ["freemium"],
+    "importance": 0.8
+  },
+  {
+    "id": "q_difficulty_beginner",
+    "text": "초보자가 쉽게 사용할 수 있나요?",
+    "type": "yes_no",
+    "targetTags": ["simple", "easy", "beginner"],
+    "weightTarget": "ease_of_use",
+    "importance": 0.8
+  },
+  {
+    "id": "q_difficulty_professional",
+    "text": "전문가나 고급 사용자를 위한 도구인가요?",
+    "type": "yes_no",
+    "targetTags": ["professional", "advanced", "expert"],
+    "weightTarget": "professional",
+    "importance": 0.8
+  },
+  {
+    "id": "q_creative_art",
+    "text": "예술적이거나 창의적인 작업에 특화되어 있나요?",
+    "type": "yes_no",
+    "targetTags": ["creative", "art", "artistic"],
+    "weightTarget": "creativity",
+    "importance": 0.7
+  },
+  {
+    "id": "q_business_enterprise",
+    "text": "기업이나 비즈니스 환경에서 주로 사용되나요?",
+    "type": "yes_no",
+    "targetTags": ["business", "enterprise", "professional"],
+    "importance": 0.7
+  },
+  {
+    "id": "q_collaboration_team",
+    "text": "팀이나 여러 사람이 함께 사용할 수 있나요?",
+    "type": "yes_no",
+    "targetTags": ["collaboration", "team", "sharing"],
+    "weightTarget": "collaboration",
+    "importance": 0.6
+  },
+  {
+    "id": "q_realtime_live",
+    "text": "실시간으로 결과를 생성하거나 처리하나요?",
+    "type": "yes_no",
+    "targetTags": ["realtime", "live", "instant"],
+    "importance": 0.6
+  },
+  {
+    "id": "q_platform_web",
+    "text": "웹 브라우저에서 바로 사용할 수 있나요?",
+    "type": "yes_no",
+    "targetTags": ["web", "browser", "online"],
+    "importance": 0.5
+  },
+  {
+    "id": "q_platform_mobile",
+    "text": "모바일 앱이 있나요?",
+    "type": "yes_no",
+    "targetTags": ["mobile", "app", "ios", "android"],
+    "importance": 0.5
+  },
+  {
+    "id": "q_integration_api",
+    "text": "다른 도구나 서비스와 연동할 수 있나요?",
+    "type": "yes_no",
+    "targetTags": ["api", "integration", "webhook"],
+    "importance": 0.6
+  },
+  {
+    "id": "q_content_text_generation",
+    "text": "텍스트를 자동으로 생성해주나요?",
+    "type": "yes_no",
+    "targetTags": ["writing", "generation", "content"],
+    "importance": 0.8
+  },
+  {
+    "id": "q_content_text_editing",
+    "text": "기존 텍스트를 수정하거나 개선해주나요?",
+    "type": "yes_no",
+    "targetTags": ["editing", "grammar", "proofreading"],
+    "importance": 0.7
+  },
+  {
+    "id": "q_image_generation",
+    "text": "이미지를 새로 만들어주나요?",
+    "type": "yes_no",
+    "targetTags": ["image", "generation", "create"],
+    "importance": 0.9
+  },
+  {
+    "id": "q_image_editing",
+    "text": "기존 이미지를 편집하거나 수정하나요?",
+    "type": "yes_no",
+    "targetTags": ["editing", "photo", "manipulation"],
+    "importance": 0.8
+  },
+  {
+    "id": "q_audio_generation",
+    "text": "음성이나 음악을 생성하나요?",
+    "type": "yes_no",
+    "targetTags": ["audio", "voice", "music", "sound"],
+    "importance": 0.9
+  },
+  {
+    "id": "q_video_creation",
+    "text": "비디오를 만들거나 편집하나요?",
+    "type": "yes_no",
+    "targetTags": ["video", "movie", "clip"],
+    "importance": 0.9
+  },
+  {
+    "id": "q_code_generation",
+    "text": "코드를 자동으로 생성해주나요?",
+    "type": "yes_no",
+    "targetTags": ["coding", "generation", "autocomplete"],
+    "importance": 0.9
+  },
+  {
+    "id": "q_code_review",
+    "text": "코드를 검토하거나 분석해주나요?",
+    "type": "yes_no",
+    "targetTags": ["review", "analysis", "debugging"],
+    "importance": 0.8
+  },
+  {
+    "id": "q_research_search",
+    "text": "정보를 검색하거나 리서치를 도와주나요?",
+    "type": "yes_no",
+    "targetTags": ["research", "search", "information"],
+    "importance": 0.8
+  },
+  {
+    "id": "q_productivity_automation",
+    "text": "작업을 자동화하거나 효율성을 높여주나요?",
+    "type": "yes_no",
+    "targetTags": ["productivity", "automation", "workflow"],
+    "importance": 0.7
+  },
+  {
+    "id": "q_presentation_slides",
+    "text": "프레젠테이션이나 슬라이드를 만들어주나요?",
+    "type": "yes_no",
+    "targetTags": ["presentation", "slides", "deck"],
+    "importance": 0.8
+  },
+  {
+    "id": "q_data_analysis",
+    "text": "데이터를 분석하거나 시각화해주나요?",
+    "type": "yes_no",
+    "targetTags": ["data", "analysis", "visualization"],
+    "importance": 0.7
+  },
+  {
+    "id": "q_learning_education",
+    "text": "학습이나 교육 목적으로 사용되나요?",
+    "type": "yes_no",
+    "targetTags": ["education", "learning", "tutorial"],
+    "importance": 0.6
+  },
+  {
+    "id": "q_entertainment_fun",
+    "text": "재미나 엔터테인먼트가 주 목적인가요?",
+    "type": "yes_no",
+    "targetTags": ["entertainment", "fun", "game"],
+    "category": "entertainment",
+    "importance": 0.7
+  },
+  {
+    "id": "q_character_persona",
+    "text": "특정 캐릭터나 페르소나와 대화할 수 있나요?",
+    "type": "yes_no",
+    "targetTags": ["character", "persona", "roleplay"],
+    "importance": 0.8
+  },
+  {
+    "id": "q_language_multilingual",
+    "text": "여러 언어를 지원하나요?",
+    "type": "yes_no",
+    "targetTags": ["multilingual", "translation", "international"],
+    "importance": 0.6
+  },
+  {
+    "id": "q_korean_support",
+    "text": "한국어를 잘 지원하나요?",
+    "type": "yes_no",
+    "targetTags": ["korean", "한국어"],
+    "weightTarget": "korean_support",
+    "importance": 0.7
+  },
+  {
+    "id": "q_opensource_community",
+    "text": "오픈소스이거나 커뮤니티 기반인가요?",
+    "type": "yes_no",
+    "targetTags": ["opensource", "community", "github"],
+    "importance": 0.6
+  },
+  {
+    "id": "q_cloud_online",
+    "text": "클라우드나 온라인에서만 사용할 수 있나요?",
+    "type": "yes_no",
+    "targetTags": ["cloud", "online", "web"],
+    "importance": 0.5
+  },
+  {
+    "id": "q_offline_local",
+    "text": "로컬이나 오프라인에서도 사용할 수 있나요?",
+    "type": "yes_no",
+    "targetTags": ["local", "offline", "desktop"],
+    "importance": 0.5
+  },
+  {
+    "id": "q_customization_flexible",
+    "text": "많은 커스터마이징 옵션이 있나요?",
+    "type": "yes_no",
+    "targetTags": ["customization", "flexible", "configurable"],
+    "importance": 0.6
+  },
+  {
+    "id": "q_speed_fast",
+    "text": "빠른 속도로 결과를 제공하나요?",
+    "type": "yes_no",
+    "targetTags": ["fast", "quick", "speed"],
+    "importance": 0.6
+  },
+  {
+    "id": "q_quality_high",
+    "text": "매우 높은 품질의 결과를 제공하나요?",
+    "type": "yes_no",
+    "targetTags": ["quality", "premium", "professional"],
+    "importance": 0.7
+  },
+  {
+    "id": "q_popular_trending",
+    "text": "최근에 인기가 많거나 화제가 된 도구인가요?",
+    "type": "yes_no",
+    "targetTags": ["popular", "trending", "viral"],
+    "importance": 0.5
+  },
+  {
+    "id": "q_established_mature",
+    "text": "오래되고 안정적인 도구인가요?",
+    "type": "yes_no",
+    "targetTags": ["established", "mature", "stable"],
+    "importance": 0.6
+  },
+  {
+    "id": "q_startup_new",
+    "text": "새롭거나 스타트업에서 만든 도구인가요?",
+    "type": "yes_no",
+    "targetTags": ["startup", "new", "innovative"],
+    "importance": 0.5
+  },
+  {
+    "id": "q_bigtech_company",
+    "text": "구글, 마이크로소프트, 메타 같은 대기업에서 만들었나요?",
+    "type": "yes_no",
+    "targetTags": ["google", "microsoft", "meta", "openai", "anthropic"],
+    "importance": 0.6
+  },
+  {
+    "id": "q_specific_chatgpt",
+    "text": "ChatGPT와 비슷한 대화형 AI인가요?",
+    "type": "yes_no",
+    "targetTags": ["chatbot", "conversational", "dialogue"],
+    "importance": 0.8
+  },
+  {
+    "id": "q_specific_midjourney",
+    "text": "Midjourney와 비슷한 이미지 생성 AI인가요?",
+    "type": "yes_no",
+    "targetTags": ["image", "art", "generation"],
+    "importance": 0.8
+  },
+  {
+    "id": "q_specific_copilot",
+    "text": "GitHub Copilot과 비슷한 코딩 도우미인가요?",
+    "type": "yes_no",
+    "targetTags": ["coding", "assistant", "autocomplete"],
+    "importance": 0.8
+  },
+  {
+    "id": "q_workflow_integration",
+    "text": "기존 워크플로우에 쉽게 통합할 수 있나요?",
+    "type": "yes_no",
+    "targetTags": ["integration", "workflow", "plugin"],
+    "importance": 0.6
+  },
+  {
+    "id": "q_batch_processing",
+    "text": "여러 작업을 한 번에 처리할 수 있나요?",
+    "type": "yes_no",
+    "targetTags": ["batch", "bulk", "multiple"],
+    "importance": 0.6
+  },
+  {
+    "id": "q_privacy_secure",
+    "text": "개인정보 보호나 보안이 중요한 기능인가요?",
+    "type": "yes_no",
+    "targetTags": ["privacy", "secure", "confidential"],
+    "importance": 0.7
+  },
+  {
+    "id": "q_commercial_business",
+    "text": "상업적 목적으로 사용해도 괜찮나요?",
+    "type": "yes_no",
+    "targetTags": ["commercial", "business", "license"],
+    "importance": 0.6
+  },
+  {
+    "id": "q_learning_curve",
+    "text": "사용법을 익히는 데 시간이 많이 걸리나요?",
+    "type": "yes_no",
+    "targetTags": ["complex", "advanced", "professional"],
+    "importance": 0.6
+  },
+  {
+    "id": "q_support_community",
+    "text": "활발한 커뮤니티나 지원이 있나요?",
+    "type": "yes_no",
+    "targetTags": ["community", "support", "documentation"],
+    "importance": 0.5
+  }
+]

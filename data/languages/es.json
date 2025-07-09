@@ -1,0 +1,64 @@
+{
+  "ui": {
+    "title": "AI.Maestro",
+    "subtitle": "¡Encuentra la herramienta de IA perfecta para ti!",
+    "startButton": "Comenzar",
+    "nextButton": "Siguiente",
+    "yes": "Sí",
+    "no": "No",
+    "unknown": "No sé",
+    "restart": "Reiniciar",
+    "visitTool": "Usar herramienta",
+    "shareResult": "Compartir resultado",
+    "progress": "Progreso",
+    "remaining": "Herramientas restantes",
+    "recommended": "Herramienta recomendada",
+    "strengths": "💪 Fortalezas",
+    "loading": "Cargando...",
+    "dataLoading": "Cargando datos...",
+    "error": "Ocurrió un error",
+    "retry": "Reintentar",
+    "language": "Idioma",
+    "changeLanguage": "Cambiar idioma"
+  },
+  "questions": {
+    "whatNeed": "¿Para qué necesitas una herramienta de IA?",
+    "freeOnly": "¿Quieres usar solo herramientas gratuitas?",
+    "complexity": "¿Prefieres uso simple en lugar de configuración compleja?",
+    "korean": "¿Necesitas soporte en coreano?",
+    "collaboration": "¿Necesitas funciones de colaboración en equipo?",
+    "mobile": "¿La usarás en móvil?",
+    "api": "¿Necesitas funciones de integración API?",
+    "commercial": "¿La usarás para fines comerciales?"
+  },
+  "categories": {
+    "chatbot": "Chatbot/Conversación",
+    "image": "Generación de imágenes",
+    "coding": "Ayuda con programación",
+    "writing": "Escritura",
+    "research": "Investigación",
+    "audio": "Voz/Música",
+    "video": "Edición de video",
+    "productivity": "Productividad",
+    "design": "Diseño",
+    "entertainment": "Entretenimiento"
+  },
+  "messages": {
+    "welcome": "¡Hola! Soy AI.Maestro. Te ayudaré a encontrar la herramienta de IA perfecta a través de algunas preguntas.",
+    "thinking": "Hmm... déjame pensar",
+    "analyzing": "Analizando tus respuestas...",
+    "result": "¡Análisis completo! La herramienta de IA que te recomiendo es",
+    "perfect": "¡Elección perfecta!",
+    "noResult": "No pude encontrar una herramienta que coincida con tus criterios. Por favor, inténtalo de nuevo.",
+    "retry": "¿Te gustaría intentar de nuevo?",
+    "shareTwitter": "Herramienta de IA recomendada por AI.Maestro:",
+    "shareKakao": "Recomendación de AI.Maestro:",
+    "shareButton": "Usar AI.Maestro"
+  },
+  "errors": {
+    "dataLoadFailed": "Error al cargar datos.",
+    "kakaoShareNotReady": "Compartir en Kakao está en preparación.",
+    "pageNotFound": "Página no encontrada",
+    "goHome": "Ir a inicio"
+  }
+}

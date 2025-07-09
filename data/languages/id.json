@@ -1,0 +1,64 @@
+{
+  "ui": {
+    "title": "AI.Guru",
+    "subtitle": "Temukan tool AI yang sempurna untuk Anda!",
+    "startButton": "Mulai",
+    "nextButton": "Selanjutnya",
+    "yes": "Ya",
+    "no": "Tidak",
+    "unknown": "Tidak tahu",
+    "restart": "Mulai ulang",
+    "visitTool": "Gunakan tool",
+    "shareResult": "Bagikan hasil",
+    "progress": "Kemajuan",
+    "remaining": "Tool tersisa",
+    "recommended": "Tool yang direkomendasikan",
+    "strengths": "💪 Kekuatan",
+    "loading": "Memuat...",
+    "dataLoading": "Memuat data...",
+    "error": "Terjadi kesalahan",
+    "retry": "Coba lagi",
+    "language": "Bahasa",
+    "changeLanguage": "Ubah bahasa"
+  },
+  "questions": {
+    "whatNeed": "Untuk apa Anda membutuhkan tool AI?",
+    "freeOnly": "Apakah Anda ingin menggunakan tool gratis saja?",
+    "complexity": "Apakah Anda lebih suka penggunaan sederhana daripada pengaturan yang kompleks?",
+    "korean": "Apakah Anda perlu dukungan bahasa Korea?",
+    "collaboration": "Apakah Anda perlu fitur kolaborasi tim?",
+    "mobile": "Apakah Anda akan menggunakannya di ponsel?",
+    "api": "Apakah Anda perlu fitur integrasi API?",
+    "commercial": "Apakah Anda akan menggunakannya untuk tujuan komersial?"
+  },
+  "categories": {
+    "chatbot": "Chatbot/Percakapan",
+    "image": "Pembuatan gambar",
+    "coding": "Bantuan coding",
+    "writing": "Penulisan",
+    "research": "Riset",
+    "audio": "Suara/Musik",
+    "video": "Edit video",
+    "productivity": "Produktivitas",
+    "design": "Desain",
+    "entertainment": "Hiburan"
+  },
+  "messages": {
+    "welcome": "Halo! Saya AI.Guru. Saya akan membantu Anda menemukan tool AI yang sempurna melalui beberapa pertanyaan.",
+    "thinking": "Hmm... biarkan saya berpikir",
+    "analyzing": "Menganalisis jawaban Anda...",
+    "result": "Analisis selesai! Tool AI yang saya rekomendasikan untuk Anda adalah",
+    "perfect": "Pilihan yang sempurna!",
+    "noResult": "Saya tidak bisa menemukan tool yang sesuai dengan kriteria Anda. Silakan coba lagi.",
+    "retry": "Apakah Anda ingin mencoba lagi?",
+    "shareTwitter": "Tool AI yang direkomendasikan oleh AI.Guru:",
+    "shareKakao": "Rekomendasi AI.Guru:",
+    "shareButton": "Gunakan AI.Guru"
+  },
+  "errors": {
+    "dataLoadFailed": "Gagal memuat data.",
+    "kakaoShareNotReady": "Berbagi Kakao sedang dalam persiapan.",
+    "pageNotFound": "Halaman tidak ditemukan",
+    "goHome": "Kembali ke beranda"
+  }
+}

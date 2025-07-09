@@ -1,0 +1,64 @@
+{
+  "ui": {
+    "title": "AI.Giáo viên",
+    "subtitle": "Tìm công cụ AI hoàn hảo cho bạn!",
+    "startButton": "Bắt đầu",
+    "nextButton": "Tiếp theo",
+    "yes": "Có",
+    "no": "Không",
+    "unknown": "Không biết",
+    "restart": "Khởi động lại",
+    "visitTool": "Sử dụng công cụ",
+    "shareResult": "Chia sẻ kết quả",
+    "progress": "Tiến độ",
+    "remaining": "Công cụ còn lại",
+    "recommended": "Công cụ được đề xuất",
+    "strengths": "💪 Điểm mạnh",
+    "loading": "Đang tải...",
+    "dataLoading": "Đang tải dữ liệu...",
+    "error": "Đã xảy ra lỗi",
+    "retry": "Thử lại",
+    "language": "Ngôn ngữ",
+    "changeLanguage": "Đổi ngôn ngữ"
+  },
+  "questions": {
+    "whatNeed": "Bạn cần công cụ AI để làm gì?",
+    "freeOnly": "Bạn có muốn chỉ sử dụng công cụ miễn phí không?",
+    "complexity": "Bạn có thích sử dụng đơn giản hơn là cài đặt phức tạp không?",
+    "korean": "Bạn có cần hỗ trợ tiếng Hàn không?",
+    "collaboration": "Bạn có cần tính năng cộng tác nhóm không?",
+    "mobile": "Bạn có sử dụng trên điện thoại không?",
+    "api": "Bạn có cần tính năng tích hợp API không?",
+    "commercial": "Bạn có sử dụng cho mục đích thương mại không?"
+  },
+  "categories": {
+    "chatbot": "Chatbot/Hội thoại",
+    "image": "Tạo hình ảnh",
+    "coding": "Hỗ trợ lập trình",
+    "writing": "Viết lách",
+    "research": "Nghiên cứu",
+    "audio": "Âm thanh/Âm nhạc",
+    "video": "Chỉnh sửa video",
+    "productivity": "Năng suất",
+    "design": "Thiết kế",
+    "entertainment": "Giải trí"
+  },
+  "messages": {
+    "welcome": "Xin chào! Tôi là AI.Giáo viên. Tôi sẽ giúp bạn tìm công cụ AI hoàn hảo thông qua một vài câu hỏi.",
+    "thinking": "Hmm... để tôi nghĩ xem",
+    "analyzing": "Đang phân tích câu trả lời của bạn...",
+    "result": "Phân tích hoàn thành! Công cụ AI tôi đề xuất cho bạn là",
+    "perfect": "Lựa chọn hoàn hảo!",
+    "noResult": "Tôi không thể tìm thấy công cụ phù hợp với tiêu chí của bạn. Vui lòng thử lại.",
+    "retry": "Bạn có muốn thử lại không?",
+    "shareTwitter": "Công cụ AI được đề xuất bởi AI.Giáo viên:",
+    "shareKakao": "Đề xuất AI.Giáo viên:",
+    "shareButton": "Sử dụng AI.Giáo viên"
+  },
+  "errors": {
+    "dataLoadFailed": "Tải dữ liệu thất bại.",
+    "kakaoShareNotReady": "Chia sẻ Kakao đang chuẩn bị.",
+    "pageNotFound": "Không tìm thấy trang",
+    "goHome": "Về trang chủ"
+  }
+}

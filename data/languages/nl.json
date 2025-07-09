@@ -1,0 +1,64 @@
+{
+  "ui": {
+    "title": "AI.Leraar",
+    "subtitle": "Vind de perfecte AI-tool voor jou!",
+    "startButton": "Beginnen",
+    "nextButton": "Volgende",
+    "yes": "Ja",
+    "no": "Nee",
+    "unknown": "Weet niet",
+    "restart": "Opnieuw starten",
+    "visitTool": "Tool gebruiken",
+    "shareResult": "Resultaat delen",
+    "progress": "Voortgang",
+    "remaining": "Resterende tools",
+    "recommended": "Aanbevolen tool",
+    "strengths": "💪 Sterke punten",
+    "loading": "Laden...",
+    "dataLoading": "Gegevens laden...",
+    "error": "Er is een fout opgetreden",
+    "retry": "Opnieuw proberen",
+    "language": "Taal",
+    "changeLanguage": "Taal wijzigen"
+  },
+  "questions": {
+    "whatNeed": "Waarvoor heb je een AI-tool nodig?",
+    "freeOnly": "Wil je alleen gratis tools gebruiken?",
+    "complexity": "Geef je de voorkeur aan eenvoudig gebruik boven complexe instellingen?",
+    "korean": "Heb je Koreaanse taalondersteuning nodig?",
+    "collaboration": "Heb je teamsamenwerkingsfuncties nodig?",
+    "mobile": "Ga je het op mobiel gebruiken?",
+    "api": "Heb je API-integratiefuncties nodig?",
+    "commercial": "Ga je het gebruiken voor commerciële doeleinden?"
+  },
+  "categories": {
+    "chatbot": "Chatbot/Conversatie",
+    "image": "Afbeeldingen genereren",
+    "coding": "Codeerhulp",
+    "writing": "Schrijven",
+    "research": "Onderzoek",
+    "audio": "Stem/Muziek",
+    "video": "Video bewerken",
+    "productivity": "Productiviteit",
+    "design": "Ontwerp",
+    "entertainment": "Entertainment"
+  },
+  "messages": {
+    "welcome": "Hallo! Ik ben AI.Leraar. Ik help je de perfecte AI-tool vinden door middel van een paar vragen.",
+    "thinking": "Hmm... laat me nadenken",
+    "analyzing": "Je antwoorden analyseren...",
+    "result": "Analyse voltooid! De AI-tool die ik voor je aanbeveel is",
+    "perfect": "Perfecte keuze!",
+    "noResult": "Ik kon geen tool vinden die aan je criteria voldoet. Probeer het opnieuw.",
+    "retry": "Wil je het opnieuw proberen?",
+    "shareTwitter": "AI-tool aanbevolen door AI.Leraar:",
+    "shareKakao": "AI.Leraar aanbeveling:",
+    "shareButton": "AI.Leraar gebruiken"
+  },
+  "errors": {
+    "dataLoadFailed": "Laden van gegevens mislukt.",
+    "kakaoShareNotReady": "Kakao delen in voorbereiding.",
+    "pageNotFound": "Pagina niet gevonden",
+    "goHome": "Naar startpagina"
+  }
+}

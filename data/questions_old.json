@@ -1,0 +1,92 @@
+[
+  {
+    "id": "q1",
+    "text": "어떤 종류의 AI 도구를 찾고 계신가요?",
+    "type": "category",
+    "options": ["대화/채팅", "콘텐츠 생성", "업무 도구", "엔터테인먼트"],
+    "filterLogic": {
+      "options": {
+        "대화/채팅": ["chatbot", "research"],
+        "콘텐츠 생성": ["image", "audio", "video", "writing"],
+        "업무 도구": ["coding", "productivity", "design"],
+        "엔터테인먼트": ["entertainment", "creative"]
+      }
+    },
+    "importance": 1.0
+  },
+  {
+    "id": "q1a",
+    "text": "어떤 종류의 콘텐츠를 만들고 싶으신가요?",
+    "type": "category",
+    "condition": {"previousAnswer": "콘텐츠 생성"},
+    "options": ["이미지/디자인", "글/텍스트", "오디오/음성", "비디오"],
+    "filterLogic": {
+      "options": {
+        "이미지/디자인": ["image", "design"],
+        "글/텍스트": ["writing", "content"],
+        "오디오/음성": ["audio", "voice"],
+        "비디오": ["video"]
+      }
+    }
+  },
+  {
+    "id": "q1b",
+    "text": "어떤 업무를 도와드릴까요?",
+    "type": "category",
+    "condition": {"previousAnswer": "업무 도구"},
+    "options": ["프로그래밍", "프레젠테이션", "디자인 작업", "문서 작성"],
+    "filterLogic": {
+      "options": {
+        "프로그래밍": ["coding", "developer"],
+        "프레젠테이션": ["presentation", "productivity"],
+        "디자인 작업": ["design", "creative"],
+        "문서 작성": ["writing", "productivity"]
+      }
+    }
+  },
+  {
+    "id": "q2",
+    "text": "무료로 사용할 수 있는 옵션이 필요하신가요?",
+    "type": "yes_no",
+    "filterLogic": {
+      "yes": ["free", "freemium"],
+      "no": []
+    }
+  },
+  {
+    "id": "q3",
+    "text": "전문가 수준의 품질이 필요하신가요?",
+    "type": "yes_no",
+    "filterLogic": {
+      "yes": ["professional", "business", "adobe"],
+      "no": []
+    }
+  },
+  {
+    "id": "q4",
+    "text": "특정 플랫폼이나 도구와 연동이 필요하신가요?",
+    "type": "yes_no",
+    "filterLogic": {
+      "yes": ["github", "google", "adobe", "openai"],
+      "no": []
+    }
+  },
+  {
+    "id": "q5",
+    "text": "한국어 지원이 중요하신가요?",
+    "type": "yes_no",
+    "filterLogic": {
+      "yes": ["multimodal", "general"],
+      "no": []
+    }
+  },
+  {
+    "id": "q6",
+    "text": "초보자도 쉽게 사용할 수 있어야 하나요?",
+    "type": "yes_no",
+    "filterLogic": {
+      "yes": ["simple", "creative"],
+      "no": ["developer", "professional"]
+    }
+  }
+]

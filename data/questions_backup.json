@@ -1,0 +1,136 @@
+[
+  {
+    "id": "q1",
+    "text": "어떤 종류의 AI 도구를 찾고 계신가요?",
+    "type": "category",
+    "options": ["대화/채팅", "콘텐츠 생성", "업무 도구", "엔터테인먼트"],
+    "filterLogic": {
+      "options": {
+        "대화/채팅": ["chatbot", "research"],
+        "콘텐츠 생성": ["image", "audio", "video", "writing"],
+        "업무 도구": ["coding", "productivity", "design"],
+        "엔터테인먼트": ["entertainment", "creative"]
+      }
+    },
+    "importance": 1.0
+  },
+  {
+    "id": "q1a",
+    "text": "어떤 종류의 콘텐츠를 만들고 싶으신가요?",
+    "type": "category",
+    "condition": {"previousAnswer": "콘텐츠 생성"},
+    "options": ["이미지/디자인", "글/텍스트", "오디오/음성", "비디오"],
+    "filterLogic": {
+      "options": {
+        "이미지/디자인": ["image", "design"],
+        "글/텍스트": ["writing", "content"],
+        "오디오/음성": ["audio", "voice"],
+        "비디오": ["video"]
+      }
+    },
+    "importance": 0.9
+  },
+  {
+    "id": "q1b",
+    "text": "어떤 업무를 도와드릴까요?",
+    "type": "category",
+    "condition": {"previousAnswer": "업무 도구"},
+    "options": ["프로그래밍", "프레젠테이션", "디자인 작업", "문서 작성"],
+    "filterLogic": {
+      "options": {
+        "프로그래밍": ["coding", "developer"],
+        "프레젠테이션": ["presentation", "productivity"],
+        "디자인 작업": ["design", "creative"],
+        "문서 작성": ["writing", "productivity"]
+      }
+    },
+    "importance": 0.9
+  },
+  {
+    "id": "q2",
+    "text": "무료로 사용할 수 있는 옵션이 필요하신가요?",
+    "type": "yes_no",
+    "filterLogic": {
+      "yes": ["free", "freemium"],
+      "no": []
+    },
+    "importance": 0.8
+  },
+  {
+    "id": "q7",
+    "text": "창의성이 중요한 작업인가요?",
+    "type": "scale",
+    "scale": {"min": 1, "max": 5, "labels": ["전혀 중요하지 않음", "약간 중요함", "보통", "중요함", "매우 중요함"]},
+    "weightTarget": "creativity",
+    "importance": 0.8
+  },
+  {
+    "id": "q8",
+    "text": "비용 대비 효율성을 얼마나 중요하게 생각하시나요?",
+    "type": "scale",
+    "scale": {"min": 1, "max": 5, "labels": ["전혀 중요하지 않음", "약간 중요함", "보통", "중요함", "매우 중요함"]},
+    "weightTarget": "cost_effectiveness",
+    "importance": 0.9
+  },
+  {
+    "id": "q9",
+    "text": "전문적인 품질이 얼마나 중요하신가요?",
+    "type": "scale",
+    "scale": {"min": 1, "max": 5, "labels": ["전혀 중요하지 않음", "약간 중요함", "보통", "중요함", "매우 중요함"]},
+    "weightTarget": "professional",
+    "importance": 0.8
+  },
+  {
+    "id": "q3",
+    "text": "전문가 수준의 품질이 필요하신가요?",
+    "type": "yes_no",
+    "filterLogic": {
+      "yes": ["professional", "business", "adobe"],
+      "no": []
+    },
+    "importance": 0.7
+  },
+  {
+    "id": "q4",
+    "text": "특정 플랫폼이나 도구와 연동이 필요하신가요?",
+    "type": "yes_no",
+    "filterLogic": {
+      "yes": ["github", "google", "adobe", "openai"],
+      "no": []
+    },
+    "importance": 0.6
+  },
+  {
+    "id": "q5",
+    "text": "한국어 지원이 중요하신가요?",
+    "type": "yes_no",
+    "filterLogic": {
+      "yes": ["multimodal", "general"],
+      "no": []
+    },
+    "weightTarget": "korean_support",
+    "importance": 0.7
+  },
+  {
+    "id": "q6",
+    "text": "초보자도 쉽게 사용할 수 있어야 하나요?",
+    "type": "yes_no",
+    "filterLogic": {
+      "yes": ["simple", "creative"],
+      "no": ["developer", "professional"]
+    },
+    "weightTarget": "ease_of_use",
+    "importance": 0.7
+  },
+  {
+    "id": "q10",
+    "text": "팀 협업 기능이 필요하신가요?",
+    "type": "yes_no",
+    "filterLogic": {
+      "yes": ["collaboration", "team"],
+      "no": []
+    },
+    "weightTarget": "collaboration",
+    "importance": 0.6
+  }
+]
