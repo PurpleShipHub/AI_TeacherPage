@@ -181,6 +181,11 @@ class I18n {
             detail: { language: lang }
         }));
         
+        // 도구 데이터 다시 로드 (DB에서 새 언어로)
+        if (typeof loadData === 'function') {
+            await loadData();
+        }
+        
         // 언어 변경 알림 (선택사항)
         this.showLanguageChangeNotification(lang);
         

@@ -1,0 +1,1738 @@
+[
+  {
+    "id": "purpose",
+    "type": "root",
+    "text": "어떤 작업을 하려고 하시나요?",
+    "level": 0,
+    "options": {
+      "create": "무언가를 만들거나 생성하고 싶어요",
+      "assist": "AI 도우미나 조언이 필요해요",
+      "analyze": "데이터를 분석하거나 정보를 찾고 싶어요",
+      "automate": "반복 작업을 자동화하고 싶어요",
+      "learn": "새로운 것을 배우거나 교육받고 싶어요",
+      "unknown": "잘 모르겠어요, 추천해주세요"
+    },
+    "next_questions": {
+      "create": [
+        "content_type",
+        "creative_style"
+      ],
+      "assist": [
+        "assistant_type",
+        "interaction_style"
+      ],
+      "analyze": [
+        "data_type",
+        "analysis_depth"
+      ],
+      "automate": [
+        "automation_area",
+        "integration_needs"
+      ],
+      "learn": [
+        "learning_topic",
+        "learning_style"
+      ],
+      "unknown": [
+        "general_category"
+      ]
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "pricing_preference",
+    "type": "filter",
+    "text": "예산은 어느 정도로 생각하고 계신가요?",
+    "level": 2,
+    "options": {
+      "free": "완전 무료만 사용하고 싶어요",
+      "freemium": "기본 무료에 필요시 유료 결제 가능해요",
+      "affordable": "월 $20 이하면 괜찮아요",
+      "premium": "성능이 좋다면 가격은 상관없어요",
+      "unknown": "몰라요"
+    },
+    "filters": {
+      "free": [
+        "pricing:free"
+      ],
+      "freemium": [
+        "pricing:freemium",
+        "pricing:free-trial"
+      ],
+      "affordable": [
+        "pricing:subscription"
+      ],
+      "premium": [
+        "pricing:enterprise",
+        "pricing:custom"
+      ],
+      "unknown": []
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "platform_preference",
+    "type": "filter",
+    "text": "주로 어디서 사용하실 예정인가요?",
+    "level": 2,
+    "options": {
+      "web": "웹 브라우저에서",
+      "mobile": "모바일 앱으로",
+      "desktop": "데스크톱 프로그램으로",
+      "api": "API로 연동해서",
+      "unknown": "몰라요"
+    },
+    "filters": {
+      "web": [
+        "feature:website",
+        "feature:web-based"
+      ],
+      "mobile": [
+        "feature:mobile app",
+        "feature:ios",
+        "feature:android"
+      ],
+      "desktop": [
+        "feature:desktop app",
+        "feature:windows",
+        "feature:mac"
+      ],
+      "api": [
+        "feature:api",
+        "feature:sdk"
+      ],
+      "unknown": []
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "dyn_group_ai_assistant",
+    "type": "dynamic_tag_group",
+    "text": "AI 어시스턴트나 챗봇이 필요하신가요?",
+    "level": 2,
+    "tags": [
+      "ai assistant",
+      "ai chatbot",
+      "chatbot",
+      "virtual assistant",
+      "chatbots",
+      "conversational ai",
+      "ai assistants"
+    ],
+    "tool_count": 14483,
+    "options": {
+      "yes": "네",
+      "no": "아니요",
+      "unknown": "몰라요"
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "dyn_tech_ai_assistant",
+    "type": "technical_question",
+    "text": "Large Language Model(LLM) 기반 대화형 AI를 찾으시나요?",
+    "level": 3,
+    "parent": "dyn_group_ai_assistant:yes",
+    "tags": [
+      "ai assistant",
+      "ai chatbot",
+      "chatbot",
+      "virtual assistant",
+      "chatbots",
+      "conversational ai",
+      "ai assistants"
+    ],
+    "options": {
+      "yes": "네",
+      "no": "아니요",
+      "unknown": "무슨 말인지 몰라요"
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "dyn_group_marketing_tools",
+    "type": "dynamic_tag_group",
+    "text": "마케팅이나 홍보를 위한 도구가 필요하신가요?",
+    "level": 2,
+    "tags": [
+      "social media engagement",
+      "ai social media",
+      "ai email generator",
+      "ai marketing",
+      "seo",
+      "ai seo tools",
+      "ai social media post generator",
+      "social media",
+      "marketing",
+      "seo writing ai",
+      "social media automation",
+      "social media management",
+      "social media content",
+      "seo optimization",
+      "content marketing",
+      "ai digital marketing",
+      "ai seo",
+      "marketing automation",
+      "ai email assistant",
+      "ai email writer",
+      "email management",
+      "ai email marketing",
+      "social media marketing",
+      "email",
+      "seo content",
+      "email marketing",
+      "ai advertising",
+      "seo tools",
+      "email assistant",
+      "digital marketing",
+      "ai marketing plan generator",
+      "email automation",
+      "advertising",
+      "influencer marketing",
+      "ai affiliate marketing",
+      "social media analytics",
+      "email writing"
+    ],
+    "tool_count": 13219,
+    "options": {
+      "yes": "네",
+      "no": "아니요",
+      "unknown": "몰라요"
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "dyn_tech_marketing_tools",
+    "type": "technical_question",
+    "text": "SEO 최적화나 소셜미디어 자동화 도구를 찾으시나요?",
+    "level": 3,
+    "parent": "dyn_group_marketing_tools:yes",
+    "tags": [
+      "social media engagement",
+      "ai social media",
+      "ai email generator",
+      "ai marketing",
+      "seo",
+      "ai seo tools",
+      "ai social media post generator",
+      "social media",
+      "marketing",
+      "seo writing ai",
+      "social media automation",
+      "social media management",
+      "social media content",
+      "seo optimization",
+      "content marketing",
+      "ai digital marketing",
+      "ai seo",
+      "marketing automation",
+      "ai email assistant",
+      "ai email writer",
+      "email management",
+      "ai email marketing",
+      "social media marketing",
+      "email",
+      "seo content",
+      "email marketing",
+      "ai advertising",
+      "seo tools",
+      "email assistant",
+      "digital marketing",
+      "ai marketing plan generator",
+      "email automation",
+      "advertising",
+      "influencer marketing",
+      "ai affiliate marketing",
+      "social media analytics",
+      "email writing"
+    ],
+    "options": {
+      "yes": "네",
+      "no": "아니요",
+      "unknown": "무슨 말인지 몰라요"
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "dyn_group_productivity_tools",
+    "type": "dynamic_tag_group",
+    "text": "업무 효율을 높이는 도구를 찾고 계신가요?",
+    "level": 2,
+    "tags": [
+      "linkedin automation",
+      "automation",
+      "ai productivity tools",
+      "task management",
+      "ai task management",
+      "productivity",
+      "ai workflow",
+      "workflow automation",
+      "customer service automation",
+      "productivity tool",
+      "ai automation",
+      "project management",
+      "ai project management",
+      "sales automation",
+      "content automation",
+      "task automation",
+      "business automation",
+      "recruitment automation",
+      "customer support automation",
+      "productivity tools",
+      "workflow"
+    ],
+    "tool_count": 12428,
+    "options": {
+      "yes": "네",
+      "no": "아니요",
+      "unknown": "몰라요"
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "dyn_tech_productivity_tools",
+    "type": "technical_question",
+    "text": "Workflow Automation이나 Task Management 도구가 필요하신가요?",
+    "level": 3,
+    "parent": "dyn_group_productivity_tools:yes",
+    "tags": [
+      "linkedin automation",
+      "automation",
+      "ai productivity tools",
+      "task management",
+      "ai task management",
+      "productivity",
+      "ai workflow",
+      "workflow automation",
+      "customer service automation",
+      "productivity tool",
+      "ai automation",
+      "project management",
+      "ai project management",
+      "sales automation",
+      "content automation",
+      "task automation",
+      "business automation",
+      "recruitment automation",
+      "customer support automation",
+      "productivity tools",
+      "workflow"
+    ],
+    "options": {
+      "yes": "네",
+      "no": "아니요",
+      "unknown": "무슨 말인지 몰라요"
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "dyn_group_image_generation",
+    "type": "dynamic_tag_group",
+    "text": "이미지나 디자인을 만드는 도구를 찾으시나요?",
+    "level": 2,
+    "tags": [
+      "ai avatar generator",
+      "avatar creation",
+      "photo editing",
+      "ai photo editor",
+      "ai art generator",
+      "ai photo filter",
+      "ai interior design",
+      "ai image generator",
+      "ai realistic image generator",
+      "ai design generator",
+      "interior design",
+      "ai photo restoration",
+      "ai photo enhancer",
+      "ai logo generator",
+      "ai design",
+      "ai avatars",
+      "ai photography",
+      "ai product photography",
+      "web design",
+      "graphic design",
+      "logo design",
+      "ai graphic design",
+      "ai avatar",
+      "ai ux design",
+      "ai photo generator",
+      "ai design assistant",
+      "ai avatar video generator",
+      "photo enhancement",
+      "image generator",
+      "website design",
+      "ai photo editing",
+      "design tool",
+      "product photography",
+      "design"
+    ],
+    "tool_count": 9666,
+    "options": {
+      "yes": "네",
+      "no": "아니요",
+      "unknown": "몰라요"
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "dyn_tech_image_generation",
+    "type": "technical_question",
+    "text": "Stable Diffusion이나 DALL-E 같은 이미지 생성 AI가 필요하신가요?",
+    "level": 3,
+    "parent": "dyn_group_image_generation:yes",
+    "tags": [
+      "ai avatar generator",
+      "avatar creation",
+      "photo editing",
+      "ai photo editor",
+      "ai art generator",
+      "ai photo filter",
+      "ai interior design",
+      "ai image generator",
+      "ai realistic image generator",
+      "ai design generator",
+      "interior design",
+      "ai photo restoration",
+      "ai photo enhancer",
+      "ai logo generator",
+      "ai design",
+      "ai avatars",
+      "ai photography",
+      "ai product photography",
+      "web design",
+      "graphic design",
+      "logo design",
+      "ai graphic design",
+      "ai avatar",
+      "ai ux design",
+      "ai photo generator",
+      "ai design assistant",
+      "ai avatar video generator",
+      "photo enhancement",
+      "image generator",
+      "website design",
+      "ai photo editing",
+      "design tool",
+      "product photography",
+      "design"
+    ],
+    "options": {
+      "yes": "네",
+      "no": "아니요",
+      "unknown": "무슨 말인지 몰라요"
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "dyn_group_developer_tools",
+    "type": "dynamic_tag_group",
+    "text": "프로그래밍이나 개발 작업을 도와주는 도구를 찾으시나요?",
+    "level": 2,
+    "tags": [
+      "no code",
+      "no code&low code",
+      "ai developer tools",
+      "api",
+      "ai api",
+      "ai code generator",
+      "code generation",
+      "ai therapist",
+      "debugging",
+      "ai code assistant",
+      "api integration",
+      "no code ai",
+      "low code",
+      "ai web scraping",
+      "web scraping",
+      "developer tools",
+      "ai code generation",
+      "visual programming",
+      "ai code review",
+      "sdk",
+      "code analysis",
+      "ai qr code generator",
+      "openai api"
+    ],
+    "tool_count": 8696,
+    "options": {
+      "yes": "네",
+      "no": "아니요",
+      "unknown": "몰라요"
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "dyn_tech_developer_tools",
+    "type": "technical_question",
+    "text": "Code Copilot이나 API 관련 도구가 필요하신가요?",
+    "level": 3,
+    "parent": "dyn_group_developer_tools:yes",
+    "tags": [
+      "no code",
+      "no code&low code",
+      "ai developer tools",
+      "api",
+      "ai api",
+      "ai code generator",
+      "code generation",
+      "ai therapist",
+      "debugging",
+      "ai code assistant",
+      "api integration",
+      "no code ai",
+      "low code",
+      "ai web scraping",
+      "web scraping",
+      "developer tools",
+      "ai code generation",
+      "visual programming",
+      "ai code review",
+      "sdk",
+      "code analysis",
+      "ai qr code generator",
+      "openai api"
+    ],
+    "options": {
+      "yes": "네",
+      "no": "아니요",
+      "unknown": "무슨 말인지 몰라요"
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "dyn_group_content_creation",
+    "type": "dynamic_tag_group",
+    "text": "글쓰기나 콘텐츠 제작을 도와주는 도구가 필요하신가요?",
+    "level": 2,
+    "tags": [
+      "text generation",
+      "content creation",
+      "ai writing assistant",
+      "ai writing",
+      "ai writing assistants",
+      "ai copywriting",
+      "ai blog generator",
+      "blog writing",
+      "copywriting",
+      "ai writing tool",
+      "ai content creation",
+      "blog post generator",
+      "blogging"
+    ],
+    "tool_count": 8230,
+    "options": {
+      "yes": "네",
+      "no": "아니요",
+      "unknown": "몰라요"
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "dyn_tech_content_creation",
+    "type": "technical_question",
+    "text": "GPT 기반 텍스트 생성 도구를 찾으시나요?",
+    "level": 3,
+    "parent": "dyn_group_content_creation:yes",
+    "tags": [
+      "text generation",
+      "content creation",
+      "ai writing assistant",
+      "ai writing",
+      "ai writing assistants",
+      "ai copywriting",
+      "ai blog generator",
+      "blog writing",
+      "copywriting",
+      "ai writing tool",
+      "ai content creation",
+      "blog post generator",
+      "blogging"
+    ],
+    "options": {
+      "yes": "네",
+      "no": "아니요",
+      "unknown": "무슨 말인지 몰라요"
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "dyn_group_video_tools",
+    "type": "dynamic_tag_group",
+    "text": "동영상 제작이나 편집 도구가 필요하신가요?",
+    "level": 2,
+    "tags": [
+      "ai video generator",
+      "video conferencing",
+      "ai animation generator",
+      "video marketing",
+      "social media video",
+      "video editing",
+      "ai short video generator",
+      "long video to short video ai",
+      "video transcription",
+      "emotional support",
+      "video generation",
+      "ai video editing",
+      "text to video",
+      "ai video editor",
+      "ai video creation",
+      "ai animated video",
+      "ai video translator",
+      "video translation",
+      "ai video recording",
+      "video creation",
+      "ai video enhancer",
+      "ai video summarizer",
+      "script to video ai generator",
+      "ai youtube video maker",
+      "ai video generation",
+      "image to video",
+      "animation",
+      "ai face swap video",
+      "ai video search",
+      "ai tiktok video generator",
+      "ai animation",
+      "ai video",
+      "video editor",
+      "video summarization",
+      "video analysis",
+      "video to text",
+      "video summary"
+    ],
+    "tool_count": 6611,
+    "options": {
+      "yes": "네",
+      "no": "아니요",
+      "unknown": "몰라요"
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "dyn_tech_video_tools",
+    "type": "technical_question",
+    "text": "AI 비디오 생성이나 편집 도구를 찾으시나요?",
+    "level": 3,
+    "parent": "dyn_group_video_tools:yes",
+    "tags": [
+      "ai video generator",
+      "video conferencing",
+      "ai animation generator",
+      "video marketing",
+      "social media video",
+      "video editing",
+      "ai short video generator",
+      "long video to short video ai",
+      "video transcription",
+      "emotional support",
+      "video generation",
+      "ai video editing",
+      "text to video",
+      "ai video editor",
+      "ai video creation",
+      "ai animated video",
+      "ai video translator",
+      "video translation",
+      "ai video recording",
+      "video creation",
+      "ai video enhancer",
+      "ai video summarizer",
+      "script to video ai generator",
+      "ai youtube video maker",
+      "ai video generation",
+      "image to video",
+      "animation",
+      "ai face swap video",
+      "ai video search",
+      "ai tiktok video generator",
+      "ai animation",
+      "ai video",
+      "video editor",
+      "video summarization",
+      "video analysis",
+      "video to text",
+      "video summary"
+    ],
+    "options": {
+      "yes": "네",
+      "no": "아니요",
+      "unknown": "무슨 말인지 몰라요"
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "dyn_group_data_analysis",
+    "type": "dynamic_tag_group",
+    "text": "데이터 분석이나 인사이트 도출 도구가 필요하신가요?",
+    "level": 2,
+    "tags": [
+      "data analysis",
+      "ai for data analytics",
+      "research tool",
+      "keyword research",
+      "ai research tool",
+      "data insights",
+      "research",
+      "data analytics",
+      "market research",
+      "ai research papers",
+      "customer insights",
+      "ai analytics",
+      "analytics",
+      "ai insights",
+      "predictive analytics",
+      "product research"
+    ],
+    "tool_count": 4692,
+    "options": {
+      "yes": "네",
+      "no": "아니요",
+      "unknown": "몰라요"
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "dyn_tech_data_analysis",
+    "type": "technical_question",
+    "text": "Machine Learning 기반 분석 도구를 찾으시나요?",
+    "level": 3,
+    "parent": "dyn_group_data_analysis:yes",
+    "tags": [
+      "data analysis",
+      "ai for data analytics",
+      "research tool",
+      "keyword research",
+      "ai research tool",
+      "data insights",
+      "research",
+      "data analytics",
+      "market research",
+      "ai research papers",
+      "customer insights",
+      "ai analytics",
+      "analytics",
+      "ai insights",
+      "predictive analytics",
+      "product research"
+    ],
+    "options": {
+      "yes": "네",
+      "no": "아니요",
+      "unknown": "무슨 말인지 몰라요"
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "dyn_group_tag_ai",
+    "type": "dynamic_tag_group",
+    "text": "ai 기능이 필요하신가요?",
+    "level": 2,
+    "tags": [
+      "ai"
+    ],
+    "tool_count": 4501,
+    "options": {
+      "yes": "네",
+      "no": "아니요",
+      "unknown": "몰라요"
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "dyn_tech_tag_ai",
+    "type": "technical_question",
+    "text": "ai 관련 전문 도구를 찾으시나요?",
+    "level": 3,
+    "parent": "dyn_group_tag_ai:yes",
+    "tags": [
+      "ai"
+    ],
+    "options": {
+      "yes": "네",
+      "no": "아니요",
+      "unknown": "무슨 말인지 몰라요"
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "dyn_group_tag_large_language_models_(llms)",
+    "type": "dynamic_tag_group",
+    "text": "large language models (llms) 기능이 필요하신가요?",
+    "level": 2,
+    "tags": [
+      "large language models (llms)"
+    ],
+    "tool_count": 2667,
+    "options": {
+      "yes": "네",
+      "no": "아니요",
+      "unknown": "몰라요"
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "dyn_tech_tag_large_language_models_(llms)",
+    "type": "technical_question",
+    "text": "large language models (llms) 관련 전문 도구를 찾으시나요?",
+    "level": 3,
+    "parent": "dyn_group_tag_large_language_models_(llms):yes",
+    "tags": [
+      "large language models (llms)"
+    ],
+    "options": {
+      "yes": "네",
+      "no": "아니요",
+      "unknown": "무슨 말인지 몰라요"
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "dyn_group_tag_ai_summarizer",
+    "type": "dynamic_tag_group",
+    "text": "ai summarizer 기능이 필요하신가요?",
+    "level": 2,
+    "tags": [
+      "ai summarizer"
+    ],
+    "tool_count": 2200,
+    "options": {
+      "yes": "네",
+      "no": "아니요",
+      "unknown": "몰라요"
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "dyn_tech_tag_ai_summarizer",
+    "type": "technical_question",
+    "text": "ai summarizer 관련 전문 도구를 찾으시나요?",
+    "level": 3,
+    "parent": "dyn_group_tag_ai_summarizer:yes",
+    "tags": [
+      "ai summarizer"
+    ],
+    "options": {
+      "yes": "네",
+      "no": "아니요",
+      "unknown": "무슨 말인지 몰라요"
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "dyn_group_tag_ai_agent",
+    "type": "dynamic_tag_group",
+    "text": "ai agent 기능이 필요하신가요?",
+    "level": 2,
+    "tags": [
+      "ai agent"
+    ],
+    "tool_count": 1885,
+    "options": {
+      "yes": "네",
+      "no": "아니요",
+      "unknown": "몰라요"
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "dyn_tech_tag_ai_agent",
+    "type": "technical_question",
+    "text": "ai agent 관련 전문 도구를 찾으시나요?",
+    "level": 3,
+    "parent": "dyn_group_tag_ai_agent:yes",
+    "tags": [
+      "ai agent"
+    ],
+    "options": {
+      "yes": "네",
+      "no": "아니요",
+      "unknown": "무슨 말인지 몰라요"
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "dyn_group_tag_chrome_extension",
+    "type": "dynamic_tag_group",
+    "text": "chrome extension 기능이 필요하신가요?",
+    "level": 2,
+    "tags": [
+      "chrome extension"
+    ],
+    "tool_count": 1742,
+    "options": {
+      "yes": "네",
+      "no": "아니요",
+      "unknown": "몰라요"
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "dyn_tech_tag_chrome_extension",
+    "type": "technical_question",
+    "text": "chrome extension 관련 전문 도구를 찾으시나요?",
+    "level": 3,
+    "parent": "dyn_group_tag_chrome_extension:yes",
+    "tags": [
+      "chrome extension"
+    ],
+    "options": {
+      "yes": "네",
+      "no": "아니요",
+      "unknown": "무슨 말인지 몰라요"
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "dyn_group_tag_ai_text_generator",
+    "type": "dynamic_tag_group",
+    "text": "ai text generator 기능이 필요하신가요?",
+    "level": 2,
+    "tags": [
+      "ai text generator"
+    ],
+    "tool_count": 1685,
+    "options": {
+      "yes": "네",
+      "no": "아니요",
+      "unknown": "몰라요"
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "dyn_tech_tag_ai_text_generator",
+    "type": "technical_question",
+    "text": "ai text generator 관련 전문 도구를 찾으시나요?",
+    "level": 3,
+    "parent": "dyn_group_tag_ai_text_generator:yes",
+    "tags": [
+      "ai text generator"
+    ],
+    "options": {
+      "yes": "네",
+      "no": "아니요",
+      "unknown": "무슨 말인지 몰라요"
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "dyn_group_tag_ai_copilot",
+    "type": "dynamic_tag_group",
+    "text": "ai copilot 기능이 필요하신가요?",
+    "level": 2,
+    "tags": [
+      "ai copilot"
+    ],
+    "tool_count": 1630,
+    "options": {
+      "yes": "네",
+      "no": "아니요",
+      "unknown": "몰라요"
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "dyn_tech_tag_ai_copilot",
+    "type": "technical_question",
+    "text": "ai copilot 관련 전문 도구를 찾으시나요?",
+    "level": 3,
+    "parent": "dyn_group_tag_ai_copilot:yes",
+    "tags": [
+      "ai copilot"
+    ],
+    "options": {
+      "yes": "네",
+      "no": "아니요",
+      "unknown": "무슨 말인지 몰라요"
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "dyn_group_tag_chatgpt",
+    "type": "dynamic_tag_group",
+    "text": "chatgpt 기능이 필요하신가요?",
+    "level": 2,
+    "tags": [
+      "chatgpt"
+    ],
+    "tool_count": 1564,
+    "options": {
+      "yes": "네",
+      "no": "아니요",
+      "unknown": "몰라요"
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "dyn_tech_tag_chatgpt",
+    "type": "technical_question",
+    "text": "chatgpt 관련 전문 도구를 찾으시나요?",
+    "level": 3,
+    "parent": "dyn_group_tag_chatgpt:yes",
+    "tags": [
+      "chatgpt"
+    ],
+    "options": {
+      "yes": "네",
+      "no": "아니요",
+      "unknown": "무슨 말인지 몰라요"
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "dyn_group_tag_text_to_image",
+    "type": "dynamic_tag_group",
+    "text": "text to image 기능이 필요하신가요?",
+    "level": 2,
+    "tags": [
+      "text to image"
+    ],
+    "tool_count": 1300,
+    "options": {
+      "yes": "네",
+      "no": "아니요",
+      "unknown": "몰라요"
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "dyn_tech_tag_text_to_image",
+    "type": "technical_question",
+    "text": "text to image 관련 전문 도구를 찾으시나요?",
+    "level": 3,
+    "parent": "dyn_group_tag_text_to_image:yes",
+    "tags": [
+      "text to image"
+    ],
+    "options": {
+      "yes": "네",
+      "no": "아니요",
+      "unknown": "무슨 말인지 몰라요"
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "dyn_group_tag_ai_customer_service",
+    "type": "dynamic_tag_group",
+    "text": "ai customer service 기능이 필요하신가요?",
+    "level": 2,
+    "tags": [
+      "ai customer service"
+    ],
+    "tool_count": 1244,
+    "options": {
+      "yes": "네",
+      "no": "아니요",
+      "unknown": "몰라요"
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "dyn_tech_tag_ai_customer_service",
+    "type": "technical_question",
+    "text": "ai customer service 관련 전문 도구를 찾으시나요?",
+    "level": 3,
+    "parent": "dyn_group_tag_ai_customer_service:yes",
+    "tags": [
+      "ai customer service"
+    ],
+    "options": {
+      "yes": "네",
+      "no": "아니요",
+      "unknown": "무슨 말인지 몰라요"
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "dyn_group_tag_ai_translate",
+    "type": "dynamic_tag_group",
+    "text": "ai translate 기능이 필요하신가요?",
+    "level": 2,
+    "tags": [
+      "ai translate"
+    ],
+    "tool_count": 1085,
+    "options": {
+      "yes": "네",
+      "no": "아니요",
+      "unknown": "몰라요"
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "dyn_tech_tag_ai_translate",
+    "type": "technical_question",
+    "text": "ai translate 관련 전문 도구를 찾으시나요?",
+    "level": 3,
+    "parent": "dyn_group_tag_ai_translate:yes",
+    "tags": [
+      "ai translate"
+    ],
+    "options": {
+      "yes": "네",
+      "no": "아니요",
+      "unknown": "무슨 말인지 몰라요"
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "dyn_group_tag_ai_lead_generation",
+    "type": "dynamic_tag_group",
+    "text": "ai lead generation 기능이 필요하신가요?",
+    "level": 2,
+    "tags": [
+      "ai lead generation"
+    ],
+    "tool_count": 1075,
+    "options": {
+      "yes": "네",
+      "no": "아니요",
+      "unknown": "몰라요"
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "dyn_tech_tag_ai_lead_generation",
+    "type": "technical_question",
+    "text": "ai lead generation 관련 전문 도구를 찾으시나요?",
+    "level": 3,
+    "parent": "dyn_group_tag_ai_lead_generation:yes",
+    "tags": [
+      "ai lead generation"
+    ],
+    "options": {
+      "yes": "네",
+      "no": "아니요",
+      "unknown": "무슨 말인지 몰라요"
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "dyn_group_tag_ai_search_engine",
+    "type": "dynamic_tag_group",
+    "text": "ai search engine 기능이 필요하신가요?",
+    "level": 2,
+    "tags": [
+      "ai search engine"
+    ],
+    "tool_count": 1045,
+    "options": {
+      "yes": "네",
+      "no": "아니요",
+      "unknown": "몰라요"
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "dyn_tech_tag_ai_search_engine",
+    "type": "technical_question",
+    "text": "ai search engine 관련 전문 도구를 찾으시나요?",
+    "level": 3,
+    "parent": "dyn_group_tag_ai_search_engine:yes",
+    "tags": [
+      "ai search engine"
+    ],
+    "options": {
+      "yes": "네",
+      "no": "아니요",
+      "unknown": "무슨 말인지 몰라요"
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "dyn_group_tag_lead_generation",
+    "type": "dynamic_tag_group",
+    "text": "lead generation 기능이 필요하신가요?",
+    "level": 2,
+    "tags": [
+      "lead generation"
+    ],
+    "tool_count": 1004,
+    "options": {
+      "yes": "네",
+      "no": "아니요",
+      "unknown": "몰라요"
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "dyn_tech_tag_lead_generation",
+    "type": "technical_question",
+    "text": "lead generation 관련 전문 도구를 찾으시나요?",
+    "level": 3,
+    "parent": "dyn_group_tag_lead_generation:yes",
+    "tags": [
+      "lead generation"
+    ],
+    "options": {
+      "yes": "네",
+      "no": "아니요",
+      "unknown": "무슨 말인지 몰라요"
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "dyn_group_tag_ai_answer",
+    "type": "dynamic_tag_group",
+    "text": "ai answer 기능이 필요하신가요?",
+    "level": 2,
+    "tags": [
+      "ai answer"
+    ],
+    "tool_count": 1004,
+    "options": {
+      "yes": "네",
+      "no": "아니요",
+      "unknown": "몰라요"
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "dyn_tech_tag_ai_answer",
+    "type": "technical_question",
+    "text": "ai answer 관련 전문 도구를 찾으시나요?",
+    "level": 3,
+    "parent": "dyn_group_tag_ai_answer:yes",
+    "tags": [
+      "ai answer"
+    ],
+    "options": {
+      "yes": "네",
+      "no": "아니요",
+      "unknown": "무슨 말인지 몰라요"
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "dyn_group_tag_artificial_intelligence",
+    "type": "dynamic_tag_group",
+    "text": "artificial intelligence 기능이 필요하신가요?",
+    "level": 2,
+    "tags": [
+      "artificial intelligence"
+    ],
+    "tool_count": 958,
+    "options": {
+      "yes": "네",
+      "no": "아니요",
+      "unknown": "몰라요"
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "dyn_tech_tag_artificial_intelligence",
+    "type": "technical_question",
+    "text": "artificial intelligence 관련 전문 도구를 찾으시나요?",
+    "level": 3,
+    "parent": "dyn_group_tag_artificial_intelligence:yes",
+    "tags": [
+      "artificial intelligence"
+    ],
+    "options": {
+      "yes": "네",
+      "no": "아니요",
+      "unknown": "무슨 말인지 몰라요"
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "dyn_group_tag_ai_models",
+    "type": "dynamic_tag_group",
+    "text": "ai models 기능이 필요하신가요?",
+    "level": 2,
+    "tags": [
+      "ai models"
+    ],
+    "tool_count": 943,
+    "options": {
+      "yes": "네",
+      "no": "아니요",
+      "unknown": "몰라요"
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "dyn_tech_tag_ai_models",
+    "type": "technical_question",
+    "text": "ai models 관련 전문 도구를 찾으시나요?",
+    "level": 3,
+    "parent": "dyn_group_tag_ai_models:yes",
+    "tags": [
+      "ai models"
+    ],
+    "options": {
+      "yes": "네",
+      "no": "아니요",
+      "unknown": "무슨 말인지 몰라요"
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "dyn_group_tag_ai_sales_assistant",
+    "type": "dynamic_tag_group",
+    "text": "ai sales assistant 기능이 필요하신가요?",
+    "level": 2,
+    "tags": [
+      "ai sales assistant"
+    ],
+    "tool_count": 935,
+    "options": {
+      "yes": "네",
+      "no": "아니요",
+      "unknown": "몰라요"
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "dyn_tech_tag_ai_sales_assistant",
+    "type": "technical_question",
+    "text": "ai sales assistant 관련 전문 도구를 찾으시나요?",
+    "level": 3,
+    "parent": "dyn_group_tag_ai_sales_assistant:yes",
+    "tags": [
+      "ai sales assistant"
+    ],
+    "options": {
+      "yes": "네",
+      "no": "아니요",
+      "unknown": "무슨 말인지 몰라요"
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "dyn_group_tag_ai_sales",
+    "type": "dynamic_tag_group",
+    "text": "ai sales 기능이 필요하신가요?",
+    "level": 2,
+    "tags": [
+      "ai sales"
+    ],
+    "tool_count": 832,
+    "options": {
+      "yes": "네",
+      "no": "아니요",
+      "unknown": "몰라요"
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "dyn_tech_tag_ai_sales",
+    "type": "technical_question",
+    "text": "ai sales 관련 전문 도구를 찾으시나요?",
+    "level": 3,
+    "parent": "dyn_group_tag_ai_sales:yes",
+    "tags": [
+      "ai sales"
+    ],
+    "options": {
+      "yes": "네",
+      "no": "아니요",
+      "unknown": "무슨 말인지 몰라요"
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "dyn_group_tag_ai_speech_to_text",
+    "type": "dynamic_tag_group",
+    "text": "ai speech to text 기능이 필요하신가요?",
+    "level": 2,
+    "tags": [
+      "ai speech to text"
+    ],
+    "tool_count": 826,
+    "options": {
+      "yes": "네",
+      "no": "아니요",
+      "unknown": "몰라요"
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "dyn_tech_tag_ai_speech_to_text",
+    "type": "technical_question",
+    "text": "ai speech to text 관련 전문 도구를 찾으시나요?",
+    "level": 3,
+    "parent": "dyn_group_tag_ai_speech_to_text:yes",
+    "tags": [
+      "ai speech to text"
+    ],
+    "options": {
+      "yes": "네",
+      "no": "아니요",
+      "unknown": "무슨 말인지 몰라요"
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "dyn_cat_ai-assistant",
+    "type": "dynamic_category",
+    "text": "AI 어시스턴트 관련 도구를 찾고 계신가요?",
+    "level": 1,
+    "category": "ai-assistant",
+    "tool_count": 1382,
+    "options": {
+      "yes": "네",
+      "no": "아니요",
+      "unknown": "몰라요"
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "dyn_cat_ai-chatbot",
+    "type": "dynamic_category",
+    "text": "대화형 챗봇 관련 도구를 찾고 계신가요?",
+    "level": 1,
+    "category": "ai-chatbot",
+    "tool_count": 1238,
+    "options": {
+      "yes": "네",
+      "no": "아니요",
+      "unknown": "몰라요"
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "dyn_cat_other",
+    "type": "dynamic_category",
+    "text": "기타 관련 도구를 찾고 계신가요?",
+    "level": 1,
+    "category": "other",
+    "tool_count": 712,
+    "options": {
+      "yes": "네",
+      "no": "아니요",
+      "unknown": "몰라요"
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "dyn_cat_ai-agent",
+    "type": "dynamic_category",
+    "text": "AI 에이전트 관련 도구를 찾고 계신가요?",
+    "level": 1,
+    "category": "ai-agent",
+    "tool_count": 659,
+    "options": {
+      "yes": "네",
+      "no": "아니요",
+      "unknown": "몰라요"
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "dyn_cat_ai-image-generator",
+    "type": "dynamic_category",
+    "text": "AI 이미지 생성 관련 도구를 찾고 계신가요?",
+    "level": 1,
+    "category": "ai-image-generator",
+    "tool_count": 487,
+    "options": {
+      "yes": "네",
+      "no": "아니요",
+      "unknown": "몰라요"
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "dyn_cat_ai-writing-assistants",
+    "type": "dynamic_category",
+    "text": "글쓰기 도우미 관련 도구를 찾고 계신가요?",
+    "level": 1,
+    "category": "ai-writing-assistants",
+    "tool_count": 446,
+    "options": {
+      "yes": "네",
+      "no": "아니요",
+      "unknown": "몰라요"
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "dyn_cat_ai-productivity-tools",
+    "type": "dynamic_category",
+    "text": "업무 효율 도구 관련 도구를 찾고 계신가요?",
+    "level": 1,
+    "category": "ai-productivity-tools",
+    "tool_count": 415,
+    "options": {
+      "yes": "네",
+      "no": "아니요",
+      "unknown": "몰라요"
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "dyn_cat_ai-video-generator",
+    "type": "dynamic_category",
+    "text": "동영상 제작 관련 도구를 찾고 계신가요?",
+    "level": 1,
+    "category": "ai-video-generator",
+    "tool_count": 360,
+    "options": {
+      "yes": "네",
+      "no": "아니요",
+      "unknown": "몰라요"
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "dyn_cat_ai-copilot",
+    "type": "dynamic_category",
+    "text": "AI 코파일럿 관련 도구를 찾고 계신가요?",
+    "level": 1,
+    "category": "ai-copilot",
+    "tool_count": 342,
+    "options": {
+      "yes": "네",
+      "no": "아니요",
+      "unknown": "몰라요"
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "dyn_cat_ai-tools-directory",
+    "type": "dynamic_category",
+    "text": "AI 도구 디렉토리 관련 도구를 찾고 계신가요?",
+    "level": 1,
+    "category": "ai-tools-directory",
+    "tool_count": 303,
+    "options": {
+      "yes": "네",
+      "no": "아니요",
+      "unknown": "몰라요"
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "dyn_cat_ai-developer-tools",
+    "type": "dynamic_category",
+    "text": "개발자 도구 관련 도구를 찾고 계신가요?",
+    "level": 1,
+    "category": "ai-developer-tools",
+    "tool_count": 300,
+    "options": {
+      "yes": "네",
+      "no": "아니요",
+      "unknown": "몰라요"
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "dyn_cat_ai-summarizer",
+    "type": "dynamic_category",
+    "text": "요약 도구 관련 도구를 찾고 계신가요?",
+    "level": 1,
+    "category": "ai-summarizer",
+    "tool_count": 300,
+    "options": {
+      "yes": "네",
+      "no": "아니요",
+      "unknown": "몰라요"
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "dyn_cat_ai-marketing",
+    "type": "dynamic_category",
+    "text": "마케팅 도구 관련 도구를 찾고 계신가요?",
+    "level": 1,
+    "category": "ai-marketing",
+    "tool_count": 299,
+    "options": {
+      "yes": "네",
+      "no": "아니요",
+      "unknown": "몰라요"
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "dyn_cat_ai-prompt-generator",
+    "type": "dynamic_category",
+    "text": "프롬프트 생성기 관련 도구를 찾고 계신가요?",
+    "level": 1,
+    "category": "ai-prompt-generator",
+    "tool_count": 297,
+    "options": {
+      "yes": "네",
+      "no": "아니요",
+      "unknown": "몰라요"
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "dyn_cat_ai-recruiting",
+    "type": "dynamic_category",
+    "text": "채용 도구 관련 도구를 찾고 계신가요?",
+    "level": 1,
+    "category": "ai-recruiting",
+    "tool_count": 290,
+    "options": {
+      "yes": "네",
+      "no": "아니요",
+      "unknown": "몰라요"
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "dyn_cat_ai-search-engine",
+    "type": "dynamic_category",
+    "text": "Ai Search Engine 관련 도구를 찾고 계신가요?",
+    "level": 1,
+    "category": "ai-search-engine",
+    "tool_count": 281,
+    "options": {
+      "yes": "네",
+      "no": "아니요",
+      "unknown": "몰라요"
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "dyn_cat_ai-for-data-analytics",
+    "type": "dynamic_category",
+    "text": "Ai For Data Analytics 관련 도구를 찾고 계신가요?",
+    "level": 1,
+    "category": "ai-for-data-analytics",
+    "tool_count": 277,
+    "options": {
+      "yes": "네",
+      "no": "아니요",
+      "unknown": "몰라요"
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "dyn_cat_ai-translate",
+    "type": "dynamic_category",
+    "text": "Ai Translate 관련 도구를 찾고 계신가요?",
+    "level": 1,
+    "category": "ai-translate",
+    "tool_count": 253,
+    "options": {
+      "yes": "네",
+      "no": "아니요",
+      "unknown": "몰라요"
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "dyn_cat_ai-api",
+    "type": "dynamic_category",
+    "text": "Ai Api 관련 도구를 찾고 계신가요?",
+    "level": 1,
+    "category": "ai-api",
+    "tool_count": 233,
+    "options": {
+      "yes": "네",
+      "no": "아니요",
+      "unknown": "몰라요"
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "dyn_cat_ai-language-learning",
+    "type": "dynamic_category",
+    "text": "Ai Language Learning 관련 도구를 찾고 계신가요?",
+    "level": 1,
+    "category": "ai-language-learning",
+    "tool_count": 228,
+    "options": {
+      "yes": "네",
+      "no": "아니요",
+      "unknown": "몰라요"
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  },
+  {
+    "id": "expertise_level",
+    "type": "filter",
+    "text": "AI 도구 사용 경험이 어느 정도이신가요?",
+    "level": 3,
+    "options": {
+      "beginner": "처음 사용해봐요",
+      "intermediate": "몇 가지 써본 적 있어요",
+      "advanced": "다양하게 사용해봤어요",
+      "expert": "전문가 수준이에요",
+      "unknown": "몰라요"
+    },
+    "created_at": "2025-07-11T12:45:17.175139",
+    "updated_at": "2025-07-11T12:45:17.175139"
+  }
+]
