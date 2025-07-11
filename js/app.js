@@ -151,7 +151,7 @@ window.startQuiz = function startQuiz() {
 }
 
 // 질문 표시 (비주얼 노벨 스타일)
-async function showQuestion() {
+async function showQuestion(questionText = null) {
     if (!ultraFastEngine) {
         showResult();
         return;
@@ -162,10 +162,17 @@ async function showQuestion() {
         return;
     }
     
-    currentQuestion = ultraFastEngine.getCurrentQuestion();
-    if (!currentQuestion) {
-        showResult();
-        return;
+    // 질문 텍스트가 전달되지 않았다면 현재 질문 가져오기
+    if (!questionText) {
+        currentQuestion = ultraFastEngine.getCurrentQuestion();
+        if (!currentQuestion) {
+            showResult();
+            return;
+        }
+        questionText = currentQuestion.text;
+    } else {
+        // 질문 텍스트가 전달되었다면 현재 질문 객체 생성
+        currentQuestion = { text: questionText };
     }
     
     // 질문 히스토리 추가
@@ -178,20 +185,20 @@ async function showQuestion() {
     questionTextElement.style.transform = 'translateY(20px)';
     
     setTimeout(() => {
-        questionTextElement.textContent = currentQuestion.text;
+        questionTextElement.textContent = questionText;
         questionTextElement.style.opacity = '1';
         questionTextElement.style.transform = 'translateY(0)';
     }, 200);
     
     // 진단 정보 표시 (디버깅용)
     const diagnostics = ultraFastEngine.getDiagnostics();
-    console.log('Question:', currentQuestion.text);
+    console.log('Question:', questionText);
     console.log('Diagnostics:', diagnostics);
     
     const answerButtons = document.getElementById('answerButtons');
     answerButtons.innerHTML = '';
     
-    // 선택지 생성 (비주얼 노벨 스타일)
+    // 선택지 생성 (3지선다)
     setTimeout(() => {
         if (currentQuestion.options) {
             // 질문별 커스텀 옵션
@@ -200,13 +207,11 @@ async function showQuestion() {
                 answerButtons.appendChild(btn);
             });
         } else {
-            // 지능형 분석 시스템 5개 옵션
+            // 3지선다 옵션
             const choices = [
-                { key: 'yes', text: '네, 맞습니다' },
-                { key: 'probably', text: '아마도 그럴 것 같습니다' },
-                { key: 'unknown', text: '잘 모르겠습니다' },
-                { key: 'probably_not', text: '아마 아닐 것 같습니다' },
-                { key: 'no', text: '아니요, 확실히 아닙니다' }
+                { key: 'yes', text: '네 맞습니다' },
+                { key: 'no', text: '아니오 확실히 아닙니다' },
+                { key: 'unknown', text: '잘 모르겠습니다' }
             ];
             
             choices.forEach((choice, index) => {
@@ -253,35 +258,8 @@ function createVisualNovelChoice(text, key, index) {
 
 // 컨트롤 버튼 상태 업데이트
 function updateControlButtons() {
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-    
-    if (prevBtn) {
-        prevBtn.disabled = currentHistoryIndex <= 0;
-    }
-    
-    if (nextBtn) {
-        nextBtn.disabled = false; // 스킵은 항상 가능
-    }
+    // 3지선다에서는 컨트롤 버튼 불필요
 }
-
-// 이전 질문으로 돌아가기
-window.previousQuestion = function() {
-    if (currentHistoryIndex > 0) {
-        currentHistoryIndex--;
-        // 여기서 실제로 엔진 상태를 되돌리는 로직 필요
-        // 현재는 간단히 히스토리 표시만
-        showToast('이전 질문으로 돌아가기', 'info');
-    }
-};
-
-// 질문 스킵
-window.skipQuestion = function() {
-    if (currentQuestion) {
-        showToast('질문을 건너뛰었습니다', 'info');
-        handleAnswer('unknown');
-    }
-};
 
 // 답변 처리
 function handleAnswer(answer) {
@@ -290,17 +268,21 @@ function handleAnswer(answer) {
         return;
     }
     
-    const handled = ultraFastEngine.handleAnswer(answer);
-    if (handled) {
+    const result = ultraFastEngine.answerQuestion(answer);
+    
+    if (result.result === 'continue') {
         console.log('답변 처리됨:', answer);
         
-        // 다음 질문으로 이동
+        // 다음 질문으로 이동 (질문 텍스트 전달)
         setTimeout(() => {
-            showQuestion();
+            showQuestion(result.question);
         }, 300);
-    } else {
-        console.log('답변 처리 실패, 결과 화면으로 이동');
+    } else if (result.result === 'success' || result.result === 'final_candidates') {
+        console.log('결과 준비됨:', result);
         showResult();
+    } else {
+        console.log('답변 처리 실패, 에러 화면으로 이동');
+        showScreen('errorScreen');
     }
 }
 
@@ -311,12 +293,14 @@ function showResult() {
         return;
     }
     
-    const result = ultraFastEngine.getResult();
-    if (!result) {
+    const finalResults = ultraFastEngine.getFinalResults();
+    if (!finalResults || !finalResults.recommendations || finalResults.recommendations.length === 0) {
         showScreen('errorScreen');
         return;
     }
     
+    // 첫 번째 추천 도구 사용
+    const result = finalResults.recommendations[0];
     console.log('결과:', result);
     
     // 결과 화면 표시
