@@ -3,176 +3,914 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-i18n="ui.title">AI.Teacher - 지능형 AI 도구 컨설턴트</title>
-    <meta name="description" content="체계적인 질문을 통해 당신에게 최적화된 AI 도구를 분석하고 추천해드립니다">
-    <link rel="stylesheet" href="css/style.css">
+    <title>AI Teacher - Visual Novel</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', 'Noto Sans CJK KR', sans-serif;
+            background: #1a1a2e;
+            min-height: 100vh;
+            overflow: hidden;
+            position: relative;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+        
+        body::-webkit-scrollbar {
+            display: none;
+        }
+        
+        /* 비주얼 노벨 배경 */
+        .vn-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, #2d1b69 0%, #0f0f1e 100%);
+            z-index: 1;
+        }
+        
+        /* 캐릭터 컨테이너 */
+        .character-container {
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 500px;
+            height: 100vh;
+            z-index: 6;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            padding-top: 20px;
+        }
+        
+        .character-image {
+            width: 100%;
+            height: auto;
+            max-height: 70vh;
+            object-fit: contain;
+            object-position: top;
+            filter: drop-shadow(0 0 30px rgba(102, 126, 234, 0.5));
+        }
+        
+        /* 대화창 */
+        .dialogue-box {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, rgba(26,26,46,0.95) 100%);
+            border-top: 3px solid #667eea;
+            padding: 15px 25px;
+            z-index: 10;
+            box-shadow: 0 -10px 40px rgba(0,0,0,0.5);
+            max-height: 25vh;
+            overflow-y: auto;
+        }
+        
+        .character-name {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4px 15px;
+            border-radius: 15px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 0.9em;
+            animation: glow 2s ease-in-out infinite;
+        }
+        
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 10px rgba(102, 126, 234, 0.5); }
+            50% { box-shadow: 0 0 20px rgba(102, 126, 234, 0.8); }
+        }
+        
+        .dialogue-text {
+            color: white;
+            font-size: 1em;
+            line-height: 1.5;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            animation: typewriter 1s steps(40, end);
+        }
+        
+
+        
+        /* 드롭박스 컨테이너 */
+        .dropdown-container {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: row;
+            gap: 12px;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        
+        /* 개별 드롭박스 */
+        .step-dropdown {
+            position: relative;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+            flex: 1;
+            max-width: 200px;
+            min-width: 160px;
+        }
+        
+        .step-dropdown.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .custom-select {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(102, 126, 234, 0.5);
+            border-radius: 10px;
+            padding: 10px 12px;
+            color: white;
+            font-size: 0.85em;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            outline: none;
+            appearance: none;
+            position: relative;
+        }
+        
+        .custom-select:hover {
+            border-color: #764ba2;
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
+        }
+        
+        .custom-select:focus {
+            border-color: #ffd700;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+        }
+        
+        .custom-select:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(102, 126, 234, 0.3);
+        }
+        
+        .custom-select option {
+            background: #1a1a2e;
+            color: white;
+            padding: 10px;
+        }
+        
+        /* 드롭박스 화살표 */
+        .dropdown-arrow {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #667eea;
+            font-size: 1em;
+            pointer-events: none;
+            transition: transform 0.3s ease;
+        }
+        
+        .custom-select:focus + .dropdown-arrow {
+            transform: translateY(-50%) rotate(180deg);
+        }
+        
+        .reset-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 15;
+            background: rgba(255, 87, 51, 0.8);
+            color: white;
+            border: 2px solid #ff5733;
+            border-radius: 25px;
+            padding: 8px 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .reset-button:hover {
+            background: rgba(255, 87, 51, 1);
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(255, 87, 51, 0.5);
+        }
+        
+        .progress-arrow {
+            margin: 0 10px;
+            opacity: 0.5;
+        }
+        
+        /* 결과 화면 */
+        .results-container {
+            position: fixed;
+            bottom: 25vh;
+            left: 10px;
+            right: 10px;
+            height: auto;
+            min-height: 220px;
+            padding: 15px;
+            z-index: 8;
+            display: none;
+            overflow: hidden;
+            background: rgba(0,0,0,0.3);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            border: 1px solid rgba(102, 126, 234, 0.3);
+        }
+        
+        .results-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            height: auto;
+            justify-content: flex-start;
+            align-items: stretch;
+            max-width: 100%;
+            margin: 0;
+            overflow: visible;
+            padding: 0;
+        }
+        
+        /* 가로 스크롤바 스타일링 */
+        .results-grid::-webkit-scrollbar {
+            height: 4px;
+        }
+        
+        .results-grid::-webkit-scrollbar-track {
+            background: rgba(255,255,255,0.1);
+            border-radius: 2px;
+        }
+        
+        .results-grid::-webkit-scrollbar-thumb {
+            background: rgba(102, 126, 234, 0.5);
+            border-radius: 2px;
+        }
+        
+        .results-grid::-webkit-scrollbar-thumb:hover {
+            background: rgba(102, 126, 234, 0.8);
+        }
+        
+        .result-card {
+            background: rgba(0,0,0,0.8);
+            border: 2px solid #667eea;
+            border-radius: 15px;
+            padding: 15px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            min-height: 60px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: slideInUp 0.6s ease-out forwards;
+        }
+        
+        @keyframes slideInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .result-card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #667eea, #764ba2, #667eea);
+            background-size: 400% 400%;
+            animation: gradient-border 3s ease infinite;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .result-card:hover::before {
+            opacity: 1;
+        }
+        
+        @keyframes gradient-border {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .result-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(102, 126, 234, 0.3);
+        }
+        
+        .tool-info {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            margin-right: 20px;
+        }
+        
+        .tool-name {
+            color: #667eea;
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-bottom: 6px;
+            text-shadow: 0 0 10px rgba(102, 126, 234, 0.5);
+            text-align: left;
+        }
+        
+        .tool-desc {
+            color: rgba(255,255,255,0.9);
+            line-height: 1.4;
+            margin-bottom: 0;
+            font-size: 0.85em;
+            text-align: left;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+        
+        .tool-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.75em;
+            margin-right: 15px;
+            align-items: flex-end;
+            min-width: 100px;
+        }
+        
+        .tool-link {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 15px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            font-size: 0.85em;
+            text-align: center;
+            white-space: nowrap;
+        }
+        
+        .tool-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.5);
+        }
+        
+        /* 모바일 반응형 - 가로 유지 */
+        @media (max-width: 768px) {
+            .dropdown-container {
+                gap: 8px;
+            }
+            
+            .step-dropdown {
+                max-width: 160px;
+                min-width: 140px;
+            }
+            
+            .custom-select {
+                padding: 10px 8px;
+                font-size: 0.8em;
+            }
+            
+            .dropdown-arrow {
+                right: 8px;
+                font-size: 0.9em;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .dropdown-container {
+                gap: 6px;
+            }
+            
+            .step-dropdown {
+                max-width: 140px;
+                min-width: 120px;
+            }
+            
+            .custom-select {
+                padding: 8px 6px;
+                font-size: 0.75em;
+            }
+            
+            .dropdown-arrow {
+                right: 6px;
+                font-size: 0.8em;
+            }
+            
+            .results-container {
+                bottom: 25vh;
+                padding: 8px;
+                height: auto;
+                min-height: 180px;
+            }
+            
+            .results-grid {
+                gap: 8px;
+            }
+            
+            .result-card {
+                padding: 10px;
+                min-height: 50px;
+            }
+            
+            .tool-info {
+                margin-right: 12px;
+            }
+            
+            .tool-name {
+                font-size: 0.95em;
+                margin-bottom: 4px;
+            }
+            
+            .tool-desc {
+                font-size: 0.75em;
+                -webkit-line-clamp: 2;
+            }
+            
+            .tool-meta {
+                font-size: 0.65em;
+                gap: 2px;
+                margin-right: 10px;
+                min-width: 80px;
+            }
+            
+            .tool-link {
+                font-size: 0.75em;
+                padding: 5px 10px;
+            }
+        }
+        
+        @media (max-width: 360px) {
+            .dropdown-container {
+                gap: 4px;
+            }
+            
+            .step-dropdown {
+                max-width: 120px;
+                min-width: 100px;
+            }
+            
+            .custom-select {
+                padding: 6px 4px;
+                font-size: 0.7em;
+            }
+            
+            .dropdown-arrow {
+                right: 4px;
+                font-size: 0.7em;
+            }
+            
+            .results-container {
+                bottom: 25vh;
+                padding: 6px;
+                height: auto;
+                min-height: 160px;
+            }
+            
+            .results-grid {
+                gap: 6px;
+            }
+            
+            .result-card {
+                padding: 8px;
+                min-height: 45px;
+            }
+            
+            .tool-info {
+                margin-right: 10px;
+            }
+            
+            .tool-name {
+                font-size: 0.9em;
+                margin-bottom: 3px;
+            }
+            
+            .tool-desc {
+                font-size: 0.7em;
+                -webkit-line-clamp: 2;
+            }
+            
+            .tool-meta {
+                font-size: 0.6em;
+                gap: 2px;
+                margin-right: 8px;
+                min-width: 70px;
+            }
+            
+            .tool-link {
+                font-size: 0.7em;
+                padding: 4px 8px;
+            }
+        }
+        
+        /* 결과 화면 반응형 */
+        @media (max-width: 1024px) {
+            .results-grid {
+                gap: 10px;
+            }
+            
+            .result-card {
+                max-width: 300px;
+                padding: 15px;
+            }
+            
+            .tool-name {
+                font-size: 1.1em;
+            }
+            
+            .tool-desc {
+                font-size: 0.85em;
+                -webkit-line-clamp: 3;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .results-container {
+                bottom: 25vh;
+                padding: 10px;
+                height: auto;
+                min-height: 200px;
+            }
+            
+            .results-grid {
+                gap: 10px;
+            }
+            
+            .result-card {
+                padding: 12px;
+                min-height: 55px;
+            }
+            
+            .tool-info {
+                margin-right: 15px;
+            }
+            
+            .tool-name {
+                font-size: 1em;
+                margin-bottom: 5px;
+            }
+            
+            .tool-desc {
+                font-size: 0.8em;
+                -webkit-line-clamp: 2;
+            }
+            
+            .tool-meta {
+                font-size: 0.7em;
+                gap: 3px;
+                margin-right: 12px;
+                min-width: 90px;
+            }
+            
+            .tool-link {
+                font-size: 0.8em;
+                padding: 6px 12px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div id="app">
-        <!-- 시작 화면 -->
-        <div id="startScreen" class="screen active">
-            <div class="visual-novel-container">
-                <!-- 배경 영역 -->
-                <div class="background-layer"></div>
-                
-                <!-- 캐릭터 영역 -->
-                <div class="character-layer">
-                    <div class="character-wrapper">
-                        <img src="images/ai_teacher_idle.png" alt="AI Teacher" class="character" id="mainCharacter">
-                    </div>
-                </div>
-                
-                <!-- 대화창 영역 -->
-                <div class="dialogue-box">
-                    <div class="dialogue-header">
-                        <span class="speaker-name">AI Teacher</span>
-                    </div>
-                    
-                    <div class="dialogue-content">
-                        <div class="dialogue-text">
-                            <div class="start-dialogue">
-                                <p class="dialogue-line">AI 도구를 찾고 계신가요?</p>
-                                <p class="dialogue-line small">체계적인 분석을 통해 최적의 솔루션을 찾아드리겠습니다.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="result-actions">
-                            <button class="btn btn-primary" onclick="startQuiz()">분석 시작</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- 비주얼 노벨 배경 -->
+    <div class="vn-background"></div>
+    
+    <!-- AI Teacher 캐릭터 -->
+    <div class="character-container" id="character-container">
+        <img src="images/ai_teacher_idle.png" alt="AI Teacher" class="character-image" id="character-image">
+    </div>
+    
+    <!-- 선택 초기화 버튼 -->
+    <button class="reset-button" id="reset-button" onclick="resetSelections()" style="display: none;">
+        다시 선택하기
+    </button>
+    
+    <!-- 대화창 -->
+    <div class="dialogue-box">
+        <div class="character-name">AI Teacher</div>
+        <div class="dialogue-text" id="dialogue-text">
+            안녕하세요! AI Teacher예요. 원하시는 AI 도구를 찾아드릴게요. 아래의 드롭박스에서 선택해주세요!
         </div>
-
-        <!-- 질문 화면 -->
-        <div id="questionScreen" class="screen">
-            <div class="visual-novel-container">
-                <!-- 배경 영역 -->
-                <div class="background-layer"></div>
-                
-                <!-- 캐릭터 영역 -->
-                <div class="character-layer">
-                    <div class="character-wrapper">
-                        <img src="images/ai_teacher_idle.png" alt="AI Teacher" class="character" id="questionCharacter">
-                    </div>
-                </div>
-                
-                <!-- 대화창 영역 -->
-                <div class="dialogue-box">
-                    <div class="dialogue-header">
-                        <span class="speaker-name">AI Teacher</span>
-                    </div>
-                    
-                    <div class="dialogue-content">
-                        <div class="dialogue-text" id="questionText"></div>
-                        
-                        <!-- 선택지 영역 -->
-                        <div class="choices-container" id="answerButtons">
-                            <!-- 선택지들이 동적으로 생성됩니다 -->
-                        </div>
-                    </div>
-                </div>
+        
+        <!-- 드롭박스 선택 영역 (대화창 안에 포함) -->
+        <div class="dropdown-container">
+            <div class="step-dropdown visible" id="what-dropdown">
+                <select class="custom-select" id="what-select">
+                    <option value="">선택하세요</option>
+                </select>
+                <span class="dropdown-arrow">▼</span>
             </div>
-        </div>
-
-        <!-- 결과 화면 -->
-        <div id="resultScreen" class="screen">
-            <div class="visual-novel-container">
-                <!-- 배경 영역 -->
-                <div class="background-layer"></div>
-                
-                <!-- 캐릭터 영역 -->
-                <div class="character-layer">
-                    <div class="character-wrapper">
-                        <img src="images/ai_teacher_idle.png" alt="AI Teacher" class="character">
-                    </div>
-                </div>
-                
-                <!-- 대화창 영역 -->
-                <div class="dialogue-box">
-                    <div class="dialogue-header">
-                        <span class="speaker-name">AI Teacher</span>
-                    </div>
-                    
-                    <div class="dialogue-content">
-                        <div class="dialogue-text">
-                            <p>분석 완료! 최적의 AI 도구를 찾았습니다.</p>
-                            <div class="result-section">
-                                <h3 id="toolName" class="tool-name"></h3>
-                                <p id="toolDescription" class="tool-description"></p>
-                                <div id="toolScore" class="tool-score"></div>
-                                <div id="toolStrengths" class="tool-strengths"></div>
-                                <div id="toolUseCases" class="tool-usecases"></div>
-                                <div id="alternatives" class="alternatives"></div>
-                                <div id="progressInfo" class="progress-info"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="result-actions">
-                            <a id="toolLink" class="btn btn-primary" target="_blank" rel="noopener noreferrer" data-i18n="ui.visitTool">바로가기</a>
-                            <button class="btn btn-secondary" onclick="restart()" data-i18n="ui.restart">다시 시작</button>
-                        </div>
-                        
-                        <div class="share-buttons">
-                            <a href="#" class="share-btn twitter" onclick="shareOnTwitter(event)">𝕏 X</a>
-                            <a href="#" class="share-btn facebook" onclick="shareOnFacebook(event)">📘 Facebook</a>
-                        </div>
-                    </div>
-                </div>
+            
+            <div class="step-dropdown" id="how-dropdown">
+                <select class="custom-select" id="how-select" disabled>
+                    <option value="">선택하세요</option>
+                </select>
+                <span class="dropdown-arrow">▼</span>
             </div>
-        </div>
-
-        <!-- 에러 화면 -->
-        <div id="errorScreen" class="screen">
-            <div class="visual-novel-container">
-                <!-- 배경 영역 -->
-                <div class="background-layer"></div>
-                
-                <!-- 캐릭터 영역 -->
-                <div class="character-layer">
-                    <div class="character-wrapper">
-                        <img src="images/ai_teacher_idle.png" alt="AI Teacher" class="character">
-                    </div>
-                </div>
-                
-                <!-- 대화창 영역 -->
-                <div class="dialogue-box">
-                    <div class="dialogue-header">
-                        <span class="speaker-name">AI Teacher</span>
-                    </div>
-                    
-                    <div class="dialogue-content">
-                        <div class="dialogue-text">
-                            <p data-i18n="messages.noResult">아... 죄송해요. 조건에 맞는 AI 도구를 찾지 못했어요.</p>
-                            <p data-i18n="messages.retry">다시 시도해보실래요?</p>
-                        </div>
-                        
-                        <div class="result-actions">
-                            <button class="btn btn-primary" onclick="restart()" data-i18n="ui.restart">다시 시작</button>
-                        </div>
-                    </div>
-                </div>
+            
+            <div class="step-dropdown" id="do-dropdown">
+                <select class="custom-select" id="do-select" disabled>
+                    <option value="">선택하세요</option>
+                </select>
+                <span class="dropdown-arrow">▼</span>
             </div>
         </div>
     </div>
-
-    <!-- Footer -->
-    <footer class="footer">
-        © 2025 <a href="https://purpleship.io/" target="_blank" rel="noopener noreferrer">Purpleship</a>. All rights reserved.
-    </footer>
-
-    <!-- sql.js 라이브러리 -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.js"></script>
-    <script>
-        // sql.js 초기화 설정
-        var config = {
-            locateFile: filename => `https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/${filename}`
-        };
-    </script>
     
-    <script src="js/components.js"></script>
-    <script src="js/i18n.js"></script>
-    <!-- ES6 모듈로 변경 -->
-    <script type="module" src="js/app.js"></script>
+    <!-- 결과 컨테이너 -->
+    <div class="results-container" id="results-container"></div>
+    
+    <script src="tools-data.js"></script>
+    <script>
+        // 3단 논법 데이터
+        const structure = {"document": {"label": "📄 문서", "description": "텍스트 기반 콘텐츠", "actions": {"generate": {"label": "✍️ 작성하기", "description": "새로운 문서 생성", "formats": {"document": "📄 텍스트 문서", "presentation": "📊 프레젠테이션", "email": "📧 이메일", "report": "📑 보고서", "article": "📰 기사/블로그"}}, "edit": {"label": "✏️ 편집하기", "description": "문서 수정 및 개선", "formats": {"document": "📝 편집된 문서", "summary": "📋 요약본", "revised": "✅ 교정된 문서", "formatted": "🎨 서식 적용 문서"}}, "analyze": {"label": "🔍 분석하기", "description": "텍스트 내용 분석", "formats": {"summary": "📊 분석 결과", "keywords": "🏷️ 키워드 추출", "sentiment": "😊 감정 분석", "insights": "💡 인사이트"}}, "translate": {"label": "🌐 번역하기", "description": "다른 언어로 번역", "formats": {"document": "🌍 번역된 문서", "subtitle": "📺 자막", "localized": "🗺️ 현지화 문서"}}}}, "image": {"label": "🖼️ 이미지", "description": "시각적 콘텐츠", "actions": {"generate": {"label": "🎨 생성하기", "description": "새로운 이미지 만들기", "formats": {"image": "🖼️ AI 생성 이미지", "illustration": "🎨 일러스트", "logo": "💎 로고 디자인", "avatar": "👤 아바타", "artwork": "🖌️ 예술 작품"}}, "edit": {"label": "✏️ 편집하기", "description": "이미지 수정", "formats": {"edited": "✨ 편집된 이미지", "resized": "📐 크기 조정", "filtered": "🎭 필터 적용", "cropped": "✂️ 자른 이미지"}}, "enhance": {"label": "⚡ 향상시키기", "description": "품질 개선", "formats": {"hd": "🔆 고화질 이미지", "restored": "🔧 복원된 이미지", "colorized": "🌈 컬러 보정", "upscaled": "🔍 확대된 이미지"}}, "remove_bg": {"label": "🖼️ 배경 제거", "description": "배경 투명화", "formats": {"transparent": "🔲 투명 배경", "replaced": "🏞️ 배경 교체", "isolated": "✂️ 객체 분리"}}}}, "video": {"label": "🎬 영상", "description": "동영상 콘텐츠", "actions": {"generate": {"label": "🎬 생성하기", "description": "새로운 영상 제작", "formats": {"video": "🎥 AI 생성 영상", "animation": "🎞️ 애니메이션", "short": "📱 숏폼 영상", "presentation": "📊 동영상 프레젠테이션"}}, "edit": {"label": "✂️ 편집하기", "description": "영상 편집", "formats": {"edited": "🎬 편집된 영상", "trimmed": "✂️ 컷 편집", "merged": "🔗 병합된 영상", "effects": "✨ 효과 적용"}}, "subtitle": {"label": "💬 자막 생성", "description": "자막 추가", "formats": {"subtitled": "📝 자막 포함 영상", "transcript": "📄 대본", "captions": "💬 캡션"}}}}, "audio": {"label": "🎵 오디오", "description": "음성 및 음악", "actions": {"generate": {"label": "🎵 생성하기", "description": "새로운 오디오 생성", "formats": {"music": "🎼 AI 작곡 음악", "voice": "🗣️ AI 음성", "sound": "🔊 효과음", "podcast": "🎙️ 팟캐스트"}}, "transcribe": {"label": "📝 텍스트 변환", "description": "음성을 텍스트로", "formats": {"transcript": "📄 텍스트 전사", "subtitle": "📺 자막 파일", "notes": "📋 회의록"}}, "enhance": {"label": "🎧 품질 개선", "description": "오디오 향상", "formats": {"cleaned": "🔇 노이즈 제거", "mastered": "🎚️ 마스터링", "enhanced": "✨ 향상된 오디오"}}}}, "code": {"label": "💻 코드", "description": "프로그래밍 관련", "actions": {"generate": {"label": "⚡ 생성하기", "description": "코드 자동 생성", "formats": {"code": "📝 소스 코드", "app": "📱 애플리케이션", "website": "🌐 웹사이트", "api": "🔌 API", "script": "📜 스크립트"}}, "debug": {"label": "🐛 디버깅", "description": "버그 수정", "formats": {"fixed": "✅ 수정된 코드", "report": "📋 디버그 리포트", "optimized": "⚡ 최적화 코드"}}, "document": {"label": "📚 문서화", "description": "코드 문서 생성", "formats": {"documentation": "📖 API 문서", "comments": "💬 주석 추가", "readme": "📄 README"}}}}, "data": {"label": "📊 데이터", "description": "데이터 분석 및 처리", "actions": {"analyze": {"label": "📊 분석하기", "description": "데이터 분석", "formats": {"report": "📈 분석 리포트", "visualization": "📊 시각화", "insights": "💡 인사이트", "dashboard": "📋 대시보드"}}, "clean": {"label": "🧹 정제하기", "description": "데이터 클리닝", "formats": {"cleaned": "✨ 정제된 데이터", "validated": "✅ 검증된 데이터", "structured": "📁 구조화된 데이터"}}, "transform": {"label": "🔄 변환하기", "description": "데이터 변환", "formats": {"converted": "🔄 변환된 데이터", "exported": "📤 내보낸 파일", "integrated": "🔗 통합 데이터"}}}}, "conversation": {"label": "💬 대화", "description": "챗봇 및 대화형 AI", "actions": {"chat": {"label": "💬 채팅하기", "description": "AI와 대화", "formats": {"assistant": "🤖 AI 비서", "companion": "👥 AI 친구", "tutor": "👨‍🏫 AI 튜터", "advisor": "💼 AI 조언자"}}, "roleplay": {"label": "🎭 역할놀이", "description": "캐릭터 대화", "formats": {"character": "🎭 캐릭터 AI", "celebrity": "⭐ 유명인 AI", "historical": "📚 역사 인물 AI", "fictional": "🦸 가상 캐릭터"}}}}, "website": {"label": "🌐 홈페이지", "description": "웹사이트 제작 및 관리", "actions": {"build": {"label": "🏗️ 제작하기", "description": "새로운 웹사이트 구축", "formats": {"landing": "🚀 랜딩 페이지", "blog": "📝 블로그 사이트", "portfolio": "💼 포트폴리오", "ecommerce": "🛒 쇼핑몰"}}, "design": {"label": "🎨 디자인하기", "description": "웹사이트 디자인 개선", "formats": {"mockup": "🖼️ 목업 디자인", "template": "📋 템플릿", "prototype": "⚡ 프로토타입", "wireframe": "📐 와이어프레임"}}, "optimize": {"label": "⚡ 최적화하기", "description": "성능 및 SEO 개선", "formats": {"seo": "🔍 SEO 최적화", "speed": "⚡ 속도 개선", "mobile": "📱 모바일 최적화", "analytics": "📊 분석 도구"}}}}, "application": {"label": "📱 애플리케이션", "description": "모바일/데스크톱 앱 개발", "actions": {"develop": {"label": "⚙️ 개발하기", "description": "새로운 앱 개발", "formats": {"mobile": "📱 모바일 앱", "desktop": "💻 데스크톱 앱", "web_app": "🌐 웹 앱", "game": "🎮 게임 앱"}}, "design": {"label": "🎨 UI/UX 디자인", "description": "앱 인터페이스 디자인", "formats": {"ui_design": "🎨 UI 디자인", "ux_flow": "🔄 UX 플로우", "icon": "🎯 아이콘 디자인", "prototype": "📲 앱 프로토타입"}}, "test": {"label": "🧪 테스트하기", "description": "앱 테스트 및 디버깅", "formats": {"unit_test": "🔬 단위 테스트", "user_test": "👥 사용자 테스트", "performance": "⚡ 성능 테스트", "security": "🔒 보안 테스트"}}}}};
+        
+        let selections = {
+            what: null,
+            how: null,
+            do: null
+        };
+        
+        let currentStep = 'what';
+        
+        // 캐릭터 상태와 대사
+        const characterStates = {
+            idle: 'images/ai_teacher_idle.png',
+            curious: 'images/ai_teacher_curious.png',
+            explaining: 'images/ai_teacher_explaining.png',
+            thinking: 'images/ai_teacher_thinking.png',
+            happy: 'images/ai_teacher_explaining.png',
+            result: 'images/ai_teacher_result.png'
+        };
+        
+        const dialogues = {
+            greeting: '안녕하세요! AI Teacher예요. 원하시는 AI 도구를 찾아드릴게요. 아래의 드롭박스에서 선택해주세요!',
+            what: '좋은 선택이에요! 이제 어떻게 작업할지 선택해주세요.',
+            how: '훌륭해요! 마지막으로 어떤 형태의 결과물을 원하는지 선택해주세요.',
+            do: '완벽해요! 선택하신 조건으로 최적의 AI 도구를 찾아드릴게요!',
+            searching: '선택하신 조건으로 최적의 AI 도구를 찾고 있어요...',
+            found: '찾았어요! 선택하신 조합에 가장 적합한 AI 도구들이에요!'
+        };
+        
+        // 대화창 업데이트
+        function updateDialogue(text, characterState = 'idle') {
+            const dialogueText = document.getElementById('dialogue-text');
+            const characterImage = document.getElementById('character-image');
+            
+            // 캐릭터 이미지 변경
+            if (characterStates[characterState]) {
+                characterImage.src = characterStates[characterState];
+            }
+            
+            // 타이핑 효과
+            dialogueText.textContent = '';
+            let index = 0;
+            const typeWriter = setInterval(() => {
+                if (index < text.length) {
+                    dialogueText.textContent += text.charAt(index);
+                    index++;
+                } else {
+                    clearInterval(typeWriter);
+                }
+            }, 30);
+        }
+        
+        // 캐릭터 상태 변경
+        function changeCharacterState(state) {
+            const characterImage = document.getElementById('character-image');
+            if (characterStates[state]) {
+                characterImage.src = characterStates[state];
+            }
+        }
+        
+        // 드롭박스 옵션 렌더링
+        function populateDropdown(step) {
+            let selectElement, data;
+            
+            if (step === 'what') {
+                selectElement = document.getElementById('what-select');
+                data = structure;
+            } else if (step === 'how') {
+                selectElement = document.getElementById('how-select');
+                data = structure[selections.what].actions;
+            } else if (step === 'do') {
+                selectElement = document.getElementById('do-select');
+                data = structure[selections.what].actions[selections.how].formats;
+            }
+            
+            // 기존 옵션 제거 (첫 번째 기본 옵션 제외)
+            selectElement.innerHTML = '<option value="">선택하세요</option>';
+            
+            for (const [key, info] of Object.entries(data)) {
+                const option = document.createElement('option');
+                option.value = key;
+                
+                if (step === 'do') {
+                    option.textContent = info;
+                } else {
+                    option.textContent = info.label;
+                }
+                
+                selectElement.appendChild(option);
+            }
+        }
+        
+        // 드롭박스 선택 처리
+        function handleDropdownChange(step, value) {
+            if (!value) return;
+            
+            selections[step] = value;
+            
+            // 리셋 버튼 표시
+            document.getElementById('reset-button').style.display = 'block';
+            
+            // 다음 단계로 진행
+            if (step === 'what') {
+                currentStep = 'how';
+                updateDialogue(dialogues.what, 'curious');
+                showNextDropdown('how');
+                populateDropdown('how');
+            } else if (step === 'how') {
+                currentStep = 'do';
+                updateDialogue(dialogues.how, 'thinking');
+                showNextDropdown('do');
+                populateDropdown('do');
+            } else if (step === 'do') {
+                updateDialogue(dialogues.do, 'explaining');
+                setTimeout(() => {
+                    findTools();
+                }, 1000);
+            }
+        }
+        
+        // 다음 드롭박스 표시 및 활성화
+        function showNextDropdown(step) {
+            const dropdown = document.getElementById(`${step}-dropdown`);
+            const select = document.getElementById(`${step}-select`);
+            dropdown.classList.add('visible');
+            select.disabled = false;
+        }
+        
+        // 선택지 데이터 가져오기
+        function getChoiceData(step, value) {
+            if (step === 'what') {
+                return structure[value];
+            } else if (step === 'how') {
+                return structure[selections.what].actions[value];
+            } else if (step === 'do') {
+                // do 레벨은 문자열이므로 객체로 만들어서 반환
+                const formatString = structure[selections.what].actions[selections.how].formats[value];
+                return {
+                    label: formatString,
+                    description: formatString
+                };
+            }
+        }
+        
+        // 도구 찾기
+        function findTools() {
+            updateDialogue(dialogues.searching, 'explaining');
+            
+            // 드롭박스 컨테이너 숨기기
+            document.querySelector('.dropdown-container').style.display = 'none';
+            
+            setTimeout(() => {
+                try {
+                    // 통합 데이터에서 가져오기
+                    const combinationKey = `${selections.what}_${selections.how}_${selections.do}`;
+                    const data = TOOLS_DATA[combinationKey];
+                    
+                    if (!data) {
+                        throw new Error('해당 조합의 데이터를 찾을 수 없습니다.');
+                    }
+                    
+                    // 결과 표시
+                    updateDialogue(dialogues.found, 'result');
+                    showResults(data.tools);
+                    
+                } catch (error) {
+                    updateDialogue('앗, 도구를 찾는 중에 문제가 발생했어요...', 'curious');
+                    console.error('Error loading tools:', error);
+                }
+            }, 2000);
+        }
+        
+        // 결과 표시
+        function showResults(tools) {
+            const container = document.getElementById('results-container');
+            container.innerHTML = '';
+            container.style.display = 'block';
+            
+            // 그리드 컨테이너 생성
+            const grid = document.createElement('div');
+            grid.className = 'results-grid';
+            
+            // 최대 3개만 표시
+            const displayTools = tools.slice(0, 3);
+            
+            displayTools.forEach((tool, index) => {
+                const card = document.createElement('div');
+                card.className = 'result-card';
+                card.style.animationDelay = `${index * 0.2}s`;
+                card.innerHTML = `
+                    <div class="tool-info">
+                        <div class="tool-name">${index + 1}. ${tool.name}</div>
+                        <div class="tool-desc">${tool.description}</div>
+                    </div>
+                    <div class="tool-meta">
+                        <span>⭐ ${tool.rating.toFixed(1)}</span>
+                        <span>👥 ${tool.visits.toLocaleString()}</span>
+                        <span>💰 ${tool.pricing === 'free' ? '무료' : tool.pricing}</span>
+                    </div>
+                    <a href="${tool.url}" target="_blank" class="tool-link">
+                        바로가기 →
+                    </a>
+                `;
+                grid.appendChild(card);
+            });
+            
+            container.appendChild(grid);
+        }
+        
+        // 선택 초기화
+        function resetSelections() {
+            // 선택 초기화
+            selections = {
+                what: null,
+                how: null,
+                do: null
+            };
+            currentStep = 'what';
+            
+            // 드롭박스 초기화
+            document.getElementById('what-select').value = '';
+            document.getElementById('how-select').value = '';
+            document.getElementById('do-select').value = '';
+            
+            // 두 번째, 세 번째 드롭박스 숨기기 및 비활성화
+            document.getElementById('how-dropdown').classList.remove('visible');
+            document.getElementById('do-dropdown').classList.remove('visible');
+            document.getElementById('how-select').disabled = true;
+            document.getElementById('do-select').disabled = true;
+            
+            // 드롭박스 컨테이너 다시 표시
+            document.querySelector('.dropdown-container').style.display = 'flex';
+            
+            // 결과 숨기기
+            document.getElementById('results-container').style.display = 'none';
+            
+            // 리셋 버튼 숨기기
+            document.getElementById('reset-button').style.display = 'none';
+            
+            // 캐릭터 상태 초기화
+            changeCharacterState('idle');
+            
+            // 초기 대화 표시
+            updateDialogue(dialogues.greeting, 'idle');
+        }
+        
+        // 드롭박스 이벤트 리스너 설정
+        function initializeDropdowns() {
+            // What 드롭박스 이벤트
+            document.getElementById('what-select').addEventListener('change', (e) => {
+                handleDropdownChange('what', e.target.value);
+            });
+            
+            // How 드롭박스 이벤트
+            document.getElementById('how-select').addEventListener('change', (e) => {
+                handleDropdownChange('how', e.target.value);
+            });
+            
+            // Do 드롭박스 이벤트
+            document.getElementById('do-select').addEventListener('change', (e) => {
+                handleDropdownChange('do', e.target.value);
+            });
+        }
+        
+        // 초기화
+        document.addEventListener('DOMContentLoaded', () => {
+            populateDropdown('what');
+            initializeDropdowns();
+        });
+    </script>
 </body>
 </html>

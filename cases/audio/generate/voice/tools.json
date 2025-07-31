@@ -1,0 +1,46 @@
+{
+  "combination": {
+    "what": "audio",
+    "how": "generate",
+    "do": "voice"
+  },
+  "tools": [
+    {
+      "id": "voice-ai",
+      "name": "Voice AI",
+      "description": "Voice AI - 코딩과 개발을 도와주는 AI 도구입니다",
+      "url": "https://link.xsolla.com/RWxtqm6I",
+      "category": "audio",
+      "pricing": "freemium",
+      "rating": 0,
+      "visits": 1874264,
+      "tags": "[\"AI Voice Changer\", \"AI Voice Cloning\", \"AI Voice Generator\", \"AI Celebrity Voice Generator\", \"AI Developer Tools\", \"AI Games\", \"AI Speech Synthesis\"]",
+      "specialty_score": 1101.874264
+    },
+    {
+      "id": "finevoice",
+      "name": "FineVoice",
+      "description": "FineVoice - 오디오 및 음성 처리 도구입니다",
+      "url": "https://www.fineshare.com/ai-voice-generator",
+      "category": "audio",
+      "pricing": "freemium",
+      "rating": 0,
+      "visits": 1429077,
+      "tags": "[\"AI Voice Generator\", \"AI Voice Cloning\", \"AI Text-to-Speech\", \"AI Song Generator\", \"AI Voice Changer\", \"AI Voice Over\"]",
+      "specialty_score": 1101.429077
+    },
+    {
+      "id": "elevenlabs-io",
+      "name": "ElevenLabs",
+      "description": "ElevenLabs - 오디오 및 음성 처리 도구입니다",
+      "url": "https://elevenlabs.io",
+      "category": "audio",
+      "pricing": "freemium",
+      "rating": 0,
+      "visits": 25447979,
+      "tags": "[\"AI Voice Generator\",\"AI Text-to-Speech\",\"AI API\",\"AI Voice Cloning\",\"AI Dubbing\",\"AI Speech-to-Text\",\"AI Voice Over\",\"AI Voice Changer\",\"AI Sound Effect Generator\",\"AI Voice Assistants\",\"AI Call Center\",\"high_priority\"]",
+      "specialty_score": 1025.447979
+    }
+  ],
+  "generated_at": "2025-07-31T00:22:47.847314"
+}

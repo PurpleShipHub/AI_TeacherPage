@@ -1,0 +1,46 @@
+{
+  "combination": {
+    "what": "video",
+    "how": "subtitle",
+    "do": "captions"
+  },
+  "tools": [
+    {
+      "id": "capcut-com",
+      "name": "CapCut",
+      "description": "CapCut - 비디오 생성 및 편집 도구입니다",
+      "url": "https://capcut.com",
+      "category": "video",
+      "pricing": "freemium",
+      "rating": 0,
+      "visits": 42915152,
+      "tags": "[\"AI Video Editor\", \"AI Text-to-Speech\", \"AI Subtitle Generator\", \"AI Background Remover\", \"AI Speech-to-Text\"]",
+      "specialty_score": 692.915152
+    },
+    {
+      "id": "veed-io",
+      "name": "VEED.IO",
+      "description": "VEED.IO - 비디오 생성 및 편집 도구입니다",
+      "url": "https://veed.io",
+      "category": "video",
+      "pricing": "freemium",
+      "rating": 0,
+      "visits": 12220073,
+      "tags": "[\"AI Video Editor\", \"AI Subtitle Generator\", \"AI Video Generator\", \"AI Voice Generator\"]",
+      "specialty_score": 662.220073
+    },
+    {
+      "id": "clideo",
+      "name": "Clideo",
+      "description": "Clideo - 비디오 생성 및 편집 도구입니다",
+      "url": "https://clideo.com",
+      "category": "video",
+      "pricing": "freemium",
+      "rating": 0,
+      "visits": 7223741,
+      "tags": "[\"AI Video Editor\", \"AI Subtitle Generator\", \"AI Video Translator\", \"AI Text-to-Speech\", \"AI GIF Generator\", \"AI Video Recording\"]",
+      "specialty_score": 657.223741
+    }
+  ],
+  "generated_at": "2025-07-31T00:22:47.816975"
+}

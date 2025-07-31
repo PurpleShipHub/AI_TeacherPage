@@ -1,0 +1,46 @@
+{
+  "combination": {
+    "what": "code",
+    "how": "generate",
+    "do": "script"
+  },
+  "tools": [
+    {
+      "id": "builder-io",
+      "name": "Builder IO",
+      "description": "Builder IO - 코딩과 개발을 도와주는 AI 도구입니다",
+      "url": "https://www.builder.io",
+      "category": "coding",
+      "pricing": "unknown",
+      "rating": 0,
+      "visits": 1148137,
+      "tags": "[\"AI Code Generator\", \"No-Code&Low-Code\", \"AI Website Builder\", \"AI App Builder\", \"AI Copilot\", \"AI Developer Tools\"]",
+      "specialty_score": 601.148137
+    },
+    {
+      "id": "clickworker-com",
+      "name": "clickworker",
+      "description": "clickworker - 대화형 AI 비서로 질문에 답하고 다양한 작업을 도와줍니다",
+      "url": "https://clickworker.com",
+      "category": "developer",
+      "pricing": "unknown",
+      "rating": 0,
+      "visits": 1862431,
+      "tags": "[\"AI Developer Tools\", \"Large Language Models (LLMs)\", \"AI Face Recognition\", \"AI Transcription\", \"AI Image Recognition\", \"AI Speech Recognition\", \"AI OCR\", \"AI Search Engine\", \"AI Voice Assistants\", \"AI Chatbot\", \"AI Medical Diagnosis\"]",
+      "specialty_score": 101.862431
+    },
+    {
+      "id": "google-ai-studio",
+      "name": "Google AI Studio",
+      "description": "Google AI Studio - 코딩과 개발을 도와주는 AI 도구입니다",
+      "url": "https://aistudio.google.com",
+      "category": "developer",
+      "pricing": "free",
+      "rating": 0,
+      "visits": 84228844,
+      "tags": "[\"AI Developer Tools\", \"AI API\", \"AI Models\", \"Large Language Models (LLMs)\"]",
+      "specialty_score": 84.228844
+    }
+  ],
+  "generated_at": "2025-07-31T00:22:48.043496"
+}

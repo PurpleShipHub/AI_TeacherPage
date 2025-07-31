@@ -1,0 +1,46 @@
+{
+  "combination": {
+    "what": "video",
+    "how": "generate",
+    "do": "video"
+  },
+  "tools": [
+    {
+      "id": "pollo-ai-1",
+      "name": "Pollo.ai",
+      "description": "Pollo.ai - 비디오 생성 및 편집 도구입니다",
+      "url": "https://pollo.ai",
+      "category": "video",
+      "pricing": "freemium",
+      "rating": 0,
+      "visits": 5095592,
+      "tags": "[\"AI Video Generator\", \"AI Image Generator\", \"Text to Video\", \"Image to Video\", \"Text to Image\", \"Image to Image\", \"AI Animation Generator\", \"Video to Video\", \"AI Video Enhancer\", \"AI Image Enhancer\", \"AI Art Generator\", \"AI Background Remover\", \"AI Cartoon Generator\", \"AI Video Upscaler\", \"AI Anime Generator\", \"AI Photo Editor\", \"AI Face Swap Video\", \"AI Lip Sync Generator\", \"Object Remover AI\", \"AI Image Upscaler\", \"AI Models\"]",
+      "specialty_score": 1305.095592
+    },
+    {
+      "id": "invideo",
+      "name": "InVideo",
+      "description": "InVideo - 비디오 생성 및 편집 도구입니다",
+      "url": "https://invideo.sjv.io/zN76Mm",
+      "category": "video",
+      "pricing": "freemium",
+      "rating": 0,
+      "visits": 8701901,
+      "tags": "[\"AI Video Editor\", \"AI Video Generator\", \"Text to Video\", \"AI Text-to-Speech\", \"AI Youtube Video Maker\", \"AI Avatar Generator\"]",
+      "specialty_score": 1258.701901
+    },
+    {
+      "id": "novi-ai",
+      "name": "Novi AI",
+      "description": "Novi AI - 비디오 생성 및 편집 도구입니다",
+      "url": "https://www.imyfone.com/ai-video-generator",
+      "category": "video",
+      "pricing": "subscription",
+      "rating": 0,
+      "visits": 7213045,
+      "tags": "[\"AI Video Generator\", \"Text to Video\", \"Script To Video AI Generator\", \"AI Animated Video\", \"AI Story Generator\", \"AI Video Editor\"]",
+      "specialty_score": 1007.213045
+    }
+  ],
+  "generated_at": "2025-07-31T00:22:47.637457"
+}

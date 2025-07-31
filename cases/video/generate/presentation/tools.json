@@ -1,0 +1,46 @@
+{
+  "combination": {
+    "what": "video",
+    "how": "generate",
+    "do": "presentation"
+  },
+  "tools": [
+    {
+      "id": "invideo",
+      "name": "InVideo",
+      "description": "InVideo - 비디오 생성 및 편집 도구입니다",
+      "url": "https://invideo.sjv.io/zN76Mm",
+      "category": "video",
+      "pricing": "freemium",
+      "rating": 0,
+      "visits": 8701901,
+      "tags": "[\"AI Video Editor\", \"AI Video Generator\", \"Text to Video\", \"AI Text-to-Speech\", \"AI Youtube Video Maker\", \"AI Avatar Generator\"]",
+      "specialty_score": 658.701901
+    },
+    {
+      "id": "capcut-com",
+      "name": "CapCut",
+      "description": "CapCut - 비디오 생성 및 편집 도구입니다",
+      "url": "https://capcut.com",
+      "category": "video",
+      "pricing": "freemium",
+      "rating": 0,
+      "visits": 42915152,
+      "tags": "[\"AI Video Editor\", \"AI Text-to-Speech\", \"AI Subtitle Generator\", \"AI Background Remover\", \"AI Speech-to-Text\"]",
+      "specialty_score": 542.915152
+    },
+    {
+      "id": "klingai-com",
+      "name": "klingai.com",
+      "description": "klingai.com - 비디오 생성 및 편집 도구입니다",
+      "url": "https://klingai.com",
+      "category": "video",
+      "pricing": "unknown",
+      "rating": 0,
+      "visits": 15411174,
+      "tags": "[\"AI Video Generator\", \"AI Image Generator\", \"AI API\", \"Image to Video\", \"Script To Video AI Generator\", \"Text to Image\", \"Text to Video\", \"AI Sound Effect Generator\"]",
+      "specialty_score": 515.411174
+    }
+  ],
+  "generated_at": "2025-07-31T00:22:47.704041"
+}

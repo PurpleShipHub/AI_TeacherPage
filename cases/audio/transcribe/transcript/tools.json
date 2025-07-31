@@ -1,0 +1,46 @@
+{
+  "combination": {
+    "what": "audio",
+    "how": "transcribe",
+    "do": "transcript"
+  },
+  "tools": [
+    {
+      "id": "elevenlabs-io",
+      "name": "ElevenLabs",
+      "description": "ElevenLabs - 오디오 및 음성 처리 도구입니다",
+      "url": "https://elevenlabs.io",
+      "category": "audio",
+      "pricing": "freemium",
+      "rating": 0,
+      "visits": 25447979,
+      "tags": "[\"AI Voice Generator\",\"AI Text-to-Speech\",\"AI API\",\"AI Voice Cloning\",\"AI Dubbing\",\"AI Speech-to-Text\",\"AI Voice Over\",\"AI Voice Changer\",\"AI Sound Effect Generator\",\"AI Voice Assistants\",\"AI Call Center\",\"high_priority\"]",
+      "specialty_score": 525.447979
+    },
+    {
+      "id": "blahget",
+      "name": "Blahget",
+      "description": "Blahget - 대화형 AI 비서로 질문에 답하고 다양한 작업을 도와줍니다",
+      "url": "https://itunes.apple.com/app/id6473291180",
+      "category": "audio",
+      "pricing": "freemium",
+      "rating": 0,
+      "visits": 25290784,
+      "tags": "[\"AI Voice Assistants\", \"AI Accounting\", \"AI Speech Recognition\", \"AI Assistant\", \"AI For Finance\", \"AI Chatbot\", \"AI Speech-to-Text\"]",
+      "specialty_score": 525.290784
+    },
+    {
+      "id": "roxy",
+      "name": "Roxy",
+      "description": "Roxy - 대화형 AI 비서로 질문에 답하고 다양한 작업을 도와줍니다",
+      "url": "https://itunes.apple.com/app/id6737482921",
+      "category": "audio",
+      "pricing": "freemium",
+      "rating": 0,
+      "visits": 24304837,
+      "tags": "[\"AI Voice Assistants\", \"AI Assistant\", \"AI Chatbot\", \"AI Language Learning\", \"AI Translate\"]",
+      "specialty_score": 524.304837
+    }
+  ],
+  "generated_at": "2025-07-31T00:22:47.892002"
+}

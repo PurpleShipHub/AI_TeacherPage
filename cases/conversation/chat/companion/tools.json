@@ -1,0 +1,46 @@
+{
+  "combination": {
+    "what": "conversation",
+    "how": "chat",
+    "do": "companion"
+  },
+  "tools": [
+    {
+      "id": "spicychat-ai",
+      "name": "SpicyChat AI",
+      "description": "SpicyChat AI - 대화형 AI 비서로 질문에 답하고 다양한 작업을 도와줍니다",
+      "url": "https://spicychat.ai",
+      "category": "chatbot",
+      "pricing": "freemium",
+      "rating": 0,
+      "visits": 47165886,
+      "tags": "[\"AI Chatbot\", \"AI Character\", \"NSFW\"]",
+      "specialty_score": 497.165886
+    },
+    {
+      "id": "offline-chat-private-ai",
+      "name": "Offline Chat: Private AI",
+      "description": "Offline Chat: Private AI - 대화형 AI 비서로 질문에 답하고 다양한 작업을 도와줍니다",
+      "url": "https://itunes.apple.com/app/id6474077941",
+      "category": "chatbot",
+      "pricing": "subscription",
+      "rating": 0,
+      "visits": 27403218,
+      "tags": "[\"AI Chatbot\", \"Large Language Models (LLMs)\", \"AI PDF\", \"AI Productivity Tools\"]",
+      "specialty_score": 477.403218
+    },
+    {
+      "id": "yeschat",
+      "name": "YesChat",
+      "description": "YesChat - 대화형 AI 비서로 질문에 답하고 다양한 작업을 도와줍니다",
+      "url": "https://yeschat.ai",
+      "category": "chatbot",
+      "pricing": "free",
+      "rating": 0,
+      "visits": 3373805,
+      "tags": "[\"AI Chatbot\", \"Large Language Models (LLMs)\", \"AI Image Generator\", \"AI Assistant\"]",
+      "specialty_score": 453.373805
+    }
+  ],
+  "generated_at": "2025-07-31T00:22:48.442871"
+}

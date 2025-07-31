@@ -1,0 +1,21 @@
+{
+  "build_info": {
+    "generated_at": "2025-07-31T00:22:49.184397",
+    "builder_version": "1.0.0",
+    "method": "3단 논법 (What-How-Do)"
+  },
+  "statistics": {
+    "total_combinations": 106,
+    "total_tools_selected": 318,
+    "avg_tools_per_combination": 3.0,
+    "structure": {
+      "what_options": 9,
+      "total_combinations": 106,
+      "hierarchy": "What → How → Do (동적 구조)"
+    }
+  },
+  "folder_structure": {
+    "root": "output/",
+    "pattern": "output/cases/{what}/{how}/{do}/tools.json"
+  }
+}

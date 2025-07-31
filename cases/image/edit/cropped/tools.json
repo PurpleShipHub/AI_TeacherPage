@@ -1,0 +1,46 @@
+{
+  "combination": {
+    "what": "image",
+    "how": "edit",
+    "do": "cropped"
+  },
+  "tools": [
+    {
+      "id": "easeus-software",
+      "name": "EaseUS Software",
+      "description": "EaseUS Software - 이미지 생성 및 편집 도구입니다",
+      "url": "https://www.easeus.com",
+      "category": "image",
+      "pricing": "freemium",
+      "rating": 0,
+      "visits": 8338943,
+      "tags": "[\"AI Image Generator\", \"AI Photo Editor\", \"AI Vocal Remover\", \"AI Voice Changer\", \"AI PDF\", \"AI Voice Over\", \"AI Video Editor\", \"AI Photo Restoration\", \"AI Video Enhancer\"]",
+      "specialty_score": 958.338943
+    },
+    {
+      "id": "shutterstock-com",
+      "name": "Shutterstock",
+      "description": "Shutterstock - 이미지 생성 및 편집 도구입니다",
+      "url": "https://shutterstock.com",
+      "category": "image",
+      "pricing": "unknown",
+      "rating": 0,
+      "visits": 59394323,
+      "tags": "[\"AI Image Generator\", \"AI Design Generator\", \"AI Photo Editor\"]",
+      "specialty_score": 709.394323
+    },
+    {
+      "id": "leonardo-ai",
+      "name": "Leonardo.Ai",
+      "description": "Leonardo.Ai - 이미지 생성 및 편집 도구입니다",
+      "url": "https://leonardo.ai",
+      "category": "image",
+      "pricing": "freemium",
+      "rating": 0,
+      "visits": 14294963,
+      "tags": "[\"AI Image Generator\", \"AI Art Generator\", \"Text to Image\", \"AI Models\", \"AI Texture Generator\", \"AI Photo Editor\", \"AI Illustration Generator\", \"AI Character\"]",
+      "specialty_score": 664.294963
+    }
+  ],
+  "generated_at": "2025-07-31T00:22:47.461116"
+}

@@ -1,0 +1,46 @@
+{
+  "combination": {
+    "what": "audio",
+    "how": "generate",
+    "do": "music"
+  },
+  "tools": [
+    {
+      "id": "udio-ai-make-your-music",
+      "name": "Udio AI | Make your music",
+      "description": "Udio AI | Make your music - 오디오 및 음성 처리 도구입니다",
+      "url": "https://www.udio.com",
+      "category": "audio",
+      "pricing": "unknown",
+      "rating": 0,
+      "visits": 2829109,
+      "tags": "[\"AI Music Generator\", \"AI Song Generator\"]",
+      "specialty_score": 1102.829109
+    },
+    {
+      "id": "riffusion",
+      "name": "Riffusion",
+      "description": "Riffusion - 오디오 및 음성 처리 도구입니다",
+      "url": "https://www.riffusion.com",
+      "category": "audio",
+      "pricing": "freemium",
+      "rating": 0,
+      "visits": 4295784,
+      "tags": "[\"AI Music Generator\", \"AI Song Generator\", \"AI Text-to-Music\", \"AI Stems Splitter\", \"AI Song Remixer\"]",
+      "specialty_score": 704.295784
+    },
+    {
+      "id": "topmediai",
+      "name": "Topmediai",
+      "description": "Topmediai - 오디오 및 음성 처리 도구입니다",
+      "url": "https://www.topmediai.com",
+      "category": "audio",
+      "pricing": "unknown",
+      "rating": 0,
+      "visits": 1641745,
+      "tags": "[\"AI Voice Over\", \"AI Music Generator\", \"AI Text-to-Speech\", \"AI Voice Cloning\", \"AI Song Cover\", \"AI Song Generator\", \"AI Dubbing\", \"AI Audio Enhancer\", \"AI Voice Changer\", \"AI Vocal Remover\", \"AI API\", \"Text to Video\", \"AI Celebrity Voice Generator\", \"AI Music Video Generator\", \"AI Rap Generator\", \"AI Lyrics Generator\"]",
+      "specialty_score": 701.641745
+    }
+  ],
+  "generated_at": "2025-07-31T00:22:47.832164"
+}

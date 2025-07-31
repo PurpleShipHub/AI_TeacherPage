@@ -1,0 +1,46 @@
+{
+  "combination": {
+    "what": "document",
+    "how": "generate",
+    "do": "report"
+  },
+  "tools": [
+    {
+      "id": "usemotion-com",
+      "name": "Motion",
+      "description": "Motion - 대화형 AI 비서로 질문에 답하고 다양한 작업을 도와줍니다",
+      "url": "https://get.usemotion.com/xl0klamesvu6",
+      "category": "productivity",
+      "pricing": "subscription",
+      "rating": 0,
+      "visits": 1757139,
+      "tags": "[\"AI Productivity Tools\", \"AI Assistant\", \"AI Task Management\", \"AI Calendar\", \"AI Meeting Assistant\", \"AI Note Taker\", \"AI Agent\", \"AI Workflow\", \"AI Documents Generator\", \"AI Scheduling\", \"AI Report Generator\"]",
+      "specialty_score": 101.757139
+    },
+    {
+      "id": "notion-ai",
+      "name": "Notion AI",
+      "description": "Notion AI - 대화형 AI 비서로 질문에 답하고 다양한 작업을 도와줍니다",
+      "url": "https://affiliate.notion.so/ffsd1156ei0l",
+      "category": "productivity",
+      "pricing": "freemium",
+      "rating": 0,
+      "visits": 155646429,
+      "tags": "[\"AI Productivity Tools\",\"AI Assistant\",\"AI Knowledge Base\",\"AI Writing Assistants\",\"AI Project Management\",\"AI Meeting Assistant\",\"AI Workflow\",\"AI Note Taker\",\"AI Calendar\",\"AI Email Assistant\",\"AI Search Engine\",\"high_priority\"]",
+      "specialty_score": 100
+    },
+    {
+      "id": "grammarly",
+      "name": "Grammarly",
+      "description": "Grammarly - AI 기반 도구입니다",
+      "url": "https://www.grammarly.com",
+      "category": "writing",
+      "pricing": "freemium",
+      "rating": 0,
+      "visits": 46381967,
+      "tags": "[\"AI Writing Assistants\", \"AI Writing\", \"AI Grammar Checker\", \"AI Text Generator\"]",
+      "specialty_score": 46.381967
+    }
+  ],
+  "generated_at": "2025-07-31T00:22:47.140773"
+}

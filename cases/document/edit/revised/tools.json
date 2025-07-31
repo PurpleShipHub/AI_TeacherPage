@@ -1,0 +1,46 @@
+{
+  "combination": {
+    "what": "document",
+    "how": "edit",
+    "do": "revised"
+  },
+  "tools": [
+    {
+      "id": "wondershare-com",
+      "name": "wondershare.com",
+      "description": "wondershare.com - 업무 생산성 향상 도구입니다",
+      "url": "https://wondershare.com",
+      "category": "productivity",
+      "pricing": "freemium",
+      "rating": 0,
+      "visits": 10451034,
+      "tags": "[\"AI Productivity Tools\", \"AI Video Generator\", \"AI Video Editor\", \"AI PDF\", \"Text to Video\", \"Text to Image\", \"AI Music Generator\", \"AI Sound Effect Generator\", \"AI Photo Restoration\", \"AI PDF Editor\", \"AI News\", \"AI Image Enhancer\", \"AI Caption Generator\"]",
+      "specialty_score": 310.451034
+    },
+    {
+      "id": "tinywow",
+      "name": "TinyWow",
+      "description": "TinyWow - 업무 생산성 향상 도구입니다",
+      "url": "https://tinywow.com",
+      "category": "productivity",
+      "pricing": "freemium",
+      "rating": 0,
+      "visits": 2163944,
+      "tags": "[\"AI Productivity Tools\", \"AI Writing\", \"AI Image Generator\", \"AI PDF Editor\", \"AI Background Remover\"]",
+      "specialty_score": 152.163944
+    },
+    {
+      "id": "notion-ai",
+      "name": "Notion AI",
+      "description": "Notion AI - 대화형 AI 비서로 질문에 답하고 다양한 작업을 도와줍니다",
+      "url": "https://affiliate.notion.so/ffsd1156ei0l",
+      "category": "productivity",
+      "pricing": "freemium",
+      "rating": 0,
+      "visits": 155646429,
+      "tags": "[\"AI Productivity Tools\",\"AI Assistant\",\"AI Knowledge Base\",\"AI Writing Assistants\",\"AI Project Management\",\"AI Meeting Assistant\",\"AI Workflow\",\"AI Note Taker\",\"AI Calendar\",\"AI Email Assistant\",\"AI Search Engine\",\"high_priority\"]",
+      "specialty_score": 100
+    }
+  ],
+  "generated_at": "2025-07-31T00:22:47.201869"
+}

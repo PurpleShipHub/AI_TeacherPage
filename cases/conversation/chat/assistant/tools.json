@@ -1,0 +1,46 @@
+{
+  "combination": {
+    "what": "conversation",
+    "how": "chat",
+    "do": "assistant"
+  },
+  "tools": [
+    {
+      "id": "yeschat",
+      "name": "YesChat",
+      "description": "YesChat - 대화형 AI 비서로 질문에 답하고 다양한 작업을 도와줍니다",
+      "url": "https://yeschat.ai",
+      "category": "chatbot",
+      "pricing": "free",
+      "rating": 0,
+      "visits": 3373805,
+      "tags": "[\"AI Chatbot\", \"Large Language Models (LLMs)\", \"AI Image Generator\", \"AI Assistant\"]",
+      "specialty_score": 553.373805
+    },
+    {
+      "id": "t3-chat",
+      "name": "T3 Chat",
+      "description": "T3 Chat - 대화형 AI 비서로 질문에 답하고 다양한 작업을 도와줍니다",
+      "url": "https://t3.chat",
+      "category": "chatbot",
+      "pricing": "subscription",
+      "rating": 0,
+      "visits": 1940360,
+      "tags": "[\"AI Chatbot\", \"AI Assistant\", \"AI Models\"]",
+      "specialty_score": 551.94036
+    },
+    {
+      "id": "chatglm-cn",
+      "name": "chatglm.cn",
+      "description": "chatglm.cn - 대화형 AI 비서로 질문에 답하고 다양한 작업을 도와줍니다",
+      "url": "https://chatglm.cn",
+      "category": "chatbot",
+      "pricing": "free",
+      "rating": 0,
+      "visits": 1805453,
+      "tags": "[\"AI Chatbot\", \"Large Language Models (LLMs)\", \"AI Image Generator\", \"AI Video Generator\", \"AI Avatar Generator\", \"AI Logo Generator\", \"AI Code Assistant\", \"AI PPT Maker\", \"Text to Video\", \"Image to Video\", \"AI Character\", \"AI API\", \"AI Agent\", \"Open Source AI Models\", \"AI Search Engine\", \"AI Reader\", \"AI For Data Analytics\"]",
+      "specialty_score": 551.8054529999999
+    }
+  ],
+  "generated_at": "2025-07-31T00:22:48.428251"
+}

@@ -1,0 +1,46 @@
+{
+  "combination": {
+    "what": "conversation",
+    "how": "roleplay",
+    "do": "fictional"
+  },
+  "tools": [
+    {
+      "id": "joyland",
+      "name": "Joyland",
+      "description": "Joyland - 대화형 AI 비서로 질문에 답하고 다양한 작업을 도와줍니다",
+      "url": "https://joyland.ai",
+      "category": "chatbot",
+      "pricing": "free",
+      "rating": 0,
+      "visits": 5449947,
+      "tags": "[\"AI Chatbot\", \"AI Character\", \"AI Roleplay\", \"NSFW\"]",
+      "specialty_score": 155.449947
+    },
+    {
+      "id": "babe-chat-ai",
+      "name": "Babe Chat AI",
+      "description": "Babe Chat AI - 대화형 AI 비서로 질문에 답하고 다양한 작업을 도와줍니다",
+      "url": "https://babechat.ai",
+      "category": "chatbot",
+      "pricing": "unknown",
+      "rating": 0,
+      "visits": 1823609,
+      "tags": "[\"AI Chatbot\", \"AI Character\", \"AI Girlfriend\", \"AI Roleplay\"]",
+      "specialty_score": 151.823609
+    },
+    {
+      "id": "spicychat-ai",
+      "name": "SpicyChat AI",
+      "description": "SpicyChat AI - 대화형 AI 비서로 질문에 답하고 다양한 작업을 도와줍니다",
+      "url": "https://spicychat.ai",
+      "category": "chatbot",
+      "pricing": "freemium",
+      "rating": 0,
+      "visits": 47165886,
+      "tags": "[\"AI Chatbot\", \"AI Character\", \"NSFW\"]",
+      "specialty_score": 47.165886
+    }
+  ],
+  "generated_at": "2025-07-31T00:22:48.530306"
+}

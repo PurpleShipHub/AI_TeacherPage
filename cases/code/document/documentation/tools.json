@@ -1,0 +1,46 @@
+{
+  "combination": {
+    "what": "code",
+    "how": "document",
+    "do": "documentation"
+  },
+  "tools": [
+    {
+      "id": "google-ai-studio",
+      "name": "Google AI Studio",
+      "description": "Google AI Studio - 코딩과 개발을 도와주는 AI 도구입니다",
+      "url": "https://aistudio.google.com",
+      "category": "developer",
+      "pricing": "free",
+      "rating": 0,
+      "visits": 84228844,
+      "tags": "[\"AI Developer Tools\", \"AI API\", \"AI Models\", \"Large Language Models (LLMs)\"]",
+      "specialty_score": 84.228844
+    },
+    {
+      "id": "bitbucket",
+      "name": "Bitbucket",
+      "description": "Bitbucket - 코딩과 개발을 도와주는 AI 도구입니다",
+      "url": "https://bitbucket.org",
+      "category": "developer",
+      "pricing": "freemium",
+      "rating": 0,
+      "visits": 12531648,
+      "tags": "[\"AI Developer Tools\", \"AI Code Assistant\", \"AI Code Review\", \"AI Summarizer\"]",
+      "specialty_score": 12.531648
+    },
+    {
+      "id": "cursor-sh",
+      "name": "cursor.sh",
+      "description": "cursor.sh - 코딩과 개발을 도와주는 AI 도구입니다",
+      "url": "https://cursor.sh",
+      "category": "coding",
+      "pricing": "freemium",
+      "rating": 0,
+      "visits": 5980124,
+      "tags": "[\"AI Code Assistant\", \"AI Copilot\", \"AI Code Generator\", \"AI Developer Tools\", \"AI Productivity Tools\"]",
+      "specialty_score": 5.980124
+    }
+  ],
+  "generated_at": "2025-07-31T00:22:48.105144"
+}

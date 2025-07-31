@@ -1,0 +1,46 @@
+{
+  "combination": {
+    "what": "audio",
+    "how": "generate",
+    "do": "sound"
+  },
+  "tools": [
+    {
+      "id": "udio-ai-make-your-music",
+      "name": "Udio AI | Make your music",
+      "description": "Udio AI | Make your music - 오디오 및 음성 처리 도구입니다",
+      "url": "https://www.udio.com",
+      "category": "audio",
+      "pricing": "unknown",
+      "rating": 0,
+      "visits": 2829109,
+      "tags": "[\"AI Music Generator\", \"AI Song Generator\"]",
+      "specialty_score": 802.829109
+    },
+    {
+      "id": "elevenlabs-io",
+      "name": "ElevenLabs",
+      "description": "ElevenLabs - 오디오 및 음성 처리 도구입니다",
+      "url": "https://elevenlabs.io",
+      "category": "audio",
+      "pricing": "freemium",
+      "rating": 0,
+      "visits": 25447979,
+      "tags": "[\"AI Voice Generator\",\"AI Text-to-Speech\",\"AI API\",\"AI Voice Cloning\",\"AI Dubbing\",\"AI Speech-to-Text\",\"AI Voice Over\",\"AI Voice Changer\",\"AI Sound Effect Generator\",\"AI Voice Assistants\",\"AI Call Center\",\"high_priority\"]",
+      "specialty_score": 625.447979
+    },
+    {
+      "id": "voicemod",
+      "name": "Voicemod",
+      "description": "Voicemod - 오디오 및 음성 처리 도구입니다",
+      "url": "https://www.voicemod.net",
+      "category": "audio",
+      "pricing": "freemium",
+      "rating": 0,
+      "visits": 4144652,
+      "tags": "[\"AI Voice Changer\", \"AI Voice Generator\", \"AI Sound Effect Generator\", \"AI Text-to-Music\"]",
+      "specialty_score": 604.144652
+    }
+  ],
+  "generated_at": "2025-07-31T00:22:47.862274"
+}

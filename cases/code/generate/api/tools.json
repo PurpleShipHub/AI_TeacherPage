@@ -1,0 +1,46 @@
+{
+  "combination": {
+    "what": "code",
+    "how": "generate",
+    "do": "api"
+  },
+  "tools": [
+    {
+      "id": "builder-io",
+      "name": "Builder IO",
+      "description": "Builder IO - 코딩과 개발을 도와주는 AI 도구입니다",
+      "url": "https://www.builder.io",
+      "category": "coding",
+      "pricing": "unknown",
+      "rating": 0,
+      "visits": 1148137,
+      "tags": "[\"AI Code Generator\", \"No-Code&Low-Code\", \"AI Website Builder\", \"AI App Builder\", \"AI Copilot\", \"AI Developer Tools\"]",
+      "specialty_score": 601.148137
+    },
+    {
+      "id": "google-ai-studio",
+      "name": "Google AI Studio",
+      "description": "Google AI Studio - 코딩과 개발을 도와주는 AI 도구입니다",
+      "url": "https://aistudio.google.com",
+      "category": "developer",
+      "pricing": "free",
+      "rating": 0,
+      "visits": 84228844,
+      "tags": "[\"AI Developer Tools\", \"AI API\", \"AI Models\", \"Large Language Models (LLMs)\"]",
+      "specialty_score": 184.22884399999998
+    },
+    {
+      "id": "fal-ai",
+      "name": "fal.ai",
+      "description": "fal.ai - 코딩과 개발을 도와주는 AI 도구입니다",
+      "url": "https://fal.ai",
+      "category": "developer",
+      "pricing": "subscription",
+      "rating": 0,
+      "visits": 1837273,
+      "tags": "[\"AI Developer Tools\", \"AI API\", \"AI Models\", \"AI Image Generator\", \"AI Video Generator\", \"Text to Image\", \"Image to Video\"]",
+      "specialty_score": 101.837273
+    }
+  ],
+  "generated_at": "2025-07-31T00:22:48.028124"
+}

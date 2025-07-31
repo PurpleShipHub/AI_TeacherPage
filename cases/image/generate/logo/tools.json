@@ -1,0 +1,46 @@
+{
+  "combination": {
+    "what": "image",
+    "how": "generate",
+    "do": "logo"
+  },
+  "tools": [
+    {
+      "id": "krea",
+      "name": "Krea",
+      "description": "Krea - 이미지 생성 및 편집 도구입니다",
+      "url": "https://www.krea.ai",
+      "category": "image",
+      "pricing": "freemium",
+      "rating": 0,
+      "visits": 5622047,
+      "tags": "[\"AI Image Generator\", \"AI Video Generator\", \"AI Image Enhancer\", \"AI Image Upscaler\", \"AI Video Enhancer\", \"AI Logo Generator\", \"AI Pattern Generator\"]",
+      "specialty_score": 605.622047
+    },
+    {
+      "id": "freepik-ai-image-generator",
+      "name": "Freepik AI Image Generator",
+      "description": "Freepik AI Image Generator - 이미지 생성 및 편집 도구입니다",
+      "url": "https://www.freepik.com/ai/image-generator",
+      "category": "image",
+      "pricing": "freemium",
+      "rating": 0,
+      "visits": 100331203,
+      "tags": "[\"AI Image Generator\", \"Text to Image\", \"AI Image Upscaler\", \"AI Realistic Image Generator\"]",
+      "specialty_score": 600
+    },
+    {
+      "id": "shutterstock-com",
+      "name": "Shutterstock",
+      "description": "Shutterstock - 이미지 생성 및 편집 도구입니다",
+      "url": "https://shutterstock.com",
+      "category": "image",
+      "pricing": "unknown",
+      "rating": 0,
+      "visits": 59394323,
+      "tags": "[\"AI Image Generator\", \"AI Design Generator\", \"AI Photo Editor\"]",
+      "specialty_score": 559.394323
+    }
+  ],
+  "generated_at": "2025-07-31T00:22:47.368743"
+}

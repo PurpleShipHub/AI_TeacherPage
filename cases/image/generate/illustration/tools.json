@@ -1,0 +1,46 @@
+{
+  "combination": {
+    "what": "image",
+    "how": "generate",
+    "do": "illustration"
+  },
+  "tools": [
+    {
+      "id": "leonardo-ai",
+      "name": "Leonardo.Ai",
+      "description": "Leonardo.Ai - 이미지 생성 및 편집 도구입니다",
+      "url": "https://leonardo.ai",
+      "category": "image",
+      "pricing": "freemium",
+      "rating": 0,
+      "visits": 14294963,
+      "tags": "[\"AI Image Generator\", \"AI Art Generator\", \"Text to Image\", \"AI Models\", \"AI Texture Generator\", \"AI Photo Editor\", \"AI Illustration Generator\", \"AI Character\"]",
+      "specialty_score": 614.294963
+    },
+    {
+      "id": "chichi-pui-com",
+      "name": "chichi-pui.com",
+      "description": "chichi-pui.com - 이미지 생성 및 편집 도구입니다",
+      "url": "https://chichi-pui.com",
+      "category": "image",
+      "pricing": "subscription",
+      "rating": 0,
+      "visits": 5086921,
+      "tags": "[\"AI Image Generator\", \"AI Art Generator\", \"AI Illustration Generator\", \"AI Photography\", \"AI Prompt Generator\", \"AI Models\"]",
+      "specialty_score": 605.086921
+    },
+    {
+      "id": "freepik-ai-image-generator",
+      "name": "Freepik AI Image Generator",
+      "description": "Freepik AI Image Generator - 이미지 생성 및 편집 도구입니다",
+      "url": "https://www.freepik.com/ai/image-generator",
+      "category": "image",
+      "pricing": "freemium",
+      "rating": 0,
+      "visits": 100331203,
+      "tags": "[\"AI Image Generator\", \"Text to Image\", \"AI Image Upscaler\", \"AI Realistic Image Generator\"]",
+      "specialty_score": 600
+    }
+  ],
+  "generated_at": "2025-07-31T00:22:47.352128"
+}
