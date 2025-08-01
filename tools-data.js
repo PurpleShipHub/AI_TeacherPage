@@ -44,7 +44,7 @@ const TOOLS_DATA = {
         "specialty_score": 146.381967
       }
     ],
-    "generated_at": "2025-07-31T15:28:04.423374"
+    "generated_at": "2025-08-01T15:28:21.256199"
   },
   "document_generate_presentation": {
     "combination": {
@@ -90,7 +90,7 @@ const TOOLS_DATA = {
         "specialty_score": 44.846789
       }
     ],
-    "generated_at": "2025-07-31T15:28:04.439860"
+    "generated_at": "2025-08-01T15:28:21.271864"
   },
   "document_generate_email": {
     "combination": {
@@ -136,7 +136,7 @@ const TOOLS_DATA = {
         "specialty_score": 44.846789
       }
     ],
-    "generated_at": "2025-07-31T15:28:04.455747"
+    "generated_at": "2025-08-01T15:28:21.287203"
   },
   "document_generate_report": {
     "combination": {
@@ -182,7 +182,7 @@ const TOOLS_DATA = {
         "specialty_score": 46.381967
       }
     ],
-    "generated_at": "2025-07-31T15:28:04.471300"
+    "generated_at": "2025-08-01T15:28:21.302722"
   },
   "document_generate_article": {
     "combination": {
@@ -228,7 +228,7 @@ const TOOLS_DATA = {
         "specialty_score": 44.846789
       }
     ],
-    "generated_at": "2025-07-31T15:28:04.486666"
+    "generated_at": "2025-08-01T15:28:21.318084"
   },
   "document_edit_document": {
     "combination": {
@@ -274,7 +274,7 @@ const TOOLS_DATA = {
         "specialty_score": 201.757139
       }
     ],
-    "generated_at": "2025-07-31T15:28:04.502282"
+    "generated_at": "2025-08-01T15:28:21.333817"
   },
   "document_edit_summary": {
     "combination": {
@@ -320,7 +320,7 @@ const TOOLS_DATA = {
         "specialty_score": 100
       }
     ],
-    "generated_at": "2025-07-31T15:28:04.517882"
+    "generated_at": "2025-08-01T15:28:21.349290"
   },
   "document_edit_revised": {
     "combination": {
@@ -366,7 +366,7 @@ const TOOLS_DATA = {
         "specialty_score": 100
       }
     ],
-    "generated_at": "2025-07-31T15:28:04.533119"
+    "generated_at": "2025-08-01T15:28:21.364728"
   },
   "document_edit_formatted": {
     "combination": {
@@ -412,7 +412,7 @@ const TOOLS_DATA = {
         "specialty_score": 100
       }
     ],
-    "generated_at": "2025-07-31T15:28:04.549875"
+    "generated_at": "2025-08-01T15:28:21.380058"
   },
   "document_analyze_summary": {
     "combination": {
@@ -458,7 +458,7 @@ const TOOLS_DATA = {
         "specialty_score": 46.381967
       }
     ],
-    "generated_at": "2025-07-31T15:28:04.565332"
+    "generated_at": "2025-08-01T15:28:21.403694"
   },
   "document_analyze_keywords": {
     "combination": {
@@ -504,7 +504,7 @@ const TOOLS_DATA = {
         "specialty_score": 46.381967
       }
     ],
-    "generated_at": "2025-07-31T15:28:04.580708"
+    "generated_at": "2025-08-01T15:28:21.427570"
   },
   "document_analyze_sentiment": {
     "combination": {
@@ -550,7 +550,7 @@ const TOOLS_DATA = {
         "specialty_score": 46.381967
       }
     ],
-    "generated_at": "2025-07-31T15:28:04.595928"
+    "generated_at": "2025-08-01T15:28:21.451605"
   },
   "document_analyze_insights": {
     "combination": {
@@ -596,7 +596,7 @@ const TOOLS_DATA = {
         "specialty_score": 46.381967
       }
     ],
-    "generated_at": "2025-07-31T15:28:04.611720"
+    "generated_at": "2025-08-01T15:28:21.475870"
   },
   "document_translate_document": {
     "combination": {
@@ -642,7 +642,7 @@ const TOOLS_DATA = {
         "specialty_score": 146.381967
       }
     ],
-    "generated_at": "2025-07-31T15:28:04.628722"
+    "generated_at": "2025-08-01T15:28:21.499794"
   },
   "document_translate_subtitle": {
     "combination": {
@@ -688,7 +688,7 @@ const TOOLS_DATA = {
         "specialty_score": 44.846789
       }
     ],
-    "generated_at": "2025-07-31T15:28:04.644356"
+    "generated_at": "2025-08-01T15:28:21.518235"
   },
   "document_translate_localized": {
     "combination": {
@@ -734,7 +734,7 @@ const TOOLS_DATA = {
         "specialty_score": 44.846789
       }
     ],
-    "generated_at": "2025-07-31T15:28:04.659815"
+    "generated_at": "2025-08-01T15:28:21.533616"
   },
   "image_generate_image": {
     "combination": {
@@ -780,7 +780,7 @@ const TOOLS_DATA = {
         "specialty_score": 1004.414083
       }
     ],
-    "generated_at": "2025-07-31T15:28:04.675655"
+    "generated_at": "2025-08-01T15:28:21.549477"
   },
   "image_generate_illustration": {
     "combination": {
@@ -826,7 +826,7 @@ const TOOLS_DATA = {
         "specialty_score": 600
       }
     ],
-    "generated_at": "2025-07-31T15:28:04.691299"
+    "generated_at": "2025-08-01T15:28:21.565195"
   },
   "image_generate_logo": {
     "combination": {
@@ -872,7 +872,7 @@ const TOOLS_DATA = {
         "specialty_score": 559.394323
       }
     ],
-    "generated_at": "2025-07-31T15:28:04.707273"
+    "generated_at": "2025-08-01T15:28:21.580898"
   },
   "image_generate_avatar": {
     "combination": {
@@ -918,7 +918,7 @@ const TOOLS_DATA = {
         "specialty_score": 559.394323
       }
     ],
-    "generated_at": "2025-07-31T15:28:04.723614"
+    "generated_at": "2025-08-01T15:28:21.596851"
   },
   "image_generate_artwork": {
     "combination": {
@@ -964,7 +964,7 @@ const TOOLS_DATA = {
         "specialty_score": 515.965877
       }
     ],
-    "generated_at": "2025-07-31T15:28:04.739934"
+    "generated_at": "2025-08-01T15:28:21.612735"
   },
   "image_edit_edited": {
     "combination": {
@@ -1010,7 +1010,7 @@ const TOOLS_DATA = {
         "specialty_score": 664.294963
       }
     ],
-    "generated_at": "2025-07-31T15:28:04.764135"
+    "generated_at": "2025-08-01T15:28:21.628379"
   },
   "image_edit_resized": {
     "combination": {
@@ -1056,7 +1056,7 @@ const TOOLS_DATA = {
         "specialty_score": 664.294963
       }
     ],
-    "generated_at": "2025-07-31T15:28:04.788383"
+    "generated_at": "2025-08-01T15:28:21.644518"
   },
   "image_edit_filtered": {
     "combination": {
@@ -1102,7 +1102,7 @@ const TOOLS_DATA = {
         "specialty_score": 664.294963
       }
     ],
-    "generated_at": "2025-07-31T15:28:04.812874"
+    "generated_at": "2025-08-01T15:28:21.660217"
   },
   "image_edit_cropped": {
     "combination": {
@@ -1148,7 +1148,7 @@ const TOOLS_DATA = {
         "specialty_score": 664.294963
       }
     ],
-    "generated_at": "2025-07-31T15:28:04.832126"
+    "generated_at": "2025-08-01T15:28:21.675717"
   },
   "image_enhance_hd": {
     "combination": {
@@ -1194,7 +1194,7 @@ const TOOLS_DATA = {
         "specialty_score": 656.130486
       }
     ],
-    "generated_at": "2025-07-31T15:28:04.848370"
+    "generated_at": "2025-08-01T15:28:21.691146"
   },
   "image_enhance_restored": {
     "combination": {
@@ -1240,7 +1240,7 @@ const TOOLS_DATA = {
         "specialty_score": 656.130486
       }
     ],
-    "generated_at": "2025-07-31T15:28:04.864245"
+    "generated_at": "2025-08-01T15:28:21.706991"
   },
   "image_enhance_colorized": {
     "combination": {
@@ -1286,7 +1286,7 @@ const TOOLS_DATA = {
         "specialty_score": 656.130486
       }
     ],
-    "generated_at": "2025-07-31T15:28:04.880415"
+    "generated_at": "2025-08-01T15:28:21.723469"
   },
   "image_enhance_upscaled": {
     "combination": {
@@ -1332,7 +1332,7 @@ const TOOLS_DATA = {
         "specialty_score": 656.130486
       }
     ],
-    "generated_at": "2025-07-31T15:28:04.898961"
+    "generated_at": "2025-08-01T15:28:21.739366"
   },
   "image_remove_bg_transparent": {
     "combination": {
@@ -1378,7 +1378,7 @@ const TOOLS_DATA = {
         "specialty_score": 515.965877
       }
     ],
-    "generated_at": "2025-07-31T15:28:04.915184"
+    "generated_at": "2025-08-01T15:28:21.755553"
   },
   "image_remove_bg_replaced": {
     "combination": {
@@ -1424,7 +1424,7 @@ const TOOLS_DATA = {
         "specialty_score": 515.965877
       }
     ],
-    "generated_at": "2025-07-31T15:28:04.931287"
+    "generated_at": "2025-08-01T15:28:21.771239"
   },
   "image_remove_bg_isolated": {
     "combination": {
@@ -1470,7 +1470,7 @@ const TOOLS_DATA = {
         "specialty_score": 515.965877
       }
     ],
-    "generated_at": "2025-07-31T15:28:04.948013"
+    "generated_at": "2025-08-01T15:28:21.787062"
   },
   "video_generate_video": {
     "combination": {
@@ -1516,7 +1516,7 @@ const TOOLS_DATA = {
         "specialty_score": 1007.213045
       }
     ],
-    "generated_at": "2025-07-31T15:28:04.963599"
+    "generated_at": "2025-08-01T15:28:21.802284"
   },
   "video_generate_animation": {
     "combination": {
@@ -1562,7 +1562,7 @@ const TOOLS_DATA = {
         "specialty_score": 607.604481
       }
     ],
-    "generated_at": "2025-07-31T15:28:04.980142"
+    "generated_at": "2025-08-01T15:28:21.817130"
   },
   "video_generate_short": {
     "combination": {
@@ -1608,7 +1608,7 @@ const TOOLS_DATA = {
         "specialty_score": 515.411174
       }
     ],
-    "generated_at": "2025-07-31T15:28:04.995475"
+    "generated_at": "2025-08-01T15:28:21.831808"
   },
   "video_generate_presentation": {
     "combination": {
@@ -1654,7 +1654,7 @@ const TOOLS_DATA = {
         "specialty_score": 515.411174
       }
     ],
-    "generated_at": "2025-07-31T15:28:05.013132"
+    "generated_at": "2025-08-01T15:28:21.850179"
   },
   "video_edit_edited": {
     "combination": {
@@ -1700,7 +1700,7 @@ const TOOLS_DATA = {
         "specialty_score": 658.701901
       }
     ],
-    "generated_at": "2025-07-31T15:28:05.032665"
+    "generated_at": "2025-08-01T15:28:21.868138"
   },
   "video_edit_trimmed": {
     "combination": {
@@ -1746,7 +1746,7 @@ const TOOLS_DATA = {
         "specialty_score": 658.701901
       }
     ],
-    "generated_at": "2025-07-31T15:28:05.055659"
+    "generated_at": "2025-08-01T15:28:21.882900"
   },
   "video_edit_merged": {
     "combination": {
@@ -1792,7 +1792,7 @@ const TOOLS_DATA = {
         "specialty_score": 658.701901
       }
     ],
-    "generated_at": "2025-07-31T15:28:05.078821"
+    "generated_at": "2025-08-01T15:28:21.897892"
   },
   "video_edit_effects": {
     "combination": {
@@ -1838,7 +1838,7 @@ const TOOLS_DATA = {
         "specialty_score": 658.701901
       }
     ],
-    "generated_at": "2025-07-31T15:28:05.101719"
+    "generated_at": "2025-08-01T15:28:21.912696"
   },
   "video_subtitle_subtitled": {
     "combination": {
@@ -1884,7 +1884,7 @@ const TOOLS_DATA = {
         "specialty_score": 657.223741
       }
     ],
-    "generated_at": "2025-07-31T15:28:05.121214"
+    "generated_at": "2025-08-01T15:28:21.927319"
   },
   "video_subtitle_transcript": {
     "combination": {
@@ -1930,7 +1930,7 @@ const TOOLS_DATA = {
         "specialty_score": 657.223741
       }
     ],
-    "generated_at": "2025-07-31T15:28:05.136891"
+    "generated_at": "2025-08-01T15:28:21.941988"
   },
   "video_subtitle_captions": {
     "combination": {
@@ -1976,7 +1976,7 @@ const TOOLS_DATA = {
         "specialty_score": 657.223741
       }
     ],
-    "generated_at": "2025-07-31T15:28:05.152448"
+    "generated_at": "2025-08-01T15:28:21.956774"
   },
   "audio_generate_music": {
     "combination": {
@@ -2022,7 +2022,7 @@ const TOOLS_DATA = {
         "specialty_score": 701.641745
       }
     ],
-    "generated_at": "2025-07-31T15:28:05.168442"
+    "generated_at": "2025-08-01T15:28:21.972270"
   },
   "audio_generate_voice": {
     "combination": {
@@ -2068,7 +2068,7 @@ const TOOLS_DATA = {
         "specialty_score": 1025.447979
       }
     ],
-    "generated_at": "2025-07-31T15:28:05.184110"
+    "generated_at": "2025-08-01T15:28:21.987692"
   },
   "audio_generate_sound": {
     "combination": {
@@ -2114,7 +2114,7 @@ const TOOLS_DATA = {
         "specialty_score": 604.144652
       }
     ],
-    "generated_at": "2025-07-31T15:28:05.199921"
+    "generated_at": "2025-08-01T15:28:22.003356"
   },
   "audio_generate_podcast": {
     "combination": {
@@ -2160,7 +2160,7 @@ const TOOLS_DATA = {
         "specialty_score": 525.290784
       }
     ],
-    "generated_at": "2025-07-31T15:28:05.215699"
+    "generated_at": "2025-08-01T15:28:22.019000"
   },
   "audio_transcribe_transcript": {
     "combination": {
@@ -2206,7 +2206,7 @@ const TOOLS_DATA = {
         "specialty_score": 524.304837
       }
     ],
-    "generated_at": "2025-07-31T15:28:05.231437"
+    "generated_at": "2025-08-01T15:28:22.034609"
   },
   "audio_transcribe_subtitle": {
     "combination": {
@@ -2252,7 +2252,7 @@ const TOOLS_DATA = {
         "specialty_score": 524.304837
       }
     ],
-    "generated_at": "2025-07-31T15:28:05.247332"
+    "generated_at": "2025-08-01T15:28:22.050016"
   },
   "audio_transcribe_notes": {
     "combination": {
@@ -2298,7 +2298,7 @@ const TOOLS_DATA = {
         "specialty_score": 524.304837
       }
     ],
-    "generated_at": "2025-07-31T15:28:05.262911"
+    "generated_at": "2025-08-01T15:28:22.066363"
   },
   "audio_enhance_cleaned": {
     "combination": {
@@ -2344,7 +2344,7 @@ const TOOLS_DATA = {
         "specialty_score": 525.447979
       }
     ],
-    "generated_at": "2025-07-31T15:28:05.278298"
+    "generated_at": "2025-08-01T15:28:22.082549"
   },
   "audio_enhance_mastered": {
     "combination": {
@@ -2390,7 +2390,7 @@ const TOOLS_DATA = {
         "specialty_score": 525.447979
       }
     ],
-    "generated_at": "2025-07-31T15:28:05.293703"
+    "generated_at": "2025-08-01T15:28:22.098271"
   },
   "audio_enhance_enhanced": {
     "combination": {
@@ -2436,7 +2436,7 @@ const TOOLS_DATA = {
         "specialty_score": 525.447979
       }
     ],
-    "generated_at": "2025-07-31T15:28:05.309324"
+    "generated_at": "2025-08-01T15:28:22.113815"
   },
   "code_generate_code": {
     "combination": {
@@ -2482,7 +2482,7 @@ const TOOLS_DATA = {
         "specialty_score": 205.980124
       }
     ],
-    "generated_at": "2025-07-31T15:28:05.324775"
+    "generated_at": "2025-08-01T15:28:22.129246"
   },
   "code_generate_app": {
     "combination": {
@@ -2528,7 +2528,7 @@ const TOOLS_DATA = {
         "specialty_score": 12.531648
       }
     ],
-    "generated_at": "2025-07-31T15:28:05.340270"
+    "generated_at": "2025-08-01T15:28:22.146480"
   },
   "code_generate_website": {
     "combination": {
@@ -2574,7 +2574,7 @@ const TOOLS_DATA = {
         "specialty_score": 12.531648
       }
     ],
-    "generated_at": "2025-07-31T15:28:05.356728"
+    "generated_at": "2025-08-01T15:28:22.162242"
   },
   "code_generate_api": {
     "combination": {
@@ -2620,7 +2620,7 @@ const TOOLS_DATA = {
         "specialty_score": 101.837273
       }
     ],
-    "generated_at": "2025-07-31T15:28:05.373002"
+    "generated_at": "2025-08-01T15:28:22.177707"
   },
   "code_generate_script": {
     "combination": {
@@ -2666,7 +2666,7 @@ const TOOLS_DATA = {
         "specialty_score": 84.228844
       }
     ],
-    "generated_at": "2025-07-31T15:28:05.389295"
+    "generated_at": "2025-08-01T15:28:22.193104"
   },
   "code_debug_fixed": {
     "combination": {
@@ -2712,7 +2712,7 @@ const TOOLS_DATA = {
         "specialty_score": 5.980124
       }
     ],
-    "generated_at": "2025-07-31T15:28:05.405684"
+    "generated_at": "2025-08-01T15:28:22.208756"
   },
   "code_debug_report": {
     "combination": {
@@ -2758,7 +2758,7 @@ const TOOLS_DATA = {
         "specialty_score": 5.980124
       }
     ],
-    "generated_at": "2025-07-31T15:28:05.421612"
+    "generated_at": "2025-08-01T15:28:22.226153"
   },
   "code_debug_optimized": {
     "combination": {
@@ -2804,7 +2804,7 @@ const TOOLS_DATA = {
         "specialty_score": 5.980124
       }
     ],
-    "generated_at": "2025-07-31T15:28:05.437085"
+    "generated_at": "2025-08-01T15:28:22.241734"
   },
   "code_document_documentation": {
     "combination": {
@@ -2850,7 +2850,7 @@ const TOOLS_DATA = {
         "specialty_score": 5.980124
       }
     ],
-    "generated_at": "2025-07-31T15:28:05.452909"
+    "generated_at": "2025-08-01T15:28:22.257395"
   },
   "code_document_comments": {
     "combination": {
@@ -2896,7 +2896,7 @@ const TOOLS_DATA = {
         "specialty_score": 5.980124
       }
     ],
-    "generated_at": "2025-07-31T15:28:05.469014"
+    "generated_at": "2025-08-01T15:28:22.273090"
   },
   "code_document_readme": {
     "combination": {
@@ -2942,7 +2942,7 @@ const TOOLS_DATA = {
         "specialty_score": 5.980124
       }
     ],
-    "generated_at": "2025-07-31T15:28:05.485260"
+    "generated_at": "2025-08-01T15:28:22.288832"
   },
   "data_analyze_report": {
     "combination": {
@@ -2982,7 +2982,7 @@ const TOOLS_DATA = {
         "visits": 646953881
       }
     ],
-    "generated_at": "2025-07-31T15:28:05.514309"
+    "generated_at": "2025-08-01T15:28:22.318006"
   },
   "data_analyze_visualization": {
     "combination": {
@@ -3022,7 +3022,7 @@ const TOOLS_DATA = {
         "visits": 646953881
       }
     ],
-    "generated_at": "2025-07-31T15:28:05.542682"
+    "generated_at": "2025-08-01T15:28:22.347286"
   },
   "data_analyze_insights": {
     "combination": {
@@ -3062,7 +3062,7 @@ const TOOLS_DATA = {
         "visits": 646953881
       }
     ],
-    "generated_at": "2025-07-31T15:28:05.571209"
+    "generated_at": "2025-08-01T15:28:22.376545"
   },
   "data_analyze_dashboard": {
     "combination": {
@@ -3102,7 +3102,7 @@ const TOOLS_DATA = {
         "visits": 646953881
       }
     ],
-    "generated_at": "2025-07-31T15:28:05.599440"
+    "generated_at": "2025-08-01T15:28:22.405538"
   },
   "data_clean_cleaned": {
     "combination": {
@@ -3142,7 +3142,7 @@ const TOOLS_DATA = {
         "visits": 646953881
       }
     ],
-    "generated_at": "2025-07-31T15:28:05.627990"
+    "generated_at": "2025-08-01T15:28:22.434114"
   },
   "data_clean_validated": {
     "combination": {
@@ -3182,7 +3182,7 @@ const TOOLS_DATA = {
         "visits": 646953881
       }
     ],
-    "generated_at": "2025-07-31T15:28:05.656489"
+    "generated_at": "2025-08-01T15:28:22.463218"
   },
   "data_clean_structured": {
     "combination": {
@@ -3222,7 +3222,7 @@ const TOOLS_DATA = {
         "visits": 646953881
       }
     ],
-    "generated_at": "2025-07-31T15:28:05.684827"
+    "generated_at": "2025-08-01T15:28:22.491692"
   },
   "data_transform_converted": {
     "combination": {
@@ -3262,7 +3262,7 @@ const TOOLS_DATA = {
         "visits": 646953881
       }
     ],
-    "generated_at": "2025-07-31T15:28:05.713953"
+    "generated_at": "2025-08-01T15:28:22.520507"
   },
   "data_transform_exported": {
     "combination": {
@@ -3302,7 +3302,7 @@ const TOOLS_DATA = {
         "visits": 646953881
       }
     ],
-    "generated_at": "2025-07-31T15:28:05.743160"
+    "generated_at": "2025-08-01T15:28:22.563783"
   },
   "data_transform_integrated": {
     "combination": {
@@ -3342,7 +3342,7 @@ const TOOLS_DATA = {
         "visits": 646953881
       }
     ],
-    "generated_at": "2025-07-31T15:28:05.771847"
+    "generated_at": "2025-08-01T15:28:22.607512"
   },
   "conversation_chat_assistant": {
     "combination": {
@@ -3388,7 +3388,7 @@ const TOOLS_DATA = {
         "specialty_score": 551.8054529999999
       }
     ],
-    "generated_at": "2025-07-31T15:28:05.786950"
+    "generated_at": "2025-08-01T15:28:22.627517"
   },
   "conversation_chat_companion": {
     "combination": {
@@ -3434,7 +3434,7 @@ const TOOLS_DATA = {
         "specialty_score": 453.373805
       }
     ],
-    "generated_at": "2025-07-31T15:28:05.802669"
+    "generated_at": "2025-08-01T15:28:22.643307"
   },
   "conversation_chat_tutor": {
     "combination": {
@@ -3480,7 +3480,7 @@ const TOOLS_DATA = {
         "specialty_score": 453.373805
       }
     ],
-    "generated_at": "2025-07-31T15:28:05.818424"
+    "generated_at": "2025-08-01T15:28:22.658810"
   },
   "conversation_chat_advisor": {
     "combination": {
@@ -3526,7 +3526,7 @@ const TOOLS_DATA = {
         "specialty_score": 453.373805
       }
     ],
-    "generated_at": "2025-07-31T15:28:05.834099"
+    "generated_at": "2025-08-01T15:28:22.674045"
   },
   "conversation_roleplay_character": {
     "combination": {
@@ -3572,7 +3572,7 @@ const TOOLS_DATA = {
         "specialty_score": 147.165886
       }
     ],
-    "generated_at": "2025-07-31T15:28:05.849314"
+    "generated_at": "2025-08-01T15:28:22.689309"
   },
   "conversation_roleplay_celebrity": {
     "combination": {
@@ -3618,7 +3618,7 @@ const TOOLS_DATA = {
         "specialty_score": 47.165886
       }
     ],
-    "generated_at": "2025-07-31T15:28:05.864336"
+    "generated_at": "2025-08-01T15:28:22.704762"
   },
   "conversation_roleplay_historical": {
     "combination": {
@@ -3664,7 +3664,7 @@ const TOOLS_DATA = {
         "specialty_score": 47.165886
       }
     ],
-    "generated_at": "2025-07-31T15:28:05.879181"
+    "generated_at": "2025-08-01T15:28:22.720266"
   },
   "conversation_roleplay_fictional": {
     "combination": {
@@ -3710,7 +3710,7 @@ const TOOLS_DATA = {
         "specialty_score": 47.165886
       }
     ],
-    "generated_at": "2025-07-31T15:28:05.894234"
+    "generated_at": "2025-08-01T15:28:22.735658"
   },
   "website_build_landing": {
     "combination": {
@@ -3750,7 +3750,7 @@ const TOOLS_DATA = {
         "visits": 646953881
       }
     ],
-    "generated_at": "2025-07-31T15:28:05.921841"
+    "generated_at": "2025-08-01T15:28:22.763509"
   },
   "website_build_blog": {
     "combination": {
@@ -3790,7 +3790,7 @@ const TOOLS_DATA = {
         "visits": 646953881
       }
     ],
-    "generated_at": "2025-07-31T15:28:05.949800"
+    "generated_at": "2025-08-01T15:28:22.790710"
   },
   "website_build_portfolio": {
     "combination": {
@@ -3830,7 +3830,7 @@ const TOOLS_DATA = {
         "visits": 646953881
       }
     ],
-    "generated_at": "2025-07-31T15:28:05.977440"
+    "generated_at": "2025-08-01T15:28:22.818628"
   },
   "website_build_ecommerce": {
     "combination": {
@@ -3870,7 +3870,7 @@ const TOOLS_DATA = {
         "visits": 646953881
       }
     ],
-    "generated_at": "2025-07-31T15:28:06.005094"
+    "generated_at": "2025-08-01T15:28:22.851051"
   },
   "website_design_mockup": {
     "combination": {
@@ -3910,7 +3910,7 @@ const TOOLS_DATA = {
         "visits": 646953881
       }
     ],
-    "generated_at": "2025-07-31T15:28:06.040205"
+    "generated_at": "2025-08-01T15:28:22.878982"
   },
   "website_design_template": {
     "combination": {
@@ -3950,7 +3950,7 @@ const TOOLS_DATA = {
         "visits": 646953881
       }
     ],
-    "generated_at": "2025-07-31T15:28:06.080023"
+    "generated_at": "2025-08-01T15:28:22.906849"
   },
   "website_design_prototype": {
     "combination": {
@@ -3990,7 +3990,7 @@ const TOOLS_DATA = {
         "visits": 646953881
       }
     ],
-    "generated_at": "2025-07-31T15:28:06.112895"
+    "generated_at": "2025-08-01T15:28:22.934528"
   },
   "website_design_wireframe": {
     "combination": {
@@ -4030,7 +4030,7 @@ const TOOLS_DATA = {
         "visits": 646953881
       }
     ],
-    "generated_at": "2025-07-31T15:28:06.143801"
+    "generated_at": "2025-08-01T15:28:22.962632"
   },
   "website_optimize_seo": {
     "combination": {
@@ -4070,7 +4070,7 @@ const TOOLS_DATA = {
         "visits": 646953881
       }
     ],
-    "generated_at": "2025-07-31T15:28:06.171432"
+    "generated_at": "2025-08-01T15:28:22.989956"
   },
   "website_optimize_speed": {
     "combination": {
@@ -4110,7 +4110,7 @@ const TOOLS_DATA = {
         "visits": 646953881
       }
     ],
-    "generated_at": "2025-07-31T15:28:06.199112"
+    "generated_at": "2025-08-01T15:28:23.017800"
   },
   "website_optimize_mobile": {
     "combination": {
@@ -4150,7 +4150,7 @@ const TOOLS_DATA = {
         "visits": 646953881
       }
     ],
-    "generated_at": "2025-07-31T15:28:06.227651"
+    "generated_at": "2025-08-01T15:28:23.044966"
   },
   "website_optimize_analytics": {
     "combination": {
@@ -4190,7 +4190,7 @@ const TOOLS_DATA = {
         "visits": 646953881
       }
     ],
-    "generated_at": "2025-07-31T15:28:06.255830"
+    "generated_at": "2025-08-01T15:28:23.073095"
   },
   "application_develop_mobile": {
     "combination": {
@@ -4230,7 +4230,7 @@ const TOOLS_DATA = {
         "visits": 646953881
       }
     ],
-    "generated_at": "2025-07-31T15:28:06.283684"
+    "generated_at": "2025-08-01T15:28:23.101491"
   },
   "application_develop_desktop": {
     "combination": {
@@ -4270,7 +4270,7 @@ const TOOLS_DATA = {
         "visits": 646953881
       }
     ],
-    "generated_at": "2025-07-31T15:28:06.311984"
+    "generated_at": "2025-08-01T15:28:23.129194"
   },
   "application_develop_web_app": {
     "combination": {
@@ -4310,7 +4310,7 @@ const TOOLS_DATA = {
         "visits": 646953881
       }
     ],
-    "generated_at": "2025-07-31T15:28:06.339800"
+    "generated_at": "2025-08-01T15:28:23.157179"
   },
   "application_develop_game": {
     "combination": {
@@ -4350,7 +4350,7 @@ const TOOLS_DATA = {
         "visits": 646953881
       }
     ],
-    "generated_at": "2025-07-31T15:28:06.367403"
+    "generated_at": "2025-08-01T15:28:23.185355"
   },
   "application_design_ui_design": {
     "combination": {
@@ -4390,7 +4390,7 @@ const TOOLS_DATA = {
         "visits": 646953881
       }
     ],
-    "generated_at": "2025-07-31T15:28:06.395072"
+    "generated_at": "2025-08-01T15:28:23.213789"
   },
   "application_design_ux_flow": {
     "combination": {
@@ -4430,7 +4430,7 @@ const TOOLS_DATA = {
         "visits": 646953881
       }
     ],
-    "generated_at": "2025-07-31T15:28:06.423794"
+    "generated_at": "2025-08-01T15:28:23.242065"
   },
   "application_design_icon": {
     "combination": {
@@ -4470,7 +4470,7 @@ const TOOLS_DATA = {
         "visits": 646953881
       }
     ],
-    "generated_at": "2025-07-31T15:28:06.452727"
+    "generated_at": "2025-08-01T15:28:23.270349"
   },
   "application_design_prototype": {
     "combination": {
@@ -4510,7 +4510,7 @@ const TOOLS_DATA = {
         "visits": 646953881
       }
     ],
-    "generated_at": "2025-07-31T15:28:06.481078"
+    "generated_at": "2025-08-01T15:28:23.298758"
   },
   "application_test_unit_test": {
     "combination": {
@@ -4550,7 +4550,7 @@ const TOOLS_DATA = {
         "visits": 646953881
       }
     ],
-    "generated_at": "2025-07-31T15:28:06.508939"
+    "generated_at": "2025-08-01T15:28:23.336868"
   },
   "application_test_user_test": {
     "combination": {
@@ -4590,7 +4590,7 @@ const TOOLS_DATA = {
         "visits": 646953881
       }
     ],
-    "generated_at": "2025-07-31T15:28:06.536649"
+    "generated_at": "2025-08-01T15:28:23.374924"
   },
   "application_test_performance": {
     "combination": {
@@ -4630,7 +4630,7 @@ const TOOLS_DATA = {
         "visits": 646953881
       }
     ],
-    "generated_at": "2025-07-31T15:28:06.564122"
+    "generated_at": "2025-08-01T15:28:23.405353"
   },
   "application_test_security": {
     "combination": {
@@ -4670,6 +4670,6 @@ const TOOLS_DATA = {
         "visits": 646953881
       }
     ],
-    "generated_at": "2025-07-31T15:28:06.591601"
+    "generated_at": "2025-08-01T15:28:23.433634"
   }
 };
