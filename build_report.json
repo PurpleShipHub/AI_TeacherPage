@@ -1,16 +1,16 @@
 {
   "build_info": {
-    "generated_at": "2025-08-01T15:28:23.449540",
+    "generated_at": "2025-08-02T17:03:20.641866",
     "builder_version": "1.0.0",
     "method": "3단 논법 (What-How-Do)"
   },
   "statistics": {
-    "total_combinations": 106,
-    "total_tools_selected": 318,
-    "avg_tools_per_combination": 3.0,
+    "total_combinations": 262,
+    "total_tools_selected": 200992,
+    "avg_tools_per_combination": 767.15,
     "structure": {
-      "what_options": 9,
-      "total_combinations": 106,
+      "what_options": 19,
+      "total_combinations": 262,
       "hierarchy": "What → How → Do (동적 구조)"
     }
   },

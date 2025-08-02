@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Teacher - Visual Novel</title>
+    <title>AI Teacher - Your AI Tool Recommendation Guide</title>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -12,28 +13,50 @@
         }
         
         body {
-            font-family: 'Segoe UI', 'Noto Sans CJK KR', sans-serif;
-            background: #1a1a2e;
+            font-family: 'VT323', 'Noto Sans CJK KR', monospace;
+            background: #000;
             min-height: 100vh;
             overflow: hidden;
             position: relative;
             scrollbar-width: none;
             -ms-overflow-style: none;
+            image-rendering: pixelated;
+            image-rendering: -moz-crisp-edges;
+            image-rendering: crisp-edges;
         }
         
         body::-webkit-scrollbar {
             display: none;
         }
         
-        /* 비주얼 노벨 배경 */
+        /* 90년대 레트로 비주얼 노벨 배경 */
         .vn-background {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(to bottom, #2d1b69 0%, #0f0f1e 100%);
+            background: #1a0033;
             z-index: 1;
+        }
+        
+        .vn-background::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                repeating-linear-gradient(
+                    0deg,
+                    rgba(0, 0, 0, 0.15),
+                    rgba(0, 0, 0, 0.15) 1px,
+                    transparent 1px,
+                    transparent 2px
+                );
+            z-index: 1;
+            pointer-events: none;
         }
         
         /* 배경 오버레이 */
@@ -85,17 +108,29 @@
             }
         }
         
-        /* 글래스 패널 베이스 */
+        /* 90년대 레트로 UI 패널 */
         .glass-panel {
-            background: rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            background: #2a0845;
+            border: 4px solid #ff00ff;
+            box-shadow: 
+                inset -2px -2px 0 #7d00b3,
+                inset 2px 2px 0 #ff66ff,
+                0 0 0 2px #000;
             position: relative;
         }
         
-        /* 대화창 */
+        .glass-panel::before {
+            content: '';
+            position: absolute;
+            top: -4px;
+            left: -4px;
+            right: -4px;
+            bottom: -4px;
+            background: #000;
+            z-index: -1;
+        }
+        
+        /* 90년대 레트로 대화창 */
         .dialogue-box {
             position: fixed;
             bottom: 20px;
@@ -103,31 +138,23 @@
             transform: translateX(-50%);
             width: calc(100% - 40px);
             max-width: 800px;
-            border-radius: 20px;
+            border-radius: 0;
             padding: 20px 30px;
             z-index: 10;
-            animation: slideInUp 0.5s ease-out;
+            animation: pixelSlideIn 0.3s steps(8);
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: none;
+            font-size: 20px;
+            letter-spacing: 1px;
+        }
+        
+        @keyframes pixelSlideIn {
+            from { transform: translateX(-50%) translateY(100%); }
+            to { transform: translateX(-50%) translateY(0); }
         }
         
         .dialogue-box.clickable {
             cursor: pointer;
-        }
-        
-        .dialogue-box.clickable::after {
-            content: '▼ 클릭하여 계속하기';
-            position: absolute;
-            bottom: 10px;
-            right: 30px;
-            font-size: 0.8em;
-            color: rgba(255, 255, 255, 0.7);
-            animation: pulse 1.5s ease-in-out infinite;
-        }
-        
-        @keyframes pulse {
-            0%, 100% { opacity: 0.5; transform: translateY(0); }
-            50% { opacity: 1; transform: translateY(-3px); }
         }
         
         .dialogue-box:hover {
@@ -137,16 +164,17 @@
         
         .character-name {
             display: inline-block;
-            background: rgba(102, 126, 234, 0.8);
-            color: white;
-            padding: 6px 20px;
-            border-radius: 20px;
+            background: #ff00ff;
+            color: #000;
+            padding: 8px 16px;
+            border-radius: 0;
             font-weight: bold;
             margin-bottom: 15px;
-            font-size: 1em;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 4px 16px rgba(102, 126, 234, 0.4);
+            font-size: 24px;
+            border: 2px solid #000;
+            box-shadow: 4px 4px 0 #7d00b3;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
         
         @keyframes glow {
@@ -155,11 +183,12 @@
         }
         
         .dialogue-text {
-            color: rgba(255, 255, 255, 0.95);
-            font-size: 1.1em;
-            line-height: 1.6;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+            color: #fff;
+            font-size: 22px;
+            line-height: 1.4;
+            text-shadow: 2px 2px 0 #000;
             margin-bottom: 20px;
+            letter-spacing: 1px;
         }
         
 
@@ -172,11 +201,34 @@
             transform: translateX(-50%);
             width: calc(100% - 40px);
             max-width: 800px;
+            max-height: 70vh;
             padding: 30px;
             border-radius: 20px;
             z-index: 11;
             animation: slideInUp 0.5s ease-out;
             display: none;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+        
+        /* Custom scrollbar for choice panel */
+        .choice-panel::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        .choice-panel::-webkit-scrollbar-track {
+            background: rgba(255,255,255,0.1);
+            border-radius: 4px;
+        }
+        
+        .choice-panel::-webkit-scrollbar-thumb {
+            background: #ff00ff;
+            border-radius: 4px;
+            border: 1px solid #000;
+        }
+        
+        .choice-panel::-webkit-scrollbar-thumb:hover {
+            background: #ff66ff;
         }
         
         @keyframes zoomIn {
@@ -200,172 +252,193 @@
             to { opacity: 1; transform: translateY(0); }
         }
         
-        /* 인라인 질문 스타일 */
-        .inline-question {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-            font-size: 1.2em;
-            color: white;
+        /* 레트로 로딩바 스타일 */
+        .retro-loading-container {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 400px;
+            padding: 30px;
+            background: #1a0033;
+            border: 4px solid #ff00ff;
+            box-shadow: 
+                inset -2px -2px 0 #7d00b3,
+                inset 2px 2px 0 #ff66ff,
+                0 0 0 2px #000,
+                0 0 40px rgba(255, 0, 255, 0.5);
+            z-index: 1000;
+            display: none;
         }
         
-        .question-text {
-            color: white;
-            font-weight: 600;
-            font-size: 1.3em;
-            text-align: center;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-            margin-bottom: 10px;
-        }
-        
-        .dropdowns-wrapper {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-            align-items: center;
-        }
-        
-        .completion-text {
-            color: rgba(255, 255, 255, 0.8);
-            font-weight: 500;
-            font-size: 1.1em;
-        }
-        
-        /* 드롭박스 컨테이너 - 하위 호환성 */
-        .dropdown-container {
-            margin-top: 20px;
-            display: flex;
-            flex-direction: row;
-            gap: 12px;
-            justify-content: center;
-            align-items: flex-start;
-        }
-        
-        /* 개별 드롭박스 */
-        .step-dropdown {
-            position: relative;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.5s ease;
-            flex: 1;
-            max-width: 200px;
-            min-width: 160px;
-        }
-        
-        .step-dropdown.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .inline-select {
-            background: rgba(255, 255, 255, 0.1);
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            border-radius: 12px;
-            color: white;
-            padding: 10px 20px;
-            font-size: 1em;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            appearance: none;
-            min-width: 140px;
-            text-align: center;
-            backdrop-filter: blur(20px);
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
-        }
-        
-        .custom-select {
+        .retro-loading-bar {
             width: 100%;
-            background: rgba(255, 255, 255, 0.1);
-            border: 2px solid rgba(102, 126, 234, 0.5);
-            border-radius: 10px;
-            padding: 10px 12px;
-            color: white;
-            font-size: 0.85em;
-            cursor: pointer;
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
-            outline: none;
-            appearance: none;
+            height: 30px;
+            background: #000;
+            border: 2px solid #ff00ff;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .retro-loading-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, 
+                #ff00ff 0%, 
+                #ff66ff 25%, 
+                #ff00ff 50%, 
+                #ff66ff 75%, 
+                #ff00ff 100%);
+            background-size: 200% 100%;
+            animation: retroShine 1s linear infinite;
+            transition: width 0.1s steps(10);
             position: relative;
         }
         
-        .inline-select:hover:not(:disabled) {
-            background: rgba(102, 126, 234, 0.4);
-            border-color: rgba(102, 126, 234, 0.8);
-            box-shadow: 0 6px 24px rgba(102, 126, 234, 0.5);
+        @keyframes retroShine {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+        
+        .retro-loading-pixels {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 2px,
+                rgba(0, 0, 0, 0.3) 2px,
+                rgba(0, 0, 0, 0.3) 4px
+            );
+            pointer-events: none;
+        }
+        
+        /* 언어 선택기 스타일 */
+        .language-selector {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 15;
+            background: #2a0845;
+            border: 4px solid #ff00ff;
+            box-shadow: 
+                inset -2px -2px 0 #7d00b3,
+                inset 2px 2px 0 #ff66ff,
+                0 0 0 2px #000;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            transition: transform 0.1s steps(4);
+        }
+        
+        .language-selector:hover {
             transform: translateY(-2px);
         }
         
-        .custom-select:hover {
-            border-color: #764ba2;
-            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
+        .language-flag {
+            font-size: 24px;
         }
         
-        .inline-select:focus {
-            outline: none;
-            border-color: #ffd700;
-            box-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
-            background: rgba(255, 215, 0, 0.1);
+        .language-name {
+            color: #ffff00;
+            font-size: 18px;
+            font-weight: bold;
+            text-shadow: 2px 2px 0 #000;
         }
         
-        .custom-select:focus {
-            border-color: #ffd700;
-            box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
-        }
-        
-        .inline-select:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-            background: rgba(255, 255, 255, 0.05);
-        }
-        
-        .custom-select:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-            background: rgba(255, 255, 255, 0.05);
-            border-color: rgba(102, 126, 234, 0.3);
-        }
-        
-        .custom-select option {
-            background: #1a1a2e;
-            color: white;
-            padding: 10px;
-        }
-        
-        /* 드롭박스 화살표 */
-        .dropdown-arrow {
+        .language-dropdown {
             position: absolute;
-            right: 12px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #667eea;
-            font-size: 1em;
-            pointer-events: none;
-            transition: transform 0.3s ease;
+            top: 100%;
+            left: 0;
+            background: #1a0033;
+            border: 4px solid #ff00ff;
+            box-shadow: 
+                inset -2px -2px 0 #7d00b3,
+                inset 2px 2px 0 #ff66ff,
+                0 0 0 2px #000;
+            margin-top: 5px;
+            display: none;
+            max-height: 400px;
+            overflow-y: auto;
+            width: 200px;
         }
         
-        .custom-select:focus + .dropdown-arrow {
-            transform: translateY(-50%) rotate(180deg);
+        .language-dropdown.show {
+            display: block;
+            animation: pixelDropdown 0.2s steps(4);
         }
+        
+        @keyframes pixelDropdown {
+            from { opacity: 0; transform: scaleY(0); transform-origin: top; }
+            to { opacity: 1; transform: scaleY(1); }
+        }
+        
+        .language-option {
+            padding: 10px 15px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 2px solid #ff00ff;
+            transition: background 0.1s steps(2);
+        }
+        
+        .language-option:last-child {
+            border-bottom: none;
+        }
+        
+        .language-option:hover {
+            background: #ff00ff;
+        }
+        
+        .language-option:hover .language-option-name {
+            color: #fff;
+            text-shadow: 2px 2px 0 #000;
+        }
+        
+        .language-option-flag {
+            font-size: 20px;
+        }
+        
+        .language-option-name {
+            color: #00ff00;  /* 밝은 초록색으로 변경 */
+            font-size: 16px;
+            text-shadow: 2px 2px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+            font-weight: bold;
+        }
+        
+        /* 레거시 CSS 삭제 */
+        
+        /* 레거시 드롭다운 CSS 삭제 */
         
         .reset-button {
             position: fixed;
             top: 20px;
             right: 20px;
             z-index: 15;
-            background: rgba(255, 87, 51, 0.8);
-            color: white;
-            border: 2px solid #ff5733;
-            border-radius: 25px;
+            background: #ff0000;
+            color: #fff;
+            border: 4px solid #000;
+            border-radius: 0;
             padding: 8px 20px;
-            font-size: 0.9em;
+            font-size: 20px;
             font-weight: bold;
             cursor: pointer;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
+            transition: none;
+            font-family: 'VT323', monospace;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            box-shadow: 4px 4px 0 #800000;
+        }
+        
+        .reset-button:hover {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0 #800000;
         }
         
         .reset-button:hover {
@@ -425,12 +498,11 @@
         }
         
         .result-card {
-            background: rgba(0,0,0,0.8);
-            border: 2px solid #667eea;
-            border-radius: 15px;
+            background: #2a0050;
+            border: 4px solid #00ff00;
+            border-radius: 0;
             padding: 15px;
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
+            transition: none;
             position: relative;
             overflow: hidden;
             width: 100%;
@@ -441,7 +513,18 @@
             justify-content: space-between;
             opacity: 0;
             transform: translateY(30px);
-            animation: slideInUp 0.6s ease-out forwards;
+            animation: pixelFadeIn 0.3s steps(4) forwards;
+            box-shadow: 
+                inset -2px -2px 0 #1a0030,
+                inset 2px 2px 0 #4a0080,
+                0 0 0 2px #000;
+        }
+        
+        @keyframes pixelFadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         
         @keyframes slideInUp {
@@ -479,6 +562,27 @@
         .result-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 40px rgba(102, 126, 234, 0.3);
+        }
+        
+        .no-results {
+            text-align: center;
+            padding: 40px 20px;
+            color: #fff;
+            background: rgba(42, 0, 80, 0.8);
+            border: 2px solid #667eea;
+            border-radius: 10px;
+        }
+        
+        .no-results h3 {
+            color: #ff6b6b;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+        
+        .no-results p {
+            color: #ddd;
+            line-height: 1.6;
+            margin: 10px 0;
         }
         
         .tool-info {
@@ -522,16 +626,20 @@
         
         .tool-link {
             display: inline-block;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            background: #ff00ff;
+            color: #000;
             padding: 8px 16px;
-            border-radius: 15px;
+            border-radius: 0;
             text-decoration: none;
             font-weight: bold;
-            transition: all 0.3s ease;
-            font-size: 0.85em;
+            transition: none;
+            font-size: 18px;
             text-align: center;
             white-space: nowrap;
+            border: 2px solid #000;
+            box-shadow: 4px 4px 0 #7d00b3;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         
         .tool-link:hover {
@@ -539,24 +647,223 @@
             box-shadow: 0 5px 20px rgba(102, 126, 234, 0.5);
         }
         
-        /* 클릭 대기 표시 */
-        .click-indicator {
-            display: inline-block;
-            margin-left: 10px;
+        /* 90년대 레트로 질문 UI */
+        .vn-question-title {
+            font-size: 32px;
+            font-weight: bold;
+            color: #ffff00;
+            text-align: center;
+            margin-bottom: 20px;
+            text-shadow: 
+                2px 2px 0 #ff00ff,
+                3px 3px 0 #000;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            animation: retroBlink 2s infinite;
+        }
+        
+        @keyframes retroBlink {
+            0%, 90%, 100% { opacity: 1; }
+            95% { opacity: 0.8; }
+        }
+        
+        .vn-options {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            padding-bottom: 10px;
+        }
+        
+        .vn-option-button {
+            background: #4a0080;
+            border: 4px solid #ff00ff;
+            border-radius: 0;
+            padding: 16px;
+            color: white;
+            cursor: pointer;
+            transition: none;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+            font-family: 'VT323', monospace;
             font-size: 20px;
-            animation: blink 1s infinite;
+            width: 100%;
+            box-shadow: 
+                inset -3px -3px 0 #2a0050,
+                inset 3px 3px 0 #7a00cc,
+                6px 6px 0 #000;
+        }
+        
+        .option-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        
+        .vn-option-button::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #667eea, #764ba2, #667eea);
+            background-size: 400% 400%;
+            z-index: -1;
             opacity: 0;
             transition: opacity 0.3s;
-            color: rgba(255, 255, 255, 0.8);
+            animation: gradient-border 3s ease infinite;
+        }
+        
+        .vn-option-button:hover {
+            background: #6a00b0;
+            transform: translate(2px, 2px);
+            box-shadow: 
+                inset -3px -3px 0 #2a0050,
+                inset 3px 3px 0 #9a00ff,
+                4px 4px 0 #000;
+        }
+        
+        .vn-option-button::after {
+            content: '▶';
+            position: absolute;
+            left: -20px;
+            color: #ffff00;
+            font-size: 24px;
+            transition: left 0.1s steps(4);
+        }
+        
+        .vn-option-button:hover::after {
+            left: 8px;
+        }
+        
+        .vn-option-button:hover::before {
+            opacity: 0.5;
+        }
+        
+        .option-icon {
+            font-size: 2em;
+            min-width: 50px;
+            text-align: center;
+        }
+        
+        .option-text {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ffff00;
+            display: block;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 0 #000;
+        }
+        
+        .option-desc {
+            font-size: 0.9em;
+            color: rgba(255, 255, 255, 0.7);
+            display: block;
+            margin-top: 5px;
+        }
+        
+        .vn-option-button:active {
+            transform: translateX(5px) scale(0.98);
+        }
+        
+        /* 클릭 대기 표시 */
+        .click-indicator {
+            position: absolute;
+            bottom: 10px;
+            right: 30px;
+            font-size: 16px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            color: rgba(255, 255, 255, 0.7);
         }
         
         .click-indicator.show {
             opacity: 1;
+            animation: pulse 1.5s ease-in-out infinite;
         }
         
-        @keyframes blink {
-            0%, 100% { opacity: 0.3; }
-            50% { opacity: 1; }
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; transform: translateY(0); }
+            50% { opacity: 1; transform: translateY(-3px); }
+        }
+        
+        /* CRT 효과 */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.15),
+                rgba(0, 0, 0, 0.15) 1px,
+                transparent 1px,
+                transparent 2px
+            );
+            pointer-events: none;
+            z-index: 100;
+        }
+        
+        /* Flicker effect removed for better performance */
+        
+        /* 모바일 반응형 - 비주얼 노벨 버튼 */
+        @media (max-width: 768px) {
+            .vn-question-title {
+                font-size: 1.3em;
+            }
+            
+            .vn-options {
+                gap: 10px;
+            }
+            
+            .vn-option-button {
+                padding: 15px;
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .option-icon {
+                font-size: 1.5em;
+                min-width: auto;
+            }
+            
+            .option-text {
+                font-size: 1.1em;
+            }
+            
+            .option-desc {
+                font-size: 0.85em;
+            }
+        }
+        
+        @media (max-width: 500px) {
+            .vn-option-button {
+                padding: 12px;
+                gap: 10px;
+            }
+            
+            .option-icon {
+                font-size: 1.3em;
+            }
+            
+            .option-text {
+                font-size: 1em;
+            }
+            
+            .option-desc {
+                font-size: 0.8em;
+            }
         }
         
         /* 모바일 반응형 - 가로 유지 */
@@ -774,6 +1081,23 @@
     </style>
 </head>
 <body>
+    <!-- 언어 선택기 -->
+    <div class="language-selector" id="language-selector">
+        <span class="language-flag" id="current-language-flag">🇰🇷</span>
+        <span class="language-name" id="current-language-name">한국어</span>
+        <div class="language-dropdown" id="language-dropdown">
+            <!-- 동적으로 생성됨 -->
+        </div>
+    </div>
+    
+    <!-- 레트로 로딩바 -->
+    <div class="retro-loading-container" id="retro-loading">
+        <div class="retro-loading-bar">
+            <div class="retro-loading-fill" id="loading-fill"></div>
+            <div class="retro-loading-pixels"></div>
+        </div>
+    </div>
+    
     <!-- 비주얼 노벨 배경 -->
     <div class="vn-background"></div>
     
@@ -784,53 +1108,184 @@
     
     <!-- 선택 초기화 버튼 -->
     <button class="reset-button" id="reset-button" onclick="resetSelections()" style="display: none;">
-        다시 선택하기
+        ${getTranslation('ui', 'restart').toUpperCase()}
     </button>
     
     <!-- 대화창 -->
     <div class="dialogue-box glass-panel clickable" id="dialogue-box">
-        <div class="character-name">AI Teacher</div>
+        <div class="character-name" id="character-name">AI Teacher</div>
         <div class="dialogue-text" id="dialogue-text">
-            안녕하세요! AI Teacher예요. 원하시는 AI 도구를 찾아드릴게요!
+            Hello! I'm AI Teacher. I'll help you find the perfect AI tool!
         </div>
-        <span class="click-indicator" id="click-indicator">▼</span>
+        <span class="click-indicator" id="click-indicator">▼ Click to continue</span>
     </div>
     
     <!-- 선택지 패널 -->
     <div class="choice-panel glass-panel" id="choice-panel">
         <!-- Q1: 무엇을 선택 -->
         <div class="question-container" id="q1-container">
-            <div class="inline-question">
-                <span class="question-text">무엇을 하고 싶으세요?</span>
-                <div class="dropdowns-wrapper">
-                    <select class="inline-select" id="what-select">
-                        <option value="">선택하세요</option>
-                    </select>
-                </div>
+            <div class="vn-question-title" id="q1-title">💭 WHAT DO YOU WANT?</div>
+            <div class="vn-options" id="q1-options">
+                <!-- 동적으로 생성됨 -->
             </div>
         </div>
         
         <!-- Q2: 어떻게 선택 -->
         <div class="question-container" id="q2-container" style="display: none;">
-            <div class="inline-question">
-                <span class="question-text">어떻게 하고 싶으세요?</span>
-                <div class="dropdowns-wrapper">
-                    <select class="inline-select" id="how-select">
-                        <option value="">선택하세요</option>
-                    </select>
-                </div>
+            <div class="vn-question-title" id="q2-title">🛠️ HOW TO DO IT?</div>
+            <div class="vn-options" id="q2-options">
+                <!-- 동적으로 생성됨 -->
             </div>
         </div>
         
         <!-- Q3: 어떤형태로 선택 -->
         <div class="question-container" id="q3-container" style="display: none;">
-            <div class="inline-question">
-                <span class="question-text">어떤 형태로 만들고 싶으세요?</span>
-                <div class="dropdowns-wrapper">
-                    <select class="inline-select" id="do-select">
-                        <option value="">선택하세요</option>
-                    </select>
-                </div>
+            <div class="vn-question-title" id="q3-title">📋 OUTPUT FORMAT?</div>
+            <div class="vn-options" id="q3-options">
+                <!-- 동적으로 생성됨 -->
+            </div>
+        </div>
+        
+        <!-- 8단계 추가 질문들 (비주얼 노벨 스타일) -->
+        <!-- Q4: Language Support -->
+        <div class="question-container" id="q4-container" style="display: none;">
+            <div class="vn-question-title" id="q4-title">🌐 LANGUAGE PREFERENCE</div>
+            <div class="vn-options">
+                <button class="vn-option-button" onclick="selectOption('step4', 'korean_must')">
+                    <span class="option-icon">🇰🇷</span>
+                    <div class="option-content">
+                        <span class="option-text">KOREAN REQUIRED</span>
+                        <span class="option-desc">Must have Korean interface and support</span>
+                    </div>
+                </button>
+                <button class="vn-option-button" onclick="selectOption('step4', 'english_ok')">
+                    <span class="option-icon">🌍</span>
+                    <span class="option-text">ENGLISH OK</span>
+                    <span class="option-desc">Can use English interface</span>
+                </button>
+                <button class="vn-option-button" onclick="selectOption('step4', 'any_language')">
+                    <span class="option-icon">🌏</span>
+                    <span class="option-text">ANY LANGUAGE</span>
+                    <span class="option-desc">Language doesn't matter</span>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Q5: Budget -->
+        <div class="question-container" id="q5-container" style="display: none;">
+            <div class="vn-question-title" id="q5-title">💰 BUDGET RANGE</div>
+            <div class="vn-options">
+                <button class="vn-option-button" onclick="selectOption('step5', 'free_only')">
+                    <span class="option-icon">🆓</span>
+                    <span class="option-text">COMPLETELY FREE</span>
+                    <span class="option-desc">Only free tools</span>
+                </button>
+                <button class="vn-option-button" onclick="selectOption('step5', 'freemium_ok')">
+                    <span class="option-icon">💎</span>
+                    <span class="option-text">FREEMIUM OK</span>
+                    <span class="option-desc">Free basic, paid premium features</span>
+                </button>
+                <button class="vn-option-button" onclick="selectOption('step5', 'trial_ok')">
+                    <span class="option-icon">🎫</span>
+                    <span class="option-text">FREE TRIAL OK</span>
+                    <span class="option-desc">Can try before buying</span>
+                </button>
+                <button class="vn-option-button" onclick="selectOption('step5', 'paid_ok')">
+                    <span class="option-icon">💳</span>
+                    <span class="option-text">PAID OK</span>
+                    <span class="option-desc">Quality paid tools accepted</span>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Q6: Difficulty -->
+        <div class="question-container" id="q6-container" style="display: none;">
+            <div class="vn-question-title" id="q6-title">📊 DIFFICULTY LEVEL</div>
+            <div class="vn-options">
+                <button class="vn-option-button" onclick="selectOption('step6', 'beginner')">
+                    <span class="option-icon">🌱</span>
+                    <span class="option-text">BEGINNER</span>
+                    <span class="option-desc">Easy to use for first-timers</span>
+                </button>
+                <button class="vn-option-button" onclick="selectOption('step6', 'intermediate')">
+                    <span class="option-icon">🌳</span>
+                    <span class="option-text">INTERMEDIATE</span>
+                    <span class="option-desc">For somewhat experienced users</span>
+                </button>
+                <button class="vn-option-button" onclick="selectOption('step6', 'advanced')">
+                    <span class="option-icon">🌲</span>
+                    <span class="option-text">ADVANCED</span>
+                    <span class="option-desc">Professional-level features</span>
+                </button>
+                <button class="vn-option-button" onclick="selectOption('step6', 'developer')">
+                    <span class="option-icon">👨‍💻</span>
+                    <span class="option-text">DEVELOPER</span>
+                    <span class="option-desc">For those who can code/use APIs</span>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Q7: Platform/Installation Type -->
+        <div class="question-container" id="q7-container" style="display: none;">
+            <div class="vn-question-title" id="q7-title">💻 PLATFORM</div>
+            <div class="vn-options" id="q7-options">
+                <button class="vn-option-button" onclick="selectOption('step7', 'web')">
+                    <span class="option-icon">🌐</span>
+                    <span class="option-text">WEB BROWSER</span>
+                    <span class="option-desc">Use in Chrome, Safari, etc.</span>
+                </button>
+                <button class="vn-option-button" onclick="selectOption('step7', 'desktop')">
+                    <span class="option-icon">🖥️</span>
+                    <span class="option-text">DESKTOP APP</span>
+                    <span class="option-desc">Install on Windows, Mac, etc.</span>
+                </button>
+                <button class="vn-option-button" onclick="selectOption('step7', 'mobile')">
+                    <span class="option-icon">📱</span>
+                    <span class="option-text">MOBILE APP</span>
+                    <span class="option-desc">iOS, Android mobile apps</span>
+                </button>
+                <button class="vn-option-button" onclick="selectOption('step7', 'api')">
+                    <span class="option-icon">🔧</span>
+                    <span class="option-text">API ACCESS</span>
+                    <span class="option-desc">API for developers</span>
+                </button>
+                <button class="vn-option-button" onclick="selectOption('step7', 'all_with_api')">
+                    <span class="option-icon">🌐</span>
+                    <span class="option-text">ALL DEVICES + API</span>
+                    <span class="option-desc">Works everywhere with API support</span>
+                </button>
+                <button class="vn-option-button" onclick="selectOption('step7', 'all_without_api')">
+                    <span class="option-icon">📱</span>
+                    <span class="option-text">ALL DEVICES (NO API)</span>
+                    <span class="option-desc">Works on all devices, no API needed</span>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Q8: Special Features -->
+        <div class="question-container" id="q8-container" style="display: none;">
+            <div class="vn-question-title" id="q8-title">⭐ PRIORITY FEATURE</div>
+            <div class="vn-options">
+                <button class="vn-option-button" onclick="selectOption('step8', 'privacy')">
+                    <span class="option-icon">🔒</span>
+                    <span class="option-text">PRIVACY FIRST</span>
+                    <span class="option-desc">Data security is most important</span>
+                </button>
+                <button class="vn-option-button" onclick="selectOption('step8', 'collaboration')">
+                    <span class="option-icon">👥</span>
+                    <span class="option-text">TEAM FEATURES</span>
+                    <span class="option-desc">Can collaborate with team members</span>
+                </button>
+                <button class="vn-option-button" onclick="selectOption('step8', 'speed')">
+                    <span class="option-icon">⚡</span>
+                    <span class="option-text">FAST SPEED</span>
+                    <span class="option-desc">Processing speed is priority</span>
+                </button>
+                <button class="vn-option-button" onclick="selectOption('step8', 'quality')">
+                    <span class="option-icon">💯</span>
+                    <span class="option-text">TOP QUALITY</span>
+                    <span class="option-desc">Output quality is most important</span>
+                </button>
             </div>
         </div>
     </div>
@@ -838,15 +1293,38 @@
     <!-- 결과 컨테이너 -->
     <div class="results-container" id="results-container"></div>
     
-    <script src="tools-data.js"></script>
+
     <script>
+        // 번역 데이터
+        const translations = {"languages": {"ko": {"name": "한국어", "flag": "🇰🇷"}, "en": {"name": "English", "flag": "🇺🇸"}, "ja": {"name": "日本語", "flag": "🇯🇵"}, "zh": {"name": "中文", "flag": "🇨🇳"}, "es": {"name": "Español", "flag": "🇪🇸"}, "fr": {"name": "Français", "flag": "🇫🇷"}, "de": {"name": "Deutsch", "flag": "🇩🇪"}, "it": {"name": "Italiano", "flag": "🇮🇹"}, "pt": {"name": "Português", "flag": "🇵🇹"}, "ru": {"name": "Русский", "flag": "🇷🇺"}, "nl": {"name": "Nederlands", "flag": "🇳🇱"}, "pl": {"name": "Polski", "flag": "🇵🇱"}, "tr": {"name": "Türkçe", "flag": "🇹🇷"}, "ar": {"name": "العربية", "flag": "🇸🇦"}, "hi": {"name": "हिन्दी", "flag": "🇮🇳"}}, "ui": {"title": {"ko": "AI 선생님 - AI 도구 추천 가이드", "en": "AI Teacher - Your AI Tool Recommendation Guide", "ja": "AI 先生 - AIツール推薦ガイド", "zh": "AI 老师 - AI工具推荐指南", "es": "AI Profesor - Tu Guía de Recomendación de Herramientas AI", "fr": "AI Professeur - Votre Guide de Recommandation d'Outils IA", "de": "AI Lehrer - Ihr KI-Tool-Empfehlungsleitfaden", "it": "AI Insegnante - La Tua Guida per la Raccomandazione di Strumenti AI", "pt": "AI Professor - Seu Guia de Recomendação de Ferramentas de IA", "ru": "AI Учитель - Ваш гид по рекомендации AI инструментов", "nl": "AI Leraar - Uw AI Tool Aanbevelingsgids", "pl": "AI Nauczyciel - Twój Przewodnik Rekomendacji Narzędzi AI", "tr": "AI Öğretmen - AI Araç Öneri Rehberiniz", "ar": "AI معلم - دليلك لتوصيات أدوات الذكاء الاصطناعي", "hi": "AI शिक्षक - आपका AI टूल अनुशंसा गाइड"}, "welcome": {"ko": "안녕하세요! 저는 AI 선생님입니다. 당신에게 맞는 AI 도구를 찾아드릴게요!", "en": "Hello! I'm AI Teacher. I'll help you find the perfect AI tool!", "ja": "こんにちは！AI 先生です。あなたにぴったりのAIツールを見つけます！", "zh": "你好！我是AI 老师。我会帮你找到完美的AI工具！", "es": "¡Hola! Soy AI Profesor. ¡Te ayudaré a encontrar la herramienta AI perfecta!", "fr": "Bonjour! Je suis AI Professeur. Je vais vous aider à trouver l'outil IA parfait!", "de": "Hallo! Ich bin AI Lehrer. Ich helfe Ihnen, das perfekte KI-Tool zu finden!", "it": "Ciao! Sono AI Insegnante. Ti aiuterò a trovare lo strumento AI perfetto!", "pt": "Olá! Eu sou AI Professor. Vou ajudá-lo a encontrar a ferramenta de IA perfeita!", "ru": "Привет! Я AI Учитель. Помогу найти идеальный AI инструмент!", "nl": "Hallo! Ik ben AI Leraar. Ik help je het perfecte AI-tool te vinden!", "pl": "Cześć! Jestem AI Nauczyciel. Pomogę Ci znaleźć idealne narzędzie AI!", "tr": "Merhaba! Ben AI Öğretmen. Size mükemmel AI aracını bulmanıza yardımcı olacağım!", "ar": "مرحباً! أنا AI معلم. سأساعدك في العثور على أداة الذكاء الاصطناعي المثالية!", "hi": "नमस्ते! मैं AI शिक्षक हूं। मैं आपको सही AI टूल खोजने में मदद करूंगा!"}, "select_language": {"ko": "언어를 선택하세요", "en": "Select your language", "ja": "言語を選択してください", "zh": "选择您的语言", "es": "Selecciona tu idioma", "fr": "Sélectionnez votre langue", "de": "Wählen Sie Ihre Sprache", "it": "Seleziona la tua lingua", "pt": "Selecione seu idioma", "ru": "Выберите ваш язык", "nl": "Selecteer uw taal", "pl": "Wybierz swój język", "tr": "Dilinizi seçin", "ar": "اختر لغتك", "hi": "अपनी भाषा चुनें"}, "start": {"ko": "시작하기", "en": "Start", "ja": "スタート", "zh": "开始", "es": "Comenzar", "fr": "Commencer", "de": "Starten", "it": "Inizia", "pt": "Começar", "ru": "Начать", "nl": "Starten", "pl": "Start", "tr": "Başla", "ar": "ابدأ", "hi": "शुरू करें"}, "next": {"ko": "다음", "en": "Next", "ja": "次へ", "zh": "下一步", "es": "Siguiente", "fr": "Suivant", "de": "Weiter", "it": "Avanti", "pt": "Próximo", "ru": "Далее", "nl": "Volgende", "pl": "Dalej", "tr": "İleri", "ar": "التالي", "hi": "अगला"}, "back": {"ko": "이전", "en": "Back", "ja": "戻る", "zh": "返回", "es": "Atrás", "fr": "Retour", "de": "Zurück", "it": "Indietro", "pt": "Voltar", "ru": "Назад", "nl": "Terug", "pl": "Wstecz", "tr": "Geri", "ar": "رجوع", "hi": "वापस"}, "searching": {"ko": "AI 도구를 검색하는 중...", "en": "Searching for AI tools...", "ja": "AIツールを検索中...", "zh": "正在搜索AI工具...", "es": "Buscando herramientas de IA...", "fr": "Recherche d'outils IA...", "de": "Suche nach KI-Tools...", "it": "Ricerca strumenti AI...", "pt": "Procurando ferramentas de IA...", "ru": "Поиск AI инструментов...", "nl": "Zoeken naar AI-tools...", "pl": "Szukanie narzędzi AI...", "tr": "AI araçları aranıyor...", "ar": "البحث عن أدوات الذكاء الاصطناعي...", "hi": "AI टूल खोज रहे हैं..."}, "found": {"ko": "완벽한 AI 도구를 찾았어요!", "en": "Found the perfect AI tools!", "ja": "完璧なAIツールを見つけました！", "zh": "找到了完美的AI工具！", "es": "¡Encontré las herramientas AI perfectas!", "fr": "J'ai trouvé les outils IA parfaits!", "de": "Perfekte KI-Tools gefunden!", "it": "Ho trovato gli strumenti AI perfetti!", "pt": "Encontrei as ferramentas de IA perfeitas!", "ru": "Нашел идеальные AI инструменты!", "nl": "Perfecte AI-tools gevonden!", "pl": "Znalazłem idealne narzędzia AI!", "tr": "Mükemmel AI araçlarını buldum!", "ar": "وجدت أدوات الذكاء الاصطناعي المثالية!", "hi": "परफेक्ट AI टूल मिल गए!"}, "what_selected": {"ko": "좋은 선택이에요! 이제 어떻게 하실 건가요?", "en": "Great choice! Now, how would you like to do it?", "ja": "いい選択です！次はどうしますか？", "zh": "很好的选择！现在，您想怎么做？", "es": "¡Buena elección! Ahora, ¿cómo te gustaría hacerlo?", "fr": "Excellent choix! Maintenant, comment voulez-vous procéder?", "de": "Gute Wahl! Wie möchten Sie nun vorgehen?", "it": "Ottima scelta! Ora, come vorresti procedere?", "pt": "Ótima escolha! Agora, como você gostaria de fazer?", "ru": "Отличный выбор! Теперь, как вы хотите это сделать?", "nl": "Goede keuze! Hoe wilt u nu verder gaan?", "pl": "Świetny wybór! Teraz, jak chcesz to zrobić?", "tr": "Harika seçim! Şimdi, nasıl yapmak istersiniz?", "ar": "اختيار رائع! الآن، كيف تريد أن تفعل ذلك؟", "hi": "बढ़िया चुनाव! अब, आप इसे कैसे करना चाहेंगे?"}, "how_selected": {"ko": "좋아요! 이제 어떤 형식의 결과물을 원하시나요?", "en": "Good! Now what kind of output do you want?", "ja": "いいですね！どのような結果をお望みですか？", "zh": "很好！您想要什么样的输出？", "es": "¡Bien! ¿Qué tipo de resultado quieres?", "fr": "Bien! Quel type de résultat souhaitez-vous?", "de": "Gut! Welche Art von Ergebnis möchten Sie?", "it": "Bene! Che tipo di risultato vuoi?", "pt": "Bom! Que tipo de resultado você quer?", "ru": "Хорошо! Какой результат вы хотите получить?", "nl": "Goed! Wat voor resultaat wilt u?", "pl": "Dobrze! Jaki wynik chcesz uzyskać?", "tr": "Güzel! Nasıl bir sonuç istiyorsunuz?", "ar": "جيد! ما نوع النتيجة التي تريدها؟", "hi": "अच्छा! आप किस तरह का परिणाम चाहते हैं?"}, "do_selected": {"ko": "기본 설정이 완료되었어요! 이제 더 자세한 옵션을 선택해주세요.", "en": "Basic setup complete! Now please select more detailed options.", "ja": "基本設定が完了しました！詳細なオプションを選択してください。", "zh": "基本设置完成！现在请选择更详细的选项。", "es": "¡Configuración básica completa! Ahora selecciona opciones más detalladas.", "fr": "Configuration de base terminée! Veuillez maintenant sélectionner des options plus détaillées.", "de": "Grundeinstellungen abgeschlossen! Bitte wählen Sie nun detailliertere Optionen.", "it": "Configurazione di base completata! Ora seleziona opzioni più dettagliate.", "pt": "Configuração básica concluída! Agora selecione opções mais detalhadas.", "ru": "Базовая настройка завершена! Теперь выберите более подробные параметры.", "nl": "Basisconfiguratie voltooid! Selecteer nu meer gedetailleerde opties.", "pl": "Podstawowa konfiguracja zakończona! Teraz wybierz bardziej szczegółowe opcje.", "tr": "Temel kurulum tamamlandı! Şimdi daha ayrıntılı seçenekleri seçin.", "ar": "اكتمل الإعداد الأساسي! الآن يرجى تحديد خيارات أكثر تفصيلاً.", "hi": "बुनियादी सेटअप पूर्ण! अब अधिक विस्तृत विकल्प चुनें।"}, "ask_pricing": {"ko": "예산은 어느 정도인가요?", "en": "What is your budget?", "ja": "予算はどのくらいですか？", "zh": "您的预算是多少？", "es": "¿Cuál es tu presupuesto?", "fr": "Quel est votre budget?", "de": "Wie hoch ist Ihr Budget?", "it": "Qual è il tuo budget?", "pt": "Qual é o seu orçamento?", "ru": "Каков ваш бюджет?", "nl": "Wat is uw budget?", "pl": "Jaki jest twój budżet?", "tr": "Bütçeniz nedir?", "ar": "ما هي ميزانيتك؟", "hi": "आपका बजट क्या है?"}, "ask_platform": {"ko": "어떤 플랫폼에서 사용하실 건가요?", "en": "Which platform will you use?", "ja": "どのプラットフォームを使用しますか？", "zh": "您将使用哪个平台？", "es": "¿Qué plataforma usarás?", "fr": "Quelle plateforme utiliserez-vous?", "de": "Welche Plattform werden Sie verwenden?", "it": "Quale piattaforma userai?", "pt": "Qual plataforma você vai usar?", "ru": "Какую платформу вы будете использовать?", "nl": "Welk platform gaat u gebruiken?", "pl": "Jakiej platformy będziesz używać?", "tr": "Hangi platformu kullanacaksınız?", "ar": "ما المنصة التي ستستخدمها؟", "hi": "आप कौन सा प्लेटफॉर्म उपयोग करेंगे?"}, "ask_special": {"ko": "특별히 중요한 기능이 있나요?", "en": "Any special features you need?", "ja": "特に重要な機能はありますか？", "zh": "有什么特别重要的功能吗？", "es": "¿Alguna característica especial que necesites?", "fr": "Des fonctionnalités spéciales dont vous avez besoin?", "de": "Gibt es besondere Funktionen, die Sie benötigen?", "it": "Qualche funzione speciale di cui hai bisogno?", "pt": "Alguma funcionalidade especial que você precisa?", "ru": "Есть ли особые функции, которые вам нужны?", "nl": "Zijn er speciale functies die u nodig heeft?", "pl": "Czy są jakieś specjalne funkcje, których potrzebujesz?", "tr": "İhtiyacınız olan özel özellikler var mı?", "ar": "هل هناك ميزات خاصة تحتاجها؟", "hi": "क्या कोई विशेष सुविधा चाहिए?"}, "ask_app_type": {"ko": "어떤 종류의 애플리케이션을 원하시나요?", "en": "What type of application do you want?", "ja": "どのようなアプリケーションをお望みですか？", "zh": "您想要什么类型的应用程序？", "es": "¿Qué tipo de aplicación quieres?", "fr": "Quel type d'application souhaitez-vous?", "de": "Welche Art von Anwendung möchten Sie?", "it": "Che tipo di applicazione vuoi?", "pt": "Que tipo de aplicativo você quer?", "ru": "Какой тип приложения вы хотите?", "nl": "Wat voor type applicatie wilt u?", "pl": "Jaki rodzaj aplikacji chcesz?", "tr": "Ne tür bir uygulama istiyorsunuz?", "ar": "ما نوع التطبيق الذي تريده؟", "hi": "आप किस प्रकार का एप्लिकेशन चाहते हैं?"}, "restart": {"ko": "처음부터", "en": "Restart", "ja": "最初から", "zh": "重新开始", "es": "Reiniciar", "fr": "Recommencer", "de": "Neustart", "it": "Ricomincia", "pt": "Reiniciar", "ru": "Начать заново", "nl": "Herstart", "pl": "Restart", "tr": "Yeniden Başla", "ar": "إعادة البدء", "hi": "फिर से शुरू करें"}}, "steps": {"what": {"question": {"ko": "무엇을 하고 싶으신가요?", "en": "What would you like to do?", "ja": "何をしたいですか？", "zh": "您想做什么？", "es": "¿Qué te gustaría hacer?", "fr": "Que souhaitez-vous faire?", "de": "Was möchten Sie tun?", "it": "Cosa vorresti fare?", "pt": "O que você gostaria de fazer?", "ru": "Что вы хотели бы сделать?", "nl": "Wat wilt u doen?", "pl": "Co chciałbyś zrobić?", "tr": "Ne yapmak istersiniz?", "ar": "ماذا تريد أن تفعل؟", "hi": "आप क्या करना चाहेंगे?"}}, "how": {"question": {"ko": "어떻게 하고 싶으신가요?", "en": "How would you like to do it?", "ja": "どのようにしたいですか？", "zh": "您想如何做？", "es": "¿Cómo te gustaría hacerlo?", "fr": "Comment souhaitez-vous le faire?", "de": "Wie möchten Sie es tun?", "it": "Come vorresti farlo?", "pt": "Como você gostaria de fazer?", "ru": "Как вы хотели бы это сделать?", "nl": "Hoe wilt u het doen?", "pl": "Jak chciałbyś to zrobić?", "tr": "Nasıl yapmak istersiniz?", "ar": "كيف تريد أن تفعل ذلك؟", "hi": "आप इसे कैसे करना चाहेंगे?"}}, "do": {"question": {"ko": "어떤 결과물을 원하시나요?", "en": "What kind of output do you want?", "ja": "どのような結果が欲しいですか？", "zh": "您想要什么样的输出？", "es": "¿Qué tipo de resultado quieres?", "fr": "Quel type de résultat souhaitez-vous?", "de": "Welche Art von Ergebnis möchten Sie?", "it": "Che tipo di risultato vuoi?", "pt": "Que tipo de resultado você quer?", "ru": "Какой результат вы хотите получить?", "nl": "Wat voor resultaat wilt u?", "pl": "Jaki wynik chcesz uzyskać?", "tr": "Nasıl bir sonuç istiyorsunuz?", "ar": "ما نوع النتيجة التي تريدها؟", "hi": "आप किस तरह का परिणाम चाहते हैं?"}}}, "details": {"step4_language": {"question": {"ko": "어떤 언어로 사용하고 싶으신가요?", "en": "Which language would you like to use?", "ja": "どの言語で使用したいですか？", "zh": "您想使用哪种语言？", "es": "¿En qué idioma te gustaría usarlo?", "fr": "Dans quelle langue souhaitez-vous l'utiliser?", "de": "In welcher Sprache möchten Sie es verwenden?", "it": "In quale lingua vorresti usarlo?", "pt": "Em qual idioma você gostaria de usar?", "ru": "На каком языке вы хотели бы использовать?", "nl": "In welke taal wilt u het gebruiken?", "pl": "W jakim języku chciałbyś używać?", "tr": "Hangi dilde kullanmak istersiniz?", "ar": "بأي لغة تريد استخدامها؟", "hi": "आप किस भाषा में उपयोग करना चाहेंगे?"}}, "step5_pricing": {"question": {"ko": "예산은 어느 정도인가요?", "en": "What is your budget?", "ja": "予算はどのくらいですか？", "zh": "您的预算是多少？", "es": "¿Cuál es tu presupuesto?", "fr": "Quel est votre budget?", "de": "Wie hoch ist Ihr Budget?", "it": "Qual è il tuo budget?", "pt": "Qual é o seu orçamento?", "ru": "Каков ваш бюджет?", "nl": "Wat is uw budget?", "pl": "Jaki jest twój budżet?", "tr": "Bütçeniz nedir?", "ar": "ما هي ميزانيتك؟", "hi": "आपका बजट क्या है?"}}, "step6_difficulty": {"question": {"ko": "사용 난이도는 어느 정도가 좋으신가요?", "en": "What difficulty level do you prefer?", "ja": "使用難易度はどの程度が良いですか？", "zh": "您希望使用难度如何？", "es": "¿Qué nivel de dificultad prefieres?", "fr": "Quel niveau de difficulté préférez-vous?", "de": "Welchen Schwierigkeitsgrad bevorzugen Sie?", "it": "Quale livello di difficoltà preferisci?", "pt": "Qual nível de dificuldade você prefere?", "ru": "Какой уровень сложности вы предпочитаете?", "nl": "Welk moeilijkheidsniveau heeft uw voorkeur?", "pl": "Jaki poziom trudności preferujesz?", "tr": "Hangi zorluk seviyesini tercih edersiniz?", "ar": "ما مستوى الصعوبة الذي تفضله؟", "hi": "आप कौन सा कठिनाई स्तर पसंद करते हैं?"}}, "step7_platform": {"question": {"ko": "어떤 플랫폼에서 사용하시나요?", "en": "Which platform do you use?", "ja": "どのプラットフォームを使用しますか？", "zh": "您使用哪个平台？", "es": "¿Qué plataforma usas?", "fr": "Quelle plateforme utilisez-vous?", "de": "Welche Plattform nutzen Sie?", "it": "Quale piattaforma usi?", "pt": "Qual plataforma você usa?", "ru": "Какую платформу вы используете?", "nl": "Welk platform gebruikt u?", "pl": "Jakiej platformy używasz?", "tr": "Hangi platformu kullanıyorsunuz?", "ar": "ما المنصة التي تستخدمها؟", "hi": "आप कौन सा प्लेटफॉर्म उपयोग करते हैं?"}}, "step8_features": {"question": {"ko": "특별히 필요한 기능이 있나요?", "en": "Do you need any special features?", "ja": "特別に必要な機能はありますか？", "zh": "您需要任何特殊功能吗？", "es": "¿Necesitas alguna función especial?", "fr": "Avez-vous besoin de fonctionnalités spéciales?", "de": "Benötigen Sie spezielle Funktionen?", "it": "Hai bisogno di funzioni speciali?", "pt": "Você precisa de algum recurso especial?", "ru": "Вам нужны какие-то особые функции?", "nl": "Heeft u speciale functies nodig?", "pl": "Czy potrzebujesz specjalnych funkcji?", "tr": "Özel özelliklere ihtiyacınız var mı?", "ar": "هل تحتاج إلى أي ميزات خاصة؟", "hi": "क्या आपको कोई विशेष सुविधा चाहिए?"}}}, "results": {"recommended_tools": {"ko": "추천 AI 도구", "en": "Recommended AI Tools", "ja": "おすすめのAIツール", "zh": "推荐的AI工具", "es": "Herramientas AI Recomendadas", "fr": "Outils IA Recommandés", "de": "Empfohlene KI-Tools", "it": "Strumenti AI Consigliati", "pt": "Ferramentas de IA Recomendadas", "ru": "Рекомендуемые AI инструменты", "nl": "Aanbevolen AI Tools", "pl": "Polecane narzędzia AI", "tr": "Önerilen AI Araçları", "ar": "أدوات الذكاء الاصطناعي الموصى بها", "hi": "अनुशंसित AI उपकरण"}, "visit": {"ko": "방문하기", "en": "Visit", "ja": "訪問", "zh": "访问", "es": "Visitar", "fr": "Visiter", "de": "Besuchen", "it": "Visita", "pt": "Visitar", "ru": "Посетить", "nl": "Bezoeken", "pl": "Odwiedź", "tr": "Ziyaret Et", "ar": "زيارة", "hi": "देखें"}, "monthly_visits": {"ko": "월간 방문자", "en": "Monthly Visits", "ja": "月間訪問者", "zh": "月访问量", "es": "Visitas Mensuales", "fr": "Visites Mensuelles", "de": "Monatliche Besuche", "it": "Visite Mensili", "pt": "Visitas Mensais", "ru": "Посещений в месяц", "nl": "Maandelijkse Bezoeken", "pl": "Miesięczne Wizyty", "tr": "Aylık Ziyaret", "ar": "الزيارات الشهرية", "hi": "मासिक विज़िट"}, "rating": {"ko": "평점", "en": "Rating", "ja": "評価", "zh": "评分", "es": "Calificación", "fr": "Note", "de": "Bewertung", "it": "Valutazione", "pt": "Avaliação", "ru": "Рейтинг", "nl": "Beoordeling", "pl": "Ocena", "tr": "Puan", "ar": "التقييم", "hi": "रेटिंग"}}};
+        
+        // What-How-Do 번역 데이터
+        const whatTranslations = {"document": {"label": {"ko": "📄 문서", "en": "📄 Document", "ja": "📄 ドキュメント", "zh": "📄 文档", "es": "📄 Documento", "fr": "📄 Document", "de": "📄 Dokument", "it": "📄 Documento", "pt": "📄 Documento", "ru": "📄 Документ", "nl": "📄 Document", "pl": "📄 Dokument", "tr": "📄 Belge", "ar": "📄 مستند", "hi": "📄 दस्तावेज़"}, "description": {"ko": "텍스트 기반 콘텐츠", "en": "Text-based content", "ja": "テキストベースのコンテンツ", "zh": "基于文本的内容", "es": "Contenido basado en texto", "fr": "Contenu textuel", "de": "Textbasierter Inhalt", "it": "Contenuto basato su testo", "pt": "Conteúdo baseado em texto", "ru": "Текстовый контент", "nl": "Tekstgebaseerde inhoud", "pl": "Treść tekstowa", "tr": "Metin tabanlı içerik", "ar": "محتوى نصي", "hi": "पाठ आधारित सामग्री"}}, "image": {"label": {"ko": "🎨 이미지", "en": "🎨 Image", "ja": "🎨 画像", "zh": "🎨 图像", "es": "🎨 Imagen", "fr": "🎨 Image", "de": "🎨 Bild", "it": "🎨 Immagine", "pt": "🎨 Imagem", "ru": "🎨 Изображение", "nl": "🎨 Afbeelding", "pl": "🎨 Obraz", "tr": "🎨 Görüntü", "ar": "🎨 صورة", "hi": "🎨 छवि"}, "description": {"ko": "사진, 그림, 디자인", "en": "Photos, drawings, designs", "ja": "写真、絵、デザイン", "zh": "照片、绘画、设计", "es": "Fotos, dibujos, diseños", "fr": "Photos, dessins, designs", "de": "Fotos, Zeichnungen, Designs", "it": "Foto, disegni, design", "pt": "Fotos, desenhos, designs", "ru": "Фотографии, рисунки, дизайн", "nl": "Foto's, tekeningen, ontwerpen", "pl": "Zdjęcia, rysunki, projekty", "tr": "Fotoğraflar, çizimler, tasarımlar", "ar": "صور، رسومات، تصاميم", "hi": "फोटो, चित्र, डिज़ाइन"}}, "video": {"label": {"ko": "🎬 영상", "en": "🎬 Video", "ja": "🎬 動画", "zh": "🎬 视频", "es": "🎬 Video", "fr": "🎬 Vidéo", "de": "🎬 Video", "it": "🎬 Video", "pt": "🎬 Vídeo", "ru": "🎬 Видео", "nl": "🎬 Video", "pl": "🎬 Wideo", "tr": "🎬 Video", "ar": "🎬 فيديو", "hi": "🎬 वीडियो"}, "description": {"ko": "동영상, 애니메이션", "en": "Videos, animations", "ja": "動画、アニメーション", "zh": "视频、动画", "es": "Videos, animaciones", "fr": "Vidéos, animations", "de": "Videos, Animationen", "it": "Video, animazioni", "pt": "Vídeos, animações", "ru": "Видео, анимация", "nl": "Video's, animaties", "pl": "Filmy, animacje", "tr": "Videolar, animasyonlar", "ar": "فيديوهات، رسوم متحركة", "hi": "वीडियो, एनिमेशन"}}, "audio": {"label": {"ko": "🎵 오디오", "en": "🎵 Audio", "ja": "🎵 オーディオ", "zh": "🎵 音频", "es": "🎵 Audio", "fr": "🎵 Audio", "de": "🎵 Audio", "it": "🎵 Audio", "pt": "🎵 Áudio", "ru": "🎵 Аудио", "nl": "🎵 Audio", "pl": "🎵 Audio", "tr": "🎵 Ses", "ar": "🎵 صوت", "hi": "🎵 ऑडियो"}, "description": {"ko": "음악, 음성, 효과음", "en": "Music, voice, sound effects", "ja": "音楽、音声、効果音", "zh": "音乐、语音、音效", "es": "Música, voz, efectos de sonido", "fr": "Musique, voix, effets sonores", "de": "Musik, Stimme, Soundeffekte", "it": "Musica, voce, effetti sonori", "pt": "Música, voz, efeitos sonoros", "ru": "Музыка, голос, звуковые эффекты", "nl": "Muziek, stem, geluidseffecten", "pl": "Muzyka, głos, efekty dźwiękowe", "tr": "Müzik, ses, ses efektleri", "ar": "موسيقى، صوت، مؤثرات صوتية", "hi": "संगीत, आवाज़, ध्वनि प्रभाव"}}, "code": {"label": {"ko": "💻 코드", "en": "💻 Code", "ja": "💻 コード", "zh": "💻 代码", "es": "💻 Código", "fr": "💻 Code", "de": "💻 Code", "it": "💻 Codice", "pt": "💻 Código", "ru": "💻 Код", "nl": "💻 Code", "pl": "💻 Kod", "tr": "💻 Kod", "ar": "💻 كود", "hi": "💻 कोड"}, "description": {"ko": "프로그래밍, 개발", "en": "Programming, development", "ja": "プログラミング、開発", "zh": "编程、开发", "es": "Programación, desarrollo", "fr": "Programmation, développement", "de": "Programmierung, Entwicklung", "it": "Programmazione, sviluppo", "pt": "Programação, desenvolvimento", "ru": "Программирование, разработка", "nl": "Programmeren, ontwikkeling", "pl": "Programowanie, rozwój", "tr": "Programlama, geliştirme", "ar": "برمجة، تطوير", "hi": "प्रोग्रामिंग, विकास"}}, "data": {"label": {"ko": "📊 데이터", "en": "📊 Data", "ja": "📊 データ", "zh": "📊 数据", "es": "📊 Datos", "fr": "📊 Données", "de": "📊 Daten", "it": "📊 Dati", "pt": "📊 Dados", "ru": "📊 Данные", "nl": "📊 Data", "pl": "📊 Dane", "tr": "📊 Veri", "ar": "📊 بيانات", "hi": "📊 डेटा"}, "description": {"ko": "표, 차트, 분석", "en": "Tables, charts, analysis", "ja": "表、チャート、分析", "zh": "表格、图表、分析", "es": "Tablas, gráficos, análisis", "fr": "Tableaux, graphiques, analyse", "de": "Tabellen, Diagramme, Analyse", "it": "Tabelle, grafici, analisi", "pt": "Tabelas, gráficos, análise", "ru": "Таблицы, графики, анализ", "nl": "Tabellen, grafieken, analyse", "pl": "Tabele, wykresy, analiza", "tr": "Tablolar, grafikler, analiz", "ar": "جداول، مخططات، تحليل", "hi": "तालिकाएं, चार्ट, विश्लेषण"}}, "conversation": {"label": {"ko": "💬 대화", "en": "💬 Conversation", "ja": "💬 会話", "zh": "💬 对话", "es": "💬 Conversación", "fr": "💬 Conversation", "de": "💬 Unterhaltung", "it": "💬 Conversazione", "pt": "💬 Conversa", "ru": "💬 Диалог", "nl": "💬 Gesprek", "pl": "💬 Rozmowa", "tr": "💬 Sohbet", "ar": "💬 محادثة", "hi": "💬 बातचीत"}, "description": {"ko": "챗봇, AI 비서", "en": "Chatbot, AI assistant", "ja": "チャットボット、AIアシスタント", "zh": "聊天机器人、AI助手", "es": "Chatbot, asistente AI", "fr": "Chatbot, assistant IA", "de": "Chatbot, KI-Assistent", "it": "Chatbot, assistente AI", "pt": "Chatbot, assistente IA", "ru": "Чат-бот, ИИ-ассистент", "nl": "Chatbot, AI-assistent", "pl": "Chatbot, asystent AI", "tr": "Sohbet robotu, AI asistan", "ar": "روبوت محادثة، مساعد ذكي", "hi": "चैटबॉट, AI सहायक"}}};
+        const howTranslations = {"generate": {"label": {"ko": "✍️ 작성하기", "en": "✍️ Generate", "ja": "✍️ 作成する", "zh": "✍️ 生成", "es": "✍️ Generar", "fr": "✍️ Générer", "de": "✍️ Erstellen", "it": "✍️ Generare", "pt": "✍️ Gerar", "ru": "✍️ Создать", "nl": "✍️ Genereren", "pl": "✍️ Generować", "tr": "✍️ Oluştur", "ar": "✍️ إنشاء", "hi": "✍️ जेनरेट करें"}, "description": {"ko": "새로운 콘텐츠 생성", "en": "Create new content", "ja": "新しいコンテンツを生成", "zh": "创建新内容", "es": "Crear nuevo contenido", "fr": "Créer du nouveau contenu", "de": "Neuen Inhalt erstellen", "it": "Crea nuovo contenuto", "pt": "Criar novo conteúdo", "ru": "Создать новый контент", "nl": "Nieuwe inhoud maken", "pl": "Tworzenie nowej treści", "tr": "Yeni içerik oluştur", "ar": "إنشاء محتوى جديد", "hi": "नई सामग्री बनाएं"}}, "edit": {"label": {"ko": "✏️ 편집하기", "en": "✏️ Edit", "ja": "✏️ 編集する", "zh": "✏️ 编辑", "es": "✏️ Editar", "fr": "✏️ Éditer", "de": "✏️ Bearbeiten", "it": "✏️ Modifica", "pt": "✏️ Editar", "ru": "✏️ Редактировать", "nl": "✏️ Bewerken", "pl": "✏️ Edytować", "tr": "✏️ Düzenle", "ar": "✏️ تحرير", "hi": "✏️ संपादित करें"}, "description": {"ko": "기존 콘텐츠 수정", "en": "Modify existing content", "ja": "既存のコンテンツを修正", "zh": "修改现有内容", "es": "Modificar contenido existente", "fr": "Modifier le contenu existant", "de": "Vorhandenen Inhalt ändern", "it": "Modifica contenuto esistente", "pt": "Modificar conteúdo existente", "ru": "Изменить существующий контент", "nl": "Bestaande inhoud wijzigen", "pl": "Modyfikuj istniejącą treść", "tr": "Mevcut içeriği düzenle", "ar": "تعديل المحتوى الموجود", "hi": "मौजूदा सामग्री संशोधित करें"}}, "analyze": {"label": {"ko": "🔍 분석하기", "en": "🔍 Analyze", "ja": "🔍 分析する", "zh": "🔍 分析", "es": "🔍 Analizar", "fr": "🔍 Analyser", "de": "🔍 Analysieren", "it": "🔍 Analizza", "pt": "🔍 Analisar", "ru": "🔍 Анализировать", "nl": "🔍 Analyseren", "pl": "🔍 Analizować", "tr": "🔍 Analiz et", "ar": "🔍 تحليل", "hi": "🔍 विश्लेषण करें"}, "description": {"ko": "콘텐츠 분석 및 인사이트", "en": "Analyze content and insights", "ja": "コンテンツ分析とインサイト", "zh": "内容分析和洞察", "es": "Analizar contenido y perspectivas", "fr": "Analyser le contenu et les insights", "de": "Inhalte und Einblicke analysieren", "it": "Analizza contenuti e approfondimenti", "pt": "Analisar conteúdo e insights", "ru": "Анализ контента и инсайты", "nl": "Inhoud en inzichten analyseren", "pl": "Analizuj treść i spostrzeżenia", "tr": "İçerik ve içgörüleri analiz et", "ar": "تحليل المحتوى والرؤى", "hi": "सामग्री और अंतर्दृष्टि का विश्लेषण करें"}}, "convert": {"label": {"ko": "🔄 변환하기", "en": "🔄 Convert", "ja": "🔄 変換する", "zh": "🔄 转换", "es": "🔄 Convertir", "fr": "🔄 Convertir", "de": "🔄 Konvertieren", "it": "🔄 Converti", "pt": "🔄 Converter", "ru": "🔄 Конвертировать", "nl": "🔄 Converteren", "pl": "🔄 Konwertować", "tr": "🔄 Dönüştür", "ar": "🔄 تحويل", "hi": "🔄 परिवर्तित करें"}, "description": {"ko": "형식이나 스타일 변환", "en": "Convert format or style", "ja": "フォーマットやスタイルを変換", "zh": "转换格式或样式", "es": "Convertir formato o estilo", "fr": "Convertir le format ou le style", "de": "Format oder Stil konvertieren", "it": "Converti formato o stile", "pt": "Converter formato ou estilo", "ru": "Конвертировать формат или стиль", "nl": "Formaat of stijl converteren", "pl": "Konwertuj format lub styl", "tr": "Format veya stili dönüştür", "ar": "تحويل التنسيق أو النمط", "hi": "प्रारूप या शैली परिवर्तित करें"}}, "remove_bg": {"label": {"ko": "🎭 배경 제거", "en": "🎭 Remove Background", "ja": "🎭 背景を削除", "zh": "🎭 删除背景", "es": "🎭 Eliminar Fondo", "fr": "🎭 Supprimer l'arrière-plan", "de": "🎭 Hintergrund entfernen", "it": "🎭 Rimuovi Sfondo", "pt": "🎭 Remover Fundo", "ru": "🎭 Удалить фон", "nl": "🎭 Achtergrond verwijderen", "pl": "🎭 Usuń tło", "tr": "🎭 Arka Planı Kaldır", "ar": "🎭 إزالة الخلفية", "hi": "🎭 पृष्ठभूमि हटाएं"}, "description": {"ko": "이미지 배경 제거", "en": "Remove image background", "ja": "画像の背景を削除", "zh": "删除图像背景", "es": "Eliminar fondo de imagen", "fr": "Supprimer l'arrière-plan de l'image", "de": "Bildhintergrund entfernen", "it": "Rimuovi sfondo immagine", "pt": "Remover fundo da imagem", "ru": "Удалить фон изображения", "nl": "Achtergrond van afbeelding verwijderen", "pl": "Usuń tło obrazu", "tr": "Görüntü arka planını kaldır", "ar": "إزالة خلفية الصورة", "hi": "छवि पृष्ठभूमि हटाएं"}}, "enhance": {"label": {"ko": "✨ 품질 향상", "en": "✨ Enhance Quality", "ja": "✨ 品質向上", "zh": "✨ 提升质量", "es": "✨ Mejorar Calidad", "fr": "✨ Améliorer la Qualité", "de": "✨ Qualität verbessern", "it": "✨ Migliora Qualità", "pt": "✨ Melhorar Qualidade", "ru": "✨ Улучшить качество", "nl": "✨ Kwaliteit verbeteren", "pl": "✨ Popraw jakość", "tr": "✨ Kaliteyi Artır", "ar": "✨ تحسين الجودة", "hi": "✨ गुणवत्ता बढ़ाएं"}, "description": {"ko": "이미지나 영상 품질 향상", "en": "Enhance image or video quality", "ja": "画像や動画の品質を向上", "zh": "提升图像或视频质量", "es": "Mejorar calidad de imagen o video", "fr": "Améliorer la qualité d'image ou de vidéo", "de": "Bild- oder Videoqualität verbessern", "it": "Migliora qualità di immagine o video", "pt": "Melhorar qualidade de imagem ou vídeo", "ru": "Улучшить качество изображения или видео", "nl": "Beeld- of videokwaliteit verbeteren", "pl": "Popraw jakość obrazu lub wideo", "tr": "Görüntü veya video kalitesini artır", "ar": "تحسين جودة الصورة أو الفيديو", "hi": "छवि या वीडियो गुणवत्ता बढ़ाएं"}}, "transcribe": {"label": {"ko": "📝 텍스트 변환", "en": "📝 Transcribe", "ja": "📝 文字起こし", "zh": "📝 转录", "es": "📝 Transcribir", "fr": "📝 Transcrire", "de": "📝 Transkribieren", "it": "📝 Trascrivi", "pt": "📝 Transcrever", "ru": "📝 Транскрибировать", "nl": "📝 Transcriberen", "pl": "📝 Transkrybuj", "tr": "📝 Metne Dönüştür", "ar": "📝 نسخ", "hi": "📝 लिप्यंतरण"}, "description": {"ko": "음성을 텍스트로 변환", "en": "Convert speech to text", "ja": "音声をテキストに変換", "zh": "语音转文字", "es": "Convertir voz a texto", "fr": "Convertir la parole en texte", "de": "Sprache in Text umwandeln", "it": "Converti voce in testo", "pt": "Converter fala em texto", "ru": "Преобразовать речь в текст", "nl": "Spraak naar tekst converteren", "pl": "Zamień mowę na tekst", "tr": "Konuşmayı metne çevir", "ar": "تحويل الكلام إلى نص", "hi": "भाषण को पाठ में बदलें"}}, "compose": {"label": {"ko": "🎼 작곡하기", "en": "🎼 Compose", "ja": "🎼 作曲する", "zh": "🎼 作曲", "es": "🎼 Componer", "fr": "🎼 Composer", "de": "🎼 Komponieren", "it": "🎼 Componi", "pt": "🎼 Compor", "ru": "🎼 Сочинить", "nl": "🎼 Componeren", "pl": "🎼 Komponuj", "tr": "🎼 Beste Yap", "ar": "🎼 ألّف", "hi": "🎼 रचना करें"}, "description": {"ko": "음악이나 멜로디 작곡", "en": "Compose music or melodies", "ja": "音楽やメロディーを作曲", "zh": "创作音乐或旋律", "es": "Componer música o melodías", "fr": "Composer de la musique ou des mélodies", "de": "Musik oder Melodien komponieren", "it": "Componi musica o melodie", "pt": "Compor música ou melodias", "ru": "Сочинить музыку или мелодии", "nl": "Muziek of melodieën componeren", "pl": "Komponuj muzykę lub melodie", "tr": "Müzik veya melodi bestele", "ar": "تأليف الموسيقى أو الألحان", "hi": "संगीत या धुन रचें"}}, "debug": {"label": {"ko": "🐛 디버그", "en": "🐛 Debug", "ja": "🐛 デバッグ", "zh": "🐛 调试", "es": "🐛 Depurar", "fr": "🐛 Déboguer", "de": "🐛 Debuggen", "it": "🐛 Debug", "pt": "🐛 Depurar", "ru": "🐛 Отладка", "nl": "🐛 Debuggen", "pl": "🐛 Debuguj", "tr": "🐛 Hata Ayıkla", "ar": "🐛 تصحيح", "hi": "🐛 डिबग"}, "description": {"ko": "코드 오류 찾기 및 수정", "en": "Find and fix code errors", "ja": "コードエラーを見つけて修正", "zh": "查找并修复代码错误", "es": "Encontrar y corregir errores de código", "fr": "Trouver et corriger les erreurs de code", "de": "Code-Fehler finden und beheben", "it": "Trova e correggi errori di codice", "pt": "Encontrar e corrigir erros de código", "ru": "Найти и исправить ошибки кода", "nl": "Code-fouten vinden en oplossen", "pl": "Znajdź i napraw błędy kodu", "tr": "Kod hatalarını bul ve düzelt", "ar": "البحث عن أخطاء الكود وإصلاحها", "hi": "कोड त्रुटियों को खोजें और ठीक करें"}}, "refactor": {"label": {"ko": "♻️ 리팩토링", "en": "♻️ Refactor", "ja": "♻️ リファクタリング", "zh": "♻️ 重构", "es": "♻️ Refactorizar", "fr": "♻️ Refactoriser", "de": "♻️ Refaktorisieren", "it": "♻️ Rifattorizza", "pt": "♻️ Refatorar", "ru": "♻️ Рефакторинг", "nl": "♻️ Refactoren", "pl": "♻️ Refaktoryzuj", "tr": "♻️ Yeniden Düzenle", "ar": "♻️ إعادة هيكلة", "hi": "♻️ रिफैक्टर"}, "description": {"ko": "코드 구조 개선", "en": "Improve code structure", "ja": "コード構造を改善", "zh": "改进代码结构", "es": "Mejorar estructura de código", "fr": "Améliorer la structure du code", "de": "Code-Struktur verbessern", "it": "Migliora struttura del codice", "pt": "Melhorar estrutura do código", "ru": "Улучшить структуру кода", "nl": "Code-structuur verbeteren", "pl": "Popraw strukturę kodu", "tr": "Kod yapısını iyileştir", "ar": "تحسين هيكل الكود", "hi": "कोड संरचना सुधारें"}}, "visualize": {"label": {"ko": "📈 시각화", "en": "📈 Visualize", "ja": "📈 可視化", "zh": "📈 可视化", "es": "📈 Visualizar", "fr": "📈 Visualiser", "de": "📈 Visualisieren", "it": "📈 Visualizza", "pt": "📈 Visualizar", "ru": "📈 Визуализировать", "nl": "📈 Visualiseren", "pl": "📈 Wizualizuj", "tr": "📈 Görselleştir", "ar": "📈 تصور", "hi": "📈 दृश्यीकरण"}, "description": {"ko": "데이터를 시각적으로 표현", "en": "Visualize data graphically", "ja": "データを視覚的に表現", "zh": "数据可视化表示", "es": "Visualizar datos gráficamente", "fr": "Visualiser les données graphiquement", "de": "Daten grafisch darstellen", "it": "Visualizza dati graficamente", "pt": "Visualizar dados graficamente", "ru": "Визуализировать данные графически", "nl": "Data grafisch weergeven", "pl": "Wizualizuj dane graficznie", "tr": "Verileri grafiksel olarak göster", "ar": "تصور البيانات بيانياً", "hi": "डेटा को ग्राफिक रूप से दिखाएं"}}, "chat": {"label": {"ko": "💬 대화하기", "en": "💬 Chat", "ja": "💬 チャット", "zh": "💬 聊天", "es": "💬 Chatear", "fr": "💬 Discuter", "de": "💬 Chatten", "it": "💬 Chatta", "pt": "💬 Conversar", "ru": "💬 Чат", "nl": "💬 Chatten", "pl": "💬 Czatuj", "tr": "💬 Sohbet Et", "ar": "💬 دردشة", "hi": "💬 चैट करें"}, "description": {"ko": "AI와 대화나 상담", "en": "Chat or consult with AI", "ja": "AIとチャットや相談", "zh": "与AI聊天或咨询", "es": "Chatear o consultar con IA", "fr": "Discuter ou consulter avec l'IA", "de": "Mit KI chatten oder beraten", "it": "Chatta o consulta con l'IA", "pt": "Conversar ou consultar com IA", "ru": "Чат или консультация с ИИ", "nl": "Chatten of overleggen met AI", "pl": "Czatuj lub konsultuj się z AI", "tr": "AI ile sohbet et veya danış", "ar": "الدردشة أو التشاور مع الذكاء الاصطناعي", "hi": "AI के साथ चैट या परामर्श"}}, "tutor": {"label": {"ko": "📚 학습 도우미", "en": "📚 Tutor", "ja": "📚 家庭教師", "zh": "📚 辅导", "es": "📚 Tutor", "fr": "📚 Tuteur", "de": "📚 Tutor", "it": "📚 Tutor", "pt": "📚 Tutor", "ru": "📚 Репетитор", "nl": "📚 Tutor", "pl": "📚 Korepetytor", "tr": "📚 Öğretmen", "ar": "📚 مدرس", "hi": "📚 ट्यूटर"}, "description": {"ko": "학습과 교육 지원", "en": "Learning and education support", "ja": "学習と教育のサポート", "zh": "学习和教育支持", "es": "Apoyo de aprendizaje y educación", "fr": "Soutien à l'apprentissage et à l'éducation", "de": "Lern- und Bildungsunterstützung", "it": "Supporto all'apprendimento e all'istruzione", "pt": "Apoio de aprendizagem e educação", "ru": "Поддержка обучения и образования", "nl": "Leer- en onderwijsondersteuning", "pl": "Wsparcie w nauce i edukacji", "tr": "Öğrenme ve eğitim desteği", "ar": "دعم التعلم والتعليم", "hi": "सीखने और शिक्षा का समर्थन"}}};
+        const doTranslations = {"document": {"label": {"ko": "📄 텍스트 문서", "en": "📄 Text Document", "ja": "📄 テキスト文書", "zh": "📄 文本文档", "es": "📄 Documento de Texto", "fr": "📄 Document Texte", "de": "📄 Textdokument", "it": "📄 Documento di Testo", "pt": "📄 Documento de Texto", "ru": "📄 Текстовый документ", "nl": "📄 Tekstdocument", "pl": "📄 Dokument Tekstowy", "tr": "📄 Metin Belgesi", "ar": "📄 مستند نصي", "hi": "📄 पाठ दस्तावेज़"}}, "presentation": {"label": {"ko": "📊 프레젠테이션", "en": "📊 Presentation", "ja": "📊 プレゼンテーション", "zh": "📊 演示文稿", "es": "📊 Presentación", "fr": "📊 Présentation", "de": "📊 Präsentation", "it": "📊 Presentazione", "pt": "📊 Apresentação", "ru": "📊 Презентация", "nl": "📊 Presentatie", "pl": "📊 Prezentacja", "tr": "📊 Sunum", "ar": "📊 عرض تقديمي", "hi": "📊 प्रस्तुति"}}, "email": {"label": {"ko": "📧 이메일", "en": "📧 Email", "ja": "📧 メール", "zh": "📧 电子邮件", "es": "📧 Correo Electrónico", "fr": "📧 Email", "de": "📧 E-Mail", "it": "📧 Email", "pt": "📧 Email", "ru": "📧 Электронная почта", "nl": "📧 E-mail", "pl": "📧 Email", "tr": "📧 E-posta", "ar": "📧 بريد إلكتروني", "hi": "📧 ईमेल"}}, "report": {"label": {"ko": "📑 보고서", "en": "📑 Report", "ja": "📑 レポート", "zh": "📑 报告", "es": "📑 Informe", "fr": "📑 Rapport", "de": "📑 Bericht", "it": "📑 Rapporto", "pt": "📑 Relatório", "ru": "📑 Отчет", "nl": "📑 Rapport", "pl": "📑 Raport", "tr": "📑 Rapor", "ar": "📑 تقرير", "hi": "📑 रिपोर्ट"}}, "article": {"label": {"ko": "📰 기사/블로그", "en": "📰 Article/Blog", "ja": "📰 記事/ブログ", "zh": "📰 文章/博客", "es": "📰 Artículo/Blog", "fr": "📰 Article/Blog", "de": "📰 Artikel/Blog", "it": "📰 Articolo/Blog", "pt": "📰 Artigo/Blog", "ru": "📰 Статья/Блог", "nl": "📰 Artikel/Blog", "pl": "📰 Artykuł/Blog", "tr": "📰 Makale/Blog", "ar": "📰 مقال/مدونة", "hi": "📰 लेख/ब्लॉग"}}, "image": {"label": {"ko": "🖼️ AI 생성 이미지", "en": "🖼️ AI Generated Image", "ja": "🖼️ AI生成画像", "zh": "🖼️ AI生成图像", "es": "🖼️ Imagen Generada por IA", "fr": "🖼️ Image Générée par IA", "de": "🖼️ KI-generiertes Bild", "it": "🖼️ Immagine Generata da IA", "pt": "🖼️ Imagem Gerada por IA", "ru": "🖼️ Изображение, созданное ИИ", "nl": "🖼️ AI-gegenereerde afbeelding", "pl": "🖼️ Obraz wygenerowany przez AI", "tr": "🖼️ AI Tarafından Oluşturulan Görüntü", "ar": "🖼️ صورة مُنشأة بالذكاء الاصطناعي", "hi": "🖼️ AI जनित छवि"}}, "video": {"label": {"ko": "🎥 AI 생성 영상", "en": "🎥 AI Generated Video", "ja": "🎥 AI生成動画", "zh": "🎥 AI生成视频", "es": "🎥 Video Generado por IA", "fr": "🎥 Vidéo Générée par IA", "de": "🎥 KI-generiertes Video", "it": "🎥 Video Generato da IA", "pt": "🎥 Vídeo Gerado por IA", "ru": "🎥 Видео, созданное ИИ", "nl": "🎥 AI-gegenereerde video", "pl": "🎥 Wideo wygenerowane przez AI", "tr": "🎥 AI Tarafından Oluşturulan Video", "ar": "🎥 فيديو مُنشأ بالذكاء الاصطناعي", "hi": "🎥 AI जनित वीडियो"}}};
+        
+        // 8단계 번역 데이터
+        const step4Translations = {"question": {"ko": "어떤 언어로 사용하고 싶으신가요?", "en": "Which language would you like to use?", "ja": "どの言語で使用したいですか？", "zh": "您想使用哪种语言？", "es": "¿En qué idioma te gustaría usarlo?", "fr": "Dans quelle langue souhaitez-vous l'utiliser?", "de": "In welcher Sprache möchten Sie es verwenden?", "it": "In quale lingua vorresti usarlo?", "pt": "Em qual idioma você gostaria de usar?", "ru": "На каком языке вы хотели бы использовать?", "nl": "In welke taal wilt u het gebruiken?", "pl": "W jakim języku chciałbyś używać?", "tr": "Hangi dilde kullanmak istersiniz?", "ar": "بأي لغة تريد استخدامها؟", "hi": "आप किस भाषा में उपयोग करना चाहेंगे?"}, "options": {"korean": {"label": {"ko": "🇰🇷 한국어", "en": "🇰🇷 Korean", "ja": "🇰🇷 韓国語", "zh": "🇰🇷 韩语", "es": "🇰🇷 Coreano", "fr": "🇰🇷 Coréen", "de": "🇰🇷 Koreanisch", "it": "🇰🇷 Coreano", "pt": "🇰🇷 Coreano", "ru": "🇰🇷 Корейский", "nl": "🇰🇷 Koreaans", "pl": "🇰🇷 Koreański", "tr": "🇰🇷 Korece", "ar": "🇰🇷 الكورية", "hi": "🇰🇷 कोरियाई"}, "description": {"ko": "한국어 인터페이스와 지원", "en": "Korean interface and support", "ja": "韓国語インターフェースとサポート", "zh": "韩语界面和支持", "es": "Interfaz y soporte en coreano", "fr": "Interface et support en coréen", "de": "Koreanische Oberfläche und Unterstützung", "it": "Interfaccia e supporto in coreano", "pt": "Interface e suporte em coreano", "ru": "Корейский интерфейс и поддержка", "nl": "Koreaanse interface en ondersteuning", "pl": "Interfejs i wsparcie w języku koreańskim", "tr": "Korece arayüz ve destek", "ar": "واجهة ودعم باللغة الكورية", "hi": "कोरियाई इंटरफ़ेस और समर्थन"}}, "any_language": {"label": {"ko": "🌍 언어 무관", "en": "🌍 Any Language", "ja": "🌍 言語不問", "zh": "🌍 任何语言", "es": "🌍 Cualquier idioma", "fr": "🌍 Toute langue", "de": "🌍 Beliebige Sprache", "it": "🌍 Qualsiasi lingua", "pt": "🌍 Qualquer idioma", "ru": "🌍 Любой язык", "nl": "🌍 Elke taal", "pl": "🌍 Dowolny język", "tr": "🌍 Herhangi bir dil", "ar": "🌍 أي لغة", "hi": "🌍 कोई भी भाषा"}, "description": {"ko": "어떤 언어든 상관없어요", "en": "Language doesn't matter", "ja": "どの言語でも構いません", "zh": "语言不限", "es": "El idioma no importa", "fr": "La langue n'a pas d'importance", "de": "Sprache ist egal", "it": "La lingua non importa", "pt": "O idioma não importa", "ru": "Язык не важен", "nl": "Taal maakt niet uit", "pl": "Język nie ma znaczenia", "tr": "Dil önemli değil", "ar": "اللغة لا تهم", "hi": "भाषा कोई मायने नहीं रखती"}}}};
+        const step5Translations = {"question": {"ko": "예산은 어느 정도인가요?", "en": "What is your budget?", "ja": "予算はどのくらいですか？", "zh": "您的预算是多少？", "es": "¿Cuál es tu presupuesto?", "fr": "Quel est votre budget?", "de": "Wie hoch ist Ihr Budget?", "it": "Qual è il tuo budget?", "pt": "Qual é o seu orçamento?", "ru": "Каков ваш бюджет?", "nl": "Wat is uw budget?", "pl": "Jaki jest twój budżet?", "tr": "Bütçeniz nedir?", "ar": "ما هي ميزانيتك؟", "hi": "आपका बजट क्या है?"}, "options": {"free_only": {"label": {"ko": "🆓 완전 무료", "en": "🆓 Completely Free", "ja": "🆓 完全無料", "zh": "🆓 完全免费", "es": "🆓 Completamente Gratis", "fr": "🆓 Entièrement Gratuit", "de": "🆓 Völlig Kostenlos", "it": "🆓 Completamente Gratuito", "pt": "🆓 Totalmente Grátis", "ru": "🆓 Полностью Бесплатно", "nl": "🆓 Volledig Gratis", "pl": "🆓 Całkowicie Darmowy", "tr": "🆓 Tamamen Ücretsiz", "ar": "🆓 مجاني تماماً", "hi": "🆓 पूर्ण रूप से मुफ्त"}, "description": {"ko": "무료로만 사용할 수 있는 도구", "en": "Tools that can only be used for free", "ja": "無料でのみ使用できるツール", "zh": "只能免费使用的工具", "es": "Herramientas que solo se pueden usar gratis", "fr": "Outils utilisables uniquement gratuitement", "de": "Tools die nur kostenlos genutzt werden können", "it": "Strumenti utilizzabili solo gratuitamente", "pt": "Ferramentas que só podem ser usadas gratuitamente", "ru": "Инструменты только для бесплатного использования", "nl": "Tools die alleen gratis kunnen worden gebruikt", "pl": "Narzędzia dostępne tylko za darmo", "tr": "Sadece ücretsiz kullanılabilen araçlar", "ar": "أدوات يمكن استخدامها مجاناً فقط", "hi": "केवल मुफ्त में उपयोग किए जा सकने वाले उपकरण"}}, "freemium_ok": {"label": {"ko": "💎 프리미엄 OK", "en": "💎 Freemium OK", "ja": "💎 フリーミアムOK", "zh": "💎 免费增值可以", "es": "💎 Freemium OK", "fr": "💎 Freemium OK", "de": "💎 Freemium OK", "it": "💎 Freemium OK", "pt": "💎 Freemium OK", "ru": "💎 Freemium OK", "nl": "💎 Freemium OK", "pl": "💎 Freemium OK", "tr": "💎 Freemium OK", "ar": "💎 Freemium OK", "hi": "💎 फ्रीमियम ठीक है"}, "description": {"ko": "무료 기본, 유료 프리미엄 기능", "en": "Free basic, paid premium features", "ja": "無料基本、有料プレミアム機能", "zh": "免费基础，付费高级功能", "es": "Básico gratis, funciones premium de pago", "fr": "Base gratuite, fonctionnalités premium payantes", "de": "Kostenlose Basis, kostenpflichtige Premium-Funktionen", "it": "Base gratuita, funzioni premium a pagamento", "pt": "Básico grátis, recursos premium pagos", "ru": "Бесплатная база, платные премиум функции", "nl": "Gratis basis, betaalde premium functies", "pl": "Darmowa podstawa, płatne funkcje premium", "tr": "Ücretsiz temel, ücretli premium özellikler", "ar": "أساسي مجاني، ميزات متميزة مدفوعة", "hi": "मुफ्त बुनियादी, भुगतान प्रीमियम सुविधाएं"}}, "trial_ok": {"label": {"ko": "🎫 무료 체험 OK", "en": "🎫 Free Trial OK", "ja": "🎫 無料トライアルOK", "zh": "🎫 免费试用可以", "es": "🎫 Prueba Gratis OK", "fr": "🎫 Essai Gratuit OK", "de": "🎫 Kostenlose Testversion OK", "it": "🎫 Prova Gratuita OK", "pt": "🎫 Teste Grátis OK", "ru": "🎫 Бесплатная пробная версия OK", "nl": "🎫 Gratis proefversie OK", "pl": "🎫 Darmowy okres próbny OK", "tr": "🎫 Ücretsiz Deneme OK", "ar": "🎫 نسخة تجريبية مجانية OK", "hi": "🎫 मुफ्त परीक्षण ठीक है"}, "description": {"ko": "구매 전 체험 가능", "en": "Can try before buying", "ja": "購入前に試せる", "zh": "购买前可以试用", "es": "Puede probar antes de comprar", "fr": "Peut essayer avant d'acheter", "de": "Kann vor dem Kauf ausprobiert werden", "it": "Puoi provare prima di acquistare", "pt": "Pode experimentar antes de comprar", "ru": "Можно попробовать перед покупкой", "nl": "Kan proberen voor aankoop", "pl": "Można wypróbować przed zakupem", "tr": "Satın almadan önce deneyebilirsiniz", "ar": "يمكن التجربة قبل الشراء", "hi": "खरीदने से पहले आज़मा सकते हैं"}}, "paid_ok": {"label": {"ko": "💳 유료 OK", "en": "💳 Paid OK", "ja": "💳 有料OK", "zh": "💳 付费可以", "es": "💳 Pago OK", "fr": "💳 Payant OK", "de": "💳 Kostenpflichtig OK", "it": "💳 A Pagamento OK", "pt": "💳 Pago OK", "ru": "💳 Платное OK", "nl": "💳 Betaald OK", "pl": "💳 Płatne OK", "tr": "💳 Ücretli OK", "ar": "💳 مدفوع OK", "hi": "💳 भुगतान ठीक है"}, "description": {"ko": "품질 좋은 유료 도구 수용", "en": "Quality paid tools accepted", "ja": "品質の良い有料ツール受け入れ", "zh": "接受优质付费工具", "es": "Se aceptan herramientas de pago de calidad", "fr": "Outils payants de qualité acceptés", "de": "Qualitativ hochwertige kostenpflichtige Tools akzeptiert", "it": "Strumenti a pagamento di qualità accettati", "pt": "Ferramentas pagas de qualidade aceitas", "ru": "Принимаются качественные платные инструменты", "nl": "Kwaliteit betaalde tools geaccepteerd", "pl": "Akceptowane wysokiej jakości narzędzia płatne", "tr": "Kaliteli ücretli araçlar kabul edilir", "ar": "أدوات مدفوعة عالية الجودة مقبولة", "hi": "गुणवत्ता भुगतान उपकरण स्वीकार किए गए"}}}};
+        const step6Translations = {"question": {"ko": "사용 난이도는 어느 정도가 좋으신가요?", "en": "What difficulty level do you prefer?", "ja": "使用難易度はどの程度が良いですか？", "zh": "您希望使用难度如何？", "es": "¿Qué nivel de dificultad prefieres?", "fr": "Quel niveau de difficulté préférez-vous?", "de": "Welchen Schwierigkeitsgrad bevorzugen Sie?", "it": "Quale livello di difficoltà preferisci?", "pt": "Qual nível de dificuldade você prefere?", "ru": "Какой уровень сложности вы предпочитаете?", "nl": "Welk moeilijkheidsniveau heeft uw voorkeur?", "pl": "Jaki poziom trudności preferujesz?", "tr": "Hangi zorluk seviyesini tercih edersiniz?", "ar": "ما مستوى الصعوبة الذي تفضله؟", "hi": "आप कौन सा कठिनाई स्तर पसंद करते हैं?"}, "options": {"beginner": {"label": {"ko": "🟢 초보자용", "en": "🟢 Beginner", "ja": "🟢 初心者向け", "zh": "🟢 初学者", "es": "🟢 Principiante", "fr": "🟢 Débutant", "de": "🟢 Anfänger", "it": "🟢 Principiante", "pt": "🟢 Iniciante", "ru": "🟢 Для начинающих", "nl": "🟢 Beginner", "pl": "🟢 Początkujący", "tr": "🟢 Başlangıç", "ar": "🟢 مبتدئ", "hi": "🟢 शुरुआती"}, "description": {"ko": "클릭 몇 번으로 쉽게 사용", "en": "Easy to use with just a few clicks", "ja": "数回のクリックで簡単に使用", "zh": "点击几下即可轻松使用", "es": "Fácil de usar con solo unos clics", "fr": "Facile à utiliser en quelques clics", "de": "Einfach mit wenigen Klicks zu bedienen", "it": "Facile da usare con pochi clic", "pt": "Fácil de usar com apenas alguns cliques", "ru": "Легко использовать несколькими кликами", "nl": "Gemakkelijk te gebruiken met een paar klikken", "pl": "Łatwy w użyciu za pomocą kilku kliknięć", "tr": "Birkaç tıklamayla kolayca kullanım", "ar": "سهل الاستخدام ببضع نقرات", "hi": "कुछ क्लिक में आसान उपयोग"}}, "intermediate": {"label": {"ko": "🌳 중급자", "en": "🌳 Intermediate", "ja": "🌳 中級者", "zh": "🌳 中级", "es": "🌳 Intermedio", "fr": "🌳 Intermédiaire", "de": "🌳 Fortgeschritten", "it": "🌳 Intermedio", "pt": "🌳 Intermediário", "ru": "🌳 Средний уровень", "nl": "🌳 Gemiddeld", "pl": "🌳 Średniozaawansowany", "tr": "🌳 Orta Düzey", "ar": "🌳 متوسط", "hi": "🌳 मध्यम"}, "description": {"ko": "어느 정도 경험이 있는 사용자용", "en": "For somewhat experienced users", "ja": "ある程度経験のあるユーザー向け", "zh": "适合有一定经验的用户", "es": "Para usuarios con algo de experiencia", "fr": "Pour les utilisateurs ayant une certaine expérience", "de": "Für Benutzer mit etwas Erfahrung", "it": "Per utenti con una certa esperienza", "pt": "Para usuários com alguma experiência", "ru": "Для пользователей с некоторым опытом", "nl": "Voor gebruikers met enige ervaring", "pl": "Dla użytkowników z pewnym doświadczeniem", "tr": "Biraz deneyimli kullanıcılar için", "ar": "للمستخدمين ذوي الخبرة المتوسطة", "hi": "कुछ अनुभवी उपयोगकर्ताओं के लिए"}}, "advanced": {"label": {"ko": "🌲 고급", "en": "🌲 Advanced", "ja": "🌲 上級", "zh": "🌲 高级", "es": "🌲 Avanzado", "fr": "🌲 Avancé", "de": "🌲 Erweitert", "it": "🌲 Avanzato", "pt": "🌲 Avançado", "ru": "🌲 Продвинутый", "nl": "🌲 Geavanceerd", "pl": "🌲 Zaawansowany", "tr": "🌲 İleri Düzey", "ar": "🌲 متقدم", "hi": "🌲 उन्नत"}, "description": {"ko": "전문가 수준의 기능", "en": "Professional-level features", "ja": "プロフェッショナルレベルの機能", "zh": "专业级功能", "es": "Funciones de nivel profesional", "fr": "Fonctionnalités de niveau professionnel", "de": "Funktionen auf professionellem Niveau", "it": "Funzionalità di livello professionale", "pt": "Recursos de nível profissional", "ru": "Функции профессионального уровня", "nl": "Functies op professioneel niveau", "pl": "Funkcje na poziomie profesjonalnym", "tr": "Profesyonel düzeyde özellikler", "ar": "ميزات على المستوى المهني", "hi": "पेशेवर स्तर की सुविधाएं"}}, "developer": {"label": {"ko": "👨‍💻 개발자", "en": "👨‍💻 Developer", "ja": "👨‍💻 開発者", "zh": "👨‍💻 开发者", "es": "👨‍💻 Desarrollador", "fr": "👨‍💻 Développeur", "de": "👨‍💻 Entwickler", "it": "👨‍💻 Sviluppatore", "pt": "👨‍💻 Desenvolvedor", "ru": "👨‍💻 Разработчик", "nl": "👨‍💻 Ontwikkelaar", "pl": "👨‍💻 Programista", "tr": "👨‍💻 Geliştirici", "ar": "👨‍💻 مطور", "hi": "👨‍💻 डेवलपर"}, "description": {"ko": "코딩/API 사용 가능한 사람용", "en": "For those who can code/use APIs", "ja": "コーディング/API使用可能な人向け", "zh": "适合会编程/使用API的人", "es": "Para quienes pueden codificar/usar APIs", "fr": "Pour ceux qui peuvent coder/utiliser des APIs", "de": "Für diejenigen, die programmieren/APIs verwenden können", "it": "Per chi sa programmare/usare API", "pt": "Para quem sabe programar/usar APIs", "ru": "Для тех, кто умеет программировать/использовать API", "nl": "Voor degenen die kunnen coderen/APIs gebruiken", "pl": "Dla osób potrafiących kodować/używać API", "tr": "Kod yazabilen/API kullanabilenler için", "ar": "لمن يستطيع البرمجة/استخدام APIs", "hi": "कोडिंग/API उपयोग कर सकने वालों के लिए"}}}};
+        const step7Translations = {"question": {"ko": "어디서 사용하실 건가요?", "en": "Where will you use it?", "ja": "どこで使用しますか？", "zh": "您将在哪里使用？", "es": "¿Dónde lo usarás?", "fr": "Où allez-vous l'utiliser?", "de": "Wo werden Sie es verwenden?", "it": "Dove lo userai?", "pt": "Onde você vai usar?", "ru": "Где вы будете использовать?", "nl": "Waar gaat u het gebruiken?", "pl": "Gdzie będziesz używać?", "tr": "Nerede kullanacaksınız?", "ar": "أين ستستخدمه؟", "hi": "आप इसे कहाँ उपयोग करेंगे?"}, "options": {"web_browser": {"label": {"ko": "🌐 웹 브라우저", "en": "🌐 Web Browser", "ja": "🌐 ウェブブラウザ", "zh": "🌐 网页浏览器", "es": "🌐 Navegador Web", "fr": "🌐 Navigateur Web", "de": "🌐 Webbrowser", "it": "🌐 Browser Web", "pt": "🌐 Navegador Web", "ru": "🌐 Веб-браузер", "nl": "🌐 Webbrowser", "pl": "🌐 Przeglądarka", "tr": "🌐 Web Tarayıcı", "ar": "🌐 متصفح الويب", "hi": "🌐 वेब ब्राउज़र"}, "description": {"ko": "크롬, 사파리 등에서 바로 사용", "en": "Use directly in Chrome, Safari, etc.", "ja": "Chrome、Safariなどで直接使用", "zh": "在Chrome、Safari等浏览器中直接使用", "es": "Usar directamente en Chrome, Safari, etc.", "fr": "Utiliser directement dans Chrome, Safari, etc.", "de": "Direkt in Chrome, Safari usw. verwenden", "it": "Usa direttamente in Chrome, Safari, ecc.", "pt": "Usar diretamente no Chrome, Safari, etc.", "ru": "Использовать прямо в Chrome, Safari и т.д.", "nl": "Direct gebruiken in Chrome, Safari, enz.", "pl": "Używaj bezpośrednio w Chrome, Safari itp.", "tr": "Chrome, Safari vb. doğrudan kullanım", "ar": "استخدم مباشرة في Chrome و Safari وغيرها", "hi": "Chrome, Safari आदि में सीधे उपयोग करें"}}, "desktop": {"label": {"ko": "🖥️ 데스크톱 앱", "en": "🖥️ Desktop App", "ja": "🖥️ デスクトップアプリ", "zh": "🖥️ 桌面应用", "es": "🖥️ Aplicación de Escritorio", "fr": "🖥️ Application de Bureau", "de": "🖥️ Desktop-Anwendung", "it": "🖥️ Applicazione Desktop", "pt": "🖥️ Aplicativo Desktop", "ru": "🖥️ Настольное приложение", "nl": "🖥️ Desktop-applicatie", "pl": "🖥️ Aplikacja Desktopowa", "tr": "🖥️ Masaüstü Uygulaması", "ar": "🖥️ تطبيق سطح المكتب", "hi": "🖥️ डेस्कटॉप ऐप"}, "description": {"ko": "Windows, Mac 등에 설치", "en": "Install on Windows, Mac, etc.", "ja": "Windows、Macなどにインストール", "zh": "安装在Windows、Mac等系统", "es": "Instalar en Windows, Mac, etc.", "fr": "Installer sur Windows, Mac, etc.", "de": "Auf Windows, Mac usw. installieren", "it": "Installa su Windows, Mac, ecc.", "pt": "Instalar no Windows, Mac, etc.", "ru": "Установить на Windows, Mac и т.д.", "nl": "Installeren op Windows, Mac, enz.", "pl": "Zainstaluj na Windows, Mac, itp.", "tr": "Windows, Mac vb. kurulum", "ar": "التثبيت على Windows و Mac وغيرها", "hi": "Windows, Mac आदि पर इंस्टॉल करें"}}, "mobile": {"label": {"ko": "📱 모바일 앱", "en": "📱 Mobile App", "ja": "📱 モバイルアプリ", "zh": "📱 移动应用", "es": "📱 Aplicación Móvil", "fr": "📱 Application Mobile", "de": "📱 Mobile App", "it": "📱 App Mobile", "pt": "📱 Aplicativo Móvel", "ru": "📱 Мобильное приложение", "nl": "📱 Mobiele app", "pl": "📱 Aplikacja Mobilna", "tr": "📱 Mobil Uygulama", "ar": "📱 تطبيق الجوال", "hi": "📱 मोबाइल ऐप"}, "description": {"ko": "iOS, Android 모바일 앱", "en": "iOS, Android mobile apps", "ja": "iOS、Androidモバイルアプリ", "zh": "iOS、Android移动应用", "es": "Aplicaciones móviles iOS, Android", "fr": "Applications mobiles iOS, Android", "de": "iOS, Android mobile Apps", "it": "App mobili iOS, Android", "pt": "Aplicativos móveis iOS, Android", "ru": "Мобильные приложения iOS, Android", "nl": "iOS, Android mobiele apps", "pl": "Aplikacje mobilne iOS, Android", "tr": "iOS, Android mobil uygulamalar", "ar": "تطبيقات iOS و Android", "hi": "iOS, Android मोबाइल ऐप्स"}}, "api": {"label": {"ko": "🔧 API 지원", "en": "🔧 API Access", "ja": "🔧 API アクセス", "zh": "🔧 API 访问", "es": "🔧 Acceso API", "fr": "🔧 Accès API", "de": "🔧 API-Zugang", "it": "🔧 Accesso API", "pt": "🔧 Acesso API", "ru": "🔧 API доступ", "nl": "🔧 API-toegang", "pl": "🔧 Dostęp API", "tr": "🔧 API Erişimi", "ar": "🔧 وصول API", "hi": "🔧 API एक्सेस"}, "description": {"ko": "개발자를 위한 API", "en": "API for developers", "ja": "開発者向けAPI", "zh": "开发者API", "es": "API para desarrolladores", "fr": "API pour développeurs", "de": "API für Entwickler", "it": "API per sviluppatori", "pt": "API para desenvolvedores", "ru": "API для разработчиков", "nl": "API voor ontwikkelaars", "pl": "API dla programistów", "tr": "Geliştiriciler için API", "ar": "API للمطورين", "hi": "डेवलपर्स के लिए API"}}, "all_with_api": {"label": {"ko": "🌐 모든 기기 + API", "en": "🌐 All Devices + API", "ja": "🌐 全デバイス + API", "zh": "🌐 所有设备 + API", "es": "🌐 Todos los Dispositivos + API", "fr": "🌐 Tous les Appareils + API", "de": "🌐 Alle Geräte + API", "it": "🌐 Tutti i Dispositivi + API", "pt": "🌐 Todos os Dispositivos + API", "ru": "🌐 Все устройства + API", "nl": "🌐 Alle apparaten + API", "pl": "🌐 Wszystkie urządzenia + API", "tr": "🌐 Tüm Cihazlar + API", "ar": "🌐 جميع الأجهزة + API", "hi": "🌐 सभी डिवाइस + API"}, "description": {"ko": "API 지원과 함께 어디서나 작동", "en": "Works everywhere with API support", "ja": "APIサポート付きでどこでも動作", "zh": "带API支持，随处可用", "es": "Funciona en todas partes con soporte API", "fr": "Fonctionne partout avec support API", "de": "Funktioniert überall mit API-Unterstützung", "it": "Funziona ovunque con supporto API", "pt": "Funciona em qualquer lugar com suporte API", "ru": "Работает везде с поддержкой API", "nl": "Werkt overal met API-ondersteuning", "pl": "Działa wszędzie z obsługą API", "tr": "API desteği ile her yerde çalışır", "ar": "يعمل في كل مكان مع دعم API", "hi": "API समर्थन के साथ हर जगह काम करता है"}}, "all_without_api": {"label": {"ko": "📱 모든 기기 (API 불필요)", "en": "📱 All Devices (No API)", "ja": "📱 全デバイス (API不要)", "zh": "📱 所有设备 (无需API)", "es": "📱 Todos los Dispositivos (Sin API)", "fr": "📱 Tous les Appareils (Sans API)", "de": "📱 Alle Geräte (Ohne API)", "it": "📱 Tutti i Dispositivi (Senza API)", "pt": "📱 Todos os Dispositivos (Sem API)", "ru": "📱 Все устройства (Без API)", "nl": "📱 Alle apparaten (Geen API)", "pl": "📱 Wszystkie urządzenia (Bez API)", "tr": "📱 Tüm Cihazlar (API Gereksiz)", "ar": "📱 جميع الأجهزة (بدون API)", "hi": "📱 सभी डिवाइस (API की जरूरत नहीं)"}, "description": {"ko": "모든 기기에서 작동, API 필요 없음", "en": "Works on all devices, no API needed", "ja": "全デバイスで動作、API不要", "zh": "在所有设备上运行，无需API", "es": "Funciona en todos los dispositivos, sin necesidad de API", "fr": "Fonctionne sur tous les appareils, pas besoin d'API", "de": "Funktioniert auf allen Geräten, keine API erforderlich", "it": "Funziona su tutti i dispositivi, API non necessaria", "pt": "Funciona em todos os dispositivos, sem necessidade de API", "ru": "Работает на всех устройствах, API не требуется", "nl": "Werkt op alle apparaten, geen API nodig", "pl": "Działa na wszystkich urządzeniach, API nie jest potrzebne", "tr": "Tüm cihazlarda çalışır, API gerekmiyor", "ar": "يعمل على جميع الأجهزة، لا حاجة لـ API", "hi": "सभी डिवाइस पर काम करता है, API की आवश्यकता नहीं"}}}};
+        const step8Translations = {"question": {"ko": "특별히 중요한 기능이 있나요?", "en": "Any important features you need?", "ja": "特に重要な機能はありますか？", "zh": "有什么重要的功能需求吗？", "es": "¿Alguna función importante que necesites?", "fr": "Des fonctionnalités importantes dont vous avez besoin?", "de": "Gibt es wichtige Funktionen, die Sie benötigen?", "it": "Qualche funzione importante di cui hai bisogno?", "pt": "Alguma funcionalidade importante que você precisa?", "ru": "Есть ли важные функции, которые вам нужны?", "nl": "Zijn er belangrijke functies die u nodig heeft?", "pl": "Czy są jakieś ważne funkcje, których potrzebujesz?", "tr": "İhtiyacınız olan önemli özellikler var mı?", "ar": "هل هناك ميزات مهمة تحتاجها؟", "hi": "क्या कोई महत्वपूर्ण सुविधा चाहिए?"}, "options": {"privacy": {"label": {"ko": "🔒 개인정보 보호", "en": "🔒 Privacy Protection", "ja": "🔒 プライバシー保護", "zh": "🔒 隐私保护", "es": "🔒 Protección de Privacidad", "fr": "🔒 Protection de la Vie Privée", "de": "🔒 Datenschutz", "it": "🔒 Protezione della Privacy", "pt": "🔒 Proteção de Privacidade", "ru": "🔒 Защита конфиденциальности", "nl": "🔒 Privacybescherming", "pl": "🔒 Ochrona Prywatności", "tr": "🔒 Gizlilik Koruması", "ar": "🔒 حماية الخصوصية", "hi": "🔒 गोपनीयता सुरक्षा"}, "description": {"ko": "데이터가 외부로 유출되지 않음", "en": "Data is not leaked externally", "ja": "データが外部に漏れない", "zh": "数据不会外泄", "es": "Los datos no se filtran externamente", "fr": "Les données ne sont pas divulguées", "de": "Daten werden nicht extern weitergegeben", "it": "I dati non vengono divulgati esternamente", "pt": "Os dados não são vazados externamente", "ru": "Данные не утекают наружу", "nl": "Gegevens worden niet extern gelekt", "pl": "Dane nie są ujawniane na zewnątrz", "tr": "Veriler dışarıya sızdırılmaz", "ar": "البيانات لا تتسرب خارجياً", "hi": "डेटा बाहर लीक नहीं होता"}}, "collaboration": {"label": {"ko": "👥 팀 협업", "en": "👥 Team Collaboration", "ja": "👥 チーム協業", "zh": "👥 团队协作", "es": "👥 Colaboración en Equipo", "fr": "👥 Collaboration d'Équipe", "de": "👥 Team-Zusammenarbeit", "it": "👥 Collaborazione di Team", "pt": "👥 Colaboração em Equipe", "ru": "👥 Командная работа", "nl": "👥 Teamsamenwerking", "pl": "👥 Współpraca Zespołowa", "tr": "👥 Takım İşbirliği", "ar": "👥 التعاون الجماعي", "hi": "👥 टीम सहयोग"}, "description": {"ko": "팀원들과 함께 협업할 수 있음", "en": "Can collaborate with team members", "ja": "チームメンバーと協力できる", "zh": "可以与团队成员协作", "es": "Puede colaborar con miembros del equipo", "fr": "Peut collaborer avec les membres de l'équipe", "de": "Kann mit Teammitgliedern zusammenarbeiten", "it": "Può collaborare con i membri del team", "pt": "Pode colaborar com membros da equipe", "ru": "Можно сотрудничать с членами команды", "nl": "Kan samenwerken met teamleden", "pl": "Może współpracować z członkami zespołu", "tr": "Takım üyeleriyle işbirliği yapabilir", "ar": "يمكن التعاون مع أعضاء الفريق", "hi": "टीम के सदस्यों के साथ सहयोग कर सकते हैं"}}, "speed": {"label": {"ko": "⚡ 빠른 속도", "en": "⚡ Fast Speed", "ja": "⚡ 高速処理", "zh": "⚡ 快速处理", "es": "⚡ Alta Velocidad", "fr": "⚡ Vitesse Rapide", "de": "⚡ Hohe Geschwindigkeit", "it": "⚡ Alta Velocità", "pt": "⚡ Alta Velocidade", "ru": "⚡ Высокая скорость", "nl": "⚡ Hoge snelheid", "pl": "⚡ Wysoka Prędkość", "tr": "⚡ Yüksek Hız", "ar": "⚡ سرعة عالية", "hi": "⚡ तेज़ गति"}, "description": {"ko": "처리 속도가 가장 중요", "en": "Processing speed is priority", "ja": "処理速度が最優先", "zh": "处理速度是优先事项", "es": "La velocidad de procesamiento es prioritaria", "fr": "La vitesse de traitement est prioritaire", "de": "Verarbeitungsgeschwindigkeit hat Priorität", "it": "La velocità di elaborazione è prioritaria", "pt": "A velocidade de processamento é prioridade", "ru": "Скорость обработки в приоритете", "nl": "Verwerkingssnelheid heeft prioriteit", "pl": "Prędkość przetwarzania jest priorytetem", "tr": "İşlem hızı öncelikli", "ar": "سرعة المعالجة هي الأولوية", "hi": "प्रसंस्करण गति प्राथमिकता है"}}, "quality": {"label": {"ko": "💯 최고 품질", "en": "💯 Top Quality", "ja": "💯 最高品質", "zh": "💯 顶级质量", "es": "💯 Máxima Calidad", "fr": "💯 Qualité Supérieure", "de": "💯 Höchste Qualität", "it": "💯 Massima Qualità", "pt": "💯 Máxima Qualidade", "ru": "💯 Высшее качество", "nl": "💯 Topkwaliteit", "pl": "💯 Najwyższa Jakość", "tr": "💯 En Yüksek Kalite", "ar": "💯 أعلى جودة", "hi": "💯 उच्चतम गुणवत्ता"}, "description": {"ko": "출력 품질이 가장 중요", "en": "Output quality is most important", "ja": "出力品質が最も重要", "zh": "输出质量最重要", "es": "La calidad del resultado es lo más importante", "fr": "La qualité du résultat est la plus importante", "de": "Ausgabequalität ist am wichtigsten", "it": "La qualità del risultato è la più importante", "pt": "A qualidade do resultado é mais importante", "ru": "Качество результата важнее всего", "nl": "Uitvoerkwaliteit is het belangrijkst", "pl": "Jakość wyniku jest najważniejsza", "tr": "Çıktı kalitesi en önemli", "ar": "جودة المخرجات هي الأهم", "hi": "आउटपुट गुणवत्ता सबसे महत्वपूर्ण है"}}}};
+        
         // 3단 논법 데이터
-        const structure = {"document": {"label": "📄 문서", "description": "텍스트 기반 콘텐츠", "actions": {"generate": {"label": "✍️ 작성하기", "description": "새로운 문서 생성", "formats": {"document": "📄 텍스트 문서", "presentation": "📊 프레젠테이션", "email": "📧 이메일", "report": "📑 보고서", "article": "📰 기사/블로그"}}, "edit": {"label": "✏️ 편집하기", "description": "문서 수정 및 개선", "formats": {"document": "📝 편집된 문서", "summary": "📋 요약본", "revised": "✅ 교정된 문서", "formatted": "🎨 서식 적용 문서"}}, "analyze": {"label": "🔍 분석하기", "description": "텍스트 내용 분석", "formats": {"summary": "📊 분석 결과", "keywords": "🏷️ 키워드 추출", "sentiment": "😊 감정 분석", "insights": "💡 인사이트"}}, "translate": {"label": "🌐 번역하기", "description": "다른 언어로 번역", "formats": {"document": "🌍 번역된 문서", "subtitle": "📺 자막", "localized": "🗺️ 현지화 문서"}}}}, "image": {"label": "🖼️ 이미지", "description": "시각적 콘텐츠", "actions": {"generate": {"label": "🎨 생성하기", "description": "새로운 이미지 만들기", "formats": {"image": "🖼️ AI 생성 이미지", "illustration": "🎨 일러스트", "logo": "💎 로고 디자인", "avatar": "👤 아바타", "artwork": "🖌️ 예술 작품"}}, "edit": {"label": "✏️ 편집하기", "description": "이미지 수정", "formats": {"edited": "✨ 편집된 이미지", "resized": "📐 크기 조정", "filtered": "🎭 필터 적용", "cropped": "✂️ 자른 이미지"}}, "enhance": {"label": "⚡ 향상시키기", "description": "품질 개선", "formats": {"hd": "🔆 고화질 이미지", "restored": "🔧 복원된 이미지", "colorized": "🌈 컬러 보정", "upscaled": "🔍 확대된 이미지"}}, "remove_bg": {"label": "🖼️ 배경 제거", "description": "배경 투명화", "formats": {"transparent": "🔲 투명 배경", "replaced": "🏞️ 배경 교체", "isolated": "✂️ 객체 분리"}}}}, "video": {"label": "🎬 영상", "description": "동영상 콘텐츠", "actions": {"generate": {"label": "🎬 생성하기", "description": "새로운 영상 제작", "formats": {"video": "🎥 AI 생성 영상", "animation": "🎞️ 애니메이션", "short": "📱 숏폼 영상", "presentation": "📊 동영상 프레젠테이션"}}, "edit": {"label": "✂️ 편집하기", "description": "영상 편집", "formats": {"edited": "🎬 편집된 영상", "trimmed": "✂️ 컷 편집", "merged": "🔗 병합된 영상", "effects": "✨ 효과 적용"}}, "subtitle": {"label": "💬 자막 생성", "description": "자막 추가", "formats": {"subtitled": "📝 자막 포함 영상", "transcript": "📄 대본", "captions": "💬 캡션"}}}}, "audio": {"label": "🎵 오디오", "description": "음성 및 음악", "actions": {"generate": {"label": "🎵 생성하기", "description": "새로운 오디오 생성", "formats": {"music": "🎼 AI 작곡 음악", "voice": "🗣️ AI 음성", "sound": "🔊 효과음", "podcast": "🎙️ 팟캐스트"}}, "transcribe": {"label": "📝 텍스트 변환", "description": "음성을 텍스트로", "formats": {"transcript": "📄 텍스트 전사", "subtitle": "📺 자막 파일", "notes": "📋 회의록"}}, "enhance": {"label": "🎧 품질 개선", "description": "오디오 향상", "formats": {"cleaned": "🔇 노이즈 제거", "mastered": "🎚️ 마스터링", "enhanced": "✨ 향상된 오디오"}}}}, "code": {"label": "💻 코드", "description": "프로그래밍 관련", "actions": {"generate": {"label": "⚡ 생성하기", "description": "코드 자동 생성", "formats": {"code": "📝 소스 코드", "app": "📱 애플리케이션", "website": "🌐 웹사이트", "api": "🔌 API", "script": "📜 스크립트"}}, "debug": {"label": "🐛 디버깅", "description": "버그 수정", "formats": {"fixed": "✅ 수정된 코드", "report": "📋 디버그 리포트", "optimized": "⚡ 최적화 코드"}}, "document": {"label": "📚 문서화", "description": "코드 문서 생성", "formats": {"documentation": "📖 API 문서", "comments": "💬 주석 추가", "readme": "📄 README"}}}}, "data": {"label": "📊 데이터", "description": "데이터 분석 및 처리", "actions": {"analyze": {"label": "📊 분석하기", "description": "데이터 분석", "formats": {"report": "📈 분석 리포트", "visualization": "📊 시각화", "insights": "💡 인사이트", "dashboard": "📋 대시보드"}}, "clean": {"label": "🧹 정제하기", "description": "데이터 클리닝", "formats": {"cleaned": "✨ 정제된 데이터", "validated": "✅ 검증된 데이터", "structured": "📁 구조화된 데이터"}}, "transform": {"label": "🔄 변환하기", "description": "데이터 변환", "formats": {"converted": "🔄 변환된 데이터", "exported": "📤 내보낸 파일", "integrated": "🔗 통합 데이터"}}}}, "conversation": {"label": "💬 대화", "description": "챗봇 및 대화형 AI", "actions": {"chat": {"label": "💬 채팅하기", "description": "AI와 대화", "formats": {"assistant": "🤖 AI 비서", "companion": "👥 AI 친구", "tutor": "👨‍🏫 AI 튜터", "advisor": "💼 AI 조언자"}}, "roleplay": {"label": "🎭 역할놀이", "description": "캐릭터 대화", "formats": {"character": "🎭 캐릭터 AI", "celebrity": "⭐ 유명인 AI", "historical": "📚 역사 인물 AI", "fictional": "🦸 가상 캐릭터"}}}}, "website": {"label": "🌐 홈페이지", "description": "웹사이트 제작 및 관리", "actions": {"build": {"label": "🏗️ 제작하기", "description": "새로운 웹사이트 구축", "formats": {"landing": "🚀 랜딩 페이지", "blog": "📝 블로그 사이트", "portfolio": "💼 포트폴리오", "ecommerce": "🛒 쇼핑몰"}}, "design": {"label": "🎨 디자인하기", "description": "웹사이트 디자인 개선", "formats": {"mockup": "🖼️ 목업 디자인", "template": "📋 템플릿", "prototype": "⚡ 프로토타입", "wireframe": "📐 와이어프레임"}}, "optimize": {"label": "⚡ 최적화하기", "description": "성능 및 SEO 개선", "formats": {"seo": "🔍 SEO 최적화", "speed": "⚡ 속도 개선", "mobile": "📱 모바일 최적화", "analytics": "📊 분석 도구"}}}}, "application": {"label": "📱 애플리케이션", "description": "모바일/데스크톱 앱 개발", "actions": {"develop": {"label": "⚙️ 개발하기", "description": "새로운 앱 개발", "formats": {"mobile": "📱 모바일 앱", "desktop": "💻 데스크톱 앱", "web_app": "🌐 웹 앱", "game": "🎮 게임 앱"}}, "design": {"label": "🎨 UI/UX 디자인", "description": "앱 인터페이스 디자인", "formats": {"ui_design": "🎨 UI 디자인", "ux_flow": "🔄 UX 플로우", "icon": "🎯 아이콘 디자인", "prototype": "📲 앱 프로토타입"}}, "test": {"label": "🧪 테스트하기", "description": "앱 테스트 및 디버깅", "formats": {"unit_test": "🔬 단위 테스트", "user_test": "👥 사용자 테스트", "performance": "⚡ 성능 테스트", "security": "🔒 보안 테스트"}}}}};
+        const structure = {"document": {"label": "📄 문서", "description": "텍스트 기반 콘텐츠", "actions": {"generate": {"label": "✍️ 작성하기", "description": "새로운 문서 생성", "formats": {"document": "📄 텍스트 문서", "presentation": "📊 프레젠테이션", "email": "📧 이메일", "report": "📑 보고서", "article": "📰 기사/블로그"}}, "edit": {"label": "✏️ 편집하기", "description": "문서 수정 및 개선", "formats": {"document": "📝 편집된 문서", "summary": "📋 요약본", "revised": "✅ 교정된 문서", "formatted": "🎨 서식 적용 문서"}}, "analyze": {"label": "🔍 분석하기", "description": "텍스트 내용 분석", "formats": {"summary": "📊 분석 결과", "keywords": "🏷️ 키워드 추출", "sentiment": "😊 감정 분석", "insights": "💡 인사이트"}}, "translate": {"label": "🌐 번역하기", "description": "다른 언어로 번역", "formats": {"document": "🌍 번역된 문서", "subtitle": "📺 자막", "localized": "🗺️ 현지화 문서"}}, "convert": {"label": "🔄 변환하기", "description": "다른 형식으로 변환", "formats": {"audio": "🎧 음성 합성", "pdf": "📄 PDF 변환", "presentation": "📊 프레젠테이션 변환", "ebook": "📚 전자책 변환"}}}}, "image": {"label": "🖼️ 이미지", "description": "시각적 콘텐츠", "actions": {"generate": {"label": "🎨 생성하기", "description": "새로운 이미지 만들기", "formats": {"image": "🖼️ AI 생성 이미지", "illustration": "🎨 일러스트", "logo": "💎 로고 디자인", "avatar": "👤 아바타", "artwork": "🖌️ 예술 작품"}}, "edit": {"label": "✏️ 편집하기", "description": "이미지 수정", "formats": {"edited": "✨ 편집된 이미지", "resized": "📐 크기 조정", "filtered": "🎭 필터 적용", "cropped": "✂️ 자른 이미지"}}, "enhance": {"label": "⚡ 향상시키기", "description": "품질 개선", "formats": {"hd": "🔆 고화질 이미지", "restored": "🔧 복원된 이미지", "colorized": "🌈 컬러 보정", "upscaled": "🔍 확대된 이미지"}}, "remove_bg": {"label": "🖼️ 배경 제거", "description": "배경 투명화", "formats": {"transparent": "🔲 투명 배경", "replaced": "🏞️ 배경 교체", "isolated": "✂️ 객체 분리"}}, "convert": {"label": "🔄 변환하기", "description": "다른 형식으로 변환", "formats": {"vector": "📐 벡터 변환", "format": "🔄 포맷 변환", "text": "📝 텍스트 추출", "3d": "🎮 3D 변환"}}}}, "video": {"label": "🎬 영상", "description": "동영상 콘텐츠", "actions": {"generate": {"label": "🎬 생성하기", "description": "새로운 영상 제작", "formats": {"video": "🎥 AI 생성 영상", "animation": "🎞️ 애니메이션", "short": "📱 숏폼 영상", "presentation": "📊 동영상 프레젠테이션"}}, "edit": {"label": "✂️ 편집하기", "description": "영상 편집", "formats": {"edited": "🎬 편집된 영상", "trimmed": "✂️ 컷 편집", "merged": "🔗 병합된 영상", "effects": "✨ 효과 적용"}}, "subtitle": {"label": "💬 자막 생성", "description": "자막 추가", "formats": {"subtitled": "📝 자막 포함 영상", "transcript": "📄 대본", "captions": "💬 캡션"}}, "convert": {"label": "🔄 변환하기", "description": "다른 형식으로 변환", "formats": {"gif": "🎬 GIF 변환", "audio": "🎵 오디오 추출", "format": "📹 포맷 변환", "compress": "🗜️ 압축하기"}}}}, "audio": {"label": "🎵 오디오", "description": "음성 및 음악", "actions": {"generate": {"label": "🎵 생성하기", "description": "새로운 오디오 생성", "formats": {"music": "🎼 AI 작곡 음악", "voice": "🗣️ AI 음성", "sound": "🔊 효과음", "podcast": "🎙️ 팟캐스트"}}, "transcribe": {"label": "📝 텍스트 변환", "description": "음성을 텍스트로", "formats": {"transcript": "📄 텍스트 전사", "subtitle": "📺 자막 파일", "notes": "📋 회의록"}}, "enhance": {"label": "🎧 품질 개선", "description": "오디오 향상", "formats": {"cleaned": "🔇 노이즈 제거", "mastered": "🎚️ 마스터링", "enhanced": "✨ 향상된 오디오"}}, "convert": {"label": "🔄 변환하기", "description": "다른 형식으로 변환", "formats": {"format": "🔄 포맷 변환", "speed": "⏩ 속도 조절", "pitch": "🎵 음정 변경", "merge": "🔗 오디오 합치기"}}}}, "code": {"label": "💻 코드", "description": "프로그래밍 관련", "actions": {"generate": {"label": "⚡ 생성하기", "description": "코드 자동 생성", "formats": {"code": "📝 소스 코드", "app": "📱 애플리케이션", "website": "🌐 웹사이트", "api": "🔌 API", "script": "📜 스크립트"}}, "improve": {"label": "✨ 개선하기", "description": "코드 품질 향상", "formats": {"refactored": "🔧 리팩토링 코드", "optimized": "⚡ 최적화 코드", "reviewed": "👀 코드 리뷰", "suggestions": "💡 개선 제안"}}, "debug": {"label": "🐛 디버깅", "description": "버그 수정", "formats": {"fixed": "✅ 수정된 코드", "report": "📋 디버그 리포트", "analysis": "🔍 문제 분석"}}, "explain": {"label": "🎓 설명하기", "description": "코드 이해 도움", "formats": {"explanation": "📖 코드 설명", "documentation": "📚 문서화", "tutorial": "👨‍🏫 튜토리얼"}}}}, "data": {"label": "📊 데이터", "description": "데이터 분석 및 처리", "actions": {"analyze": {"label": "📊 분석하기", "description": "데이터 분석", "formats": {"report": "📈 분석 리포트", "visualization": "📊 시각화", "insights": "💡 인사이트", "dashboard": "📋 대시보드"}}, "clean": {"label": "🧹 정제하기", "description": "데이터 클리닝", "formats": {"cleaned": "✨ 정제된 데이터", "validated": "✅ 검증된 데이터", "structured": "📁 구조화된 데이터"}}, "transform": {"label": "🔄 변환하기", "description": "데이터 변환", "formats": {"converted": "🔄 변환된 데이터", "exported": "📤 내보낸 파일", "integrated": "🔗 통합 데이터"}}, "predict": {"label": "🔮 예측하기", "description": "미래 예측 및 추천", "formats": {"forecast": "📈 예측 결과", "trend": "📊 트렌드 분석", "recommendation": "💡 추천 시스템", "pattern": "🎯 패턴 인식"}}}}, "conversation": {"label": "💬 대화", "description": "챗봇 및 대화형 AI", "actions": {"chat": {"label": "💬 채팅하기", "description": "AI와 대화", "formats": {"assistant": "🤖 AI 비서", "companion": "👥 AI 친구", "tutor": "👨‍🏫 AI 튜터", "advisor": "💼 AI 조언자"}}, "roleplay": {"label": "🎭 역할놀이", "description": "캐릭터 대화", "formats": {"character": "🎭 캐릭터 AI", "celebrity": "⭐ 유명인 AI", "historical": "📚 역사 인물 AI", "fictional": "🦸 가상 캐릭터"}}, "support": {"label": "🆘 지원하기", "description": "고객 지원 봇", "formats": {"helpdesk": "🆘 헬프데스크 봇", "faq": "❓ FAQ 봇", "booking": "📅 예약 봇", "sales": "💼 영업 봇"}}}}, "website": {"label": "🌐 홈페이지", "description": "웹사이트 제작 및 관리", "actions": {"build": {"label": "🏗️ 제작하기", "description": "새로운 웹사이트 구축", "formats": {"landing": "🚀 랜딩 페이지", "blog": "📝 블로그 사이트", "portfolio": "💼 포트폴리오", "ecommerce": "🛒 쇼핑몰"}}, "design": {"label": "🎨 디자인하기", "description": "웹사이트 디자인 개선", "formats": {"mockup": "🖼️ 목업 디자인", "template": "📋 템플릿", "prototype": "⚡ 프로토타입", "wireframe": "📐 와이어프레임"}}, "optimize": {"label": "⚡ 최적화하기", "description": "성능 및 SEO 개선", "formats": {"seo": "🔍 SEO 최적화", "speed": "⚡ 속도 개선", "mobile": "📱 모바일 최적화", "analytics": "📊 분석 도구"}}}}, "finance": {"label": "💰 금융", "description": "주식, 암호화폐, 투자 분석", "actions": {"analyze": {"label": "📊 분석하기", "description": "시장 및 자산 분석", "formats": {"stock": "📈 주식 분석", "crypto": "₿ 암호화폐 분석", "market": "📊 시장 동향", "portfolio": "💼 포트폴리오 분석"}}, "predict": {"label": "🔮 예측하기", "description": "가격 및 추세 예측", "formats": {"price": "💵 가격 예측", "trend": "📈 추세 예측", "signal": "🚦 매매 신호", "risk": "⚠️ 리스크 평가"}}, "trade": {"label": "💱 거래하기", "description": "자동 거래 및 봇", "formats": {"bot": "🤖 트레이딩 봇", "alert": "🔔 가격 알림", "execute": "⚡ 자동 매매", "strategy": "📋 전략 실행"}}, "research": {"label": "🔍 리서치", "description": "투자 정보 조사", "formats": {"news": "📰 뉴스 분석", "report": "📑 리서치 리포트", "sentiment": "💭 시장 심리", "fundamental": "📊 기본적 분석"}}}}, "application": {"label": "📱 애플리케이션", "description": "모바일/데스크톱 앱 개발", "actions": {"mobile": {"label": "📱 모바일 개발", "description": "iOS/Android 앱 개발", "formats": {"productivity": "📊 생산성 앱", "game": "🎮 모바일 게임", "utility": "🔧 유틸리티 앱", "social": "💬 소셜 앱"}}, "desktop": {"label": "💻 데스크톱 개발", "description": "Windows/Mac/Linux 앱", "formats": {"productivity": "📈 생산성 도구", "game": "🎮 PC 게임", "utility": "🛠️ 시스템 유틸리티", "developer": "👨‍💻 개발 도구"}}, "web_app": {"label": "🌐 웹앱 개발", "description": "브라우저 기반 애플리케이션", "formats": {"saas": "☁️ SaaS 서비스", "dashboard": "📊 대시보드", "collaboration": "👥 협업 도구", "business": "💼 비즈니스 앱"}}, "plugin": {"label": "🔌 플러그인 개발", "description": "확장 프로그램 및 애드온", "formats": {"browser": "🌐 브라우저 확장", "ide": "💻 IDE 플러그인", "app": "📱 앱 플러그인", "cms": "📝 CMS 플러그인"}}}}, "social_media": {"label": "📱 소셜미디어", "description": "Social media content and management", "actions": {"generate": {"label": "🎨 Generate Content", "description": "Create social media content", "formats": {"post": "📝 Social Post", "caption": "💬 Caption", "hashtag": "#️⃣ Hashtags", "story": "📸 Story Content"}}, "analyze": {"label": "📊 Analyze", "description": "Analyze social media performance", "formats": {"engagement": "💍 Engagement Analysis", "followers": "👥 Follower Analysis", "trend": "📈 Trend Analysis", "competitor": "🔍 Competitor Analysis"}}, "schedule": {"label": "📅 Schedule", "description": "Schedule and manage posts", "formats": {"calendar": "📅 Content Calendar", "automation": "🤖 Auto-posting", "queue": "📋 Post Queue", "optimization": "⏰ Time Optimization"}}}}, "ai_detection": {"label": "🔍 AI Detection", "description": "AI detection and anti-detection tools", "actions": {"detect": {"label": "🔍 Detect AI", "description": "Detect AI-generated content", "formats": {"text": "📝 Text Detection", "image": "🖼️ Image Detection", "audio": "🎵 Audio Detection", "video": "🎬 Video Detection"}}, "humanize": {"label": "✨ 인간화", "description": "콘텐츠를 인간적으로 변환", "formats": {"rewrite": "✍️ 재작성된 텍스트", "paraphrase": "🔄 패러프레이즈", "style": "🎨 스타일 변환", "bypass": "🔓 탐지 회피"}}, "verify": {"label": "✅ 검증", "description": "콘텐츠 진위 확인", "formats": {"authenticity": "🔐 진위성 확인", "plagiarism": "📚 표절 검사", "originality": "💡 독창성 점수", "watermark": "💧 워터마크 탐지"}}}}, "daily_life": {"label": "🏠 Daily Life", "description": "Everyday life assistance", "actions": {"plan": {"label": "📅 Plan", "description": "Plan daily activities", "formats": {"schedule": "📅 Daily Schedule", "meal": "🍽️ Meal Plan", "travel": "✈️ Travel Plan", "event": "🎉 Event Planning"}}, "assist": {"label": "🤝 도우미", "description": "개인 비서 기능", "formats": {"reminder": "⏰ 리마인더", "shopping": "🛒 쇼핑 리스트", "task": "✅ 작업 관리", "habit": "🎯 습관 추적"}}, "recommend": {"label": "💡 추천", "description": "개인화된 추천", "formats": {"recipe": "👨‍🍳 레시피", "entertainment": "🎬 엔터테인먼트", "gift": "🎁 선물 아이디어", "activity": "🏃 활동 추천"}}}}, "health": {"label": "🏥 건강 & 웰빙", "description": "건강 및 피트니스 도우미", "actions": {"track": {"label": "📊 추적", "description": "건강 지표 추적", "formats": {"fitness": "💪 피트니스 추적", "diet": "🥗 식단 기록", "sleep": "😴 수면 분석", "vitals": "❤️ 생체 신호"}}, "plan": {"label": "📋 계획", "description": "건강 계획 수립", "formats": {"workout": "🏋️ 운동 계획", "nutrition": "🥗 영양 계획", "wellness": "🧘 웰빙 프로그램", "recovery": "🏥 회복 계획"}}, "analyze": {"label": "🔍 분석", "description": "건강 데이터 분석", "formats": {"symptoms": "🩺 증상 분석", "progress": "📈 진행 리포트", "risk": "⚠️ 위험 평가", "insights": "💡 건강 인사이트"}}}}, "business": {"label": "💼 비즈니스 관리", "description": "비즈니스 운영 및 관리", "actions": {"manage": {"label": "📊 관리", "description": "비즈니스 운영 관리", "formats": {"crm": "👥 CRM 시스템", "project": "📋 프로젝트 관리", "inventory": "📦 재고 관리", "hr": "👔 인사 관리"}}, "analyze": {"label": "📈 분석", "description": "비즈니스 분석", "formats": {"revenue": "💰 매출 분석", "performance": "📊 성과 지표", "market": "🎯 시장 분석", "forecast": "🔮 비즈니스 예측"}}, "automate": {"label": "🤖 자동화", "description": "비즈니스 자동화", "formats": {"workflow": "⚡ 워크플로우 자동화", "invoice": "📄 송장 생성", "report": "📊 자동 리포트", "communication": "📧 커뮤니케이션 자동화"}}}}, "marketing": {"label": "📢 마케팅", "description": "마케팅 및 광고 도구", "actions": {"create": {"label": "🎨 생성", "description": "마케팅 콘텐츠 생성", "formats": {"ad": "📢 광고", "campaign": "🎯 캠페인", "copy": "✍️ 광고 카피", "landing": "🚀 랜딩 페이지"}}, "optimize": {"label": "⚡ 최적화", "description": "마케팅 효과 최적화", "formats": {"seo": "🔍 SEO 최적화", "conversion": "💰 전환율 개선", "targeting": "🎯 타겟 설정", "budget": "💵 예산 최적화"}}, "analyze": {"label": "📊 분석", "description": "마케팅 분석", "formats": {"roi": "💰 ROI 분석", "audience": "👥 고객 인사이트", "competitor": "🔍 경쟁사 분석", "trend": "📈 트렌드 분석"}}}}, "education": {"label": "🎓 교육", "description": "교육 및 학습 도구", "actions": {"learn": {"label": "📚 학습", "description": "학습 도우미", "formats": {"course": "📚 강의 자료", "quiz": "❓ 퀴즈 & 테스트", "flashcard": "🃏 플래시카드", "summary": "📋 학습 요약"}}, "teach": {"label": "👨‍🏫 교육", "description": "교육 자료", "formats": {"lesson": "📖 수업 계획", "presentation": "📊 교육 프레젠테이션", "worksheet": "📝 워크시트", "assessment": "📊 평가 도구"}}, "research": {"label": "🔍 연구", "description": "학술 연구", "formats": {"paper": "📄 연구 논문", "citation": "📚 인용", "literature": "📖 문헌 검토", "bibliography": "📚 참고문헌"}}}}, "design": {"label": "🏗️ Design", "description": "Interior and architectural design", "actions": {"create": {"label": "🎨 Create", "description": "Create designs", "formats": {"interior": "🏠 Interior Design", "architecture": "🏢 Architectural Plan", "landscape": "🌳 Landscape Design", "3d_model": "🎮 3D Model"}}, "visualize": {"label": "👁️ Visualize", "description": "Visualize spaces", "formats": {"render": "🖼️ 3D Render", "vr": "🥽 VR Walkthrough", "staging": "🏠 Virtual Staging", "floor_plan": "📐 Floor Plan"}}, "optimize": {"label": "⚡ Optimize", "description": "Optimize designs", "formats": {"space": "📏 Space Optimization", "lighting": "💡 Lighting Design", "material": "🎨 Material Selection", "cost": "💰 Cost Estimation"}}}}, "productivity": {"label": "⚡ Productivity", "description": "Office and productivity tools", "actions": {"organize": {"label": "📋 Organize", "description": "Organize work", "formats": {"task": "✅ Task Management", "calendar": "📅 Calendar Management", "notes": "📝 Note Taking", "knowledge": "🧠 Knowledge Base"}}, "automate": {"label": "🤖 Automate", "description": "Automate workflows", "formats": {"workflow": "⚡ Workflow Automation", "template": "📋 Templates", "macro": "🔄 Macros", "integration": "🔗 App Integration"}}, "collaborate": {"label": "👥 Collaborate", "description": "Team collaboration", "formats": {"meeting": "💬 Meeting Tools", "whiteboard": "📊 Digital Whiteboard", "document": "📄 Shared Documents", "communication": "💬 Team Communication"}}}}};
+        
+        let currentLanguage = 'ko';  // 기본 언어: 한국어
         
         let selections = {
             what: null,
             how: null,
-            do: null
+            do: null,
+            // 8단계 추가 선택사항
+            language: null,
+            pricing: null,
+            complexity: null,
+            platform: null,
+            special: null
         };
         
         let currentStep = 'what';
@@ -862,47 +1340,297 @@
             result: 'images/ai_teacher_result.png'
         };
         
+        // 번역 함수
+        function getTranslation(category, key) {
+            // 디버깅을 위한 로그
+            console.log(`getTranslation called: category=${category}, key=${key}, lang=${currentLanguage}`);
+            
+            if (!translations || !translations[category]) {
+                console.error(`Translation category not found: ${category}`);
+                return key;
+            }
+            
+            if (!translations[category][key]) {
+                console.error(`Translation key not found: ${category}.${key}`);
+                return key;
+            }
+            
+            if (translations[category][key][currentLanguage]) {
+                return translations[category][key][currentLanguage];
+            }
+            
+            // Fallback to English if translation not found
+            if (translations[category][key]['en']) {
+                return translations[category][key]['en'];
+            }
+            
+            return key;
+        }
+        
+        // 언어 변경 함수
+        function changeLanguage(lang) {
+            currentLanguage = lang;
+            const langInfo = translations.languages[lang];
+            document.getElementById('current-language-flag').textContent = langInfo.flag;
+            document.getElementById('current-language-name').textContent = langInfo.name;
+            
+            // UI 텍스트 업데이트
+            updateUITexts();
+            
+            // 언어 드롭다운 닫기
+            document.getElementById('language-dropdown').classList.remove('show');
+        }
+        
+        // UI 텍스트 업데이트
+        function updateUITexts() {
+            // 타이틀 업데이트
+            document.title = getTranslation('ui', 'title');
+            
+            // 캐릭터 이름 업데이트
+            const characterName = document.getElementById('character-name');
+            if (characterName) {
+                const teacherNames = {
+                    'ko': 'AI 선생님',
+                    'en': 'AI Teacher',
+                    'ja': 'AI 先生',
+                    'zh': 'AI 老师',
+                    'es': 'AI Profesor',
+                    'fr': 'AI Professeur',
+                    'de': 'AI Lehrer',
+                    'it': 'AI Insegnante',
+                    'pt': 'AI Professor',
+                    'ru': 'AI Учитель',
+                    'nl': 'AI Leraar',
+                    'pl': 'AI Nauczyciel',
+                    'tr': 'AI Öğretmen',
+                    'ar': 'AI معلم',
+                    'hi': 'AI शिक्षक'
+                };
+                characterName.textContent = teacherNames[currentLanguage] || 'AI Teacher';
+            }
+            
+            // 리셋 버튼 텍스트
+            const resetBtn = document.getElementById('reset-button');
+            if (resetBtn) {
+                resetBtn.textContent = getTranslation('ui', 'restart');
+            }
+            
+            // 질문 타이틀 업데이트
+            updateQuestionTitles();
+            
+            // 8단계 옵션 텍스트 업데이트
+            update8StepOptions();
+            
+            // 현재 표시되는 VN 버튼들 재생성
+            if (currentStep === 'what') {
+                populateVNButtons('what');
+            } else if (currentStep === 'how') {
+                populateVNButtons('how');
+            } else if (currentStep === 'do') {
+                populateVNButtons('do');
+            }
+            
+            // 현재 단계에 따라 대화 텍스트 업데이트
+            if (currentStep === 'what') {
+                updateDialogue(getTranslation('ui', 'welcome'), 'idle');
+            }
+        }
+        
+        // 질문 타이틀 업데이트
+        function updateQuestionTitles() {
+            // 3단계 질문 타이틀
+            const q1Title = document.getElementById('q1-title');
+            if (q1Title && translations.steps.what && translations.steps.what.question) {
+                q1Title.textContent = '💭 ' + (translations.steps.what.question[currentLanguage] || translations.steps.what.question['en']);
+            }
+            
+            const q2Title = document.getElementById('q2-title');
+            if (q2Title && translations.steps.how && translations.steps.how.question) {
+                q2Title.textContent = '🛠️ ' + (translations.steps.how.question[currentLanguage] || translations.steps.how.question['en']);
+            }
+            
+            const q3Title = document.getElementById('q3-title');
+            if (q3Title && translations.steps.do && translations.steps.do.question) {
+                q3Title.textContent = '📋 ' + (translations.steps.do.question[currentLanguage] || translations.steps.do.question['en']);
+            }
+            
+            // 8단계 질문 타이틀
+            const q4Title = document.getElementById('q4-title');
+            if (q4Title && translations.details.step4_language && translations.details.step4_language.question) {
+                q4Title.textContent = '🌐 ' + (translations.details.step4_language.question[currentLanguage] || translations.details.step4_language.question['en']);
+            }
+            
+            const q5Title = document.getElementById('q5-title');
+            if (q5Title && translations.details.step5_pricing && translations.details.step5_pricing.question) {
+                q5Title.textContent = '💰 ' + (translations.details.step5_pricing.question[currentLanguage] || translations.details.step5_pricing.question['en']);
+            }
+            
+            const q6Title = document.getElementById('q6-title');
+            if (q6Title && translations.details.step6_difficulty && translations.details.step6_difficulty.question) {
+                q6Title.textContent = '📊 ' + (translations.details.step6_difficulty.question[currentLanguage] || translations.details.step6_difficulty.question['en']);
+            }
+            
+            const q7Title = document.getElementById('q7-title');
+            if (q7Title && translations.details.step7_platform && translations.details.step7_platform.question) {
+                q7Title.textContent = '💻 ' + (translations.details.step7_platform.question[currentLanguage] || translations.details.step7_platform.question['en']);
+            }
+            
+            const q8Title = document.getElementById('q8-title');
+            if (q8Title && translations.details.step8_features && translations.details.step8_features.question) {
+                q8Title.textContent = '⭐ ' + (translations.details.step8_features.question[currentLanguage] || translations.details.step8_features.question['en']);
+            }
+        }
+        
+        // 8단계 옵션 텍스트 업데이트
+        function update8StepOptions() {
+            generate8StepOptions();
+            // Step 4 옵션 업데이트
+            const q4Options = document.getElementById('q4-container').querySelectorAll('.vn-option-button');
+            if (q4Options.length >= 3) {
+                // korean_must 옵션
+                const koreanOpt = step4Translations.options.korean || step4Translations.options.korean_must;
+                if (koreanOpt) {
+                    q4Options[0].querySelector('.option-text').textContent = koreanOpt.label[currentLanguage] || koreanOpt.label['en'];
+                    q4Options[0].querySelector('.option-desc').textContent = koreanOpt.description[currentLanguage] || koreanOpt.description['en'];
+                }
+                
+                // english_ok 옵션
+                const englishOpt = step4Translations.options.english_ok;
+                if (englishOpt) {
+                    q4Options[1].querySelector('.option-text').textContent = englishOpt.label[currentLanguage] || englishOpt.label['en'];
+                    q4Options[1].querySelector('.option-desc').textContent = englishOpt.description[currentLanguage] || englishOpt.description['en'];
+                }
+                
+                // any_language 옵션
+                const anyLangOpt = step4Translations.options.any_language;
+                if (anyLangOpt) {
+                    q4Options[2].querySelector('.option-text').textContent = anyLangOpt.label[currentLanguage] || anyLangOpt.label['en'];
+                    q4Options[2].querySelector('.option-desc').textContent = anyLangOpt.description[currentLanguage] || anyLangOpt.description['en'];
+                }
+            }
+            
+            // Step 5 옵션 업데이트
+            const q5Options = document.getElementById('q5-container').querySelectorAll('.vn-option-button');
+            if (q5Options.length >= 4) {
+                const step5Options = ['free_only', 'freemium_ok', 'trial_ok', 'paid_ok'];
+                step5Options.forEach((key, index) => {
+                    const opt = step5Translations.options[key];
+                    if (opt && q5Options[index]) {
+                        q5Options[index].querySelector('.option-text').textContent = opt.label[currentLanguage] || opt.label['en'];
+                        q5Options[index].querySelector('.option-desc').textContent = opt.description[currentLanguage] || opt.description['en'];
+                    }
+                });
+            }
+            
+            // Step 6 옵션 업데이트
+            const q6Options = document.getElementById('q6-container').querySelectorAll('.vn-option-button');
+            if (q6Options.length >= 4) {
+                const step6Options = ['beginner', 'intermediate', 'advanced', 'developer'];
+                step6Options.forEach((key, index) => {
+                    const opt = step6Translations.options[key];
+                    if (opt && q6Options[index]) {
+                        q6Options[index].querySelector('.option-text').textContent = opt.label[currentLanguage] || opt.label['en'];
+                        q6Options[index].querySelector('.option-desc').textContent = opt.description[currentLanguage] || opt.description['en'];
+                    }
+                });
+            }
+            
+            // Step 7 옵션 업데이트
+            const q7Options = document.getElementById('q7-container').querySelectorAll('.vn-option-button');
+            if (q7Options.length >= 6) {
+                const step7Options = ['web', 'desktop', 'mobile', 'api', 'all_with_api', 'all_without_api'];
+                step7Options.forEach((key, index) => {
+                    const opt = step7Translations.options[key];
+                    if (opt && q7Options[index]) {
+                        q7Options[index].querySelector('.option-text').textContent = opt.label[currentLanguage] || opt.label['en'];
+                        q7Options[index].querySelector('.option-desc').textContent = opt.description[currentLanguage] || opt.description['en'];
+                    }
+                });
+            }
+            
+            // Step 8 옵션 업데이트
+            const q8Options = document.getElementById('q8-container').querySelectorAll('.vn-option-button');
+            if (q8Options.length >= 4) {
+                const step8Options = ['privacy', 'collaboration', 'speed', 'quality'];
+                step8Options.forEach((key, index) => {
+                    const opt = step8Translations.options[key];
+                    if (opt && q8Options[index]) {
+                        q8Options[index].querySelector('.option-text').textContent = opt.label[currentLanguage] || opt.label['en'];
+                        q8Options[index].querySelector('.option-desc').textContent = opt.description[currentLanguage] || opt.description['en'];
+                    }
+                });
+            }
+        }
+        
+        // 레트로 로딩바 표시
+        function showRetroLoading(callback) {
+            const loadingContainer = document.getElementById('retro-loading');
+            const loadingFill = document.getElementById('loading-fill');
+            
+            loadingContainer.style.display = 'block';
+            let progress = 0;
+            
+            const interval = setInterval(() => {
+                progress += Math.random() * 15 + 5; // 5-20% 랜덤 증가
+                if (progress > 100) progress = 100;
+                
+                loadingFill.style.width = progress + '%';
+                
+                if (progress >= 100) {
+                    clearInterval(interval);
+                    setTimeout(() => {
+                        loadingContainer.style.display = 'none';
+                        loadingFill.style.width = '0%';
+                        if (callback) callback();
+                    }, 300);
+                }
+            }, 100);
+        }
+        
         const dialogues = {
-            greeting: '안녕하세요! AI Teacher예요. 원하시는 AI 도구를 찾아드릴게요!',
-            what: '좋은 선택이에요! 이제 어떻게 작업할지 알려주세요.',
-            how: '훌륭해요! 마지막으로 어떤 형태의 결과물을 원하는지 선택해주세요.',
-            do: '완벽해요! 선택하신 조건으로 최적의 AI 도구를 찾아드릴게요!',
-            searching: '선택하신 조건으로 최적의 AI 도구를 찾고 있어요...',
-            found: '찾았어요! 선택하신 조합에 가장 적합한 AI 도구들이에요!',
-            askWhat: '먼저, 무엇을 하고 싶으신지 알려주세요!',
-            askHow: '어떤 방식으로 작업하고 싶으신가요?',
-            askDo: '어떤 형태의 결과물을 원하시나요?'
+            greeting: () => getTranslation('ui', 'welcome'),
+            what: () => getTranslation('ui', 'what_selected'),
+            how: () => getTranslation('ui', 'how_selected'),
+            do: () => getTranslation('ui', 'do_selected'),
+            searching: () => getTranslation('ui', 'searching'),
+            found: () => getTranslation('ui', 'found'),
+            askWhat: () => getTranslation('steps', 'what').question || 'What do you want?',
+            askHow: () => getTranslation('steps', 'how').question || 'How do you want to do it?',
+            askDo: () => getTranslation('steps', 'do').question || 'What output do you want?',
+            askAppType: () => getTranslation('ui', 'ask_app_type'),
+            // 8단계 추가 질문들
+            askLanguage: () => getTranslation('details', 'step4_language').question || 'Language preference?',
+            askPricing: () => getTranslation('details', 'step5_pricing').question || 'Budget?',
+            askComplexity: () => getTranslation('details', 'step6_difficulty').question || 'Difficulty level?',
+            askPlatform: () => getTranslation('details', 'step7_platform').question || 'Platform?',
+            askSpecial: () => getTranslation('details', 'step8_features').question || 'Special features?'
         };
         
         // 대화창 업데이트
-        function updateDialogue(text, characterState = 'idle', keepPanel = false, callback = null) {
+        function updateDialogue(text, characterState = 'idle', showPanelAfter = false, callback = null) {
+            // text가 undefined인 경우 처리
+            if (!text) {
+                console.error('updateDialogue: text is undefined');
+                text = '...';  // 기본값 설정
+            }
             const dialogueBox = document.getElementById('dialogue-box');
             const dialogueText = document.getElementById('dialogue-text');
             const characterImage = document.getElementById('character-image');
             const choicePanel = document.getElementById('choice-panel');
             const clickIndicator = document.getElementById('click-indicator');
             
-            // 대화창 표시하고 선택지 패널 숨기기 (keepPanel이 true가 아닌 경우)
+            // 대화창 표시
             dialogueBox.style.display = 'block';
-            if (!keepPanel) {
-                choicePanel.style.display = 'none';
-                isChoicePanelVisible = false;
-            }
             
             // 클릭 대기 표시 숨기기
             clickIndicator.classList.remove('show');
             
-            // 대화창에 클릭 가능 표시 추가
-            if (currentStep === 'what' || currentStep === 'how' || currentStep === 'do') {
-                dialogueBox.classList.add('clickable');
-            } else {
-                dialogueBox.classList.remove('clickable');
-            }
+            // 기존 클릭 이벤트 제거
+            dialogueBox.onclick = null;
+            dialogueBox.classList.remove('clickable');
             
-            // 캐릭터 이미지 변경
-            if (characterStates[characterState]) {
-                characterImage.src = characterStates[characterState];
-            }
+            // 타이핑 시작 시 result 이미지로 변경
+            changeCharacterState('result');
             
             // 타이핑 효과
             dialogueText.textContent = '';
@@ -913,22 +1641,21 @@
                     index++;
                 } else {
                     clearInterval(typeWriter);
-                    // 타이핑 완료 후 처리
+                    // 타이핑 완료 후 원하는 캐릭터 상태로 변경
+                    changeCharacterState(characterState);
                     clickIndicator.classList.add('show');
+                    dialogueBox.classList.add('clickable');
                     
                     // 클릭 대기 설정
                     dialogueBox.onclick = function() {
                         clickIndicator.classList.remove('show');
                         dialogueBox.onclick = null;
+                        dialogueBox.classList.remove('clickable');
                         
                         if (callback) {
                             callback();
-                        } else if (currentStep === 'what' && !selections.what && !keepPanel) {
-                            // 첫 질문인 경우 선택지 패널 표시
-                            choicePanel.style.display = 'block';
-                            isChoicePanelVisible = true;
-                        } else if ((currentStep === 'how' || currentStep === 'do') && keepPanel) {
-                            // 다음 질문들은 선택지 표시
+                        } else if (showPanelAfter) {
+                            // 선택지 패널 표시
                             choicePanel.style.display = 'block';
                             isChoicePanelVisible = true;
                         }
@@ -990,11 +1717,83 @@
             }
         }
         
+        // 비주얼 노벨 버튼 생성 함수 추가
+        function populateVNButtons(step) {
+            let container, data;
+            
+            if (step === 'what') {
+                container = document.getElementById('q1-options');
+                data = structure;
+            } else if (step === 'how') {
+                container = document.getElementById('q2-options');
+                data = structure[selections.what].actions;
+            } else if (step === 'do') {
+                container = document.getElementById('q3-options');
+                data = structure[selections.what].actions[selections.how].formats;
+            }
+            
+            if (!container) return;
+            
+            container.innerHTML = '';
+            
+            for (const [key, info] of Object.entries(data)) {
+                const button = document.createElement('button');
+                button.className = 'vn-option-button';
+                button.onclick = () => handleDropdownChange(step, key);
+                
+                if (step === 'what') {
+                    // What 옵션 번역 사용
+                    const whatTrans = whatTranslations[key];
+                    const label = whatTrans && whatTrans.label ? whatTrans.label[currentLanguage] || whatTrans.label['en'] : info.label;
+                    const desc = whatTrans && whatTrans.description ? whatTrans.description[currentLanguage] || whatTrans.description['en'] : info.description;
+                    
+                    button.innerHTML = `
+                        <span class="option-icon">${label.substring(0, 2)}</span>
+                        <div class="option-content">
+                            <span class="option-text">${label.substring(3).toUpperCase()}</span>
+                            <span class="option-desc">${desc}</span>
+                        </div>
+                    `;
+                } else if (step === 'how') {
+                    // How 옵션 번역 사용
+                    const howTrans = howTranslations[key];
+                    const label = howTrans && howTrans.label ? howTrans.label[currentLanguage] || howTrans.label['en'] : info.label;
+                    const desc = howTrans && howTrans.description ? howTrans.description[currentLanguage] || howTrans.description['en'] : info.description;
+                    
+                    button.innerHTML = `
+                        <span class="option-icon">${label.substring(0, 2)}</span>
+                        <div class="option-content">
+                            <span class="option-text">${label.substring(3).toUpperCase()}</span>
+                            <span class="option-desc">${desc}</span>
+                        </div>
+                    `;
+                } else if (step === 'do') {
+                    // Do 옵션 번역 사용
+                    const doTrans = doTranslations[key];
+                    const label = doTrans && doTrans.label ? doTrans.label[currentLanguage] || doTrans.label['en'] : info;
+                    
+                    button.innerHTML = `
+                        <span class="option-icon">${label.substring(0, 2)}</span>
+                        <div class="option-content">
+                            <span class="option-text">${label.substring(3).toUpperCase()}</span>
+                            <span class="option-desc">${label}</span>
+                        </div>
+                    `;
+                }
+                
+                container.appendChild(button);
+            }
+        }
+        
         // 드롭박스 선택 처리
         function handleDropdownChange(step, value) {
             if (!value) return;
             
             selections[step] = value;
+            
+            // 로그 출력
+            console.log(`[선택] ${step.toUpperCase()}: ${value}`);
+            console.log('현재 selections:', selections);
             
             // 리셋 버튼 표시
             document.getElementById('reset-button').style.display = 'block';
@@ -1002,32 +1801,56 @@
             // 다음 단계로 진행
             if (step === 'what') {
                 currentStep = 'how';
-                updateDialogue(dialogues.what, 'curious');
-                setTimeout(() => {
-                    populateDropdown('how');
-                    // Q1 숨기고 Q2 표시
-                    document.getElementById('q1-container').style.display = 'none';
-                    document.getElementById('q2-container').style.display = 'block';
-                    updateDialogue(dialogues.askHow, 'curious', true);
-                }, 1500);
+                document.getElementById('q1-container').style.display = 'none';
+                showRetroLoading(() => {
+                    updateDialogue(getTranslation('ui', 'what_selected'), 'curious');
+                    setTimeout(() => {
+                        document.getElementById('q2-container').style.display = 'block';
+                        populateVNButtons('how');  // VN 버튼 생성
+                    }, 500);
+                });
             } else if (step === 'how') {
                 currentStep = 'do';
-                updateDialogue(dialogues.how, 'explaining');
-                setTimeout(() => {
-                    populateDropdown('do');
-                    // Q2 숨기고 Q3 표시
-                    document.getElementById('q2-container').style.display = 'none';
-                    document.getElementById('q3-container').style.display = 'block';
-                    updateDialogue(dialogues.askDo, 'thinking', true);
-                }, 1500);
+                document.getElementById('q2-container').style.display = 'none';
+                showRetroLoading(() => {
+                    // 애플리케이션인 경우 다른 대사와 제목 사용
+                    if (selections.what === 'application') {
+                        updateDialogue(getTranslation('ui', 'ask_app_type'), 'explaining');
+                    } else {
+                        updateDialogue(getTranslation('ui', 'how_selected'), 'explaining');
+                    }
+                    
+                    setTimeout(() => {
+                        document.getElementById('q3-container').style.display = 'block';
+                        
+                        // 애플리케이션인 경우 제목 변경
+                        const q3Title = document.getElementById('q3-title');
+                        if (selections.what === 'application') {
+                            q3Title.textContent = '🎮 ' + (getTranslation('ui', 'ask_app_type') || 'APP TYPE');
+                        } else {
+                            q3Title.textContent = '📋 ' + (translations.steps.do && translations.steps.do.question ? 
+                                (translations.steps.do.question[currentLanguage] || translations.steps.do.question['en']) : 'OUTPUT FORMAT?');
+                        }
+                        
+                        populateVNButtons('do');  // VN 버튼 생성
+                    }, 500);
+                });
             } else if (step === 'do') {
-                // 선택지 패널 숨기기
-                document.getElementById('choice-panel').style.display = 'none';
-                isChoicePanelVisible = false;
-                updateDialogue(dialogues.do, 'happy');
-                setTimeout(() => {
-                    findTools();
-                }, 1000);
+                // 3단계 완료 후 8단계 질문으로 이동
+                // 기존 컨테이너 숨기기
+                document.getElementById('q1-container').style.display = 'none';
+                document.getElementById('q2-container').style.display = 'none';
+                document.getElementById('q3-container').style.display = 'none';
+                showRetroLoading(() => {
+                    updateDialogue(getTranslation('ui', 'do_selected'), 'happy');
+                    setTimeout(() => {
+                        // 4단계 질문 표시
+                        const langQuestion = getTranslation('details', 'step4_language');
+                        const langQuestionText = langQuestion && langQuestion.question ? langQuestion.question : '어떤 언어로 사용하고 싶으신가요?';
+                        updateDialogue(langQuestionText, 'curious');
+                        document.getElementById('q4-container').style.display = 'block';
+                    }, 500);
+                });
             }
         }
         
@@ -1055,23 +1878,99 @@
             }
         }
         
+        // 8단계 옵션 선택
+        function selectOption(step, value) {
+            // 현재 질문 숨기기
+            const stepNum = step.replace('step', '');
+            document.getElementById(`q${stepNum}-container`).style.display = 'none';
+            
+            // 로그 출력
+            console.log(`[선택] STEP${stepNum}: ${value}`);
+            console.log('현재 selections:', selections);
+            
+            // 선택 저장
+            if (stepNum === '4') {
+                selections.language = value;
+                showRetroLoading(() => {
+                    updateDialogue(getTranslation('ui', 'ask_pricing'), 'curious');
+                    setTimeout(() => {
+                        document.getElementById('q5-container').style.display = 'block';
+                    }, 500);
+                });
+            } else if (stepNum === '5') {
+                selections.pricing = value;
+                showRetroLoading(() => {
+                    const diffQuestion = getTranslation('details', 'step6_difficulty');
+                    const diffQuestionText = diffQuestion && diffQuestion.question ? diffQuestion.question : '사용 난이도는 어느 정도가 좋으신가요?';
+                    updateDialogue(diffQuestionText, 'explaining');
+                    setTimeout(() => {
+                        document.getElementById('q6-container').style.display = 'block';
+                    }, 500);
+                });
+            } else if (stepNum === '6') {
+                selections.complexity = value;
+                showRetroLoading(() => {
+                    updateDialogue(getTranslation('ui', 'ask_platform'), 'curious');
+                    setTimeout(() => {
+                        // 애플리케이션 카테고리면 다른 옵션 표시
+                        if (selections.what === 'application') {
+                            setupApplicationPlatformOptions();
+                        }
+                        document.getElementById('q7-container').style.display = 'block';
+                    }, 500);
+                });
+            } else if (stepNum === '7') {
+                selections.platform = value;
+                showRetroLoading(() => {
+                    updateDialogue(getTranslation('ui', 'ask_special'), 'happy');
+                    setTimeout(() => {
+                        document.getElementById('q8-container').style.display = 'block';
+                    }, 500);
+                });
+            } else if (stepNum === '8') {
+                selections.special = value;
+                // 모든 선택 완료 - 도구 찾기
+                document.getElementById('choice-panel').style.display = 'none';
+                isChoicePanelVisible = false;
+                showRetroLoading(() => {
+                    findTools();
+                });
+            }
+        }
+        
         // 도구 찾기
         function findTools() {
-            updateDialogue(dialogues.searching, 'explaining', false, () => {
-                // 드롭박스 컨테이너 숨기기
-                document.querySelector('.dropdown-container').style.display = 'none';
+            // 레트로 로딩바 표시
+            showRetroLoading(() => {
+                updateDialogue(getTranslation('ui', 'searching'), 'explaining', false, () => {
+                    // 선택지 패널 숨기기
+                const choicePanel = document.getElementById('choice-panel');
+                if (choicePanel) {
+                    choicePanel.style.display = 'none';
+                }
                 
                 try {
                     // 통합 데이터에서 가져오기
                     const combinationKey = `${selections.what}_${selections.how}_${selections.do}`;
                     const data = TOOLS_DATA[combinationKey];
                     
+                    console.log(`[검색] 조합 키: ${combinationKey}`);
+                    console.log('최종 selections:', selections);
+                    
                     if (!data) {
+                        console.error(`[오류] 데이터 없음: ${combinationKey}`);
                         throw new Error('해당 조합의 데이터를 찾을 수 없습니다.');
                     }
                     
+                    console.log(`[결과] 찾은 도구 개수: ${data.tools ? data.tools.length : 0}`);
+                    if (data.tools && data.tools.length > 0) {
+                        console.log('[도구 목록]:', data.tools.map(t => `${t.name} (점수: ${t.score || 'N/A'})`));
+                    } else {
+                        console.log('[경고] 도구가 없습니다!');
+                    }
+                    
                     // 결과 표시
-                    updateDialogue(dialogues.found, 'result', false, () => {
+                    updateDialogue(getTranslation('ui', 'found'), 'idle', false, () => {
                         showResults(data.tools);
                         
                         // 리셋 버튼 표시
@@ -1079,9 +1978,10 @@
                     });
                     
                 } catch (error) {
-                    updateDialogue('앗, 도구를 찾는 중에 문제가 발생했어요...', 'curious');
+                    updateDialogue('Oops! Something went wrong while searching...', 'curious');
                     console.error('Error loading tools:', error);
                 }
+                }); // updateDialogue 콜백 닫기
             });
         }
         
@@ -1091,12 +1991,25 @@
             container.innerHTML = '';
             container.style.display = 'block';
             
+            // 도구가 없는 경우 처리
+            if (!tools || tools.length === 0) {
+                container.innerHTML = `
+                    <div class="no-results">
+                        <h3>😔 죄송합니다. 해당 조합에 맞는 도구를 찾지 못했습니다.</h3>
+                        <p>다른 옵션을 선택해보시거나, 더 일반적인 카테고리에서 찾아보세요.</p>
+                        <p style="color: #888; font-size: 0.9em;">조합: ${selections.what} → ${selections.how} → ${selections.do}</p>
+                    </div>
+                `;
+                return;
+            }
+            
             // 그리드 컨테이너 생성
             const grid = document.createElement('div');
             grid.className = 'results-grid';
             
-            // 최대 3개만 표시
-            const displayTools = tools.slice(0, 3);
+            // 8단계 필터링을 통해 최종 1개 또는 상위 3개 표시
+            const filteredTools = filterToolsBySelections(tools);
+            const displayTools = filteredTools.slice(0, 3);
             
             displayTools.forEach((tool, index) => {
                 const card = document.createElement('div');
@@ -1110,10 +2023,10 @@
                     <div class="tool-meta">
                         <span>⭐ ${tool.rating.toFixed(1)}</span>
                         <span>👥 ${tool.visits.toLocaleString()}</span>
-                        <span>💰 ${tool.pricing === 'free' ? '무료' : tool.pricing}</span>
+                        <span>💰 ${tool.pricing === 'free' ? 'FREE' : tool.pricing}</span>
                     </div>
                     <a href="${tool.url}" target="_blank" class="tool-link">
-                        바로가기 →
+                        VISIT →
                     </a>
                 `;
                 grid.appendChild(card);
@@ -1122,20 +2035,31 @@
             container.appendChild(grid);
         }
         
+        // 8단계 필터링
+        function filterToolsBySelections(tools) {
+            // TODO: eight_step_system.py의 calculate_tool_score 함수를 참고하여
+            // selections에 따라 도구를 필터링하고 점수를 매기는 로직 구현
+            // 현재는 임시로 모든 도구 반환
+            return tools;
+        }
+        
         // 선택 초기화
         function resetSelections() {
             // 선택 초기화
             selections = {
                 what: null,
                 how: null,
-                do: null
+                do: null,
+                language: null,
+                pricing: null,
+                complexity: null,
+                platform: null,
+                special: null
             };
             currentStep = 'what';
             
-            // 드롭박스 초기화
-            document.getElementById('what-select').value = '';
-            document.getElementById('how-select').value = '';
-            document.getElementById('do-select').value = '';
+            // 옵션 컨테이너 초기화
+            populateVNButtons('what');  // VN 버튼으로 변경
             
             // 첫 번째 질문만 표시하고 나머지는 숨기기
             document.getElementById('q1-container').style.display = 'block';
@@ -1146,13 +2070,20 @@
             document.getElementById('choice-panel').style.display = 'none';
             isChoicePanelVisible = false;
             
+            // 8단계 질문들 숨기기
+            for (let i = 4; i <= 8; i++) {
+                const container = document.getElementById(`q${i}-container`);
+                if (container) container.style.display = 'none';
+            }
+            
             // 대화창 다시 표시
             setTimeout(() => {
-                updateDialogue(dialogues.greeting, 'idle');
-                // 인사 후 첫 질문으로 전환
-                setTimeout(() => {
-                    updateDialogue(dialogues.askWhat, 'curious', true);
-                }, 2000);
+                updateDialogue(getTranslation('ui', 'welcome'), 'idle', false, () => {
+                    // 클릭 후 첫 질문 표시
+                    const whatQuestion = getTranslation('steps', 'what');
+                    const questionText = whatQuestion && whatQuestion.question ? whatQuestion.question : '무엇을 하고 싶으신가요?';
+                    updateDialogue(questionText, 'curious', true);
+                });
             }, 500);
             
             // 결과 숨기기
@@ -1163,9 +2094,6 @@
             
             // 캐릭터 상태 초기화
             changeCharacterState('idle');
-            
-            // 초기 대화 표시
-            updateDialogue(dialogues.greeting, 'idle');
         }
         
         // 드롭박스 이벤트 리스너 설정
@@ -1186,16 +2114,191 @@
             });
         }
         
+        // 8단계 옵션 버튼 동적 생성 함수
+        function generate8StepOptions() {
+            // Step 4: Language Options
+            const q4Container = document.getElementById('q4-options');
+            if (q4Container) {
+                q4Container.innerHTML = '';
+                const step4Options = [
+                    { key: 'korean', value: 'korean_must', icon: '🇰🇷' },
+                    { key: 'english_ok', value: 'english_ok', icon: '🌍' },
+                    { key: 'any_language', value: 'any_language', icon: '🌏' }
+                ];
+                
+                step4Options.forEach(opt => {
+                    const optData = step4Translations.options[opt.key];
+                    if (optData) {
+                        const button = createOptionButton('step4', opt.value, opt.icon, optData);
+                        q4Container.appendChild(button);
+                    }
+                });
+            }
+            
+            // Step 5: Budget Options
+            const q5Container = document.getElementById('q5-options');
+            if (q5Container) {
+                q5Container.innerHTML = '';
+                const step5Options = [
+                    { key: 'free_only', icon: '🆓' },
+                    { key: 'freemium_ok', icon: '💎' },
+                    { key: 'trial_ok', icon: '🎫' },
+                    { key: 'paid_ok', icon: '💳' }
+                ];
+                
+                step5Options.forEach(opt => {
+                    const optData = step5Translations.options[opt.key];
+                    if (optData) {
+                        const button = createOptionButton('step5', opt.key, opt.icon, optData);
+                        q5Container.appendChild(button);
+                    }
+                });
+            }
+            
+            // Step 6: Difficulty Options
+            const q6Container = document.getElementById('q6-options');
+            if (q6Container) {
+                q6Container.innerHTML = '';
+                const step6Options = [
+                    { key: 'beginner', icon: '🌱' },
+                    { key: 'intermediate', icon: '🌳' },
+                    { key: 'advanced', icon: '🌲' },
+                    { key: 'developer', icon: '👨‍💻' }
+                ];
+                
+                step6Options.forEach(opt => {
+                    const optData = step6Translations.options[opt.key];
+                    if (optData) {
+                        const button = createOptionButton('step6', opt.key, opt.icon, optData);
+                        q6Container.appendChild(button);
+                    }
+                });
+            }
+            
+            // Step 7: Platform Options
+            const q7Container = document.getElementById('q7-options');
+            if (q7Container) {
+                q7Container.innerHTML = '';
+                const step7Options = [
+                    { key: 'web_browser', icon: '🌐' },
+                    { key: 'desktop', icon: '🖥️' },
+                    { key: 'mobile', icon: '📱' },
+                    { key: 'api', icon: '🔧' },
+                    { key: 'all_with_api', icon: '🌐' },
+                    { key: 'all_without_api', icon: '📱' }
+                ];
+                
+                step7Options.forEach(opt => {
+                    const optData = step7Translations.options[opt.key];
+                    if (optData) {
+                        const button = createOptionButton('step7', opt.key, opt.icon, optData);
+                        q7Container.appendChild(button);
+                    }
+                });
+            }
+            
+            // Step 8: Special Features Options
+            const q8Container = document.getElementById('q8-options');
+            if (q8Container) {
+                q8Container.innerHTML = '';
+                const step8Options = [
+                    { key: 'privacy', icon: '🔒' },
+                    { key: 'collaboration', icon: '👥' },
+                    { key: 'speed', icon: '⚡' },
+                    { key: 'quality', icon: '💯' }
+                ];
+                
+                step8Options.forEach(opt => {
+                    const optData = step8Translations.options[opt.key];
+                    if (optData) {
+                        const button = createOptionButton('step8', opt.key, opt.icon, optData);
+                        q8Container.appendChild(button);
+                    }
+                });
+            }
+        }
+        
+        function createOptionButton(step, value, icon, optionData) {
+            const button = document.createElement('button');
+            button.className = 'vn-option-button';
+            button.onclick = () => selectOption(step, value);
+            
+            const label = optionData.label[currentLanguage] || optionData.label['en'];
+            const desc = optionData.description[currentLanguage] || optionData.description['en'];
+            
+            // 레이블에서 아이콘 제거 (이미 별도로 표시)
+            const labelText = label.replace(/^[^\s]+\s/, '');
+            
+            button.innerHTML = `
+                <span class="option-icon">${icon}</span>
+                <div class="option-content">
+                    <span class="option-text">${labelText.toUpperCase()}</span>
+                    <span class="option-desc">${desc}</span>
+                </div>
+            `;
+            
+            return button;
+        }
+        
         // 초기화
         document.addEventListener('DOMContentLoaded', () => {
-            populateDropdown('what');
-            initializeDropdowns();
+            // 언어 선택기 초기화
+            initializeLanguageSelector();
+            
+            // 초기 언어 설정
+            changeLanguage('ko');
+            
+            populateVNButtons('what');  // VN 버튼으로 변경
+            
+            // 8단계 옵션 생성
+            generate8StepOptions();
+            
             // 초기 대화 표시
-            updateDialogue(dialogues.greeting, 'idle', false, () => {
+            updateDialogue(getTranslation('ui', 'welcome'), 'idle', false, () => {
                 // 클릭 후 첫 질문 표시
-                updateDialogue(dialogues.askWhat, 'curious', true);
+                const whatQuestion = getTranslation('steps', 'what');
+                const questionText = whatQuestion && whatQuestion.question ? whatQuestion.question : '무엇을 하고 싶으신가요?';
+                updateDialogue(questionText, 'curious', true);
             });
         });
+        
+        // 언어 선택기 초기화
+        function initializeLanguageSelector() {
+            const selector = document.getElementById('language-selector');
+            const dropdown = document.getElementById('language-dropdown');
+            
+            // 번역 데이터 확인
+            console.log('translations object:', translations);
+            console.log('translations.languages:', translations.languages);
+            
+            if (!translations || !translations.languages) {
+                console.error('번역 데이터가 올바르게 로드되지 않았습니다.');
+                return;
+            }
+            
+            // 언어 옵션 생성
+            for (const [code, langInfo] of Object.entries(translations.languages)) {
+                const option = document.createElement('div');
+                option.className = 'language-option';
+                option.innerHTML = `
+                    <span class="language-option-flag">${langInfo.flag}</span>
+                    <span class="language-option-name">${langInfo.name}</span>
+                `;
+                option.onclick = () => changeLanguage(code);
+                dropdown.appendChild(option);
+            }
+            
+            // 선택기 클릭 이벤트
+            selector.onclick = (e) => {
+                e.stopPropagation();
+                dropdown.classList.toggle('show');
+            };
+            
+            // 외부 클릭 시 드롭다운 닫기
+            document.addEventListener('click', () => {
+                dropdown.classList.remove('show');
+            });
+        }
     </script>
 </body>
 </html>
