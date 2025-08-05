@@ -76,7 +76,7 @@
                     transparent 2px
                 );
             pointer-events: none;
-            z-index: 9999;  /* 최상단으로 */
+            z-index: 9000;  /* 푸터보다 낮게 조정 */
         }
         
         /* 스캔라인 효과 제거 */
@@ -816,12 +816,18 @@
             left: 50%;
             transform: translateX(-50%);
             color: #00ff00;
-            font-size: 12px;
+            font-size: 14px;
             font-family: 'VT323', monospace;
             text-align: center;
-            opacity: 0.7;
-            z-index: 100;
+            opacity: 0.8;
+            z-index: 10000;
             letter-spacing: 1px;
+            background: rgba(0, 0, 0, 0.9);
+            padding: 5px 20px;
+            border: 1px solid #00ff00;
+            border-radius: 3px;
+            white-space: nowrap;
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
         }
         
         .copyright-footer a {
@@ -833,6 +839,25 @@
         .copyright-footer a:hover {
             text-shadow: 0 0 5px rgba(0, 255, 0, 0.8);
             opacity: 1;
+        }
+        
+        /* PC 화면에서 푸터 위치 조정 */
+        @media (min-width: 768px) {
+            .copyright-footer {
+                bottom: 20px;
+                font-size: 16px;
+                padding: 8px 30px;
+            }
+        }
+        
+        /* 큰 화면에서 game-container가 중앙에 위치할 때 푸터도 조정 */
+        @media (min-width: 1024px) {
+            .copyright-footer {
+                position: fixed;
+                bottom: 30px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
         }
         
         /* 로딩 화면 */
