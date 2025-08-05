@@ -1381,7 +1381,8 @@
             }
             
             loadResults() {
-                const pathKey = `${this.selections.what}/${this.selections.how}/${this.selections.do}/${this.selections.step4}/${this.selections.step5}/${this.selections.step6}/${this.selections.step7}/${this.selections.step8}`;
+                // step8 (language filter)를 제외한 경로
+                const pathKey = `${this.selections.what}/${this.selections.how}/${this.selections.do}/${this.selections.step4}/${this.selections.step5}/${this.selections.step6}/${this.selections.step7}`;
                 const jsPath = `cases/${pathKey}/tools.js`;
                 
                 // 동적으로 script 태그를 추가하여 JS 파일 로드 (file:// 프로토콜에서도 작동)
@@ -1391,11 +1392,20 @@
                     // JS 파일이 로드되면 window.loadToolsData에 데이터가 저장됨
                     if (window.loadToolsData && window.loadToolsData[pathKey]) {
                         const data = window.loadToolsData[pathKey];
-                        const tools = data.languages[this.currentLang] || data.languages['en'] || [];
+                        const languageFilter = this.selections.step8; // current, english, or any
                         
-                        if (tools.length > 0) {
-                            this.showResults(tools);
+                        // 선택한 언어 필터에 해당하는 도구들 가져오기
+                        if (data.language_filters && data.language_filters[languageFilter]) {
+                            const filteredData = data.language_filters[languageFilter];
+                            const tools = filteredData.languages[this.currentLang] || filteredData.languages['en'] || [];
+                            
+                            if (tools.length > 0) {
+                                this.showResults(tools);
+                            } else {
+                                this.showError();
+                            }
                         } else {
+                            console.error('Language filter data not found');
                             this.showError();
                         }
                     } else {
