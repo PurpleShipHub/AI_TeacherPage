@@ -1,1 +1,688 @@
-window.loadToolsData = window.loadToolsData || {}; window.loadToolsData['video/edit/edited/budget/collaboration/moderate/desktop'] = {"language_filters": {"current": {"languages": {"ko": [{"id": "openai-sora", "name": "OpenAI Sora", "description": "OpenAI Sora - 비디오 생성 및 편집 도구입니다", "url": "https://sora.chatgpt.com", "pricing": "freemium", "visits": 50214504}, {"id": "magiclight", "name": "MagicLight", "description": "MagicLight - 비디오 생성 및 편집 도구입니다", "url": "https://magiclight.ai", "pricing": "free", "visits": 1449630}], "en": [{"id": "openai-sora", "name": "OpenAI Sora", "description": "AI model creating realistic videos from text, images, or existing videos.", "url": "https://sora.chatgpt.com", "pricing": "freemium", "visits": 50214504}, {"id": "magiclight", "name": "MagicLight", "description": "AI text-to-video platform for creating captivating, professional-quality videos from written content.", "url": "https://magiclight.ai", "pricing": "free", "visits": 1449630}], "ja": [{"id": "openai-sora", "name": "OpenAI Sora", "description": "AI model creating realistic videos from text, images, or existing videos.", "url": "https://sora.chatgpt.com", "pricing": "freemium", "visits": 50214504}, {"id": "magiclight", "name": "MagicLight", "description": "AI text-to-video platform for creating captivating, professional-quality videos from written content.", "url": "https://magiclight.ai", "pricing": "free", "visits": 1449630}], "zh": [{"id": "openai-sora", "name": "OpenAI Sora", "description": "AI model creating realistic videos from text, images, or existing videos.", "url": "https://sora.chatgpt.com", "pricing": "freemium", "visits": 50214504}, {"id": "magiclight", "name": "MagicLight", "description": "AI text-to-video platform for creating captivating, professional-quality videos from written content.", "url": "https://magiclight.ai", "pricing": "free", "visits": 1449630}], "es": [{"id": "openai-sora", "name": "OpenAI Sora", "description": "AI model creating realistic videos from text, images, or existing videos.", "url": "https://sora.chatgpt.com", "pricing": "freemium", "visits": 50214504}, {"id": "magiclight", "name": "MagicLight", "description": "AI text-to-video platform for creating captivating, professional-quality videos from written content.", "url": "https://magiclight.ai", "pricing": "free", "visits": 1449630}], "fr": [{"id": "openai-sora", "name": "OpenAI Sora", "description": "AI model creating realistic videos from text, images, or existing videos.", "url": "https://sora.chatgpt.com", "pricing": "freemium", "visits": 50214504}, {"id": "magiclight", "name": "MagicLight", "description": "AI text-to-video platform for creating captivating, professional-quality videos from written content.", "url": "https://magiclight.ai", "pricing": "free", "visits": 1449630}], "de": [{"id": "openai-sora", "name": "OpenAI Sora", "description": "AI model creating realistic videos from text, images, or existing videos.", "url": "https://sora.chatgpt.com", "pricing": "freemium", "visits": 50214504}, {"id": "magiclight", "name": "MagicLight", "description": "AI text-to-video platform for creating captivating, professional-quality videos from written content.", "url": "https://magiclight.ai", "pricing": "free", "visits": 1449630}]}}, "english": {"languages": {"ko": [{"id": "openai-sora", "name": "OpenAI Sora", "description": "OpenAI Sora - 비디오 생성 및 편집 도구입니다", "url": "https://sora.chatgpt.com", "pricing": "freemium", "visits": 50214504}, {"id": "magiclight", "name": "MagicLight", "description": "MagicLight - 비디오 생성 및 편집 도구입니다", "url": "https://magiclight.ai", "pricing": "free", "visits": 1449630}], "en": [{"id": "openai-sora", "name": "OpenAI Sora", "description": "AI model creating realistic videos from text, images, or existing videos.", "url": "https://sora.chatgpt.com", "pricing": "freemium", "visits": 50214504}, {"id": "magiclight", "name": "MagicLight", "description": "AI text-to-video platform for creating captivating, professional-quality videos from written content.", "url": "https://magiclight.ai", "pricing": "free", "visits": 1449630}], "ja": [{"id": "openai-sora", "name": "OpenAI Sora", "description": "AI model creating realistic videos from text, images, or existing videos.", "url": "https://sora.chatgpt.com", "pricing": "freemium", "visits": 50214504}, {"id": "magiclight", "name": "MagicLight", "description": "AI text-to-video platform for creating captivating, professional-quality videos from written content.", "url": "https://magiclight.ai", "pricing": "free", "visits": 1449630}], "zh": [{"id": "openai-sora", "name": "OpenAI Sora", "description": "AI model creating realistic videos from text, images, or existing videos.", "url": "https://sora.chatgpt.com", "pricing": "freemium", "visits": 50214504}, {"id": "magiclight", "name": "MagicLight", "description": "AI text-to-video platform for creating captivating, professional-quality videos from written content.", "url": "https://magiclight.ai", "pricing": "free", "visits": 1449630}], "es": [{"id": "openai-sora", "name": "OpenAI Sora", "description": "AI model creating realistic videos from text, images, or existing videos.", "url": "https://sora.chatgpt.com", "pricing": "freemium", "visits": 50214504}, {"id": "magiclight", "name": "MagicLight", "description": "AI text-to-video platform for creating captivating, professional-quality videos from written content.", "url": "https://magiclight.ai", "pricing": "free", "visits": 1449630}], "fr": [{"id": "openai-sora", "name": "OpenAI Sora", "description": "AI model creating realistic videos from text, images, or existing videos.", "url": "https://sora.chatgpt.com", "pricing": "freemium", "visits": 50214504}, {"id": "magiclight", "name": "MagicLight", "description": "AI text-to-video platform for creating captivating, professional-quality videos from written content.", "url": "https://magiclight.ai", "pricing": "free", "visits": 1449630}], "de": [{"id": "openai-sora", "name": "OpenAI Sora", "description": "AI model creating realistic videos from text, images, or existing videos.", "url": "https://sora.chatgpt.com", "pricing": "freemium", "visits": 50214504}, {"id": "magiclight", "name": "MagicLight", "description": "AI text-to-video platform for creating captivating, professional-quality videos from written content.", "url": "https://magiclight.ai", "pricing": "free", "visits": 1449630}]}}, "any": {"languages": {"ko": [{"id": "openai-sora", "name": "OpenAI Sora", "description": "OpenAI Sora - 비디오 생성 및 편집 도구입니다", "url": "https://sora.chatgpt.com", "pricing": "freemium", "visits": 50214504}, {"id": "capcut-com", "name": "CapCut", "description": "CapCut - 비디오 생성 및 편집 도구입니다", "url": "https://capcut.com", "pricing": "freemium", "visits": 42915152}, {"id": "magiclight", "name": "MagicLight", "description": "MagicLight - 비디오 생성 및 편집 도구입니다", "url": "https://magiclight.ai", "pricing": "free", "visits": 1449630}], "en": [{"id": "openai-sora", "name": "OpenAI Sora", "description": "AI model creating realistic videos from text, images, or existing videos.", "url": "https://sora.chatgpt.com", "pricing": "freemium", "visits": 50214504}, {"id": "capcut-com", "name": "CapCut", "description": "CapCut is an AI-driven all-in-one video editor and graphic design tool.", "url": "https://capcut.com", "pricing": "freemium", "visits": 42915152}, {"id": "magiclight", "name": "MagicLight", "description": "AI text-to-video platform for creating captivating, professional-quality videos from written content.", "url": "https://magiclight.ai", "pricing": "free", "visits": 1449630}], "ja": [{"id": "openai-sora", "name": "OpenAI Sora", "description": "AI model creating realistic videos from text, images, or existing videos.", "url": "https://sora.chatgpt.com", "pricing": "freemium", "visits": 50214504}, {"id": "capcut-com", "name": "CapCut", "description": "CapCut is an AI-driven all-in-one video editor and graphic design tool.", "url": "https://capcut.com", "pricing": "freemium", "visits": 42915152}, {"id": "magiclight", "name": "MagicLight", "description": "AI text-to-video platform for creating captivating, professional-quality videos from written content.", "url": "https://magiclight.ai", "pricing": "free", "visits": 1449630}], "zh": [{"id": "openai-sora", "name": "OpenAI Sora", "description": "AI model creating realistic videos from text, images, or existing videos.", "url": "https://sora.chatgpt.com", "pricing": "freemium", "visits": 50214504}, {"id": "capcut-com", "name": "CapCut", "description": "CapCut is an AI-driven all-in-one video editor and graphic design tool.", "url": "https://capcut.com", "pricing": "freemium", "visits": 42915152}, {"id": "magiclight", "name": "MagicLight", "description": "AI text-to-video platform for creating captivating, professional-quality videos from written content.", "url": "https://magiclight.ai", "pricing": "free", "visits": 1449630}], "es": [{"id": "openai-sora", "name": "OpenAI Sora", "description": "AI model creating realistic videos from text, images, or existing videos.", "url": "https://sora.chatgpt.com", "pricing": "freemium", "visits": 50214504}, {"id": "capcut-com", "name": "CapCut", "description": "CapCut is an AI-driven all-in-one video editor and graphic design tool.", "url": "https://capcut.com", "pricing": "freemium", "visits": 42915152}, {"id": "magiclight", "name": "MagicLight", "description": "AI text-to-video platform for creating captivating, professional-quality videos from written content.", "url": "https://magiclight.ai", "pricing": "free", "visits": 1449630}], "fr": [{"id": "openai-sora", "name": "OpenAI Sora", "description": "AI model creating realistic videos from text, images, or existing videos.", "url": "https://sora.chatgpt.com", "pricing": "freemium", "visits": 50214504}, {"id": "capcut-com", "name": "CapCut", "description": "CapCut is an AI-driven all-in-one video editor and graphic design tool.", "url": "https://capcut.com", "pricing": "freemium", "visits": 42915152}, {"id": "magiclight", "name": "MagicLight", "description": "AI text-to-video platform for creating captivating, professional-quality videos from written content.", "url": "https://magiclight.ai", "pricing": "free", "visits": 1449630}], "de": [{"id": "openai-sora", "name": "OpenAI Sora", "description": "AI model creating realistic videos from text, images, or existing videos.", "url": "https://sora.chatgpt.com", "pricing": "freemium", "visits": 50214504}, {"id": "capcut-com", "name": "CapCut", "description": "CapCut is an AI-driven all-in-one video editor and graphic design tool.", "url": "https://capcut.com", "pricing": "freemium", "visits": 42915152}, {"id": "magiclight", "name": "MagicLight", "description": "AI text-to-video platform for creating captivating, professional-quality videos from written content.", "url": "https://magiclight.ai", "pricing": "free", "visits": 1449630}]}}}};
+const tools = {
+  "language_filters": {
+    "current": {
+      "languages": {
+        "ko": [
+          {
+            "id": "chatgpt-4",
+            "name": "ChatGPT",
+            "description": "ChatGPT - OpenAI가 개발한 대화형 AI로, 질문 답변, 글쓰기, 코딩, 번역 등 다양한 작업을 도와줍니다",
+            "url": "https://chatgpt.com",
+            "pricing_type": "freemium",
+            "rating": 0.0,
+            "monthly_visits": 5395125236,
+            "tags": "[\"AI Chatbot\", \"AI Assistant\", \"AI Text Generator\", \"AI Writing Assistants\", \"AI Summarizer\", \"AI Code Assistant\", \"AI Email Generator\", \"Large Language Models (LLMs)\"]"
+          },
+          {
+            "id": "getprospect",
+            "name": "Getprospect",
+            "description": "Getprospect - AI 기반 도구입니다",
+            "url": "https://chromewebstore.google.com/detail/email-finder-getprospect/bhbcbkonalnjkflmdkdodieehnmmeknp",
+            "pricing_type": "freemium",
+            "rating": 0.0,
+            "monthly_visits": 274349133,
+            "tags": "[\"AI Lead Generation\", \"AI Sales Assistant\", \"AI CRM\", \"AI Email Marketing\", \"AI Recruiting\", \"AI Marketing\"]"
+          },
+          {
+            "id": "deepl",
+            "name": "DeepL",
+            "description": "DeepL - AI 기반 도구입니다",
+            "url": "https://deepl.com",
+            "pricing_type": "freemium",
+            "rating": 0.0,
+            "monthly_visits": 177974976,
+            "tags": "[\"AI Translate\", \"AI Writing Assistants\", \"AI API\", \"AI Voice Translator\", \"AI Writing\"]"
+          }
+        ],
+        "en": [
+          {
+            "id": "chatgpt-4",
+            "name": "ChatGPT",
+            "description": "A free-to-use AI system for conversations, insights, and task automation.",
+            "url": "https://chatgpt.com",
+            "pricing_type": "freemium",
+            "rating": 0.0,
+            "monthly_visits": 5395125236,
+            "tags": "[\"AI Chatbot\", \"AI Assistant\", \"AI Text Generator\", \"AI Writing Assistants\", \"AI Summarizer\", \"AI Code Assistant\", \"AI Email Generator\", \"Large Language Models (LLMs)\"]"
+          },
+          {
+            "id": "getprospect",
+            "name": "Getprospect",
+            "description": "LinkedIn email finder tool for accurate business email addresses and lead management.",
+            "url": "https://chromewebstore.google.com/detail/email-finder-getprospect/bhbcbkonalnjkflmdkdodieehnmmeknp",
+            "pricing_type": "freemium",
+            "rating": 0.0,
+            "monthly_visits": 274349133,
+            "tags": "[\"AI Lead Generation\", \"AI Sales Assistant\", \"AI CRM\", \"AI Email Marketing\", \"AI Recruiting\", \"AI Marketing\"]"
+          },
+          {
+            "id": "deepl",
+            "name": "DeepL",
+            "description": "Accurate machine translation and AI-powered writing assistance for text and documents.",
+            "url": "https://deepl.com",
+            "pricing_type": "freemium",
+            "rating": 0.0,
+            "monthly_visits": 177974976,
+            "tags": "[\"AI Translate\", \"AI Writing Assistants\", \"AI API\", \"AI Voice Translator\", \"AI Writing\"]"
+          }
+        ],
+        "ja": [
+          {
+            "id": "chatgpt-4",
+            "name": "ChatGPT",
+            "description": "ChatGPT - OpenAIが開発した対話型AIで、質問応答、文章作成、プログラミング、翻訳など様々なタスクをサポートします",
+            "url": "https://chatgpt.com",
+            "pricing_type": "freemium",
+            "rating": 0.0,
+            "monthly_visits": 5395125236,
+            "tags": "[\"AI Chatbot\", \"AI Assistant\", \"AI Text Generator\", \"AI Writing Assistants\", \"AI Summarizer\", \"AI Code Assistant\", \"AI Email Generator\", \"Large Language Models (LLMs)\"]"
+          },
+          {
+            "id": "getprospect",
+            "name": "Getprospect",
+            "description": "LinkedIn email finder tool for accurate business email addresses and lead management.",
+            "url": "https://chromewebstore.google.com/detail/email-finder-getprospect/bhbcbkonalnjkflmdkdodieehnmmeknp",
+            "pricing_type": "freemium",
+            "rating": 0.0,
+            "monthly_visits": 274349133,
+            "tags": "[\"AI Lead Generation\", \"AI Sales Assistant\", \"AI CRM\", \"AI Email Marketing\", \"AI Recruiting\", \"AI Marketing\"]"
+          },
+          {
+            "id": "deepl",
+            "name": "DeepL",
+            "description": "Accurate machine translation and AI-powered writing assistance for text and documents.",
+            "url": "https://deepl.com",
+            "pricing_type": "freemium",
+            "rating": 0.0,
+            "monthly_visits": 177974976,
+            "tags": "[\"AI Translate\", \"AI Writing Assistants\", \"AI API\", \"AI Voice Translator\", \"AI Writing\"]"
+          }
+        ],
+        "zh": [
+          {
+            "id": "chatgpt-4",
+            "name": "ChatGPT",
+            "description": "ChatGPT - OpenAI开发的对话式AI，可帮助回答问题、写作、编程、翻译等多种任务",
+            "url": "https://chatgpt.com",
+            "pricing_type": "freemium",
+            "rating": 0.0,
+            "monthly_visits": 5395125236,
+            "tags": "[\"AI Chatbot\", \"AI Assistant\", \"AI Text Generator\", \"AI Writing Assistants\", \"AI Summarizer\", \"AI Code Assistant\", \"AI Email Generator\", \"Large Language Models (LLMs)\"]"
+          },
+          {
+            "id": "getprospect",
+            "name": "Getprospect",
+            "description": "LinkedIn email finder tool for accurate business email addresses and lead management.",
+            "url": "https://chromewebstore.google.com/detail/email-finder-getprospect/bhbcbkonalnjkflmdkdodieehnmmeknp",
+            "pricing_type": "freemium",
+            "rating": 0.0,
+            "monthly_visits": 274349133,
+            "tags": "[\"AI Lead Generation\", \"AI Sales Assistant\", \"AI CRM\", \"AI Email Marketing\", \"AI Recruiting\", \"AI Marketing\"]"
+          },
+          {
+            "id": "deepl",
+            "name": "DeepL",
+            "description": "Accurate machine translation and AI-powered writing assistance for text and documents.",
+            "url": "https://deepl.com",
+            "pricing_type": "freemium",
+            "rating": 0.0,
+            "monthly_visits": 177974976,
+            "tags": "[\"AI Translate\", \"AI Writing Assistants\", \"AI API\", \"AI Voice Translator\", \"AI Writing\"]"
+          }
+        ],
+        "es": [
+          {
+            "id": "chatgpt-4",
+            "name": "ChatGPT",
+            "description": "ChatGPT - IA conversacional desarrollada por OpenAI que ayuda con preguntas, escritura, programación, traducción y más",
+            "url": "https://chatgpt.com",
+            "pricing_type": "freemium",
+            "rating": 0.0,
+            "monthly_visits": 5395125236,
+            "tags": "[\"AI Chatbot\", \"AI Assistant\", \"AI Text Generator\", \"AI Writing Assistants\", \"AI Summarizer\", \"AI Code Assistant\", \"AI Email Generator\", \"Large Language Models (LLMs)\"]"
+          },
+          {
+            "id": "getprospect",
+            "name": "Getprospect",
+            "description": "LinkedIn email finder tool for accurate business email addresses and lead management.",
+            "url": "https://chromewebstore.google.com/detail/email-finder-getprospect/bhbcbkonalnjkflmdkdodieehnmmeknp",
+            "pricing_type": "freemium",
+            "rating": 0.0,
+            "monthly_visits": 274349133,
+            "tags": "[\"AI Lead Generation\", \"AI Sales Assistant\", \"AI CRM\", \"AI Email Marketing\", \"AI Recruiting\", \"AI Marketing\"]"
+          },
+          {
+            "id": "deepl",
+            "name": "DeepL",
+            "description": "Accurate machine translation and AI-powered writing assistance for text and documents.",
+            "url": "https://deepl.com",
+            "pricing_type": "freemium",
+            "rating": 0.0,
+            "monthly_visits": 177974976,
+            "tags": "[\"AI Translate\", \"AI Writing Assistants\", \"AI API\", \"AI Voice Translator\", \"AI Writing\"]"
+          }
+        ],
+        "fr": [
+          {
+            "id": "chatgpt-4",
+            "name": "ChatGPT",
+            "description": "ChatGPT - IA conversationnelle développée par OpenAI qui aide avec questions, écriture, programmation, traduction et plus",
+            "url": "https://chatgpt.com",
+            "pricing_type": "freemium",
+            "rating": 0.0,
+            "monthly_visits": 5395125236,
+            "tags": "[\"AI Chatbot\", \"AI Assistant\", \"AI Text Generator\", \"AI Writing Assistants\", \"AI Summarizer\", \"AI Code Assistant\", \"AI Email Generator\", \"Large Language Models (LLMs)\"]"
+          },
+          {
+            "id": "getprospect",
+            "name": "Getprospect",
+            "description": "LinkedIn email finder tool for accurate business email addresses and lead management.",
+            "url": "https://chromewebstore.google.com/detail/email-finder-getprospect/bhbcbkonalnjkflmdkdodieehnmmeknp",
+            "pricing_type": "freemium",
+            "rating": 0.0,
+            "monthly_visits": 274349133,
+            "tags": "[\"AI Lead Generation\", \"AI Sales Assistant\", \"AI CRM\", \"AI Email Marketing\", \"AI Recruiting\", \"AI Marketing\"]"
+          },
+          {
+            "id": "deepl",
+            "name": "DeepL",
+            "description": "Accurate machine translation and AI-powered writing assistance for text and documents.",
+            "url": "https://deepl.com",
+            "pricing_type": "freemium",
+            "rating": 0.0,
+            "monthly_visits": 177974976,
+            "tags": "[\"AI Translate\", \"AI Writing Assistants\", \"AI API\", \"AI Voice Translator\", \"AI Writing\"]"
+          }
+        ],
+        "de": [
+          {
+            "id": "chatgpt-4",
+            "name": "ChatGPT",
+            "description": "ChatGPT - Von OpenAI entwickelte Konversations-KI, die bei Fragen, Schreiben, Programmierung, Übersetzung und mehr hilft",
+            "url": "https://chatgpt.com",
+            "pricing_type": "freemium",
+            "rating": 0.0,
+            "monthly_visits": 5395125236,
+            "tags": "[\"AI Chatbot\", \"AI Assistant\", \"AI Text Generator\", \"AI Writing Assistants\", \"AI Summarizer\", \"AI Code Assistant\", \"AI Email Generator\", \"Large Language Models (LLMs)\"]"
+          },
+          {
+            "id": "getprospect",
+            "name": "Getprospect",
+            "description": "LinkedIn email finder tool for accurate business email addresses and lead management.",
+            "url": "https://chromewebstore.google.com/detail/email-finder-getprospect/bhbcbkonalnjkflmdkdodieehnmmeknp",
+            "pricing_type": "freemium",
+            "rating": 0.0,
+            "monthly_visits": 274349133,
+            "tags": "[\"AI Lead Generation\", \"AI Sales Assistant\", \"AI CRM\", \"AI Email Marketing\", \"AI Recruiting\", \"AI Marketing\"]"
+          },
+          {
+            "id": "deepl",
+            "name": "DeepL",
+            "description": "Accurate machine translation and AI-powered writing assistance for text and documents.",
+            "url": "https://deepl.com",
+            "pricing_type": "freemium",
+            "rating": 0.0,
+            "monthly_visits": 177974976,
+            "tags": "[\"AI Translate\", \"AI Writing Assistants\", \"AI API\", \"AI Voice Translator\", \"AI Writing\"]"
+          }
+        ]
+      }
+    },
+    "english": {
+      "languages": {
+        "ko": [
+          {
+            "id": "chatgpt-4",
+            "name": "ChatGPT",
+            "description": "ChatGPT - OpenAI가 개발한 대화형 AI로, 질문 답변, 글쓰기, 코딩, 번역 등 다양한 작업을 도와줍니다",
+            "url": "https://chatgpt.com",
+            "pricing_type": "freemium",
+            "rating": 0.0,
+            "monthly_visits": 5395125236,
+            "tags": "[\"AI Chatbot\", \"AI Assistant\", \"AI Text Generator\", \"AI Writing Assistants\", \"AI Summarizer\", \"AI Code Assistant\", \"AI Email Generator\", \"Large Language Models (LLMs)\"]"
+          },
+          {
+            "id": "getprospect",
+            "name": "Getprospect",
+            "description": "Getprospect - AI 기반 도구입니다",
+            "url": "https://chromewebstore.google.com/detail/email-finder-getprospect/bhbcbkonalnjkflmdkdodieehnmmeknp",
+            "pricing_type": "freemium",
+            "rating": 0.0,
+            "monthly_visits": 274349133,
+            "tags": "[\"AI Lead Generation\", \"AI Sales Assistant\", \"AI CRM\", \"AI Email Marketing\", \"AI Recruiting\", \"AI Marketing\"]"
+          },
+          {
+            "id": "grok",
+            "name": "Grok",
+            "description": "Grok - 대화형 AI 비서로 질문에 답하고 다양한 작업을 도와줍니다",
+            "url": "https://grok.com",
+            "pricing_type": "free",
+            "rating": 0.0,
+            "monthly_visits": 158337402,
+            "tags": "[\"AI Assistant\", \"AI Search Engine\", \"AI Image Generator\", \"AI Chatbot\"]"
+          }
+        ],
+        "en": [
+          {
+            "id": "chatgpt-4",
+            "name": "ChatGPT",
+            "description": "A free-to-use AI system for conversations, insights, and task automation.",
+            "url": "https://chatgpt.com",
+            "pricing_type": "freemium",
+            "rating": 0.0,
+            "monthly_visits": 5395125236,
+            "tags": "[\"AI Chatbot\", \"AI Assistant\", \"AI Text Generator\", \"AI Writing Assistants\", \"AI Summarizer\", \"AI Code Assistant\", \"AI Email Generator\", \"Large Language Models (LLMs)\"]"
+          },
+          {
+            "id": "getprospect",
+            "name": "Getprospect",
+            "description": "LinkedIn email finder tool for accurate business email addresses and lead management.",
+            "url": "https://chromewebstore.google.com/detail/email-finder-getprospect/bhbcbkonalnjkflmdkdodieehnmmeknp",
+            "pricing_type": "freemium",
+            "rating": 0.0,
+            "monthly_visits": 274349133,
+            "tags": "[\"AI Lead Generation\", \"AI Sales Assistant\", \"AI CRM\", \"AI Email Marketing\", \"AI Recruiting\", \"AI Marketing\"]"
+          },
+          {
+            "id": "grok",
+            "name": "Grok",
+            "description": "Grok is a free AI assistant by xAI for truth, objectivity, real-time search, and more.",
+            "url": "https://grok.com",
+            "pricing_type": "free",
+            "rating": 0.0,
+            "monthly_visits": 158337402,
+            "tags": "[\"AI Assistant\", \"AI Search Engine\", \"AI Image Generator\", \"AI Chatbot\"]"
+          }
+        ],
+        "ja": [
+          {
+            "id": "chatgpt-4",
+            "name": "ChatGPT",
+            "description": "ChatGPT - OpenAIが開発した対話型AIで、質問応答、文章作成、プログラミング、翻訳など様々なタスクをサポートします",
+            "url": "https://chatgpt.com",
+            "pricing_type": "freemium",
+            "rating": 0.0,
+            "monthly_visits": 5395125236,
+            "tags": "[\"AI Chatbot\", \"AI Assistant\", \"AI Text Generator\", \"AI Writing Assistants\", \"AI Summarizer\", \"AI Code Assistant\", \"AI Email Generator\", \"Large Language Models (LLMs)\"]"
+          },
+          {
+            "id": "getprospect",
+            "name": "Getprospect",
+            "description": "LinkedIn email finder tool for accurate business email addresses and lead management.",
+            "url": "https://chromewebstore.google.com/detail/email-finder-getprospect/bhbcbkonalnjkflmdkdodieehnmmeknp",
+            "pricing_type": "freemium",
+            "rating": 0.0,
+            "monthly_visits": 274349133,
+            "tags": "[\"AI Lead Generation\", \"AI Sales Assistant\", \"AI CRM\", \"AI Email Marketing\", \"AI Recruiting\", \"AI Marketing\"]"
+          },
+          {
+            "id": "grok",
+            "name": "Grok",
+            "description": "Grok is a free AI assistant by xAI for truth, objectivity, real-time search, and more.",
+            "url": "https://grok.com",
+            "pricing_type": "free",
+            "rating": 0.0,
+            "monthly_visits": 158337402,
+            "tags": "[\"AI Assistant\", \"AI Search Engine\", \"AI Image Generator\", \"AI Chatbot\"]"
+          }
+        ],
+        "zh": [
+          {
+            "id": "chatgpt-4",
+            "name": "ChatGPT",
+            "description": "ChatGPT - OpenAI开发的对话式AI，可帮助回答问题、写作、编程、翻译等多种任务",
+            "url": "https://chatgpt.com",
+            "pricing_type": "freemium",
+            "rating": 0.0,
+            "monthly_visits": 5395125236,
+            "tags": "[\"AI Chatbot\", \"AI Assistant\", \"AI Text Generator\", \"AI Writing Assistants\", \"AI Summarizer\", \"AI Code Assistant\", \"AI Email Generator\", \"Large Language Models (LLMs)\"]"
+          },
+          {
+            "id": "getprospect",
+            "name": "Getprospect",
+            "description": "LinkedIn email finder tool for accurate business email addresses and lead management.",
+            "url": "https://chromewebstore.google.com/detail/email-finder-getprospect/bhbcbkonalnjkflmdkdodieehnmmeknp",
+            "pricing_type": "freemium",
+            "rating": 0.0,
+            "monthly_visits": 274349133,
+            "tags": "[\"AI Lead Generation\", \"AI Sales Assistant\", \"AI CRM\", \"AI Email Marketing\", \"AI Recruiting\", \"AI Marketing\"]"
+          },
+          {
+            "id": "grok",
+            "name": "Grok",
+            "description": "Grok is a free AI assistant by xAI for truth, objectivity, real-time search, and more.",
+            "url": "https://grok.com",
+            "pricing_type": "free",
+            "rating": 0.0,
+            "monthly_visits": 158337402,
+            "tags": "[\"AI Assistant\", \"AI Search Engine\", \"AI Image Generator\", \"AI Chatbot\"]"
+          }
+        ],
+        "es": [
+          {
+            "id": "chatgpt-4",
+            "name": "ChatGPT",
+            "description": "ChatGPT - IA conversacional desarrollada por OpenAI que ayuda con preguntas, escritura, programación, traducción y más",
+            "url": "https://chatgpt.com",
+            "pricing_type": "freemium",
+            "rating": 0.0,
+            "monthly_visits": 5395125236,
+            "tags": "[\"AI Chatbot\", \"AI Assistant\", \"AI Text Generator\", \"AI Writing Assistants\", \"AI Summarizer\", \"AI Code Assistant\", \"AI Email Generator\", \"Large Language Models (LLMs)\"]"
+          },
+          {
+            "id": "getprospect",
+            "name": "Getprospect",
+            "description": "LinkedIn email finder tool for accurate business email addresses and lead management.",
+            "url": "https://chromewebstore.google.com/detail/email-finder-getprospect/bhbcbkonalnjkflmdkdodieehnmmeknp",
+            "pricing_type": "freemium",
+            "rating": 0.0,
+            "monthly_visits": 274349133,
+            "tags": "[\"AI Lead Generation\", \"AI Sales Assistant\", \"AI CRM\", \"AI Email Marketing\", \"AI Recruiting\", \"AI Marketing\"]"
+          },
+          {
+            "id": "grok",
+            "name": "Grok",
+            "description": "Grok is a free AI assistant by xAI for truth, objectivity, real-time search, and more.",
+            "url": "https://grok.com",
+            "pricing_type": "free",
+            "rating": 0.0,
+            "monthly_visits": 158337402,
+            "tags": "[\"AI Assistant\", \"AI Search Engine\", \"AI Image Generator\", \"AI Chatbot\"]"
+          }
+        ],
+        "fr": [
+          {
+            "id": "chatgpt-4",
+            "name": "ChatGPT",
+            "description": "ChatGPT - IA conversationnelle développée par OpenAI qui aide avec questions, écriture, programmation, traduction et plus",
+            "url": "https://chatgpt.com",
+            "pricing_type": "freemium",
+            "rating": 0.0,
+            "monthly_visits": 5395125236,
+            "tags": "[\"AI Chatbot\", \"AI Assistant\", \"AI Text Generator\", \"AI Writing Assistants\", \"AI Summarizer\", \"AI Code Assistant\", \"AI Email Generator\", \"Large Language Models (LLMs)\"]"
+          },
+          {
+            "id": "getprospect",
+            "name": "Getprospect",
+            "description": "LinkedIn email finder tool for accurate business email addresses and lead management.",
+            "url": "https://chromewebstore.google.com/detail/email-finder-getprospect/bhbcbkonalnjkflmdkdodieehnmmeknp",
+            "pricing_type": "freemium",
+            "rating": 0.0,
+            "monthly_visits": 274349133,
+            "tags": "[\"AI Lead Generation\", \"AI Sales Assistant\", \"AI CRM\", \"AI Email Marketing\", \"AI Recruiting\", \"AI Marketing\"]"
+          },
+          {
+            "id": "grok",
+            "name": "Grok",
+            "description": "Grok is a free AI assistant by xAI for truth, objectivity, real-time search, and more.",
+            "url": "https://grok.com",
+            "pricing_type": "free",
+            "rating": 0.0,
+            "monthly_visits": 158337402,
+            "tags": "[\"AI Assistant\", \"AI Search Engine\", \"AI Image Generator\", \"AI Chatbot\"]"
+          }
+        ],
+        "de": [
+          {
+            "id": "chatgpt-4",
+            "name": "ChatGPT",
+            "description": "ChatGPT - Von OpenAI entwickelte Konversations-KI, die bei Fragen, Schreiben, Programmierung, Übersetzung und mehr hilft",
+            "url": "https://chatgpt.com",
+            "pricing_type": "freemium",
+            "rating": 0.0,
+            "monthly_visits": 5395125236,
+            "tags": "[\"AI Chatbot\", \"AI Assistant\", \"AI Text Generator\", \"AI Writing Assistants\", \"AI Summarizer\", \"AI Code Assistant\", \"AI Email Generator\", \"Large Language Models (LLMs)\"]"
+          },
+          {
+            "id": "getprospect",
+            "name": "Getprospect",
+            "description": "LinkedIn email finder tool for accurate business email addresses and lead management.",
+            "url": "https://chromewebstore.google.com/detail/email-finder-getprospect/bhbcbkonalnjkflmdkdodieehnmmeknp",
+            "pricing_type": "freemium",
+            "rating": 0.0,
+            "monthly_visits": 274349133,
+            "tags": "[\"AI Lead Generation\", \"AI Sales Assistant\", \"AI CRM\", \"AI Email Marketing\", \"AI Recruiting\", \"AI Marketing\"]"
+          },
+          {
+            "id": "grok",
+            "name": "Grok",
+            "description": "Grok is a free AI assistant by xAI for truth, objectivity, real-time search, and more.",
+            "url": "https://grok.com",
+            "pricing_type": "free",
+            "rating": 0.0,
+            "monthly_visits": 158337402,
+            "tags": "[\"AI Assistant\", \"AI Search Engine\", \"AI Image Generator\", \"AI Chatbot\"]"
+          }
+        ]
+      }
+    },
+    "any": {
+      "languages": {
+        "ko": [
+          {
+            "id": "chatgpt-4",
+            "name": "ChatGPT",
+            "description": "ChatGPT - OpenAI가 개발한 대화형 AI로, 질문 답변, 글쓰기, 코딩, 번역 등 다양한 작업을 도와줍니다",
+            "url": "https://chatgpt.com",
+            "pricing_type": "freemium",
+            "rating": 0.0,
+            "monthly_visits": 5395125236,
+            "tags": "[\"AI Chatbot\", \"AI Assistant\", \"AI Text Generator\", \"AI Writing Assistants\", \"AI Summarizer\", \"AI Code Assistant\", \"AI Email Generator\", \"Large Language Models (LLMs)\"]"
+          },
+          {
+            "id": "gemini-gemini-advanced",
+            "name": "Gemini & Gemini Advanced",
+            "description": "Gemini & Gemini Advanced - 대화형 AI 비서로 질문에 답하고 다양한 작업을 도와줍니다",
+            "url": "https://gemini.google.com",
+            "pricing_type": "free",
+            "rating": 0.0,
+            "monthly_visits": 648554740,
+            "tags": "[\"AI Chatbot\", \"AI Assistant\", \"Large Language Models (LLMs)\", \"AI Models\"]"
+          },
+          {
+            "id": "getprospect",
+            "name": "Getprospect",
+            "description": "Getprospect - AI 기반 도구입니다",
+            "url": "https://chromewebstore.google.com/detail/email-finder-getprospect/bhbcbkonalnjkflmdkdodieehnmmeknp",
+            "pricing_type": "freemium",
+            "rating": 0.0,
+            "monthly_visits": 274349133,
+            "tags": "[\"AI Lead Generation\", \"AI Sales Assistant\", \"AI CRM\", \"AI Email Marketing\", \"AI Recruiting\", \"AI Marketing\"]"
+          }
+        ],
+        "en": [
+          {
+            "id": "chatgpt-4",
+            "name": "ChatGPT",
+            "description": "A free-to-use AI system for conversations, insights, and task automation.",
+            "url": "https://chatgpt.com",
+            "pricing_type": "freemium",
+            "rating": 0.0,
+            "monthly_visits": 5395125236,
+            "tags": "[\"AI Chatbot\", \"AI Assistant\", \"AI Text Generator\", \"AI Writing Assistants\", \"AI Summarizer\", \"AI Code Assistant\", \"AI Email Generator\", \"Large Language Models (LLMs)\"]"
+          },
+          {
+            "id": "gemini-gemini-advanced",
+            "name": "Gemini & Gemini Advanced",
+            "description": "Google's personal, proactive, and powerful AI assistant.",
+            "url": "https://gemini.google.com",
+            "pricing_type": "free",
+            "rating": 0.0,
+            "monthly_visits": 648554740,
+            "tags": "[\"AI Chatbot\", \"AI Assistant\", \"Large Language Models (LLMs)\", \"AI Models\"]"
+          },
+          {
+            "id": "getprospect",
+            "name": "Getprospect",
+            "description": "LinkedIn email finder tool for accurate business email addresses and lead management.",
+            "url": "https://chromewebstore.google.com/detail/email-finder-getprospect/bhbcbkonalnjkflmdkdodieehnmmeknp",
+            "pricing_type": "freemium",
+            "rating": 0.0,
+            "monthly_visits": 274349133,
+            "tags": "[\"AI Lead Generation\", \"AI Sales Assistant\", \"AI CRM\", \"AI Email Marketing\", \"AI Recruiting\", \"AI Marketing\"]"
+          }
+        ],
+        "ja": [
+          {
+            "id": "chatgpt-4",
+            "name": "ChatGPT",
+            "description": "ChatGPT - OpenAIが開発した対話型AIで、質問応答、文章作成、プログラミング、翻訳など様々なタスクをサポートします",
+            "url": "https://chatgpt.com",
+            "pricing_type": "freemium",
+            "rating": 0.0,
+            "monthly_visits": 5395125236,
+            "tags": "[\"AI Chatbot\", \"AI Assistant\", \"AI Text Generator\", \"AI Writing Assistants\", \"AI Summarizer\", \"AI Code Assistant\", \"AI Email Generator\", \"Large Language Models (LLMs)\"]"
+          },
+          {
+            "id": "gemini-gemini-advanced",
+            "name": "Gemini & Gemini Advanced",
+            "description": "Gemini & Gemini Advanced - 様々な質問に答え、タスクをサポートする対話型AIチャットボットです",
+            "url": "https://gemini.google.com",
+            "pricing_type": "free",
+            "rating": 0.0,
+            "monthly_visits": 648554740,
+            "tags": "[\"AI Chatbot\", \"AI Assistant\", \"Large Language Models (LLMs)\", \"AI Models\"]"
+          },
+          {
+            "id": "getprospect",
+            "name": "Getprospect",
+            "description": "LinkedIn email finder tool for accurate business email addresses and lead management.",
+            "url": "https://chromewebstore.google.com/detail/email-finder-getprospect/bhbcbkonalnjkflmdkdodieehnmmeknp",
+            "pricing_type": "freemium",
+            "rating": 0.0,
+            "monthly_visits": 274349133,
+            "tags": "[\"AI Lead Generation\", \"AI Sales Assistant\", \"AI CRM\", \"AI Email Marketing\", \"AI Recruiting\", \"AI Marketing\"]"
+          }
+        ],
+        "zh": [
+          {
+            "id": "chatgpt-4",
+            "name": "ChatGPT",
+            "description": "ChatGPT - OpenAI开发的对话式AI，可帮助回答问题、写作、编程、翻译等多种任务",
+            "url": "https://chatgpt.com",
+            "pricing_type": "freemium",
+            "rating": 0.0,
+            "monthly_visits": 5395125236,
+            "tags": "[\"AI Chatbot\", \"AI Assistant\", \"AI Text Generator\", \"AI Writing Assistants\", \"AI Summarizer\", \"AI Code Assistant\", \"AI Email Generator\", \"Large Language Models (LLMs)\"]"
+          },
+          {
+            "id": "gemini-gemini-advanced",
+            "name": "Gemini & Gemini Advanced",
+            "description": "Gemini & Gemini Advanced - 对话式AI聊天机器人，回答问题并协助完成任务",
+            "url": "https://gemini.google.com",
+            "pricing_type": "free",
+            "rating": 0.0,
+            "monthly_visits": 648554740,
+            "tags": "[\"AI Chatbot\", \"AI Assistant\", \"Large Language Models (LLMs)\", \"AI Models\"]"
+          },
+          {
+            "id": "getprospect",
+            "name": "Getprospect",
+            "description": "LinkedIn email finder tool for accurate business email addresses and lead management.",
+            "url": "https://chromewebstore.google.com/detail/email-finder-getprospect/bhbcbkonalnjkflmdkdodieehnmmeknp",
+            "pricing_type": "freemium",
+            "rating": 0.0,
+            "monthly_visits": 274349133,
+            "tags": "[\"AI Lead Generation\", \"AI Sales Assistant\", \"AI CRM\", \"AI Email Marketing\", \"AI Recruiting\", \"AI Marketing\"]"
+          }
+        ],
+        "es": [
+          {
+            "id": "chatgpt-4",
+            "name": "ChatGPT",
+            "description": "ChatGPT - IA conversacional desarrollada por OpenAI que ayuda con preguntas, escritura, programación, traducción y más",
+            "url": "https://chatgpt.com",
+            "pricing_type": "freemium",
+            "rating": 0.0,
+            "monthly_visits": 5395125236,
+            "tags": "[\"AI Chatbot\", \"AI Assistant\", \"AI Text Generator\", \"AI Writing Assistants\", \"AI Summarizer\", \"AI Code Assistant\", \"AI Email Generator\", \"Large Language Models (LLMs)\"]"
+          },
+          {
+            "id": "gemini-gemini-advanced",
+            "name": "Gemini & Gemini Advanced",
+            "description": "Gemini & Gemini Advanced - Chatbot de IA conversacional que responde preguntas y ayuda con tareas",
+            "url": "https://gemini.google.com",
+            "pricing_type": "free",
+            "rating": 0.0,
+            "monthly_visits": 648554740,
+            "tags": "[\"AI Chatbot\", \"AI Assistant\", \"Large Language Models (LLMs)\", \"AI Models\"]"
+          },
+          {
+            "id": "getprospect",
+            "name": "Getprospect",
+            "description": "LinkedIn email finder tool for accurate business email addresses and lead management.",
+            "url": "https://chromewebstore.google.com/detail/email-finder-getprospect/bhbcbkonalnjkflmdkdodieehnmmeknp",
+            "pricing_type": "freemium",
+            "rating": 0.0,
+            "monthly_visits": 274349133,
+            "tags": "[\"AI Lead Generation\", \"AI Sales Assistant\", \"AI CRM\", \"AI Email Marketing\", \"AI Recruiting\", \"AI Marketing\"]"
+          }
+        ],
+        "fr": [
+          {
+            "id": "chatgpt-4",
+            "name": "ChatGPT",
+            "description": "ChatGPT - IA conversationnelle développée par OpenAI qui aide avec questions, écriture, programmation, traduction et plus",
+            "url": "https://chatgpt.com",
+            "pricing_type": "freemium",
+            "rating": 0.0,
+            "monthly_visits": 5395125236,
+            "tags": "[\"AI Chatbot\", \"AI Assistant\", \"AI Text Generator\", \"AI Writing Assistants\", \"AI Summarizer\", \"AI Code Assistant\", \"AI Email Generator\", \"Large Language Models (LLMs)\"]"
+          },
+          {
+            "id": "gemini-gemini-advanced",
+            "name": "Gemini & Gemini Advanced",
+            "description": "Gemini & Gemini Advanced - Chatbot IA conversationnel qui répond aux questions et aide avec les tâches",
+            "url": "https://gemini.google.com",
+            "pricing_type": "free",
+            "rating": 0.0,
+            "monthly_visits": 648554740,
+            "tags": "[\"AI Chatbot\", \"AI Assistant\", \"Large Language Models (LLMs)\", \"AI Models\"]"
+          },
+          {
+            "id": "getprospect",
+            "name": "Getprospect",
+            "description": "LinkedIn email finder tool for accurate business email addresses and lead management.",
+            "url": "https://chromewebstore.google.com/detail/email-finder-getprospect/bhbcbkonalnjkflmdkdodieehnmmeknp",
+            "pricing_type": "freemium",
+            "rating": 0.0,
+            "monthly_visits": 274349133,
+            "tags": "[\"AI Lead Generation\", \"AI Sales Assistant\", \"AI CRM\", \"AI Email Marketing\", \"AI Recruiting\", \"AI Marketing\"]"
+          }
+        ],
+        "de": [
+          {
+            "id": "chatgpt-4",
+            "name": "ChatGPT",
+            "description": "ChatGPT - Von OpenAI entwickelte Konversations-KI, die bei Fragen, Schreiben, Programmierung, Übersetzung und mehr hilft",
+            "url": "https://chatgpt.com",
+            "pricing_type": "freemium",
+            "rating": 0.0,
+            "monthly_visits": 5395125236,
+            "tags": "[\"AI Chatbot\", \"AI Assistant\", \"AI Text Generator\", \"AI Writing Assistants\", \"AI Summarizer\", \"AI Code Assistant\", \"AI Email Generator\", \"Large Language Models (LLMs)\"]"
+          },
+          {
+            "id": "gemini-gemini-advanced",
+            "name": "Gemini & Gemini Advanced",
+            "description": "Gemini & Gemini Advanced - Konversations-KI-Chatbot, der Fragen beantwortet und bei Aufgaben hilft",
+            "url": "https://gemini.google.com",
+            "pricing_type": "free",
+            "rating": 0.0,
+            "monthly_visits": 648554740,
+            "tags": "[\"AI Chatbot\", \"AI Assistant\", \"Large Language Models (LLMs)\", \"AI Models\"]"
+          },
+          {
+            "id": "getprospect",
+            "name": "Getprospect",
+            "description": "LinkedIn email finder tool for accurate business email addresses and lead management.",
+            "url": "https://chromewebstore.google.com/detail/email-finder-getprospect/bhbcbkonalnjkflmdkdodieehnmmeknp",
+            "pricing_type": "freemium",
+            "rating": 0.0,
+            "monthly_visits": 274349133,
+            "tags": "[\"AI Lead Generation\", \"AI Sales Assistant\", \"AI CRM\", \"AI Email Marketing\", \"AI Recruiting\", \"AI Marketing\"]"
+          }
+        ]
+      }
+    }
+  }
+};

@@ -1,1 +1,688 @@
-window.loadToolsData = window.loadToolsData || {}; window.loadToolsData['conversation/roleplay/historical/premium/speed/advanced/mobile'] = {"language_filters": {"current": {"languages": {"ko": [{"id": "chatgpt-4", "name": "ChatGPT", "description": "ChatGPT - OpenAI가 개발한 대화형 AI로, 질문 답변, 글쓰기, 코딩, 번역 등 다양한 작업을 도와줍니다", "url": "https://chatgpt.com", "pricing": "freemium", "visits": 5395125236}, {"id": "polybuzz", "name": "PolyBuzz", "description": "PolyBuzz - 대화형 AI 비서로 질문에 답하고 다양한 작업을 도와줍니다", "url": "https://www.polybuzz.ai/", "pricing": "free", "visits": 23417436}], "en": [{"id": "chatgpt-4", "name": "ChatGPT", "description": "A free-to-use AI system for conversations, insights, and task automation.", "url": "https://chatgpt.com", "pricing": "freemium", "visits": 5395125236}, {"id": "polybuzz", "name": "PolyBuzz", "description": "Free AI chatbot platform for creating and chatting with customized AI characters.", "url": "https://www.polybuzz.ai/", "pricing": "free", "visits": 23417436}], "ja": [{"id": "chatgpt-4", "name": "ChatGPT", "description": "ChatGPT - OpenAIが開発した対話型AIで、質問応答、文章作成、プログラミング、翻訳など様々なタスクをサポートします", "url": "https://chatgpt.com", "pricing": "freemium", "visits": 5395125236}, {"id": "polybuzz", "name": "PolyBuzz", "description": "PolyBuzz - 様々な質問に答え、タスクをサポートする対話型AIチャットボットです", "url": "https://www.polybuzz.ai/", "pricing": "free", "visits": 23417436}], "zh": [{"id": "chatgpt-4", "name": "ChatGPT", "description": "ChatGPT - OpenAI开发的对话式AI，可帮助回答问题、写作、编程、翻译等多种任务", "url": "https://chatgpt.com", "pricing": "freemium", "visits": 5395125236}, {"id": "polybuzz", "name": "PolyBuzz", "description": "PolyBuzz - 对话式AI聊天机器人，回答问题并协助完成任务", "url": "https://www.polybuzz.ai/", "pricing": "free", "visits": 23417436}], "es": [{"id": "chatgpt-4", "name": "ChatGPT", "description": "ChatGPT - IA conversacional desarrollada por OpenAI que ayuda con preguntas, escritura, programación, traducción y más", "url": "https://chatgpt.com", "pricing": "freemium", "visits": 5395125236}, {"id": "polybuzz", "name": "PolyBuzz", "description": "PolyBuzz - Chatbot de IA conversacional que responde preguntas y ayuda con tareas", "url": "https://www.polybuzz.ai/", "pricing": "free", "visits": 23417436}], "fr": [{"id": "chatgpt-4", "name": "ChatGPT", "description": "ChatGPT - IA conversationnelle développée par OpenAI qui aide avec questions, écriture, programmation, traduction et plus", "url": "https://chatgpt.com", "pricing": "freemium", "visits": 5395125236}, {"id": "polybuzz", "name": "PolyBuzz", "description": "PolyBuzz - Chatbot IA conversationnel qui répond aux questions et aide avec les tâches", "url": "https://www.polybuzz.ai/", "pricing": "free", "visits": 23417436}], "de": [{"id": "chatgpt-4", "name": "ChatGPT", "description": "ChatGPT - Von OpenAI entwickelte Konversations-KI, die bei Fragen, Schreiben, Programmierung, Übersetzung und mehr hilft", "url": "https://chatgpt.com", "pricing": "freemium", "visits": 5395125236}, {"id": "polybuzz", "name": "PolyBuzz", "description": "PolyBuzz - Konversations-KI-Chatbot, der Fragen beantwortet und bei Aufgaben hilft", "url": "https://www.polybuzz.ai/", "pricing": "free", "visits": 23417436}]}}, "english": {"languages": {"ko": [{"id": "chatgpt-4", "name": "ChatGPT", "description": "ChatGPT - OpenAI가 개발한 대화형 AI로, 질문 답변, 글쓰기, 코딩, 번역 등 다양한 작업을 도와줍니다", "url": "https://chatgpt.com", "pricing": "freemium", "visits": 5395125236}, {"id": "polybuzz", "name": "PolyBuzz", "description": "PolyBuzz - 대화형 AI 비서로 질문에 답하고 다양한 작업을 도와줍니다", "url": "https://www.polybuzz.ai/", "pricing": "free", "visits": 23417436}], "en": [{"id": "chatgpt-4", "name": "ChatGPT", "description": "A free-to-use AI system for conversations, insights, and task automation.", "url": "https://chatgpt.com", "pricing": "freemium", "visits": 5395125236}, {"id": "polybuzz", "name": "PolyBuzz", "description": "Free AI chatbot platform for creating and chatting with customized AI characters.", "url": "https://www.polybuzz.ai/", "pricing": "free", "visits": 23417436}], "ja": [{"id": "chatgpt-4", "name": "ChatGPT", "description": "ChatGPT - OpenAIが開発した対話型AIで、質問応答、文章作成、プログラミング、翻訳など様々なタスクをサポートします", "url": "https://chatgpt.com", "pricing": "freemium", "visits": 5395125236}, {"id": "polybuzz", "name": "PolyBuzz", "description": "PolyBuzz - 様々な質問に答え、タスクをサポートする対話型AIチャットボットです", "url": "https://www.polybuzz.ai/", "pricing": "free", "visits": 23417436}], "zh": [{"id": "chatgpt-4", "name": "ChatGPT", "description": "ChatGPT - OpenAI开发的对话式AI，可帮助回答问题、写作、编程、翻译等多种任务", "url": "https://chatgpt.com", "pricing": "freemium", "visits": 5395125236}, {"id": "polybuzz", "name": "PolyBuzz", "description": "PolyBuzz - 对话式AI聊天机器人，回答问题并协助完成任务", "url": "https://www.polybuzz.ai/", "pricing": "free", "visits": 23417436}], "es": [{"id": "chatgpt-4", "name": "ChatGPT", "description": "ChatGPT - IA conversacional desarrollada por OpenAI que ayuda con preguntas, escritura, programación, traducción y más", "url": "https://chatgpt.com", "pricing": "freemium", "visits": 5395125236}, {"id": "polybuzz", "name": "PolyBuzz", "description": "PolyBuzz - Chatbot de IA conversacional que responde preguntas y ayuda con tareas", "url": "https://www.polybuzz.ai/", "pricing": "free", "visits": 23417436}], "fr": [{"id": "chatgpt-4", "name": "ChatGPT", "description": "ChatGPT - IA conversationnelle développée par OpenAI qui aide avec questions, écriture, programmation, traduction et plus", "url": "https://chatgpt.com", "pricing": "freemium", "visits": 5395125236}, {"id": "polybuzz", "name": "PolyBuzz", "description": "PolyBuzz - Chatbot IA conversationnel qui répond aux questions et aide avec les tâches", "url": "https://www.polybuzz.ai/", "pricing": "free", "visits": 23417436}], "de": [{"id": "chatgpt-4", "name": "ChatGPT", "description": "ChatGPT - Von OpenAI entwickelte Konversations-KI, die bei Fragen, Schreiben, Programmierung, Übersetzung und mehr hilft", "url": "https://chatgpt.com", "pricing": "freemium", "visits": 5395125236}, {"id": "polybuzz", "name": "PolyBuzz", "description": "PolyBuzz - Konversations-KI-Chatbot, der Fragen beantwortet und bei Aufgaben hilft", "url": "https://www.polybuzz.ai/", "pricing": "free", "visits": 23417436}]}}, "any": {"languages": {"ko": [{"id": "chatgpt-4", "name": "ChatGPT", "description": "ChatGPT - OpenAI가 개발한 대화형 AI로, 질문 답변, 글쓰기, 코딩, 번역 등 다양한 작업을 도와줍니다", "url": "https://chatgpt.com", "pricing": "freemium", "visits": 5395125236}, {"id": "gemini-gemini-advanced", "name": "Gemini & Gemini Advanced", "description": "Gemini & Gemini Advanced - 대화형 AI 비서로 질문에 답하고 다양한 작업을 도와줍니다", "url": "https://gemini.google.com", "pricing": "free", "visits": 648554740}, {"id": "polybuzz", "name": "PolyBuzz", "description": "PolyBuzz - 대화형 AI 비서로 질문에 답하고 다양한 작업을 도와줍니다", "url": "https://www.polybuzz.ai/", "pricing": "free", "visits": 23417436}], "en": [{"id": "chatgpt-4", "name": "ChatGPT", "description": "A free-to-use AI system for conversations, insights, and task automation.", "url": "https://chatgpt.com", "pricing": "freemium", "visits": 5395125236}, {"id": "gemini-gemini-advanced", "name": "Gemini & Gemini Advanced", "description": "Google's personal, proactive, and powerful AI assistant.", "url": "https://gemini.google.com", "pricing": "free", "visits": 648554740}, {"id": "polybuzz", "name": "PolyBuzz", "description": "Free AI chatbot platform for creating and chatting with customized AI characters.", "url": "https://www.polybuzz.ai/", "pricing": "free", "visits": 23417436}], "ja": [{"id": "chatgpt-4", "name": "ChatGPT", "description": "ChatGPT - OpenAIが開発した対話型AIで、質問応答、文章作成、プログラミング、翻訳など様々なタスクをサポートします", "url": "https://chatgpt.com", "pricing": "freemium", "visits": 5395125236}, {"id": "gemini-gemini-advanced", "name": "Gemini & Gemini Advanced", "description": "Gemini & Gemini Advanced - 様々な質問に答え、タスクをサポートする対話型AIチャットボットです", "url": "https://gemini.google.com", "pricing": "free", "visits": 648554740}, {"id": "polybuzz", "name": "PolyBuzz", "description": "PolyBuzz - 様々な質問に答え、タスクをサポートする対話型AIチャットボットです", "url": "https://www.polybuzz.ai/", "pricing": "free", "visits": 23417436}], "zh": [{"id": "chatgpt-4", "name": "ChatGPT", "description": "ChatGPT - OpenAI开发的对话式AI，可帮助回答问题、写作、编程、翻译等多种任务", "url": "https://chatgpt.com", "pricing": "freemium", "visits": 5395125236}, {"id": "gemini-gemini-advanced", "name": "Gemini & Gemini Advanced", "description": "Gemini & Gemini Advanced - 对话式AI聊天机器人，回答问题并协助完成任务", "url": "https://gemini.google.com", "pricing": "free", "visits": 648554740}, {"id": "polybuzz", "name": "PolyBuzz", "description": "PolyBuzz - 对话式AI聊天机器人，回答问题并协助完成任务", "url": "https://www.polybuzz.ai/", "pricing": "free", "visits": 23417436}], "es": [{"id": "chatgpt-4", "name": "ChatGPT", "description": "ChatGPT - IA conversacional desarrollada por OpenAI que ayuda con preguntas, escritura, programación, traducción y más", "url": "https://chatgpt.com", "pricing": "freemium", "visits": 5395125236}, {"id": "gemini-gemini-advanced", "name": "Gemini & Gemini Advanced", "description": "Gemini & Gemini Advanced - Chatbot de IA conversacional que responde preguntas y ayuda con tareas", "url": "https://gemini.google.com", "pricing": "free", "visits": 648554740}, {"id": "polybuzz", "name": "PolyBuzz", "description": "PolyBuzz - Chatbot de IA conversacional que responde preguntas y ayuda con tareas", "url": "https://www.polybuzz.ai/", "pricing": "free", "visits": 23417436}], "fr": [{"id": "chatgpt-4", "name": "ChatGPT", "description": "ChatGPT - IA conversationnelle développée par OpenAI qui aide avec questions, écriture, programmation, traduction et plus", "url": "https://chatgpt.com", "pricing": "freemium", "visits": 5395125236}, {"id": "gemini-gemini-advanced", "name": "Gemini & Gemini Advanced", "description": "Gemini & Gemini Advanced - Chatbot IA conversationnel qui répond aux questions et aide avec les tâches", "url": "https://gemini.google.com", "pricing": "free", "visits": 648554740}, {"id": "polybuzz", "name": "PolyBuzz", "description": "PolyBuzz - Chatbot IA conversationnel qui répond aux questions et aide avec les tâches", "url": "https://www.polybuzz.ai/", "pricing": "free", "visits": 23417436}], "de": [{"id": "chatgpt-4", "name": "ChatGPT", "description": "ChatGPT - Von OpenAI entwickelte Konversations-KI, die bei Fragen, Schreiben, Programmierung, Übersetzung und mehr hilft", "url": "https://chatgpt.com", "pricing": "freemium", "visits": 5395125236}, {"id": "gemini-gemini-advanced", "name": "Gemini & Gemini Advanced", "description": "Gemini & Gemini Advanced - Konversations-KI-Chatbot, der Fragen beantwortet und bei Aufgaben hilft", "url": "https://gemini.google.com", "pricing": "free", "visits": 648554740}, {"id": "polybuzz", "name": "PolyBuzz", "description": "PolyBuzz - Konversations-KI-Chatbot, der Fragen beantwortet und bei Aufgaben hilft", "url": "https://www.polybuzz.ai/", "pricing": "free", "visits": 23417436}]}}}};
+const tools = {
+  "language_filters": {
+    "current": {
+      "languages": {
+        "ko": [
+          {
+            "id": "openai",
+            "name": "OpenAI",
+            "description": "OpenAI - 대화형 AI 비서로 질문에 답하고 다양한 작업을 도와줍니다",
+            "url": "https://openai.com",
+            "pricing_type": "subscription",
+            "rating": 0.0,
+            "monthly_visits": 646953881,
+            "tags": "[\"AI Models\", \"AI API\", \"Large Language Models (LLMs)\", \"AI Chatbot\", \"AI Image Generator\", \"AI Video Generator\"]"
+          },
+          {
+            "id": "force-com",
+            "name": "Salesforce Einstein",
+            "description": "Salesforce Einstein - 코딩과 개발을 도와주는 AI 도구입니다",
+            "url": "https://force.com",
+            "pricing_type": "subscription",
+            "rating": 0.0,
+            "monthly_visits": 136491270,
+            "tags": "[\"AI App Builder\", \"AI Developer Tools\", \"AI CRM\", \"No-Code&Low-Code\", \"AI For Data Analytics\", \"AI Agent\"]"
+          },
+          {
+            "id": "offline-chat-private-ai",
+            "name": "Offline Chat: Private AI",
+            "description": "Offline Chat: Private AI - 대화형 AI 비서로 질문에 답하고 다양한 작업을 도와줍니다",
+            "url": "https://itunes.apple.com/app/id6474077941",
+            "pricing_type": "subscription",
+            "rating": 0.0,
+            "monthly_visits": 27403218,
+            "tags": "[\"AI Chatbot\", \"Large Language Models (LLMs)\", \"AI PDF\", \"AI Productivity Tools\"]"
+          }
+        ],
+        "en": [
+          {
+            "id": "openai",
+            "name": "OpenAI",
+            "description": "AI research and deployment company focused on building safe and beneficial AGI.",
+            "url": "https://openai.com",
+            "pricing_type": "subscription",
+            "rating": 0.0,
+            "monthly_visits": 646953881,
+            "tags": "[\"AI Models\", \"AI API\", \"Large Language Models (LLMs)\", \"AI Chatbot\", \"AI Image Generator\", \"AI Video Generator\"]"
+          },
+          {
+            "id": "force-com",
+            "name": "Salesforce Einstein",
+            "description": "A unified platform for data, AI, CRM, development, and security.",
+            "url": "https://force.com",
+            "pricing_type": "subscription",
+            "rating": 0.0,
+            "monthly_visits": 136491270,
+            "tags": "[\"AI App Builder\", \"AI Developer Tools\", \"AI CRM\", \"No-Code&Low-Code\", \"AI For Data Analytics\", \"AI Agent\"]"
+          },
+          {
+            "id": "offline-chat-private-ai",
+            "name": "Offline Chat: Private AI",
+            "description": "AI ChatBot app that runs offline on Apple devices, ensuring privacy and security.",
+            "url": "https://itunes.apple.com/app/id6474077941",
+            "pricing_type": "subscription",
+            "rating": 0.0,
+            "monthly_visits": 27403218,
+            "tags": "[\"AI Chatbot\", \"Large Language Models (LLMs)\", \"AI PDF\", \"AI Productivity Tools\"]"
+          }
+        ],
+        "ja": [
+          {
+            "id": "openai",
+            "name": "OpenAI",
+            "description": "AI research and deployment company focused on building safe and beneficial AGI.",
+            "url": "https://openai.com",
+            "pricing_type": "subscription",
+            "rating": 0.0,
+            "monthly_visits": 646953881,
+            "tags": "[\"AI Models\", \"AI API\", \"Large Language Models (LLMs)\", \"AI Chatbot\", \"AI Image Generator\", \"AI Video Generator\"]"
+          },
+          {
+            "id": "force-com",
+            "name": "Salesforce Einstein",
+            "description": "A unified platform for data, AI, CRM, development, and security.",
+            "url": "https://force.com",
+            "pricing_type": "subscription",
+            "rating": 0.0,
+            "monthly_visits": 136491270,
+            "tags": "[\"AI App Builder\", \"AI Developer Tools\", \"AI CRM\", \"No-Code&Low-Code\", \"AI For Data Analytics\", \"AI Agent\"]"
+          },
+          {
+            "id": "offline-chat-private-ai",
+            "name": "Offline Chat: Private AI",
+            "description": "Offline Chat: Private AI - 様々な質問に答え、タスクをサポートする対話型AIチャットボットです",
+            "url": "https://itunes.apple.com/app/id6474077941",
+            "pricing_type": "subscription",
+            "rating": 0.0,
+            "monthly_visits": 27403218,
+            "tags": "[\"AI Chatbot\", \"Large Language Models (LLMs)\", \"AI PDF\", \"AI Productivity Tools\"]"
+          }
+        ],
+        "zh": [
+          {
+            "id": "openai",
+            "name": "OpenAI",
+            "description": "AI research and deployment company focused on building safe and beneficial AGI.",
+            "url": "https://openai.com",
+            "pricing_type": "subscription",
+            "rating": 0.0,
+            "monthly_visits": 646953881,
+            "tags": "[\"AI Models\", \"AI API\", \"Large Language Models (LLMs)\", \"AI Chatbot\", \"AI Image Generator\", \"AI Video Generator\"]"
+          },
+          {
+            "id": "force-com",
+            "name": "Salesforce Einstein",
+            "description": "A unified platform for data, AI, CRM, development, and security.",
+            "url": "https://force.com",
+            "pricing_type": "subscription",
+            "rating": 0.0,
+            "monthly_visits": 136491270,
+            "tags": "[\"AI App Builder\", \"AI Developer Tools\", \"AI CRM\", \"No-Code&Low-Code\", \"AI For Data Analytics\", \"AI Agent\"]"
+          },
+          {
+            "id": "offline-chat-private-ai",
+            "name": "Offline Chat: Private AI",
+            "description": "Offline Chat: Private AI - 对话式AI聊天机器人，回答问题并协助完成任务",
+            "url": "https://itunes.apple.com/app/id6474077941",
+            "pricing_type": "subscription",
+            "rating": 0.0,
+            "monthly_visits": 27403218,
+            "tags": "[\"AI Chatbot\", \"Large Language Models (LLMs)\", \"AI PDF\", \"AI Productivity Tools\"]"
+          }
+        ],
+        "es": [
+          {
+            "id": "openai",
+            "name": "OpenAI",
+            "description": "AI research and deployment company focused on building safe and beneficial AGI.",
+            "url": "https://openai.com",
+            "pricing_type": "subscription",
+            "rating": 0.0,
+            "monthly_visits": 646953881,
+            "tags": "[\"AI Models\", \"AI API\", \"Large Language Models (LLMs)\", \"AI Chatbot\", \"AI Image Generator\", \"AI Video Generator\"]"
+          },
+          {
+            "id": "force-com",
+            "name": "Salesforce Einstein",
+            "description": "A unified platform for data, AI, CRM, development, and security.",
+            "url": "https://force.com",
+            "pricing_type": "subscription",
+            "rating": 0.0,
+            "monthly_visits": 136491270,
+            "tags": "[\"AI App Builder\", \"AI Developer Tools\", \"AI CRM\", \"No-Code&Low-Code\", \"AI For Data Analytics\", \"AI Agent\"]"
+          },
+          {
+            "id": "offline-chat-private-ai",
+            "name": "Offline Chat: Private AI",
+            "description": "Offline Chat: Private AI - Chatbot de IA conversacional que responde preguntas y ayuda con tareas",
+            "url": "https://itunes.apple.com/app/id6474077941",
+            "pricing_type": "subscription",
+            "rating": 0.0,
+            "monthly_visits": 27403218,
+            "tags": "[\"AI Chatbot\", \"Large Language Models (LLMs)\", \"AI PDF\", \"AI Productivity Tools\"]"
+          }
+        ],
+        "fr": [
+          {
+            "id": "openai",
+            "name": "OpenAI",
+            "description": "AI research and deployment company focused on building safe and beneficial AGI.",
+            "url": "https://openai.com",
+            "pricing_type": "subscription",
+            "rating": 0.0,
+            "monthly_visits": 646953881,
+            "tags": "[\"AI Models\", \"AI API\", \"Large Language Models (LLMs)\", \"AI Chatbot\", \"AI Image Generator\", \"AI Video Generator\"]"
+          },
+          {
+            "id": "force-com",
+            "name": "Salesforce Einstein",
+            "description": "A unified platform for data, AI, CRM, development, and security.",
+            "url": "https://force.com",
+            "pricing_type": "subscription",
+            "rating": 0.0,
+            "monthly_visits": 136491270,
+            "tags": "[\"AI App Builder\", \"AI Developer Tools\", \"AI CRM\", \"No-Code&Low-Code\", \"AI For Data Analytics\", \"AI Agent\"]"
+          },
+          {
+            "id": "offline-chat-private-ai",
+            "name": "Offline Chat: Private AI",
+            "description": "Offline Chat: Private AI - Chatbot IA conversationnel qui répond aux questions et aide avec les tâches",
+            "url": "https://itunes.apple.com/app/id6474077941",
+            "pricing_type": "subscription",
+            "rating": 0.0,
+            "monthly_visits": 27403218,
+            "tags": "[\"AI Chatbot\", \"Large Language Models (LLMs)\", \"AI PDF\", \"AI Productivity Tools\"]"
+          }
+        ],
+        "de": [
+          {
+            "id": "openai",
+            "name": "OpenAI",
+            "description": "AI research and deployment company focused on building safe and beneficial AGI.",
+            "url": "https://openai.com",
+            "pricing_type": "subscription",
+            "rating": 0.0,
+            "monthly_visits": 646953881,
+            "tags": "[\"AI Models\", \"AI API\", \"Large Language Models (LLMs)\", \"AI Chatbot\", \"AI Image Generator\", \"AI Video Generator\"]"
+          },
+          {
+            "id": "force-com",
+            "name": "Salesforce Einstein",
+            "description": "A unified platform for data, AI, CRM, development, and security.",
+            "url": "https://force.com",
+            "pricing_type": "subscription",
+            "rating": 0.0,
+            "monthly_visits": 136491270,
+            "tags": "[\"AI App Builder\", \"AI Developer Tools\", \"AI CRM\", \"No-Code&Low-Code\", \"AI For Data Analytics\", \"AI Agent\"]"
+          },
+          {
+            "id": "offline-chat-private-ai",
+            "name": "Offline Chat: Private AI",
+            "description": "Offline Chat: Private AI - Konversations-KI-Chatbot, der Fragen beantwortet und bei Aufgaben hilft",
+            "url": "https://itunes.apple.com/app/id6474077941",
+            "pricing_type": "subscription",
+            "rating": 0.0,
+            "monthly_visits": 27403218,
+            "tags": "[\"AI Chatbot\", \"Large Language Models (LLMs)\", \"AI PDF\", \"AI Productivity Tools\"]"
+          }
+        ]
+      }
+    },
+    "english": {
+      "languages": {
+        "ko": [
+          {
+            "id": "openai",
+            "name": "OpenAI",
+            "description": "OpenAI - 대화형 AI 비서로 질문에 답하고 다양한 작업을 도와줍니다",
+            "url": "https://openai.com",
+            "pricing_type": "subscription",
+            "rating": 0.0,
+            "monthly_visits": 646953881,
+            "tags": "[\"AI Models\", \"AI API\", \"Large Language Models (LLMs)\", \"AI Chatbot\", \"AI Image Generator\", \"AI Video Generator\"]"
+          },
+          {
+            "id": "force-com",
+            "name": "Salesforce Einstein",
+            "description": "Salesforce Einstein - 코딩과 개발을 도와주는 AI 도구입니다",
+            "url": "https://force.com",
+            "pricing_type": "subscription",
+            "rating": 0.0,
+            "monthly_visits": 136491270,
+            "tags": "[\"AI App Builder\", \"AI Developer Tools\", \"AI CRM\", \"No-Code&Low-Code\", \"AI For Data Analytics\", \"AI Agent\"]"
+          },
+          {
+            "id": "outlier-ai",
+            "name": "Outlier AI",
+            "description": "Outlier AI - 코딩과 개발을 도와주는 AI 도구입니다",
+            "url": "https://outlier.ai",
+            "pricing_type": "subscription",
+            "rating": 0.0,
+            "monthly_visits": 15996534,
+            "tags": "[\"AI Jobs\", \"Large Language Models (LLMs)\", \"AI Developer Tools\"]"
+          }
+        ],
+        "en": [
+          {
+            "id": "openai",
+            "name": "OpenAI",
+            "description": "AI research and deployment company focused on building safe and beneficial AGI.",
+            "url": "https://openai.com",
+            "pricing_type": "subscription",
+            "rating": 0.0,
+            "monthly_visits": 646953881,
+            "tags": "[\"AI Models\", \"AI API\", \"Large Language Models (LLMs)\", \"AI Chatbot\", \"AI Image Generator\", \"AI Video Generator\"]"
+          },
+          {
+            "id": "force-com",
+            "name": "Salesforce Einstein",
+            "description": "A unified platform for data, AI, CRM, development, and security.",
+            "url": "https://force.com",
+            "pricing_type": "subscription",
+            "rating": 0.0,
+            "monthly_visits": 136491270,
+            "tags": "[\"AI App Builder\", \"AI Developer Tools\", \"AI CRM\", \"No-Code&Low-Code\", \"AI For Data Analytics\", \"AI Agent\"]"
+          },
+          {
+            "id": "outlier-ai",
+            "name": "Outlier AI",
+            "description": "A platform connecting experts with AI training opportunities for paid, flexible work.",
+            "url": "https://outlier.ai",
+            "pricing_type": "subscription",
+            "rating": 0.0,
+            "monthly_visits": 15996534,
+            "tags": "[\"AI Jobs\", \"Large Language Models (LLMs)\", \"AI Developer Tools\"]"
+          }
+        ],
+        "ja": [
+          {
+            "id": "openai",
+            "name": "OpenAI",
+            "description": "AI research and deployment company focused on building safe and beneficial AGI.",
+            "url": "https://openai.com",
+            "pricing_type": "subscription",
+            "rating": 0.0,
+            "monthly_visits": 646953881,
+            "tags": "[\"AI Models\", \"AI API\", \"Large Language Models (LLMs)\", \"AI Chatbot\", \"AI Image Generator\", \"AI Video Generator\"]"
+          },
+          {
+            "id": "force-com",
+            "name": "Salesforce Einstein",
+            "description": "A unified platform for data, AI, CRM, development, and security.",
+            "url": "https://force.com",
+            "pricing_type": "subscription",
+            "rating": 0.0,
+            "monthly_visits": 136491270,
+            "tags": "[\"AI App Builder\", \"AI Developer Tools\", \"AI CRM\", \"No-Code&Low-Code\", \"AI For Data Analytics\", \"AI Agent\"]"
+          },
+          {
+            "id": "outlier-ai",
+            "name": "Outlier AI",
+            "description": "A platform connecting experts with AI training opportunities for paid, flexible work.",
+            "url": "https://outlier.ai",
+            "pricing_type": "subscription",
+            "rating": 0.0,
+            "monthly_visits": 15996534,
+            "tags": "[\"AI Jobs\", \"Large Language Models (LLMs)\", \"AI Developer Tools\"]"
+          }
+        ],
+        "zh": [
+          {
+            "id": "openai",
+            "name": "OpenAI",
+            "description": "AI research and deployment company focused on building safe and beneficial AGI.",
+            "url": "https://openai.com",
+            "pricing_type": "subscription",
+            "rating": 0.0,
+            "monthly_visits": 646953881,
+            "tags": "[\"AI Models\", \"AI API\", \"Large Language Models (LLMs)\", \"AI Chatbot\", \"AI Image Generator\", \"AI Video Generator\"]"
+          },
+          {
+            "id": "force-com",
+            "name": "Salesforce Einstein",
+            "description": "A unified platform for data, AI, CRM, development, and security.",
+            "url": "https://force.com",
+            "pricing_type": "subscription",
+            "rating": 0.0,
+            "monthly_visits": 136491270,
+            "tags": "[\"AI App Builder\", \"AI Developer Tools\", \"AI CRM\", \"No-Code&Low-Code\", \"AI For Data Analytics\", \"AI Agent\"]"
+          },
+          {
+            "id": "outlier-ai",
+            "name": "Outlier AI",
+            "description": "A platform connecting experts with AI training opportunities for paid, flexible work.",
+            "url": "https://outlier.ai",
+            "pricing_type": "subscription",
+            "rating": 0.0,
+            "monthly_visits": 15996534,
+            "tags": "[\"AI Jobs\", \"Large Language Models (LLMs)\", \"AI Developer Tools\"]"
+          }
+        ],
+        "es": [
+          {
+            "id": "openai",
+            "name": "OpenAI",
+            "description": "AI research and deployment company focused on building safe and beneficial AGI.",
+            "url": "https://openai.com",
+            "pricing_type": "subscription",
+            "rating": 0.0,
+            "monthly_visits": 646953881,
+            "tags": "[\"AI Models\", \"AI API\", \"Large Language Models (LLMs)\", \"AI Chatbot\", \"AI Image Generator\", \"AI Video Generator\"]"
+          },
+          {
+            "id": "force-com",
+            "name": "Salesforce Einstein",
+            "description": "A unified platform for data, AI, CRM, development, and security.",
+            "url": "https://force.com",
+            "pricing_type": "subscription",
+            "rating": 0.0,
+            "monthly_visits": 136491270,
+            "tags": "[\"AI App Builder\", \"AI Developer Tools\", \"AI CRM\", \"No-Code&Low-Code\", \"AI For Data Analytics\", \"AI Agent\"]"
+          },
+          {
+            "id": "outlier-ai",
+            "name": "Outlier AI",
+            "description": "A platform connecting experts with AI training opportunities for paid, flexible work.",
+            "url": "https://outlier.ai",
+            "pricing_type": "subscription",
+            "rating": 0.0,
+            "monthly_visits": 15996534,
+            "tags": "[\"AI Jobs\", \"Large Language Models (LLMs)\", \"AI Developer Tools\"]"
+          }
+        ],
+        "fr": [
+          {
+            "id": "openai",
+            "name": "OpenAI",
+            "description": "AI research and deployment company focused on building safe and beneficial AGI.",
+            "url": "https://openai.com",
+            "pricing_type": "subscription",
+            "rating": 0.0,
+            "monthly_visits": 646953881,
+            "tags": "[\"AI Models\", \"AI API\", \"Large Language Models (LLMs)\", \"AI Chatbot\", \"AI Image Generator\", \"AI Video Generator\"]"
+          },
+          {
+            "id": "force-com",
+            "name": "Salesforce Einstein",
+            "description": "A unified platform for data, AI, CRM, development, and security.",
+            "url": "https://force.com",
+            "pricing_type": "subscription",
+            "rating": 0.0,
+            "monthly_visits": 136491270,
+            "tags": "[\"AI App Builder\", \"AI Developer Tools\", \"AI CRM\", \"No-Code&Low-Code\", \"AI For Data Analytics\", \"AI Agent\"]"
+          },
+          {
+            "id": "outlier-ai",
+            "name": "Outlier AI",
+            "description": "A platform connecting experts with AI training opportunities for paid, flexible work.",
+            "url": "https://outlier.ai",
+            "pricing_type": "subscription",
+            "rating": 0.0,
+            "monthly_visits": 15996534,
+            "tags": "[\"AI Jobs\", \"Large Language Models (LLMs)\", \"AI Developer Tools\"]"
+          }
+        ],
+        "de": [
+          {
+            "id": "openai",
+            "name": "OpenAI",
+            "description": "AI research and deployment company focused on building safe and beneficial AGI.",
+            "url": "https://openai.com",
+            "pricing_type": "subscription",
+            "rating": 0.0,
+            "monthly_visits": 646953881,
+            "tags": "[\"AI Models\", \"AI API\", \"Large Language Models (LLMs)\", \"AI Chatbot\", \"AI Image Generator\", \"AI Video Generator\"]"
+          },
+          {
+            "id": "force-com",
+            "name": "Salesforce Einstein",
+            "description": "A unified platform for data, AI, CRM, development, and security.",
+            "url": "https://force.com",
+            "pricing_type": "subscription",
+            "rating": 0.0,
+            "monthly_visits": 136491270,
+            "tags": "[\"AI App Builder\", \"AI Developer Tools\", \"AI CRM\", \"No-Code&Low-Code\", \"AI For Data Analytics\", \"AI Agent\"]"
+          },
+          {
+            "id": "outlier-ai",
+            "name": "Outlier AI",
+            "description": "A platform connecting experts with AI training opportunities for paid, flexible work.",
+            "url": "https://outlier.ai",
+            "pricing_type": "subscription",
+            "rating": 0.0,
+            "monthly_visits": 15996534,
+            "tags": "[\"AI Jobs\", \"Large Language Models (LLMs)\", \"AI Developer Tools\"]"
+          }
+        ]
+      }
+    },
+    "any": {
+      "languages": {
+        "ko": [
+          {
+            "id": "openai",
+            "name": "OpenAI",
+            "description": "OpenAI - 대화형 AI 비서로 질문에 답하고 다양한 작업을 도와줍니다",
+            "url": "https://openai.com",
+            "pricing_type": "subscription",
+            "rating": 0.0,
+            "monthly_visits": 646953881,
+            "tags": "[\"AI Models\", \"AI API\", \"Large Language Models (LLMs)\", \"AI Chatbot\", \"AI Image Generator\", \"AI Video Generator\"]"
+          },
+          {
+            "id": "deepseek",
+            "name": "Deepseek",
+            "description": "Deepseek - 대화형 AI 비서로 질문에 답하고 다양한 작업을 도와줍니다",
+            "url": "https://www.deepseek.com",
+            "pricing_type": "subscription",
+            "rating": 0.0,
+            "monthly_visits": 385849616,
+            "tags": "[\"Large Language Models (LLMs)\", \"Open Source AI Models\", \"AI API\", \"AI Chatbot\", \"AI Code Generator\", \"AI Assistant\", \"AI Translate\", \"AI Writing\"]"
+          },
+          {
+            "id": "force-com",
+            "name": "Salesforce Einstein",
+            "description": "Salesforce Einstein - 코딩과 개발을 도와주는 AI 도구입니다",
+            "url": "https://force.com",
+            "pricing_type": "subscription",
+            "rating": 0.0,
+            "monthly_visits": 136491270,
+            "tags": "[\"AI App Builder\", \"AI Developer Tools\", \"AI CRM\", \"No-Code&Low-Code\", \"AI For Data Analytics\", \"AI Agent\"]"
+          }
+        ],
+        "en": [
+          {
+            "id": "openai",
+            "name": "OpenAI",
+            "description": "AI research and deployment company focused on building safe and beneficial AGI.",
+            "url": "https://openai.com",
+            "pricing_type": "subscription",
+            "rating": 0.0,
+            "monthly_visits": 646953881,
+            "tags": "[\"AI Models\", \"AI API\", \"Large Language Models (LLMs)\", \"AI Chatbot\", \"AI Image Generator\", \"AI Video Generator\"]"
+          },
+          {
+            "id": "deepseek",
+            "name": "Deepseek",
+            "description": "DeepSeek is an AI company providing foundation models and APIs for AI applications.",
+            "url": "https://www.deepseek.com",
+            "pricing_type": "subscription",
+            "rating": 0.0,
+            "monthly_visits": 385849616,
+            "tags": "[\"Large Language Models (LLMs)\", \"Open Source AI Models\", \"AI API\", \"AI Chatbot\", \"AI Code Generator\", \"AI Assistant\", \"AI Translate\", \"AI Writing\"]"
+          },
+          {
+            "id": "force-com",
+            "name": "Salesforce Einstein",
+            "description": "A unified platform for data, AI, CRM, development, and security.",
+            "url": "https://force.com",
+            "pricing_type": "subscription",
+            "rating": 0.0,
+            "monthly_visits": 136491270,
+            "tags": "[\"AI App Builder\", \"AI Developer Tools\", \"AI CRM\", \"No-Code&Low-Code\", \"AI For Data Analytics\", \"AI Agent\"]"
+          }
+        ],
+        "ja": [
+          {
+            "id": "openai",
+            "name": "OpenAI",
+            "description": "AI research and deployment company focused on building safe and beneficial AGI.",
+            "url": "https://openai.com",
+            "pricing_type": "subscription",
+            "rating": 0.0,
+            "monthly_visits": 646953881,
+            "tags": "[\"AI Models\", \"AI API\", \"Large Language Models (LLMs)\", \"AI Chatbot\", \"AI Image Generator\", \"AI Video Generator\"]"
+          },
+          {
+            "id": "deepseek",
+            "name": "Deepseek",
+            "description": "DeepSeek is an AI company providing foundation models and APIs for AI applications.",
+            "url": "https://www.deepseek.com",
+            "pricing_type": "subscription",
+            "rating": 0.0,
+            "monthly_visits": 385849616,
+            "tags": "[\"Large Language Models (LLMs)\", \"Open Source AI Models\", \"AI API\", \"AI Chatbot\", \"AI Code Generator\", \"AI Assistant\", \"AI Translate\", \"AI Writing\"]"
+          },
+          {
+            "id": "force-com",
+            "name": "Salesforce Einstein",
+            "description": "A unified platform for data, AI, CRM, development, and security.",
+            "url": "https://force.com",
+            "pricing_type": "subscription",
+            "rating": 0.0,
+            "monthly_visits": 136491270,
+            "tags": "[\"AI App Builder\", \"AI Developer Tools\", \"AI CRM\", \"No-Code&Low-Code\", \"AI For Data Analytics\", \"AI Agent\"]"
+          }
+        ],
+        "zh": [
+          {
+            "id": "openai",
+            "name": "OpenAI",
+            "description": "AI research and deployment company focused on building safe and beneficial AGI.",
+            "url": "https://openai.com",
+            "pricing_type": "subscription",
+            "rating": 0.0,
+            "monthly_visits": 646953881,
+            "tags": "[\"AI Models\", \"AI API\", \"Large Language Models (LLMs)\", \"AI Chatbot\", \"AI Image Generator\", \"AI Video Generator\"]"
+          },
+          {
+            "id": "deepseek",
+            "name": "Deepseek",
+            "description": "DeepSeek is an AI company providing foundation models and APIs for AI applications.",
+            "url": "https://www.deepseek.com",
+            "pricing_type": "subscription",
+            "rating": 0.0,
+            "monthly_visits": 385849616,
+            "tags": "[\"Large Language Models (LLMs)\", \"Open Source AI Models\", \"AI API\", \"AI Chatbot\", \"AI Code Generator\", \"AI Assistant\", \"AI Translate\", \"AI Writing\"]"
+          },
+          {
+            "id": "force-com",
+            "name": "Salesforce Einstein",
+            "description": "A unified platform for data, AI, CRM, development, and security.",
+            "url": "https://force.com",
+            "pricing_type": "subscription",
+            "rating": 0.0,
+            "monthly_visits": 136491270,
+            "tags": "[\"AI App Builder\", \"AI Developer Tools\", \"AI CRM\", \"No-Code&Low-Code\", \"AI For Data Analytics\", \"AI Agent\"]"
+          }
+        ],
+        "es": [
+          {
+            "id": "openai",
+            "name": "OpenAI",
+            "description": "AI research and deployment company focused on building safe and beneficial AGI.",
+            "url": "https://openai.com",
+            "pricing_type": "subscription",
+            "rating": 0.0,
+            "monthly_visits": 646953881,
+            "tags": "[\"AI Models\", \"AI API\", \"Large Language Models (LLMs)\", \"AI Chatbot\", \"AI Image Generator\", \"AI Video Generator\"]"
+          },
+          {
+            "id": "deepseek",
+            "name": "Deepseek",
+            "description": "DeepSeek is an AI company providing foundation models and APIs for AI applications.",
+            "url": "https://www.deepseek.com",
+            "pricing_type": "subscription",
+            "rating": 0.0,
+            "monthly_visits": 385849616,
+            "tags": "[\"Large Language Models (LLMs)\", \"Open Source AI Models\", \"AI API\", \"AI Chatbot\", \"AI Code Generator\", \"AI Assistant\", \"AI Translate\", \"AI Writing\"]"
+          },
+          {
+            "id": "force-com",
+            "name": "Salesforce Einstein",
+            "description": "A unified platform for data, AI, CRM, development, and security.",
+            "url": "https://force.com",
+            "pricing_type": "subscription",
+            "rating": 0.0,
+            "monthly_visits": 136491270,
+            "tags": "[\"AI App Builder\", \"AI Developer Tools\", \"AI CRM\", \"No-Code&Low-Code\", \"AI For Data Analytics\", \"AI Agent\"]"
+          }
+        ],
+        "fr": [
+          {
+            "id": "openai",
+            "name": "OpenAI",
+            "description": "AI research and deployment company focused on building safe and beneficial AGI.",
+            "url": "https://openai.com",
+            "pricing_type": "subscription",
+            "rating": 0.0,
+            "monthly_visits": 646953881,
+            "tags": "[\"AI Models\", \"AI API\", \"Large Language Models (LLMs)\", \"AI Chatbot\", \"AI Image Generator\", \"AI Video Generator\"]"
+          },
+          {
+            "id": "deepseek",
+            "name": "Deepseek",
+            "description": "DeepSeek is an AI company providing foundation models and APIs for AI applications.",
+            "url": "https://www.deepseek.com",
+            "pricing_type": "subscription",
+            "rating": 0.0,
+            "monthly_visits": 385849616,
+            "tags": "[\"Large Language Models (LLMs)\", \"Open Source AI Models\", \"AI API\", \"AI Chatbot\", \"AI Code Generator\", \"AI Assistant\", \"AI Translate\", \"AI Writing\"]"
+          },
+          {
+            "id": "force-com",
+            "name": "Salesforce Einstein",
+            "description": "A unified platform for data, AI, CRM, development, and security.",
+            "url": "https://force.com",
+            "pricing_type": "subscription",
+            "rating": 0.0,
+            "monthly_visits": 136491270,
+            "tags": "[\"AI App Builder\", \"AI Developer Tools\", \"AI CRM\", \"No-Code&Low-Code\", \"AI For Data Analytics\", \"AI Agent\"]"
+          }
+        ],
+        "de": [
+          {
+            "id": "openai",
+            "name": "OpenAI",
+            "description": "AI research and deployment company focused on building safe and beneficial AGI.",
+            "url": "https://openai.com",
+            "pricing_type": "subscription",
+            "rating": 0.0,
+            "monthly_visits": 646953881,
+            "tags": "[\"AI Models\", \"AI API\", \"Large Language Models (LLMs)\", \"AI Chatbot\", \"AI Image Generator\", \"AI Video Generator\"]"
+          },
+          {
+            "id": "deepseek",
+            "name": "Deepseek",
+            "description": "DeepSeek is an AI company providing foundation models and APIs for AI applications.",
+            "url": "https://www.deepseek.com",
+            "pricing_type": "subscription",
+            "rating": 0.0,
+            "monthly_visits": 385849616,
+            "tags": "[\"Large Language Models (LLMs)\", \"Open Source AI Models\", \"AI API\", \"AI Chatbot\", \"AI Code Generator\", \"AI Assistant\", \"AI Translate\", \"AI Writing\"]"
+          },
+          {
+            "id": "force-com",
+            "name": "Salesforce Einstein",
+            "description": "A unified platform for data, AI, CRM, development, and security.",
+            "url": "https://force.com",
+            "pricing_type": "subscription",
+            "rating": 0.0,
+            "monthly_visits": 136491270,
+            "tags": "[\"AI App Builder\", \"AI Developer Tools\", \"AI CRM\", \"No-Code&Low-Code\", \"AI For Data Analytics\", \"AI Agent\"]"
+          }
+        ]
+      }
+    }
+  }
+};
