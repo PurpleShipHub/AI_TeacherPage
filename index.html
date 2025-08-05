@@ -1470,6 +1470,8 @@
                     const resetButton = document.getElementById('resetButton');
                     if (resetButton) {
                         resetButton.textContent = this.uiTranslations[this.currentLang].restart;
+                        // onclick 핸들러 설정
+                        resetButton.onclick = () => this.reset();
                         // 기본 reset-button 클래스 스타일 유지하면서 위치만 조정
                         resetButton.style.display = 'block';
                         resetButton.style.position = 'absolute';
