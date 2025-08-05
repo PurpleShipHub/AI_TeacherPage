@@ -809,6 +809,32 @@
             text-shadow: 0 0 5px rgba(255, 0, 0, 0.8);
         }
         
+        /* Copyright 푸터 */
+        .copyright-footer {
+            position: fixed;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #00ff00;
+            font-size: 12px;
+            font-family: 'VT323', monospace;
+            text-align: center;
+            opacity: 0.7;
+            z-index: 100;
+            letter-spacing: 1px;
+        }
+        
+        .copyright-footer a {
+            color: #00ff00;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .copyright-footer a:hover {
+            text-shadow: 0 0 5px rgba(0, 255, 0, 0.8);
+            opacity: 1;
+        }
+        
         /* 로딩 화면 */
         .loading-container {
             position: fixed;
@@ -1115,7 +1141,13 @@
         <h2 class="results-title" id="resultsTitle">추천 AI 도구</h2>
         <div id="toolsList"></div>
     </div>
+    
     </div>  <!-- game-container 닫기 -->
+    
+    <!-- Copyright 푸터 (game-container 밖에 위치) -->
+    <div class="copyright-footer">
+        © 2024 <a href="https://purpleship.io/" target="_blank">PurpleShip</a>. All rights reserved.
+    </div>
 
     <script>
 
@@ -1265,10 +1297,8 @@
                     ? this.whatLabels[this.selections.what][this.currentLang] 
                     : this.whatTranslations[this.selections.what].label;
                 const dialogue = this.stepQuestions[this.currentLang].step2.replace('{what}', whatLabel);
-                this.updateDialogue(dialogue);
+                this.updateDialogue(dialogue, true); // autoShowChoices = true
                 this.updateCharacterImage('curious');
-                
-                // 버튼 그리드로 변경되어 이 부분은 더 이상 필요없음
             }
             
             selectHow(how) {
@@ -1282,10 +1312,8 @@
                 this.currentStep = 3;
                 this.dialogueCompleted = false;
                 const dialogue = this.stepQuestions[this.currentLang].step3;
-                this.updateDialogue(dialogue);
+                this.updateDialogue(dialogue, true); // autoShowChoices = true
                 this.updateCharacterImage('curious');
-                
-                // 버튼 그리드로 변경되어 이 부분은 더 이상 필요없음
             }
             
             selectDo(doValue) {
@@ -1299,10 +1327,8 @@
                 this.currentStep = 4;
                 this.dialogueCompleted = false;
                 const question = this.step4Translations.question[this.currentLang];
-                this.updateDialogue(question);
+                this.updateDialogue(question, true); // autoShowChoices = true
                 this.updateCharacterImage('curious');
-                
-                // 버튼 그리드로 변경되어 이 부분은 더 이상 필요없음
             }
             
             selectStep4(value) {
@@ -1316,10 +1342,8 @@
                 this.currentStep = 5;
                 this.dialogueCompleted = false;
                 const question = this.step5Translations.question[this.currentLang];
-                this.updateDialogue(question);
+                this.updateDialogue(question, true); // autoShowChoices = true
                 this.updateCharacterImage('curious');
-                
-                // 버튼 그리드로 변경되어 이 부분은 더 이상 필요없음
             }
             
             selectStep5(value) {
@@ -1333,10 +1357,8 @@
                 this.currentStep = 6;
                 this.dialogueCompleted = false;
                 const question = this.step6Translations.question[this.currentLang];
-                this.updateDialogue(question);
+                this.updateDialogue(question, true); // autoShowChoices = true
                 this.updateCharacterImage('curious');
-                
-                // 버튼 그리드로 변경되어 이 부분은 더 이상 필요없음
             }
             
             selectStep6(value) {
@@ -1350,10 +1372,8 @@
                 this.currentStep = 7;
                 this.dialogueCompleted = false;
                 const question = this.step7Translations.question[this.currentLang];
-                this.updateDialogue(question);
+                this.updateDialogue(question, true); // autoShowChoices = true
                 this.updateCharacterImage('curious');
-                
-                // 버튼 그리드로 변경되어 이 부분은 더 이상 필요없음
             }
             
             selectStep7(value) {
@@ -1367,10 +1387,8 @@
                 this.currentStep = 8;
                 this.dialogueCompleted = false;
                 const question = this.step8Translations.question[this.currentLang];
-                this.updateDialogue(question);
+                this.updateDialogue(question, true); // autoShowChoices = true
                 this.updateCharacterImage('curious');
-                
-                // 버튼 그리드로 변경되어 이 부분은 더 이상 필요없음
             }
             
             selectStep8(value) {
@@ -1438,7 +1456,7 @@
                 // 대화창 크기를 적절히 조정 (스크롤 없이 3개 도구가 보이도록)
                 const dialogueBox = document.getElementById('dialogueBox');
                 if (dialogueBox) {
-                    dialogueBox.style.height = '280px'; // 높이 더 줄임
+                    dialogueBox.style.height = '320px'; // 3개 항목과 버튼이 겹치지 않도록 조정
                 }
                 
                 // 대화 텍스트 영역에 결과 표시
@@ -1565,6 +1583,12 @@
                     resultButton.remove();
                 }
                 
+                // 페이지의 리셋 버튼 숨기기
+                const resetButton = document.getElementById('resetButton');
+                if (resetButton) {
+                    resetButton.style.display = 'none';
+                }
+                
                 // 대화창 원래 크기로 복원
                 const dialogueBox = document.getElementById('dialogueBox');
                 if (dialogueBox) {
@@ -1575,7 +1599,7 @@
                 this.showStep1();
             }
             
-            updateDialogue(text) {
+            updateDialogue(text, autoShowChoices = false) {
                 const dialogue = document.querySelector('.dialogue-text');
                 const clickIndicator = document.querySelector('.click-indicator');
                 this.dialogueCompleted = false;
@@ -1598,7 +1622,16 @@
                     } else {
                         // 타이핑 완료 후
                         this.dialogueCompleted = true;
-                        clickIndicator.classList.add('show');
+                        
+                        if (autoShowChoices && this.currentStep >= 2 && this.currentStep <= 8) {
+                            // step 2부터는 바로 선택창 표시
+                            setTimeout(() => {
+                                this.showChoices();
+                            }, 300); // 약간의 딜레이 후 선택창 표시
+                        } else {
+                            // step 1은 클릭 표시
+                            clickIndicator.classList.add('show');
+                        }
                     }
                 };
                 
