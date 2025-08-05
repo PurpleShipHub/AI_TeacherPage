@@ -35,6 +35,15 @@
             display: none;
         }
         
+        /* 컨텐츠 래퍼 */
+        .content-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            flex: 1;
+            overflow: hidden;
+        }
+        
         /* 90년대 레트로 배경 */
         /* 게임 화면 컨테이너 */
         .game-container {
@@ -46,6 +55,8 @@
             margin: 0 auto;
             overflow: hidden;
             background: #000;
+            display: flex;
+            flex-direction: column;
         }
         
         /* 90년대 레트로 배경 */
@@ -811,23 +822,20 @@
         
         /* Copyright 푸터 */
         .copyright-footer {
-            position: fixed;
-            bottom: 10px;
-            left: 50%;
-            transform: translateX(-50%);
+            position: relative;
+            bottom: 0;
+            left: 0;
+            right: 0;
             color: #00ff00;
-            font-size: 14px;
+            font-size: 11px;
             font-family: 'VT323', monospace;
             text-align: center;
-            opacity: 0.8;
-            z-index: 10000;
+            opacity: 0.6;
+            z-index: 20;
             letter-spacing: 1px;
-            background: rgba(0, 0, 0, 0.9);
-            padding: 5px 20px;
-            border: 1px solid #00ff00;
-            border-radius: 3px;
-            white-space: nowrap;
-            box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+            background: transparent;
+            padding: 3px 10px;
+            flex-shrink: 0;
         }
         
         .copyright-footer a {
@@ -839,25 +847,6 @@
         .copyright-footer a:hover {
             text-shadow: 0 0 5px rgba(0, 255, 0, 0.8);
             opacity: 1;
-        }
-        
-        /* PC 화면에서 푸터 위치 조정 */
-        @media (min-width: 768px) {
-            .copyright-footer {
-                bottom: 20px;
-                font-size: 16px;
-                padding: 8px 30px;
-            }
-        }
-        
-        /* 큰 화면에서 game-container가 중앙에 위치할 때 푸터도 조정 */
-        @media (min-width: 1024px) {
-            .copyright-footer {
-                position: fixed;
-                bottom: 30px;
-                left: 50%;
-                transform: translateX(-50%);
-            }
         }
         
         /* 로딩 화면 */
@@ -1079,100 +1068,100 @@
 
     <!-- 게임 컨테이너 -->
     <div class="game-container">
-        <!-- 로딩 화면 -->
-        <div class="loading-container" id="loadingContainer">
-        <h1 class="loading-title">AI Teacher</h1>
-        <div class="loading-bar">
-            <div class="loading-progress"></div>
-        </div>
-        <div class="loading-text">Loading...</div>
-    </div>
-    
-    <!-- 비주얼 노벨 배경 -->
-    <div class="vn-background"></div>
-    <div class="background-overlay"></div>
-    
-    <!-- 진행 상태 표시 -->
-    <div class="progress-container" id="progressContainer" style="display: none;">
-        <div class="progress-text" id="progressText">Step 1 / 8</div>
-        <div class="progress-steps">
-            <div class="step-indicator active" id="step1">1</div>
-            <div class="step-indicator" id="step2">2</div>
-            <div class="step-indicator" id="step3">3</div>
-            <div class="step-indicator" id="step4">4</div>
-            <div class="step-indicator" id="step5">5</div>
-            <div class="step-indicator" id="step6">6</div>
-            <div class="step-indicator" id="step7">7</div>
-            <div class="step-indicator" id="step8">8</div>
-        </div>
-    </div>
-    
-    <!-- 리셋 버튼 -->
-    <button class="reset-button" id="resetButton" style="display: none;">Reset</button>
-    
-    <!-- 언어 선택기 -->
-    <div class="language-selector">
-        <select class="lang-dropdown" id="languageSelect" onchange="aiTeacher.changeLanguage(this.value)">
-            <option value="ko" selected>한국어</option>
-            <option value="en">English</option>
-            <option value="ja">日本語</option>
-            <option value="zh">中文</option>
-            <option value="es">Español</option>
-            <option value="fr">Français</option>
-            <option value="de">Deutsch</option>
-            <option value="vi">Tiếng Việt</option>
-            <option value="ru">Русский</option>
-            <option value="pt">Português</option>
-            <option value="it">Italiano</option>
-            <option value="nl">Nederlands</option>
-            <option value="pl">Polski</option>
-            <option value="tr">Türkçe</option>
-            <option value="ar">العربية</option>
-            <option value="hi">हिन्दी</option>
-        </select>
-    </div>
-    
-    <!-- AI Teacher 캐릭터 -->
-    <!-- AI Teacher 캐릭터 (오른쪽 고정) -->
-    <div class="ai-teacher" id="aiTeacher" style="display: none;">
-        <!-- 캐릭터 이미지는 JavaScript로 동적 로드 -->
-    </div>
-    
-    <!-- 대화창 -->
-    <div class="dialogue-box" id="dialogueBox" style="display: none;" onclick="aiTeacher.onDialogueClick()">
-        <div class="dialogue-text" id="dialogueText"></div>
-        <div class="click-indicator" id="clickIndicator">▼ Click</div>
-        
-        <!-- 버튼 그리드 컨테이너 - 대화창에 직접 추가 -->
-        <div class="button-grid-container" id="buttonGridContainer" style="display: none;">
-            <div class="button-grid" id="buttonGrid">
-                <!-- 버튼들이 동적으로 추가됨 -->
+        <div class="content-wrapper">
+            <!-- 로딩 화면 -->
+            <div class="loading-container" id="loadingContainer">
+                <h1 class="loading-title">AI Teacher</h1>
+                <div class="loading-bar">
+                    <div class="loading-progress"></div>
+                </div>
+                <div class="loading-text">Loading...</div>
             </div>
+            
+            <!-- 비주얼 노벨 배경 -->
+            <div class="vn-background"></div>
+            <div class="background-overlay"></div>
+            
+            <!-- 진행 상태 표시 -->
+            <div class="progress-container" id="progressContainer" style="display: none;">
+                <div class="progress-text" id="progressText">Step 1 / 8</div>
+                <div class="progress-steps">
+                    <div class="step-indicator active" id="step1">1</div>
+                    <div class="step-indicator" id="step2">2</div>
+                    <div class="step-indicator" id="step3">3</div>
+                    <div class="step-indicator" id="step4">4</div>
+                    <div class="step-indicator" id="step5">5</div>
+                    <div class="step-indicator" id="step6">6</div>
+                    <div class="step-indicator" id="step7">7</div>
+                    <div class="step-indicator" id="step8">8</div>
+                </div>
+            </div>
+            
+            <!-- 리셋 버튼 -->
+            <button class="reset-button" id="resetButton" style="display: none;">Reset</button>
+            
+            <!-- 언어 선택기 -->
+            <div class="language-selector">
+                <select class="lang-dropdown" id="languageSelect" onchange="aiTeacher.changeLanguage(this.value)">
+                    <option value="ko" selected>한국어</option>
+                    <option value="en">English</option>
+                    <option value="ja">日本語</option>
+                    <option value="zh">中文</option>
+                    <option value="es">Español</option>
+                    <option value="fr">Français</option>
+                    <option value="de">Deutsch</option>
+                    <option value="vi">Tiếng Việt</option>
+                    <option value="ru">Русский</option>
+                    <option value="pt">Português</option>
+                    <option value="it">Italiano</option>
+                    <option value="nl">Nederlands</option>
+                    <option value="pl">Polski</option>
+                    <option value="tr">Türkçe</option>
+                    <option value="ar">العربية</option>
+                    <option value="hi">हिन्दी</option>
+                </select>
+            </div>
+    
+            <!-- AI Teacher 캐릭터 -->
+            <div class="ai-teacher" id="aiTeacher" style="display: none;">
+                <!-- 캐릭터 이미지는 JavaScript로 동적 로드 -->
+            </div>
+            
+            <!-- 대화창 -->
+            <div class="dialogue-box" id="dialogueBox" style="display: none;" onclick="aiTeacher.onDialogueClick()">
+                <div class="dialogue-text" id="dialogueText"></div>
+                <div class="click-indicator" id="clickIndicator">▼ Click</div>
+                
+                <!-- 버튼 그리드 컨테이너 - 대화창에 직접 추가 -->
+                <div class="button-grid-container" id="buttonGridContainer" style="display: none;">
+                    <div class="button-grid" id="buttonGrid">
+                        <!-- 버튼들이 동적으로 추가됨 -->
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 선택지 컨테이너 (초기 선택용) -->
+            <div class="choices-container" id="choicesContainer" style="display: none;">
+                <!-- 동적으로 생성됨 -->
+            </div>
+            
+            <!-- 드롭다운 컨테이너 (3단계 선택용) -->
+            <div class="dropdown-container" id="dropdownContainer" style="display: none;">
+                <!-- 동적으로 생성됨 -->
+            </div>
+    
+            <!-- 결과 화면 -->
+            <div class="results-container" id="resultsContainer" style="display: none;">
+                <h2 class="results-title" id="resultsTitle">추천 AI 도구</h2>
+                <div id="toolsList"></div>
+            </div>
+        </div>  <!-- content-wrapper 닫기 -->
+        
+        <!-- Copyright 푸터 (game-container 안에 위치) -->
+        <div class="copyright-footer">
+            © 2024 <a href="https://purpleship.io/" target="_blank">PurpleShip</a>. All rights reserved.
         </div>
-    </div>
-    
-    <!-- 선택지 컨테이너 (초기 선택용) -->
-    <div class="choices-container" id="choicesContainer" style="display: none;">
-        <!-- 동적으로 생성됨 -->
-    </div>
-    
-    <!-- 드롭다운 컨테이너 (3단계 선택용) -->
-    <div class="dropdown-container" id="dropdownContainer" style="display: none;">
-        <!-- 동적으로 생성됨 -->
-    </div>
-    
-    <!-- 결과 화면 -->
-    <div class="results-container" id="resultsContainer" style="display: none;">
-        <h2 class="results-title" id="resultsTitle">추천 AI 도구</h2>
-        <div id="toolsList"></div>
-    </div>
-    
     </div>  <!-- game-container 닫기 -->
-    
-    <!-- Copyright 푸터 (game-container 밖에 위치) -->
-    <div class="copyright-footer">
-        © 2024 <a href="https://purpleship.io/" target="_blank">PurpleShip</a>. All rights reserved.
-    </div>
 
     <script>
 
